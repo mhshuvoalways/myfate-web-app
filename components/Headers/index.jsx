@@ -11,10 +11,7 @@ const TopHeader = () => {
 
   return (
     <div className="pb-[76px]">
-      <Header
-        isOpen={isOpen}
-        toggleSidebar={toggleSidebar}
-      />
+      <Header toggleSidebar={toggleSidebar} />
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       {isOpen && (
         <p

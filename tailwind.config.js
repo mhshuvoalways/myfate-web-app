@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         "my-gold": "#ba9545",
         "my-cream": "#f1ede8",
-        "my-blue": "#54a8d0",
+        "my-blue": "#332089",
         "my-text-gray": "#7a7a7a",
       },
     },

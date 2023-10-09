@@ -7,9 +7,14 @@ const index = () => {
   return (
     <div className="relative w-full intro mt-1">
       <div className="flex justify-between items-center h-auto lg:h-screen gap-5 flex-wrap lg:flex-nowrap w-11/12 mx-auto">
-        <div className="w-full md:w-6/12 space-y-2 lg:space-y-5">
+        <div className="w-full lg:w-6/12 space-y-2 lg:space-y-7">
           <Zoom>
-            <p className="text-8xl font-semibold pt-10 font-gabarito">
+            <p
+              className="font-semibold leading-none pt-10 font-gabarito"
+              style={{
+                fontSize: "6.8vw",
+              }}
+            >
               Explore Your Future
             </p>
             <p className="text-xl">
@@ -24,12 +29,11 @@ const index = () => {
               sapien elementum ligula, id lobortis dolor tortor eu massa.
               Phasellus vitae auctor justo.
             </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </Zoom>
           <Zoom right>
             <motion.button
               whileTap={{ scale: 0.9 }}
-              className="bg-gray-800 text-white rounded px-5 py-2 font-gabarito"
+              className="bg-gray-800 text-white rounded-full px-5 py-2 font-gabarito"
             >
               Explore More
             </motion.button>

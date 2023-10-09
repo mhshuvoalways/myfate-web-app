@@ -15,11 +15,11 @@ const Index = () => {
   return (
     <div className="bg-gray-50 py-32">
       <div className="w-11/12 mx-auto">
-        <p className="text-6xl font-semibold text-center">Our Affordable,</p>
-        <p className="text-6xl font-semibold text-my-blue text-center">
+        <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center">Our Affordable,</p>
+        <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue text-center">
           Fair Pricing
         </p>
-        <div className="bg-gray-100 flex w-3/12 mx-auto p-1 rounded-full mt-10 relative">
+        <div className="bg-gray-100 flex w-60 mx-auto p-1 rounded-full mt-10 relative">
           <p
             className={
               selectPrice === "monthly"
@@ -40,9 +40,9 @@ const Index = () => {
           >
             Quarterly
           </p>
-          <div className="absolute -right-28 top-5 flex gap-2 items-center">
-            <Image src={ArrowPhoto} alt="" className="" />
-            <p className="font-semibold text-xl">5% off</p>
+          <div className="absolute -right-0 top-16 md:-right-28 md:top-4 flex gap-2 items-center">
+            <Image src={ArrowPhoto} alt="" />
+            <p className="text-lg font-semibold">5% off</p>
           </div>
         </div>
         <Fade bottom>
@@ -107,7 +107,7 @@ const Index = () => {
               <div>
                 <p className="text-4xl font-semibold">
                   NGN
-                  {selectPrice === "monthly" ? " 1,500" : " 3,848"}
+                  {selectPrice === "monthly" ? " 2,350" : " 6,695"}
                 </p>
                 <p className="text-xl text-gray-500">
                   {" "}
@@ -164,7 +164,7 @@ const Index = () => {
               </div>
               <div>
                 <p className="text-4xl font-semibold">
-                  NGN {selectPrice === "monthly" ? "4,500" : "11,543"}
+                  NGN {selectPrice === "monthly" ? " 6,750" : "19,235"}
                 </p>
                 <p className="text-xl text-gray-500">
                   {selectPrice === "monthly" ? "Monthly" : "Quaterly"}
