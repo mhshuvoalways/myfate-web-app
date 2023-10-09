@@ -10,7 +10,7 @@ const Header = ({ toggleSidebar }) => {
         >
           ☰
         </button>
-        <p className="text-2xl text-my-gold cursor-pointer">My Fate</p>
+        <p className="text-2xl text-my-gold cursor-pointer ml-0 sm:ml-20">My Fate</p>
         <button
           className="text-2xl text-black px-3 py-1 block sm:hidden"
           onClick={toggleSidebar}
