@@ -14,7 +14,7 @@ const index = () => {
           hide/show planets and asteroids, choose a house system, customize
           orbs, show declinations, sidereal charts and more...
         </p>
-        <div className="mt-10 flex gap-5 flex-wrap md:flex-nowrap justify-between">
+        <div className="mt-10 flex gap-5 flex-wrap md:flex-nowrap justify-center">
           <div className="bg-white md:w-6/12 p-10 w-full">
             <p className="text-my-gold font-semibold">FILL IN YOUR DETAILS</p>
             <div className="space-y-12 mt-10">
@@ -70,7 +70,7 @@ const index = () => {
             <Image
               src={FormPhoto}
               alt=""
-              className="w-10/12 mx-auto"
+              className="md:w-full w-10/12 mx-auto"
             />
           </Fade>
         </div>

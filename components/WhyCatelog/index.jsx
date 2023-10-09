@@ -13,8 +13,8 @@ const index = () => {
         <p className="text-6xl font-semibold text-my-blue">with the tools to</p>
       </div>
       <Zoom top>
-        <div className="mt-10 flex gap-6 justify-center md:justify-between flex-wrap">
-          <div className="bg-my-cream rounded-xl p-10 w-full md:w-[49%] space-y-5">
+        <div className="mt-10 flex gap-6 justify-center flex-wrap">
+          <div className="bg-my-cream rounded-xl px-10 lg:py-20 py-10 w-full lg:w-[49%] space-y-5">
             <Image src={Money} alt="" className="w-36" />
             <Fade bottom>
               <p className="text-4xl font-semibold">Make More Money</p>
@@ -25,7 +25,7 @@ const index = () => {
               </p>
             </Fade>
           </div>
-          <div className="bg-my-cream rounded-xl p-10 w-full md:w-[49%] space-y-5">
+          <div className="bg-my-cream rounded-xl px-10 lg:py-20 py-10 w-full lg:w-[49%] space-y-5">
             <Image src={Efficient} alt="" className="w-36" />
             <Fade bottom>
               <p className="text-4xl font-semibold">Be More Efficient</p>
@@ -34,7 +34,7 @@ const index = () => {
               </p>
             </Fade>
           </div>
-          <div className="bg-my-cream rounded-xl p-10 w-full md:w-[49%] space-y-5">
+          <div className="bg-my-cream rounded-xl px-10 lg:py-20 py-10 w-full lg:w-[49%] space-y-5">
             <Image src={Visible} alt="" className="w-36" />
             <Fade bottom>
               <p className="text-4xl font-semibold">Be More Visible</p>
@@ -43,7 +43,7 @@ const index = () => {
               </p>
             </Fade>
           </div>
-          <div className="bg-my-cream rounded-xl p-10 w-full md:w-[49%] space-y-5">
+          <div className="bg-my-cream rounded-xl px-10 lg:py-20 py-10 w-full lg:w-[49%] space-y-5">
             <Image src={Standout} alt="" className="w-36" />
             <Fade bottom>
               <p className="text-4xl font-semibold">Stand Out</p>
