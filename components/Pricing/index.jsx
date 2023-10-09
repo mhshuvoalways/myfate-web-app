@@ -60,7 +60,7 @@ const Index = () => {
               </div>
               <motion.p
                 whileTap={{ scale: 0.9 }}
-                className="border border-gray-400 py-2 rounded-md font-semibold text-center cursor-pointer"
+                className="border border-gray-400 py-2 rounded-full font-semibold text-center cursor-pointer"
               >
                 Try for free
               </motion.p>
@@ -116,7 +116,7 @@ const Index = () => {
               </div>
               <motion.p
                 whileTap={{ scale: 0.9 }}
-                className="bg-my-blue py-2 rounded-md font-semibold text-center cursor-pointer text-white"
+                className="bg-my-blue py-2 rounded-full font-semibold text-center cursor-pointer text-white"
               >
                 Start 14 day trial
               </motion.p>
@@ -172,7 +172,7 @@ const Index = () => {
               </div>
               <motion.p
                 whileTap={{ scale: 0.9 }}
-                className="bg-my-blue py-2 rounded-md font-semibold text-center cursor-pointer text-white"
+                className="bg-my-blue py-2 rounded-full font-semibold text-center cursor-pointer text-white"
               >
                 Start 14 day trial
               </motion.p>
