@@ -5,25 +5,16 @@ import Mobile from "@/public/intro/mobile.jpg";
 
 const index = () => {
   return (
-    <div className="relative w-full intro mt-1">
-      <div className="flex justify-between items-center h-auto lg:h-screen gap-5 flex-wrap lg:flex-nowrap w-11/12 mx-auto">
-        <div className="w-full lg:w-6/12 space-y-2 lg:space-y-7">
+    <div className="relative w-full intro pb-10 sm:pb-0">
+      <div className="h-auto sm:h-screen flex justify-between items-center gap-5 flex-wrap sm:flex-nowrap w-10/12 mx-auto">
+        <div className="w-full sm:w-6/12 space-y-10">
           <Zoom>
             <p
-              className="font-semibold leading-none pt-10 font-gabarito"
-              style={{
-                fontSize: "6.8vw",
-              }}
+              className="font-semibold leading-none pt-10 font-gabarito text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
             >
               Explore Your Future
             </p>
-            <p className="text-xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Vestibulum euismod, leo sit amet hendrerit facilisis, tortor
-              sapien elementum ligula, id lobortis dolor tortor eu massa.
-              Phasellus vitae auctor justo.
-            </p>
-            <p className="text-xl">
+            <p className="text-xl w-8/12 sm:w-full">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Vestibulum euismod, leo sit amet hendrerit facilisis, tortor
               sapien elementum ligula, id lobortis dolor tortor eu massa.
@@ -33,15 +24,19 @@ const index = () => {
           <Zoom right>
             <motion.button
               whileTap={{ scale: 0.9 }}
-              className="bg-gray-800 text-white rounded-full px-5 py-2 font-gabarito"
+              className="bg-gray-800 text-white rounded px-5 py-2 font-gabarito"
             >
               Explore More
             </motion.button>
           </Zoom>
         </div>
         <Zoom>
-          <div className="z-10 w-10/12 mx-auto lg:w-6/12 static lg:absolute right-0 top-0">
-            <Image src={Mobile} alt="" className="rounded-md w-full" />
+          <div className="z-10 w-10/12 mx-auto sm:w-5/12 static sm:absolute right-0 top-10 hidden sm:block">
+            <Image
+              src={Mobile}
+              alt=""
+              className="rounded-md w-full"
+            />
           </div>
         </Zoom>
       </div>

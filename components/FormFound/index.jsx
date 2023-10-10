@@ -14,7 +14,7 @@ const Index = () => {
 
   return (
     <div className="bg-my-cream py-10 mt-32">
-      <div className="w-11/12 mx-auto">
+      <div className="w-10/12 mx-auto container">
         <p className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center">
           Find Out Now
         </p>
@@ -29,14 +29,14 @@ const Index = () => {
             <p className="text-my-gold font-semibold">FILL IN YOUR DETAILS</p>
             <div className="space-y-12 mt-10">
               <div className="flex gap-2 flex-wrap md:flex-nowrap">
-                <p className="text-xl w-[30%]">My name is: </p>
+                <p className="text-xl w-full md:w-[30%]">My name is: </p>
                 <input
                   type="text"
                   className="border-b-2 border-gray-400 outline-0 px-2 w-full"
                 />
               </div>
               <div className="flex gap-5 flex-wrap md:flex-nowrap">
-                <p className="text-xl w-[30%]">I was born in: </p>
+                <p className="text-xl w-full md:w-[30%]">I was born in: </p>
                 <input
                   type="text"
                   className="border-b-2 border-gray-400 outline-0 px-2 w-full"
@@ -98,7 +98,7 @@ const Index = () => {
             </div>
             <motion.p
               whileTap={{ scale: 0.9 }}
-              className="bg-gray-800 text-white py-2 text-center mt-10 font-semibold cursor-pointer rounded-full"
+              className="bg-gray-800 text-white py-2 text-center mt-10 font-semibold cursor-pointer rounded"
             >
               CREATE
             </motion.p>

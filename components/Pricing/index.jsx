@@ -14,7 +14,7 @@ const Index = () => {
 
   return (
     <div className="bg-gray-50 py-32">
-      <div className="w-11/12 mx-auto">
+      <div className="w-10/12 mx-auto container">
         <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center">Our Affordable,</p>
         <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue text-center">
           Fair Pricing
@@ -60,7 +60,7 @@ const Index = () => {
               </div>
               <motion.p
                 whileTap={{ scale: 0.9 }}
-                className="border border-gray-400 py-2 rounded-full font-semibold text-center cursor-pointer"
+                className="border border-gray-400 py-2 rounded font-semibold text-center cursor-pointer"
               >
                 Try for free
               </motion.p>
@@ -116,7 +116,7 @@ const Index = () => {
               </div>
               <motion.p
                 whileTap={{ scale: 0.9 }}
-                className="bg-my-blue py-2 rounded-full font-semibold text-center cursor-pointer text-white"
+                className="bg-my-blue py-2 rounded font-semibold text-center cursor-pointer text-white"
               >
                 Start 14 day trial
               </motion.p>
@@ -172,7 +172,7 @@ const Index = () => {
               </div>
               <motion.p
                 whileTap={{ scale: 0.9 }}
-                className="bg-my-blue py-2 rounded-full font-semibold text-center cursor-pointer text-white"
+                className="bg-my-blue py-2 rounded font-semibold text-center cursor-pointer text-white"
               >
                 Start 14 day trial
               </motion.p>

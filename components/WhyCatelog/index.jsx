@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const index = () => {
   return (
-    <div className="w-11/12 mx-auto mt-32">
+    <div className="w-10/12 mx-auto mt-32 container">
       <div>
         <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">Catlog supports you</p>
         <p className="text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-blue">with the tools to</p>

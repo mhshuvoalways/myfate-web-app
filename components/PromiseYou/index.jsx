@@ -6,7 +6,7 @@ import Support from "@/public/promise/support.svg";
 
 const index = () => {
   return (
-    <div className="w-11/12 mx-auto mt-32">
+    <div className="w-10/12 mx-auto mt-32 container">
       <div>
         <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">{`Here's what we`}</p>
         <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue mt-0 md:mt-4">promise you!</p>
