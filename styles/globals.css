@@ -57,6 +57,40 @@
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
   }
 
+  .storeLinksIntro::after {
+    position: absolute;
+    z-index: -1;
+    height: 71%;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    background: linear-gradient(
+        117.78deg,
+        #fff9e6 4.58%,
+        rgba(255, 255, 255, 0) 86.1%
+      ),
+      radial-gradient(
+        96.79% 217.39% at 100% 104.38%,
+        rgba(222, 216, 255, 0.4) 0%,
+        #ffffff 100%
+      );
+    background-size: 250% 250%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   @media (min-width: 640px) {
     .intro::before {
       left: 30%;
@@ -71,5 +105,45 @@
     .intro::before {
       left: 20%;
     }
+  }
+  .mySlider .slick-slide {
+    margin: 0 10px;
+  }
+
+  /* hover effect */
+
+  .last-element {
+    transition: all 0.5s;
+    display: flex;
+    opacity: 0;
+    gap: 10;
+  }
+  .parent:hover .last-element {
+    display: flex;
+    opacity: 1;
+    gap: 10;
+    transform: translateY(-20px);
+  }
+  .buildforgrowth {
+    transition: all 0.5s;
+  }
+  .parent:hover .buildforgrowth {
+    transform: translateY(-35px);
+  }
+  .buildforgrowth-img-bg {
+    transition: all 0.5s;
+  }
+  .parent:hover .buildforgrowth-img-bg {
+    background: linear-gradient(45deg, #ffffff, #95dff8);
+  }
+  .notconvince {
+    display: flex !important;
+  }
+  .notc .slick-slide {
+    width: auto !important;
+    margin: 0 15px;
+  }
+  .gswsl {
+    background-image: url("../public/gswsl/gswslBg.svg");
   }
 }

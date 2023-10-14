@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Header = ({ toggleSidebar }) => {
   return (
     <div className={`shadow-sm fixed left-0 right-0 bg-white z-30`}>
@@ -8,9 +10,9 @@ const Header = ({ toggleSidebar }) => {
         >
           ☰
         </button>
-        <p className="text-2xl text-my-gold cursor-pointer">
-          My Fate
-        </p>
+        <Link href="/">
+          <p className="text-2xl text-my-gold">My Fate</p>
+        </Link>
         <button
           className="text-2xl text-black px-3 py-1 block sm:hidden"
           onClick={toggleSidebar}

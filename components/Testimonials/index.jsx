@@ -10,7 +10,7 @@ import Item5 from "@/public/testimonials/5.jpeg";
 import Item6 from "@/public/testimonials/6.webp";
 import Item7 from "@/public/testimonials/7.jpeg";
 
-const index = () => {
+const index = ({ storeLinks }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -41,6 +41,11 @@ const index = () => {
 
   return (
     <div className="w-full mt-32">
+      {storeLinks && (
+        <p className="font-semibold text-2xl text-center w-10/12 mx-auto mb-10">
+          Trusted by thousands of Merchants
+        </p>
+      )}
       <Slider {...settings}>
         <div>
           <Image

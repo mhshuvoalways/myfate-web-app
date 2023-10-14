@@ -10,7 +10,7 @@ import Pricing from "@/components/Pricing";
 
 const Index = () => {
   return (
-    <div>
+    <>
       <Headers />
       <Categories />
       <Intro />
@@ -20,7 +20,7 @@ const Index = () => {
       <Reviews />
       <FormFound />
       <Pricing />
-    </div>
+    </>
   );
 };
 

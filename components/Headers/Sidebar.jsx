@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <div
@@ -24,9 +26,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
               Login
             </p>
-            <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
-              Cart
-            </p>
+            <Link href="/storeLinks">
+              <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
+                Store Links
+              </p>
+            </Link>
           </div>
         </div>
         <div className="py-5">
@@ -39,9 +43,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
               Login
             </p>
-            <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
-              Cart
-            </p>
+            <Link href="/storeLinks">
+              <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
+                Store Links
+              </p>
+            </Link>
           </div>
         </div>
       </div>
