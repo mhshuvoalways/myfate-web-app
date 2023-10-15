@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Fade } from "react-reveal";
-import PricingItem from "./PricingItem";
+import PricingItem from "../Pricing/PricingItem";
 import ArrowPhoto from "@/public/pricing/arrow.svg";
+import Nigeria from "@/public/flag/ng.png";
+import ArrowDown from "@/public/buildgrowth/arrowDown.svg";
 
 const Index = () => {
   const [selectPrice, setSelectPrice] = useState("monthly");
@@ -77,47 +79,54 @@ const Index = () => {
   ];
 
   return (
-    <div className="bg-gray-50 py-32">
-      <div className="w-10/12 mx-auto container">
-        <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center">
-          Our Affordable,
-        </p>
-        <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue text-center">
-          Fair Pricing
-        </p>
-        <div className="bg-gray-100 flex w-60 mx-auto p-1 rounded-full mt-10 relative">
-          <p
-            className={
-              selectPrice === "monthly"
-                ? "bg-white text-xl rounded-full p-4 shadow-lg cursor-pointer font-semibold text-my-blue w-6/12 text-center"
-                : "text-xl rounded-full p-4 w-6/12 text-center cursor-pointer"
-            }
-            onClick={() => selectHandler("monthly")}
-          >
-            Monthly
-          </p>
-          <p
-            className={
-              selectPrice === "quarterly"
-                ? "bg-white text-xl rounded-full p-4 shadow-lg cursor-pointer font-semibold text-my-blue w-6/12 text-center"
-                : "text-xl rounded-full p-4 w-6/12 text-center cursor-pointer"
-            }
-            onClick={() => selectHandler("quarterly")}
-          >
-            Quarterly
-          </p>
-          <div className="absolute -right-0 top-16 md:-right-28 md:top-4 flex gap-2 items-center">
-            <Image src={ArrowPhoto} alt="" />
-            <p className="text-lg font-semibold">5% off</p>
+    <div className="storeLinksIntro relative">
+      <div className="w-10/12 mx-auto flex justify-center items-center container py-10">
+        <div>
+          <div className="flex items-center bg-white py-2 px-3 cursor-pointer shadow-sm justify-between rounded-full w-44 mx-auto my-8">
+            <Image src={Nigeria} alt="" className="w-9 h-9 rounded-full" />
+            <p className="text-xl font-semibold text-gray-500">Nigeria</p>
+            <Image src={ArrowDown} alt="" className="w-4 h-4 rounded-full" />
           </div>
+          <p className="text-4xl md:text-5xl lg:text-7xl text-center">
+            Our Affordable,
+          </p>
+          <p className="text-4xl md:text-5xl lg:text-7xl font-semibold text-my-blue text-center">
+            Fair Pricing
+          </p>
+          <div className="bg-gray-100 flex w-60 mx-auto p-1 rounded-full mt-10 relative">
+            <p
+              className={
+                selectPrice === "monthly"
+                  ? "bg-white text-xl rounded-full p-4 shadow-lg cursor-pointer font-semibold text-my-blue w-6/12 text-center"
+                  : "text-xl rounded-full p-4 w-6/12 text-center cursor-pointer"
+              }
+              onClick={() => selectHandler("monthly")}
+            >
+              Monthly
+            </p>
+            <p
+              className={
+                selectPrice === "quarterly"
+                  ? "bg-white text-xl rounded-full p-4 shadow-lg cursor-pointer font-semibold text-my-blue w-6/12 text-center"
+                  : "text-xl rounded-full p-4 w-6/12 text-center cursor-pointer"
+              }
+              onClick={() => selectHandler("quarterly")}
+            >
+              Quarterly
+            </p>
+            <div className="absolute -right-0 top-16 md:-right-28 md:top-4 flex gap-2 items-center">
+              <Image src={ArrowPhoto} alt="" />
+              <p className="text-lg font-semibold">5% off</p>
+            </div>
+          </div>
+          <Fade bottom>
+            <div className="flex gap-5 flex-wrap md:flex-nowrap mt-10">
+              <PricingItem pricingObj={pricingObj[0]} />
+              <PricingItem pricingObj={pricingObj[1]} />
+              <PricingItem pricingObj={pricingObj[2]} />
+            </div>
+          </Fade>
         </div>
-        <Fade bottom>
-          <div className="flex gap-5 flex-wrap md:flex-nowrap mt-10">
-            <PricingItem pricingObj={pricingObj[0]} />
-            <PricingItem pricingObj={pricingObj[1]} />
-            <PricingItem pricingObj={pricingObj[2]} />
-          </div>
-        </Fade>
       </div>
     </div>
   );

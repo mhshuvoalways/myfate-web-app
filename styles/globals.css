@@ -60,7 +60,7 @@
   .storeLinksIntro::after {
     position: absolute;
     z-index: -1;
-    height: 71%;
+    height: 65%;
     top: 0;
     left: 0;
     content: "";
@@ -110,8 +110,29 @@
     margin: 0 10px;
   }
 
-  /* hover effect */
+  .slick-dots li button:before {
+    font-size: 14px !important;
+  }
 
+  /* Owner says catelog */
+  .ownersayscatelog .slick-dots li {
+    width: 10px !important;
+  }
+  .ownersayscatelog .slick-dots {
+    bottom: -48px !important;
+    left: 0 !important;
+    width: auto !important;
+  }
+  @media (min-width: 768px) {
+    .ownersayscatelog .slick-dots {
+      bottom: 10px !important;
+      right: -82px !important;
+      left: auto !important;
+      width: 100% !important;
+    }
+  }
+
+  /* hover effect */
   .last-element {
     transition: all 0.5s;
     display: flex;
@@ -145,5 +166,13 @@
   }
   .gswsl {
     background-image: url("../public/gswsl/gswslBg.svg");
+  }
+
+  /* what sell catelog */
+  .whatsellcalelog .slick-dots li {
+    width: 10px !important;
+  }
+  .whatsellcalelog .slick-dots {
+    bottom: -10% !important;
   }
 }

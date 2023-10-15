@@ -31,6 +31,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 Store Links
               </p>
             </Link>
+            <Link href="/pricing">
+              <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
+                Pricing
+              </p>
+            </Link>
           </div>
         </div>
         <div className="py-5">
@@ -46,6 +51,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <Link href="/storeLinks">
               <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
                 Store Links
+              </p>
+            </Link>
+            <Link href="/pricing">
+              <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
+                Pricing
               </p>
             </Link>
           </div>
