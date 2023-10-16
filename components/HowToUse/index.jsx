@@ -46,8 +46,8 @@ const Index = () => {
           store links
         </p>
       </div>
-      <div className="mt-10 flex justify-between items-center gap-20">
-        <div className="p-5 space-y-8 w-6/12 border-l-4 border-gray-100 relative mx-auto">
+      <div className="mt-10 flex flex-wrap lg:flex-nowrap justify-between gap-10 lg:gap-20 items-center">
+        <div className="p-5 space-y-8 w-full lg:w-6/12 border-l-4 border-gray-100 relative mx-auto">
           <Fade bottom>
             <p
               className={`${
@@ -123,7 +123,7 @@ const Index = () => {
             </div>
           </Fade>
         </div>
-        <div className="bg-my-bg-pastel w-6/12 rounded-3xl relative  mx-auto">
+        <div className="bg-my-bg-pastel w-full lg:w-6/12 rounded-3xl relative  mx-auto h-full">
           <Fade bottom key={currentImage}>
             <Image
               src={
@@ -132,7 +132,7 @@ const Index = () => {
                 allImages[currentImage - 1]
               }
               alt=""
-              className="px-28 pt-10 object-cover h-4/6"
+              className="px-28 pt-10 object-cover"
             />
           </Fade>
           <div>

@@ -7,18 +7,24 @@ const Sliders = ({ rtl }) => {
     dots: false,
     infinite: true,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     arrows: false,
-    speed: 30000,
+    speed: 10000,
     autoplay: true,
     cssEase: "linear",
     rtl: rtl ? true : false,
+    rows: 1,
     responsive: [
       {
-        breakpoint: 600,
+        breakpoint: 960,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 615,
+        settings: {
+          slidesToShow: 1,
         },
       },
     ],

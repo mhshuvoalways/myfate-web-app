@@ -11,6 +11,7 @@ import Img4 from "@/public/whatcatlog/4.webp";
 import Img5 from "@/public/whatcatlog/5.webp";
 import ArrowRight from "@/public/whatcatlog/arrowRight.svg";
 import ArrowLeft from "@/public/whatcatlog/arrowLeft.svg";
+import ArrowRightBlue from "@/public/ownerSaysCatelog/arrowRightBlue.svg";
 
 const items = [
   {
@@ -183,7 +184,7 @@ const Index = () => {
                         className={`bg-white shadow rounded px-5 py-3 font-gabarito text-lg font-semibold flex items-center gap-2 transition-all duration-500 absolute bottom-10 left-10`}
                       >
                         <p className="text-my-blue">Get stated</p>
-                        <Image src={ArrowRight} alt="" />
+                        <Image src={ArrowRightBlue} alt="" />
                       </motion.button>
                     </>
                   ) : (
@@ -203,7 +204,7 @@ const Index = () => {
                         className={`bg-white shadow rounded px-5 py-3 font-gabarito text-lg font-semibold flex items-center gap-2 transition-all duration-500 absolute -bottom-[100%] left-10`}
                       >
                         <p className="text-my-blue">Get stated</p>
-                        <Image src={ArrowRight} alt="" />
+                        <Image src={ArrowRightBlue} alt="" />
                       </motion.button>
                     </>
                   )}

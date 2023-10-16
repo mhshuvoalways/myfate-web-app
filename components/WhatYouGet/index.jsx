@@ -21,8 +21,8 @@ const Index = () => {
           </p>
         </div>
         <Fade bottom>
-          <div className="mt-10 flex justify-between gap-20">
-            <div className="w-9/12 -mb-72 overflow-y-hidden">
+          <div className="mt-10 flex flex-wrap lg:flex-nowrap justify-between gap-20">
+            <div className="w-full lg:w-9/12 -mb-[65%] lg:-mb-72 overflow-y-hidden">
               <Image
                 src={WhatYouGetImg}
                 alt=""
@@ -43,7 +43,7 @@ const Index = () => {
                 </motion.button>
               </div>
             </div>
-            <div className="space-y-7">
+            <div className="space-y-7 w-full lg:w-auto">
               <div className="bg-white rounded-3xl p-6 shadow-sm">
                 <div className="bg-gray-50 w-16 h-16 rounded-full flex justify-center items-center p-4">
                   <Image src={ShareIcon} alt="" />

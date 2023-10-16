@@ -15,10 +15,9 @@ const index = ({ storeLinks }) => {
     dots: false,
     infinite: true,
     slidesToShow: 7,
-    slidesToScroll: 7,
+    slidesToScroll: 1,
     arrows: false,
-    speed: 10000,
-    autoplaySpeed: 100,
+    speed: 3000,
     autoplay: true,
     cssEase: "linear",
     responsive: [
@@ -26,14 +25,12 @@ const index = ({ storeLinks }) => {
         breakpoint: 600,
         settings: {
           slidesToShow: 5,
-          slidesToScroll: 5,
         },
       },
       {
         breakpoint: 400,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
         },
       },
     ],

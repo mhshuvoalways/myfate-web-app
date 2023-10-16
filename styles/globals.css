@@ -175,4 +175,9 @@
   .whatsellcalelog .slick-dots {
     bottom: -10% !important;
   }
+
+  /* pricing get started */
+  .pricing-gswsl {
+    background-image: url("../public/gswsl/lightpurplepattern.svg");
+  }
 }

@@ -4,6 +4,8 @@ import PricingIntro from "@/components/PricingIntro";
 import OwnerSaysCatelog from "@/components/OwnerSaysCatelog";
 import Faq from "@/components/Faq";
 import WhatSellCtlog from "@/components/WhatSellCtlog";
+import StayUpdCtlog from "@/components/StayUpdCtlog";
+import GswSl from "@/components/GswSl";
 
 const Pricing = () => {
   return (
@@ -14,6 +16,8 @@ const Pricing = () => {
       <OwnerSaysCatelog />
       <Faq />
       <WhatSellCtlog />
+      <StayUpdCtlog />
+      <GswSl pricing />
     </>
   );
 };

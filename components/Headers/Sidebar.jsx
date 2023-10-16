@@ -15,7 +15,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       >
         ✕
       </p>
-      <div className="px-10">
+      <div className={isOpen && "px-10"}>
         <div className="py-5">
           <p className="text-2xl pb-2">Home</p>
           <hr />
