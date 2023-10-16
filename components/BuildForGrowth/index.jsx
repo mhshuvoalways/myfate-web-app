@@ -25,7 +25,7 @@ const index = () => {
         <div className="flex md:justify-between justify-center mt-0 md:mt-20 gap-5 flex-wrap">
           <div className="mt-10 md:mt-36 space-y-7 w-full md:w-[48%]">
             <div className="parent">
-              <div className="relative pt-16 px-20 border-white border-4 rounded-t-xl buildforgrowth-img-bg">
+              <div className="relative pt-16 px-5 md:px-20 border-white border-4 rounded-t-xl buildforgrowth-img-bg">
                 <Image src={FormImg} alt="" className="rounded-t-xl" />
                 <p className="bg-gray-200 opacity-10 absolute inset-0"></p>
               </div>
@@ -50,7 +50,7 @@ const index = () => {
               </div>
             </div>
             <div className="parent">
-              <div className="relative pt-16 px-20 border-white border-4 rounded-t-xl buildforgrowth-img-bg">
+              <div className="relative pt-16 px-5 md:px-20 border-white border-4 rounded-t-xl buildforgrowth-img-bg">
                 <Image src={FormImg} alt="" className="rounded-t-xl" />
                 <p className="bg-gray-200 opacity-10 absolute inset-0"></p>
               </div>
@@ -73,7 +73,7 @@ const index = () => {
           </div>
           <div className="space-y-7 w-full md:w-[48%]">
             <div className="parent">
-              <div className="relative pt-16 px-20 border-white border-4 rounded-t-xl buildforgrowth-img-bg">
+              <div className="relative pt-16 px-5 md:px-20 border-white border-4 rounded-t-xl buildforgrowth-img-bg">
                 <Image src={FormImg} alt="" className="rounded-t-xl" />
                 <p className="bg-gray-200 opacity-10 absolute inset-0"></p>
               </div>
@@ -96,7 +96,7 @@ const index = () => {
               </div>
             </div>
             <div className="parent">
-              <div className="relative pt-16 px-20 border-white border-4 rounded-t-xl buildforgrowth-img-bg">
+              <div className="relative pt-16 px-5 md:px-20 border-white border-4 rounded-t-xl buildforgrowth-img-bg">
                 <Image src={FormImg} alt="" className="rounded-t-xl" />
                 <p className="bg-gray-200 opacity-10 absolute inset-0"></p>
               </div>
