@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Fade } from "react-reveal";
+import { Fade, Zoom } from "react-reveal";
 import { motion } from "framer-motion";
 import WhatYouGetImg from "@/public/whatWeGet/woman.webp";
 import ShareIcon from "@/public/whatWeGet/share.svg";
@@ -20,13 +20,13 @@ const Index = () => {
             with store links
           </p>
         </div>
-        <Fade bottom>
-          <div className="mt-10 flex flex-wrap lg:flex-nowrap justify-between gap-20">
-            <div className="w-full lg:w-9/12 -mb-[65%] lg:-mb-72 overflow-y-hidden">
+        <div className="mt-10 flex flex-wrap flex-col-reverse lg:flex-row lg:flex-nowrap justify-between gap-20">
+          <div className="w-full lg:w-9/12 overflow-y-hidden">
+            <Zoom>
               <Image
                 src={WhatYouGetImg}
                 alt=""
-                className="rounded-3xl object-cover h-3/6"
+                className="rounded-3xl object-cover"
               />
               <div className="bg-my-bg-pastel rounded-3xl mt-5 p-8">
                 <p className="text-4xl font-semibold">
@@ -42,8 +42,10 @@ const Index = () => {
                   <Image src={ArrowRight} alt="" />
                 </motion.button>
               </div>
-            </div>
-            <div className="space-y-7 w-full lg:w-auto">
+            </Zoom>
+          </div>
+          <div className="space-y-7 w-full lg:w-auto">
+            <Fade bottom>
               <div className="bg-white rounded-3xl p-6 shadow-sm">
                 <div className="bg-gray-50 w-16 h-16 rounded-full flex justify-center items-center p-4">
                   <Image src={ShareIcon} alt="" />
@@ -76,9 +78,9 @@ const Index = () => {
                   A dashboard to track how well your store is performing
                 </p>
               </div>
-            </div>
+            </Fade>
           </div>
-        </Fade>
+        </div>
       </div>
     </div>
   );

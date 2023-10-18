@@ -8,7 +8,7 @@ import ArrowRight from "@/public/buildgrowth/arrowRight.svg";
 const index = () => {
   return (
     <div className="bg-blue-50">
-      <div className="w-10/12 mx-auto container border-l border-r px-5 py-10">
+      <div className="w-10/12 mx-auto container border-l border-r px-5 py-32">
         <div className="space-y-6 w-full md:w-7/12">
           <p className="text-my-blue font-semibold text-xl">Built for growth</p>
           <p className="text-4xl font-bold">

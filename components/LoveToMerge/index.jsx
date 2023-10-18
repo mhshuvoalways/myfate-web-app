@@ -21,13 +21,13 @@ const index = () => {
     cssEase: "linear",
     responsive: [
       {
-        breakpoint: 600,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 400,
+        breakpoint: 678,
         settings: {
           slidesToShow: 1,
         },

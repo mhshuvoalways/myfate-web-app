@@ -180,4 +180,21 @@
   .pricing-gswsl {
     background-image: url("../public/gswsl/lightpurplepattern.svg");
   }
+
+  /* test animation */
+  .waviy p {
+    display: inline-block;
+    animation: waviy 1s;
+    animation-delay: calc(0.1s * var(--i));
+  }
+  @keyframes waviy {
+    0%,
+    40%,
+    100% {
+      transform: translateY(0px);
+    }
+    20% {
+      transform: translateY(-20px);
+    }
+  }
 }

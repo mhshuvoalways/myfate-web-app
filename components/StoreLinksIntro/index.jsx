@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Zoom } from "react-reveal";
+import { Fade } from "react-reveal";
 import Modal from "../Modal";
+import TextAnimation from "../TextAnimation";
 import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 import Play from "@/public/storeLinks/play.svg";
 import StoreFrontWhatsApp from "@/public/storeLinks/storeFrontWhatsapp.webp";
@@ -13,26 +14,24 @@ const Index = () => {
   const modalHandler = () => {
     setModal(!modal);
   };
+  const letters = "Take Orders Via Chat".split(" ");
 
   return (
     <div className="storeLinksIntro relative">
       <div className="w-10/12 mx-auto flex justify-center items-center text-center container">
         <div>
           <div className="space-y-8 py-[85px]">
-            <div>
-              <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-                Take Orders Via Chat
-              </p>
+            <TextAnimation
+              letters="Take Orders Via Chat"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mx-3"
+            />
+            <Fade top>
               <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-my-blue font-semibold">
                 With One Link
               </p>
-            </div>
-            <p className="text-xl md:text-3xl text-my-text-gray w-full md:w-10/12 lg:w-7/12 mx-auto text-center">
-              Store links helps you beautifully showcase all your products and
-              get orders on whatsapp.
-            </p>
+            </Fade>
             <div className="flex items-center justify-center gap-5 flex-wrap">
-              <Zoom right>
+              <Fade bottom>
                 <motion.button
                   whileTap={{ scale: 0.9 }}
                   className="bg-my-blue rounded px-5 py-3 font-gabarito text-lg font-semibold flex items-center gap-2"
@@ -40,8 +39,6 @@ const Index = () => {
                   <p className="text-white">Start using links</p>
                   <Image src={ArrowRight} alt="" />
                 </motion.button>
-              </Zoom>
-              <Zoom right>
                 <motion.button
                   whileTap={{ scale: 0.9 }}
                   className="bg-white rounded px-5 py-3 font-gabarito text-lg font-semibold flex items-center gap-2"
@@ -50,10 +47,10 @@ const Index = () => {
                   <p className="text-black">See how it works</p>
                   <Image src={Play} alt="" />
                 </motion.button>
-              </Zoom>
+              </Fade>
             </div>
           </div>
-          <Image src={StoreFrontWhatsApp} alt="" className="w-full"/>
+          <Image src={StoreFrontWhatsApp} alt="" className="w-full" />
         </div>
       </div>
       {modal && (

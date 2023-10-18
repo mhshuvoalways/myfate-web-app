@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { Fade } from "react-reveal";
 import { motion } from "framer-motion";
+import TextAnimation from "../TextAnimation";
 import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 import Storefront from "@/public/gswsl/storefront.webp";
 
@@ -14,36 +16,42 @@ const index = ({ pricing }) => {
         <div className="w-full md:w-7/12 space-y-10">
           {pricing ? (
             <div>
-              <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
-                Get started in
-              </p>
-              <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue">
-                5 minutes
-              </p>
+                <TextAnimation
+                  letters="Get started in"
+                  className="text-4xl md:text-5xl lg:text-6xl font-semibold"
+                />
+                <TextAnimation
+                  letters="5 minutes"
+                  className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue"
+                />
             </div>
           ) : (
             <div>
-              <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
-                Get started with
-              </p>
-              <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-yellow">
-                store links
-              </p>
+              <Fade top>
+                <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
+                  Get started with
+                </p>
+                <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-yellow">
+                  store links
+                </p>
+              </Fade>
             </div>
           )}
-          <p className="text-2xl">
-            Your customers buy from you on Whatsapp, don’t take them away, make
-            it easier with Catlog.
-          </p>
-          <motion.button
-            whileTap={{ scale: 0.9 }}
-            className="bg-my-blue rounded px-5 py-3 font-gabarito text-lg font-semibold flex items-center gap-2 mt-10"
-          >
-            <p className="text-white">
-              {pricing ? "Get stated for free" : "Start using links"}
+          <Fade bottom>
+            <p className="text-2xl">
+              Your customers buy from you on Whatsapp, don’t take them away,
+              make it easier with Catlog.
             </p>
-            <Image src={ArrowRight} alt="" />
-          </motion.button>
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              className="bg-my-blue rounded px-5 py-3 font-gabarito text-lg font-semibold flex items-center gap-2 mt-10"
+            >
+              <p className="text-white">
+                {pricing ? "Get stated for free" : "Start using links"}
+              </p>
+              <Image src={ArrowRight} alt="" />
+            </motion.button>
+          </Fade>
         </div>
         <div>
           <Image src={Storefront} alt="" className="w-full" />

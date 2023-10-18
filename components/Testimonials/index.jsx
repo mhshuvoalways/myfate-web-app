@@ -14,23 +14,19 @@ const index = ({ storeLinks }) => {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 7,
-    slidesToScroll: 1,
+    slidesToShow: 8,
+    slidesToScroll: 8,
     arrows: false,
-    speed: 3000,
+    speed: 20000,
     autoplay: true,
     cssEase: "linear",
+    pauseOnHover: true,
+    autoplaySpeed: 1000,
     responsive: [
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 5,
-        },
-      },
-      {
-        breakpoint: 400,
-        settings: {
-          slidesToShow: 3,
         },
       },
     ],
@@ -48,147 +44,147 @@ const index = ({ storeLinks }) => {
           <Image
             src={Item1}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item2}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item3}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item4}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item5}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item6}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item7}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item1}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item2}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item3}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item4}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item5}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item6}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item7}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item1}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item2}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item3}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item4}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item5}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item6}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
         <div>
           <Image
             src={Item7}
             alt=""
-            className="rounded-full w-16 h-16 shadow-md border"
+            className="rounded-full w-12 h-12 shadow-md border"
           />
         </div>
       </Slider>
