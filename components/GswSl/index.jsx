@@ -16,24 +16,28 @@ const index = ({ pricing }) => {
         <div className="w-full md:w-7/12 space-y-10">
           {pricing ? (
             <div>
-                <TextAnimation
-                  letters="Get started in"
-                  className="text-4xl md:text-5xl lg:text-6xl font-semibold"
-                />
-                <TextAnimation
-                  letters="5 minutes"
-                  className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue"
-                />
+              <TextAnimation
+                letters="Get started in"
+                className="text-4xl md:text-5xl lg:text-6xl font-semibold"
+              />
+              <TextAnimation
+                letters="5 minutes"
+                className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue"
+              />
             </div>
           ) : (
             <div>
               <Fade top>
-                <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
-                  Get started with
-                </p>
-                <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-yellow">
-                  store links
-                </p>
+                <TextAnimation
+                  letters={`Get started with`}
+                  className={`text-4xl md:text-5xl lg:text-6xl font-semibold`}
+                />
+                <TextAnimation
+                  letters={"store links"}
+                  className={
+                    "text-4xl md:text-5xl lg:text-6xl font-semibold text-my-yellow"
+                  }
+                />
               </Fade>
             </div>
           )}

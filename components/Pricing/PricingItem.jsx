@@ -6,7 +6,7 @@ const PricingItem = ({ pricingObj }) => {
   const { title, description, planTitle, planTime, inclueds } = pricingObj;
 
   return (
-    <div className="space-y-5 bg-white rounded-xl shadow p-5 w-full md:w-4/12">
+    <div className="space-y-5 bg-white rounded-xl shadow p-5 min-w-[280px] max-w-[340px] overflow-hidden">
       <div>
         {title === "Basic" ? (
           <div className="flex items-center justify-between">

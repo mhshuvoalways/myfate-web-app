@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Fade } from "react-reveal";
+import TextAnimation from "../TextAnimation";
 import PricingItem from "./PricingItem";
 import ArrowPhoto from "@/public/pricing/arrow.svg";
 
@@ -79,12 +80,18 @@ const Index = () => {
   return (
     <div className="bg-gray-50 py-32">
       <div className="w-10/12 mx-auto container">
-        <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center">
-          Our Affordable,
-        </p>
-        <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue text-center">
-          Fair Pricing
-        </p>
+        <TextAnimation
+          letters="Our Affordable"
+          className="text-4xl md:text-5xl lg:text-6xl font-semibold"
+          textCenter
+        />
+        <TextAnimation
+          letters={"Fair Pricing"}
+          className={
+            "text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue"
+          }
+          textCenter
+        />
         <div className="bg-gray-100 flex w-60 mx-auto p-1 rounded-full mt-10 relative">
           <p
             className={
@@ -112,7 +119,7 @@ const Index = () => {
           </div>
         </div>
         <Fade bottom>
-          <div className="flex gap-5 flex-wrap md:flex-nowrap mt-10">
+          <div className="flex gap-5 flex-wrap justify-center mt-10">
             <PricingItem pricingObj={pricingObj[0]} />
             <PricingItem pricingObj={pricingObj[1]} />
             <PricingItem pricingObj={pricingObj[2]} />

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Fade } from "react-reveal";
+import TextAnimation from "../TextAnimation";
 import PricingItem from "../Pricing/PricingItem";
 import ArrowPhoto from "@/public/pricing/arrow.svg";
 import Nigeria from "@/public/flag/ng.png";
@@ -87,12 +88,16 @@ const Index = () => {
             <p className="text-xl font-semibold text-gray-500">Nigeria</p>
             <Image src={ArrowDown} alt="" className="w-4 h-4 rounded-full" />
           </div>
-          <p className="text-4xl md:text-5xl lg:text-7xl text-center">
-            Our Affordable,
-          </p>
-          <p className="text-4xl md:text-5xl lg:text-7xl font-semibold text-my-blue text-center">
-            Fair Pricing
-          </p>
+          <TextAnimation
+            letters={"Our Affordable,"}
+            className="text-4xl md:text-5xl lg:text-7xl"
+            textCenter
+          />
+          <TextAnimation
+            letters={"Fair Pricing"}
+            className="text-4xl md:text-5xl lg:text-7xl font-semibold text-my-blue"
+            textCenter
+          />
           <div className="bg-gray-100 flex w-60 mx-auto p-1 rounded-full mt-10 relative">
             <p
               className={
