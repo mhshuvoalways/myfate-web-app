@@ -10,8 +10,8 @@ import Img2 from "@/public/whatcatlog/2.webp";
 import Img3 from "@/public/whatcatlog/3.webp";
 import Img4 from "@/public/whatcatlog/4.webp";
 import Img5 from "@/public/whatcatlog/5.webp";
-import ArrowRight from "@/public/whatcatlog/arrowRight.svg";
-import ArrowLeft from "@/public/whatcatlog/arrowLeft.svg";
+import ArrowRight from "@/public/ownerSaysCatelog/arrowRight.svg";
+import ArrowLeft from "@/public/ownerSaysCatelog/arrowLeft.svg";
 import ArrowRightBlue from "@/public/ownerSaysCatelog/arrowRightBlue.svg";
 
 const items = [
@@ -56,7 +56,7 @@ const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="bg-my-blue w-7 h-7 rounded-full shadow-2xl inline-flex justify-center items-center absolute -left-0 top-[45%] cursor-pointer z-50"
+      className="bg-white w-10 h-10 md:w-16 md:h-16 rounded-full shadow-2xl inline-flex justify-center items-center absolute -bottom-2 md:-bottom-6 right-20 md:right-28 cursor-pointer z-10"
       onClick={onClick}
     >
       <Image src={ArrowLeft} alt="" />
@@ -68,7 +68,7 @@ const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="bg-my-blue w-7 h-7 rounded-full shadow-2xl inline-flex justify-center items-center absolute -right-0  top-[45%] cursor-pointer z-10"
+      className="bg-my-blue w-10 h-10 md:w-16 md:h-16 rounded-full shadow-2xl inline-flex justify-center items-center absolute -bottom-2 md:-bottom-6 right-8 cursor-pointer z-10"
       onClick={onClick}
     >
       <Image src={ArrowRight} alt="" />
@@ -115,9 +115,9 @@ const Index = () => {
   };
 
   return (
-    <div className="bg-gray-50">
-      <div className="mt-32 pt-10 pb-20">
-        <div className="mycontainer">
+    <div className="bg-gray-50 whatsellcatlog">
+      <div className="mt-32 py-28 mycontainer">
+        <div>
           <TextAnimation
             letters={"What you can sell"}
             className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
@@ -130,10 +130,7 @@ const Index = () => {
           />
         </div>
         <div className="mt-20">
-          <Slider
-            {...settings}
-            className="whatsellcalelog w-full mycontainer px-5"
-          >
+          <Slider {...settings} className="whatsellcalelog w-full px-5">
             {items.map((item) => (
               <>
                 <div
