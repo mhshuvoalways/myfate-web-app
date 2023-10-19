@@ -8,7 +8,7 @@ import Review4 from "@/public/reviews/4.webp";
 
 const index = () => {
   return (
-    <div className="w-10/12 mx-auto mt-32 container">
+    <div className="mycontainer mt-32">
       <p className="text-3xl md:text-[33px] font-semibold text-center w-10/12 mx-auto">{`I won't say much. Proven by clear results.
 Every month, we are flooded with reviews like the ones below.`}</p>
       <Fade bottom>

@@ -117,13 +117,13 @@ const Index = () => {
   return (
     <div className="bg-gray-50">
       <div className="mt-32 pt-10 pb-20">
-        <div className="w-10/12 mx-auto container">
+        <div className="mycontainer">
           <TextAnimation
             letters={"What you can sell"}
             className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
           />
           <TextAnimation
-            letters={" with Catlog"}
+            letters={"with Catlog"}
             className={
               "text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-blue"
             }
@@ -132,7 +132,7 @@ const Index = () => {
         <div className="mt-20">
           <Slider
             {...settings}
-            className="whatsellcalelog w-full mx-auto container px-5"
+            className="whatsellcalelog w-full mycontainer px-5"
           >
             {items.map((item) => (
               <>

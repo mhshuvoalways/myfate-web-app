@@ -3,7 +3,7 @@ import Link from "next/link";
 const Header = ({ toggleSidebar }) => {
   return (
     <div className={`shadow-sm fixed left-0 right-0 bg-white z-30`}>
-      <div className="w-10/12 mx-auto flex justify-between items-center flex-wrap py-3">
+      <div className="mx-auto flex justify-between items-center flex-wrap py-3 mycontainer">
         <button
           className="text-2xl text-black px-3 py-1 sm:block hidden"
           onClick={toggleSidebar}

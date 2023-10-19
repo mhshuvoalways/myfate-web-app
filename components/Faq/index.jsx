@@ -100,7 +100,7 @@ const Index = () => {
   };
 
   return (
-    <div className="w-10/12 mx-auto mt-32 py-10 container">
+    <div className="mycontainer mt-32 py-10">
       <TextAnimation
         letters={"Frequently"}
         className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}

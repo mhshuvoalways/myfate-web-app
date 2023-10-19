@@ -13,7 +13,7 @@ import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 const Index = () => {
   return (
     <div className="bg-gray-50 py-16 sm:py-28 mt-32">
-      <div className="w-10/12 mx-auto container">
+      <div className="mycontainer">
         <div>
           <TextAnimation
             letters={"What do you get"}

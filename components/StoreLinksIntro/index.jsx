@@ -17,7 +17,7 @@ const Index = () => {
 
   return (
     <div className="storeLinksIntro relative">
-      <div className="w-10/12 mx-auto flex justify-center items-center text-center container">
+      <div className="mycontainer flex justify-center items-center text-center">
         <div>
           <div className="space-y-8 py-10 sm:py-24">
             <TextAnimation

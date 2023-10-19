@@ -12,7 +12,7 @@ const index = ({ pricing }) => {
         pricing ? "pricing-gswsl" : "gswsl"
       }`}
     >
-      <div className="w-10/12 mx-auto flex justify-center md:justify-between items-center flex-wrap md:flex-nowrap gap-10 container">
+      <div className="mycontainer flex justify-center md:justify-between items-center flex-wrap md:flex-nowrap gap-10">
         <div className="w-full md:w-7/12 space-y-10">
           {pricing ? (
             <div>

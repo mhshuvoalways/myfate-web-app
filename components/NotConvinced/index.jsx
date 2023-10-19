@@ -4,7 +4,7 @@ import TextAnimation from "../TextAnimation";
 const index = () => {
   return (
     <div className="mt-32">
-      <div className="w-10/12 mx-auto">
+      <div className="mycontainer">
         <TextAnimation
           letters={"Not convinced yet?"}
           className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}

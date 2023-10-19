@@ -9,7 +9,7 @@ import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 
 const index = () => {
   return (
-    <div className="w-10/12 mx-auto mt-32 py-10 container">
+    <div className="mycontainer mt-32 py-10">
       <div className="flex justify-between gap-10 flex-wrap md:flex-nowrap">
         <div className="bg-my-bg-pastel p-7 md:p-14 rounded-3xl w-full md:w-6/12">
           <div className="bg-white w-24 h-24 flex justify-center items-center rounded-full">

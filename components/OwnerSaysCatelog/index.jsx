@@ -51,7 +51,7 @@ const index = () => {
 
   return (
     <div className="bg-gray-50 ownersayscatelog">
-      <div className="w-10/12 mx-auto mt-32 pt-16 sm:pt-28 pb-40 container">
+      <div className="mycontainer mt-32 pt-16 sm:pt-28 pb-40">
         <div>
           <TextAnimation
             letters={"What business owners"}

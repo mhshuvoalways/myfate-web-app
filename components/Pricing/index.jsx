@@ -82,7 +82,7 @@ const Index = () => {
 
   return (
     <div className="bg-gray-50 py-32">
-      <div className="w-10/12 mx-auto container">
+      <div className="mycontainer">
         <TextAnimation
           letters="Our Affordable"
           className="text-4xl md:text-5xl lg:text-6xl font-semibold"
@@ -122,7 +122,7 @@ const Index = () => {
           </div>
         </div>
         <div className="flex gap-5 flex-wrap justify-center mt-10">
-          <Fade right>
+          <Fade bottom>
             <PricingItem pricingObj={pricingObj[0]} />
             <PricingItem pricingObj={pricingObj[1]} />
             <PricingItem pricingObj={pricingObj[2]} />

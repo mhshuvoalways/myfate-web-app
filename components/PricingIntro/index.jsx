@@ -81,7 +81,7 @@ const Index = () => {
 
   return (
     <div className="storeLinksIntro relative">
-      <div className="w-10/12 mx-auto flex justify-center items-center container py-10">
+      <div className="mycontainer flex justify-center items-center py-10">
         <div>
           <div className="flex items-center bg-white py-2 px-3 cursor-pointer shadow-sm justify-between rounded-full w-44 mx-auto my-8">
             <Image src={Nigeria} alt="" className="w-9 h-9 rounded-full" />
@@ -124,13 +124,13 @@ const Index = () => {
               <p className="text-lg font-semibold">5% off</p>
             </div>
           </div>
-          <Fade bottom>
-            <div className="flex gap-5 justify-center flex-wrap mt-10">
+          <div className="flex gap-5 justify-center flex-wrap mt-10">
+            <Fade bottom>
               <PricingItem pricingObj={pricingObj[0]} />
               <PricingItem pricingObj={pricingObj[1]} />
               <PricingItem pricingObj={pricingObj[2]} />
-            </div>
-          </Fade>
+            </Fade>
+          </div>
         </div>
       </div>
     </div>

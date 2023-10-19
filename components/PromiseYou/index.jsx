@@ -7,7 +7,7 @@ import Support from "@/public/promise/support.svg";
 
 const index = () => {
   return (
-    <div className="w-10/12 mx-auto mt-32 container">
+    <div className="mycontainer mt-32">
       <div>
         <AnimationText
           letters={`Here's what we`}

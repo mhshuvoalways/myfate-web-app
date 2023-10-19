@@ -8,7 +8,7 @@ import Visible from "@/public/catelog/visible.webp";
 
 const index = () => {
   return (
-    <div className="w-10/12 mx-auto mt-32 container">
+    <div className="mycontainer mt-32">
       <div>
         <AnimationText
           letters={"Catlog supports you"}

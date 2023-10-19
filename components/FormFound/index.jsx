@@ -15,7 +15,7 @@ const Index = () => {
 
   return (
     <div className="bg-my-cream py-10 mt-32">
-      <div className="w-10/12 mx-auto container">
+      <div className="mycontainer">
         <TextAnimation
           letters={"Find Out Now"}
           className={

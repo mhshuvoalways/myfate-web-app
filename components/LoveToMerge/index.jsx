@@ -40,7 +40,7 @@ const index = () => {
 
   return (
     <div className="w-full mt-32">
-      <div className="w-10/12 mx-auto mb-20">
+      <div className="mycontainer mb-20">
         <TextAnimation
           letters={"Love for Merge"}
           className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}

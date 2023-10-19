@@ -7,7 +7,7 @@ import Mobile from "@/public/intro/mobile.jpg";
 const index = () => {
   return (
     <div className="relative w-full intro pb-10 sm:pb-0">
-      <div className="h-auto sm:h-screen flex justify-between items-center gap-5 flex-wrap sm:flex-nowrap w-10/12 mx-auto">
+      <div className="h-auto sm:h-screen flex justify-between items-center gap-5 flex-wrap sm:flex-nowrap mycontainer">
         <div className="w-full sm:w-6/12 space-y-10">
           <AnimationText
             letters={"Explore Your Future"}
