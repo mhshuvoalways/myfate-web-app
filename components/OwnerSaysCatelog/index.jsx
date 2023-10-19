@@ -2,6 +2,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import TextAnimation from "../TextAnimation";
 import Img1 from "@/public/ownerSaysCatelog/1.webp";
 import Img2 from "@/public/ownerSaysCatelog/2.webp";
 import Img3 from "@/public/ownerSaysCatelog/3.webp";
@@ -17,7 +18,7 @@ const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="bg-white w-10 h-10 md:w-16 md:h-16 rounded-full shadow-2xl inline-flex justify-center items-center absolute right-12 md:right-20 -bottom-14 md:bottom-0 cursor-pointer z-10"
+      className="bg-white w-10 h-10 md:w-16 md:h-16 rounded-full shadow-2xl inline-flex justify-center items-center absolute right-12 md:right-20 -bottom-14 md:bottom-0 cursor-pointer z-10 prevarrow"
       onClick={onClick}
     >
       <Image src={ArrowLeft} alt="" />
@@ -29,7 +30,7 @@ const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="bg-my-blue w-10 h-10 md:w-16 md:h-16 rounded-full shadow-2xl inline-flex justify-center items-center absolute right-0 -bottom-14 md:bottom-0 cursor-pointer z-10"
+      className="bg-my-blue w-10 h-10 md:w-16 md:h-16 rounded-full shadow-2xl inline-flex justify-center items-center absolute right-0 -bottom-14 md:bottom-0 cursor-pointer z-10 nextarrow"
       onClick={onClick}
     >
       <Image src={ArrowRight} alt="" />
@@ -50,16 +51,20 @@ const index = () => {
 
   return (
     <div className="bg-gray-50 ownersayscatelog">
-      <div className="w-10/12 mx-auto mt-32 pt-10 md:pb-10 pb-20 container">
+      <div className="w-10/12 mx-auto mt-32 pt-16 sm:pt-28 pb-40 container">
         <div>
-          <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
-            What business owners
-          </p>
-          <p className="text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-blue">
-            say about catlog
-          </p>
+          <TextAnimation
+            letters={"What business owners"}
+            className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
+          />
+          <TextAnimation
+            letters={"say about catlog"}
+            className={
+              "text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-blue"
+            }
+          />
         </div>
-        <div className="mt-10 relative">
+        <div className="mt-20 relative">
           <Slider {...settings}>
             <div>
               <div className="flex gap-10 md:gap-20 justify-between px-1 flex-wrap md:flex-nowrap">

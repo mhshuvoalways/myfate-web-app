@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
+import TextAnimation from "../TextAnimation";
 import Img1 from "@/public/whatcatlog/1.webp";
 import Img2 from "@/public/whatcatlog/2.webp";
 import Img3 from "@/public/whatcatlog/3.webp";
@@ -117,14 +118,18 @@ const Index = () => {
     <div className="bg-gray-50">
       <div className="mt-32 pt-10 pb-20">
         <div className="w-10/12 mx-auto container">
-          <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
-            What you can sell
-          </p>
-          <p className="text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-blue">
-            with Catlog
-          </p>
+          <TextAnimation
+            letters={"What you can sell"}
+            className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
+          />
+          <TextAnimation
+            letters={" with Catlog"}
+            className={
+              "text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-blue"
+            }
+          />
         </div>
-        <div className="mt-10">
+        <div className="mt-20">
           <Slider
             {...settings}
             className="whatsellcalelog w-full mx-auto container px-5"

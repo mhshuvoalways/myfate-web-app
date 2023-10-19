@@ -1,8 +1,7 @@
 import { useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import parse from "html-react-parser";
-import PlueIcon from "@/public/faq/plus.svg";
+import TextAnimation from "../TextAnimation";
 
 const Index = () => {
   const faqItems = [
@@ -102,15 +101,19 @@ const Index = () => {
 
   return (
     <div className="w-10/12 mx-auto mt-32 py-10 container">
-      <div className="text-center">
-        <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
-          Frequently
-        </p>
-        <p className="text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-blue">
-          Asked Questions
-        </p>
-      </div>
-      <div className="mt-10">
+      <TextAnimation
+        letters={"Frequently"}
+        className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
+        textCenter
+      />
+      <TextAnimation
+        letters={"Asked Questions"}
+        className={
+          "text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-blue"
+        }
+        textCenter
+      />
+      <div className="mt-20">
         {faqItems.map((faq) => (
           <div key={faq.id} className="border-b py-10">
             <div

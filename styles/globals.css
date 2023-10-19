@@ -43,6 +43,8 @@
   .font-gabarito {
     font-family: "Gabarito", cursive;
   }
+
+  /* Home page Intro */
   .intro {
     background: linear-gradient(45deg, #ab60ea, #95dff8);
   }
@@ -57,10 +59,11 @@
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
   }
 
+  /* Store Page Intro */
   .storeLinksIntro::after {
     position: absolute;
     z-index: -1;
-    height: 65%;
+    height: 80%;
     top: 0;
     left: 0;
     content: "";
@@ -91,21 +94,7 @@
     }
   }
 
-  @media (min-width: 640px) {
-    .intro::before {
-      left: 30%;
-    }
-  }
-  @media (min-width: 768px) {
-    .intro::before {
-      left: 25%;
-    }
-  }
-  @media (min-width: 1024px) {
-    .intro::before {
-      left: 20%;
-    }
-  }
+  /* Slider */
   .mySlider .slick-slide {
     margin: 0 10px;
   }
@@ -123,28 +112,22 @@
     left: 0 !important;
     width: auto !important;
   }
-  @media (min-width: 768px) {
-    .ownersayscatelog .slick-dots {
-      bottom: 10px !important;
-      right: -82px !important;
-      left: auto !important;
-      width: 100% !important;
-    }
-  }
 
-  /* hover effect */
-  .last-element {
+  /* Build for growth */
+  .buildgrowth .last-element {
     transition: all 0.5s;
     display: flex;
     opacity: 0;
     gap: 10;
   }
-  .parent:hover .last-element {
+  .buildgrowth .parent:hover .last-element {
     display: flex;
     opacity: 1;
     gap: 10;
     transform: translateY(-20px);
   }
+
+  /* Build for growth components */
   .buildforgrowth {
     transition: all 0.5s;
   }
@@ -157,6 +140,8 @@
   .parent:hover .buildforgrowth-img-bg {
     background: linear-gradient(45deg, #ffffff, #95dff8);
   }
+
+  /* Not convince */
   .notconvince {
     display: flex !important;
   }
@@ -164,6 +149,8 @@
     width: auto !important;
     margin: 0 15px;
   }
+
+  /* Get started components */
   .gswsl {
     background-image: url("../public/gswsl/gswslBg.svg");
   }
@@ -181,7 +168,7 @@
     background-image: url("../public/gswsl/lightpurplepattern.svg");
   }
 
-  /* test animation */
+  /* text animation */
   .waviy p {
     display: inline-block;
     animation: waviy 1s;

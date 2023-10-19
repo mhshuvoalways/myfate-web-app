@@ -125,7 +125,7 @@ const Index = () => {
             </div>
           </div>
           <Fade bottom>
-            <div className="flex gap-5 flex-wrap md:flex-nowrap mt-10">
+            <div className="flex gap-5 justify-center flex-wrap mt-10">
               <PricingItem pricingObj={pricingObj[0]} />
               <PricingItem pricingObj={pricingObj[1]} />
               <PricingItem pricingObj={pricingObj[2]} />

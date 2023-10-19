@@ -1,8 +1,11 @@
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import TickPhoto from "@/public/pricing/tick.svg";
+import ArrowDownBlue from "@/public/pricing/arrowDownBlue.svg";
 
 const PricingItem = ({ pricingObj }) => {
+  const [itemExpand, setItemExpand] = useState(false);
   const { title, description, planTitle, planTime, inclueds } = pricingObj;
 
   return (
@@ -33,16 +36,34 @@ const PricingItem = ({ pricingObj }) => {
       >
         {planTitle === "Free" ? "Try for free" : "Start 14 day trial"}
       </motion.p>
-      <hr />
-      <div>
-        <p className="font-semibold text-gray-600 text-xl">Includes:</p>
-        <div className="space-y-2 mt-2">
-          {inclueds.map((item) => (
-            <div className="flex gap-2" key={item}>
-              <Image src={TickPhoto} alt="" />
-              <p className="text-gray-600 text-lg">{item}</p>
-            </div>
-          ))}
+      <div className="bg-gray-50 rounded-b-xl py-2 block md:hidden">
+        <div
+          className="flex items-center justify-center gap-2 cursor-pointer"
+          onClick={() => setItemExpand(!itemExpand)}
+        >
+          <p className="text-my-blue text-lg font-semibold">
+            {itemExpand ? "View Less" : "View Features"}
+          </p>
+          <motion.div
+            animate={{ rotate: itemExpand ? 180 : 0 }}
+            clclassName="mt-1"
+          >
+            <Image src={ArrowDownBlue} alt="" />
+          </motion.div>
+        </div>
+      </div>
+      <div className={`block ${itemExpand ? "block" : "hidden md:block"}`}>
+        <hr />
+        <div className="mt-5">
+          <p className="font-semibold text-gray-600 text-xl">Includes:</p>
+          <div className="space-y-2 mt-2">
+            {inclueds.map((item) => (
+              <div className="flex gap-2" key={item}>
+                <Image src={TickPhoto} alt="" />
+                <p className="text-gray-600 text-lg">{item}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

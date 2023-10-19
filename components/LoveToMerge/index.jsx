@@ -2,6 +2,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import TextAnimation from "../TextAnimation";
 import Client1 from "@/public/testimonials/client1.jpeg";
 import Client2 from "@/public/testimonials/client2.jpeg";
 import Client3 from "@/public/testimonials/client3.jpeg";
@@ -39,9 +40,12 @@ const index = () => {
 
   return (
     <div className="w-full mt-32">
-      <p className="text-4xl md:text-5xl lg:text-6xl font-semibold w-10/12 mx-auto mb-10">
-        Love for Merge
-      </p>
+      <div className="w-10/12 mx-auto mb-20">
+        <TextAnimation
+          letters={"Love for Merge"}
+          className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
+        />
+      </div>
       <Slider {...settings} className="mySlider">
         <div className="shadow-md rounded-3xl p-6">
           <p>

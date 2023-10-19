@@ -8,7 +8,7 @@ import Storefront from "@/public/gswsl/storefront.webp";
 const index = ({ pricing }) => {
   return (
     <div
-      className={`mt-32 py-10 bg-cover bg-no-repeat ${
+      className={`mt-32 py-28 bg-cover bg-no-repeat ${
         pricing ? "pricing-gswsl" : "gswsl"
       }`}
     >

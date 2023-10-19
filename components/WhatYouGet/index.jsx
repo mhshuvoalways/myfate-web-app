@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Fade, Zoom } from "react-reveal";
 import { motion } from "framer-motion";
+import "react-circular-progressbar/dist/styles.css";
+import TextAnimation from "../TextAnimation";
 import WhatYouGetImg from "@/public/whatWeGet/woman.webp";
 import ShareIcon from "@/public/whatWeGet/share.svg";
 import BoxIcon from "@/public/whatWeGet/box.svg";
@@ -10,23 +12,27 @@ import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 
 const Index = () => {
   return (
-    <div className="bg-gray-50 py-10 mt-32">
+    <div className="bg-gray-50 py-16 sm:py-28 mt-32">
       <div className="w-10/12 mx-auto container">
         <div>
-          <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
-            What do you get
-          </p>
-          <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-yellow mt-0 md:mt-4">
-            with store links
-          </p>
+          <TextAnimation
+            letters={"What do you get"}
+            className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
+          />
+          <TextAnimation
+            letters={"with store links"}
+            className={
+              "text-4xl md:text-5xl lg:text-6xl font-semibold text-my-yellow mt-0 md:mt-4"
+            }
+          />
         </div>
-        <div className="mt-10 flex flex-wrap flex-col-reverse lg:flex-row lg:flex-nowrap justify-between gap-20">
+        <div className="mt-20 flex flex-wrap flex-col-reverse lg:flex-row lg:flex-nowrap justify-between gap-20 items-center">
           <div className="w-full lg:w-9/12 overflow-y-hidden">
             <Zoom>
               <Image
                 src={WhatYouGetImg}
                 alt=""
-                className="rounded-3xl object-cover"
+                className="rounded-3xl object-cover h-[615px]"
               />
               <div className="bg-my-bg-pastel rounded-3xl mt-5 p-8">
                 <p className="text-4xl font-semibold">

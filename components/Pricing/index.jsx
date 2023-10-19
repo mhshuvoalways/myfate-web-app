@@ -14,6 +14,7 @@ const Index = () => {
 
   const pricingObj = [
     {
+      id: 1,
       title: "Starter",
       description: "For businesses just starting out with few products",
       planTitle: "Free",
@@ -31,6 +32,7 @@ const Index = () => {
       ],
     },
     {
+      id: 2,
       title: "Basic",
       description:
         "For growing businesses looking to handle their sales better",
@@ -55,6 +57,7 @@ const Index = () => {
       ],
     },
     {
+      id: 3,
       title: "Business+",
       description: "For bigger businesses looking to sell more efficiently",
       planTitle:
@@ -92,7 +95,7 @@ const Index = () => {
           }
           textCenter
         />
-        <div className="bg-gray-100 flex w-60 mx-auto p-1 rounded-full mt-10 relative">
+        <div className="bg-gray-100 flex w-60 mx-auto p-1 rounded-full mt-20 relative">
           <p
             className={
               selectPrice === "monthly"
@@ -118,13 +121,13 @@ const Index = () => {
             <p className="text-lg font-semibold">5% off</p>
           </div>
         </div>
-        <Fade bottom>
-          <div className="flex gap-5 flex-wrap justify-center mt-10">
+        <div className="flex gap-5 flex-wrap justify-center mt-10">
+          <Fade right>
             <PricingItem pricingObj={pricingObj[0]} />
             <PricingItem pricingObj={pricingObj[1]} />
             <PricingItem pricingObj={pricingObj[2]} />
-          </div>
-        </Fade>
+          </Fade>
+        </div>
       </div>
     </div>
   );

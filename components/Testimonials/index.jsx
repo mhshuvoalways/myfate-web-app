@@ -35,7 +35,7 @@ const index = ({ storeLinks }) => {
   return (
     <div className="w-full mt-32">
       {storeLinks && (
-        <p className="font-semibold text-2xl text-center w-10/12 mx-auto mb-10">
+        <p className="font-semibold text-2xl text-center w-10/12 mx-auto mb-20">
           Trusted by thousands of Merchants
         </p>
       )}

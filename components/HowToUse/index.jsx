@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Image from "next/image";
-import { Fade } from "react-reveal";
+import { Fade, Zoom } from "react-reveal";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { motion } from "framer-motion";
+import TextAnimation from "../TextAnimation";
 import Img1 from "@/public/howToUse/1.webp";
 import Img2 from "@/public/howToUse/2.webp";
 import Img3 from "@/public/howToUse/3.webp";
@@ -39,16 +41,20 @@ const Index = () => {
   return (
     <div className="w-10/12 mx-auto mt-32 container py-10">
       <div>
-        <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
-          How to use
-        </p>
-        <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-yellow mt-0 md:mt-4">
-          store links
-        </p>
+        <TextAnimation
+          letters={"How to use"}
+          className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
+        />
+        <TextAnimation
+          letters={"store links"}
+          className={
+            "text-4xl md:text-5xl lg:text-6xl font-semibold text-my-yellow mt-0 md:mt-4"
+          }
+        />
       </div>
-      <div className="mt-10 flex flex-wrap lg:flex-nowrap justify-between gap-10 lg:gap-20 items-center">
+      <div className="mt-20 flex flex-wrap lg:flex-nowrap justify-between gap-10 lg:gap-20 items-center">
         <div className="p-5 space-y-8 w-full lg:w-6/12 border-l-4 border-gray-100 relative mx-auto">
-          <Fade bottom>
+          <Fade>
             <p
               className={`${
                 currentImage === 0
@@ -123,8 +129,8 @@ const Index = () => {
             </div>
           </Fade>
         </div>
-        <div className="bg-my-bg-pastel w-full lg:w-6/12 rounded-3xl relative  mx-auto h-full">
-          <Fade bottom key={currentImage}>
+        <div className="bg-my-bg-pastel w-full lg:w-5/12 rounded-3xl relative mx-auto h-full">
+          <Zoom key={currentImage}>
             <Image
               src={
                 (currentImage === 0 && allImages[0]) ||
@@ -132,22 +138,30 @@ const Index = () => {
                 allImages[currentImage - 1]
               }
               alt=""
-              className="px-28 pt-10 object-cover"
+              className="px-28 py-10 object-cover"
             />
-          </Fade>
+          </Zoom>
           <div>
-            <Image
-              src={ArrowLeft}
-              alt=""
+            <motion.div
+              whileTap={{ scale: 0.9 }}
               className="absolute top-[50%] left-5 cursor-pointer"
-              onClick={() => imgChanger("decrease")}
-            />
-            <Image
-              src={ArrowRight}
-              alt=""
+            >
+              <Image
+                src={ArrowLeft}
+                alt=""
+                onClick={() => imgChanger("decrease")}
+              />
+            </motion.div>
+            <motion.div
+              whileTap={{ scale: 0.9 }}
               className="absolute top-[50%] right-5 cursor-pointer"
-              onClick={() => imgChanger("increase")}
-            />
+            >
+              <Image
+                src={ArrowRight}
+                alt=""
+                onClick={() => imgChanger("increase")}
+              />
+            </motion.div>
           </div>
           <div className="absolute right-5 top-5 flex gap-2 items-center">
             <CircularProgressbar

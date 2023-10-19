@@ -1,9 +1,10 @@
+import { useState } from "react";
 import Image from "next/image";
 import { Fade } from "react-reveal";
 import { motion } from "framer-motion";
+import TextAnimation from "../TextAnimation";
 import RadioBtn from "./RadioBtn";
 import FormPhoto from "@/public/form/form.webp";
-import { useState } from "react";
 
 const Index = () => {
   const [selectBtn, setSelectBtn] = useState("am");
@@ -15,16 +16,20 @@ const Index = () => {
   return (
     <div className="bg-my-cream py-10 mt-32">
       <div className="w-10/12 mx-auto container">
-        <p className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center">
-          Find Out Now
-        </p>
+        <TextAnimation
+          letters={"Find Out Now"}
+          className={
+            "text-3xl md:text-4xl lg:text-5xl font-semibold text-center"
+          }
+          textCenter
+        />
         <p className="text-my-blue text-center text-xl mt-5">
           Create your free, personalized, and highly customizable birth chart
           (natal chart) by filling in the form below. Using our tools you can
           hide/show planets and asteroids, choose a house system, customize
           orbs, show declinations, sidereal charts and more...
         </p>
-        <div className="mt-10 flex gap-5 flex-wrap items-center md:flex-nowrap justify-center">
+        <div className="mt-20 flex gap-5 flex-wrap items-center md:flex-nowrap justify-center">
           <div className="bg-white md:w-6/12 p-10 w-full">
             <p className="text-my-gold font-semibold">FILL IN YOUR DETAILS</p>
             <div className="space-y-12 mt-10">

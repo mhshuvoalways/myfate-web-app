@@ -14,16 +14,15 @@ const Index = () => {
   const modalHandler = () => {
     setModal(!modal);
   };
-  const letters = "Take Orders Via Chat".split(" ");
 
   return (
     <div className="storeLinksIntro relative">
       <div className="w-10/12 mx-auto flex justify-center items-center text-center container">
         <div>
-          <div className="space-y-8 py-[85px]">
+          <div className="space-y-8 py-10 sm:py-24">
             <TextAnimation
               letters="Take Orders Via Chat"
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mx-3"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
             />
             <Fade top>
               <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-my-blue font-semibold">

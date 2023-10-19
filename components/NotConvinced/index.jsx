@@ -1,17 +1,24 @@
 import Sliders from "./Sliders";
+import TextAnimation from "../TextAnimation";
 
 const index = () => {
   return (
     <div className="mt-32">
       <div className="w-10/12 mx-auto">
-        <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
-          Not convinced yet?
-        </p>
-        <p className="text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-yellow">{`There's more!`}</p>
+        <TextAnimation
+          letters={"Not convinced yet?"}
+          className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
+        />
+        <TextAnimation
+          letters={`There's more!`}
+          className={
+            "text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-yellow"
+          }
+        />
       </div>
-      <div className="mt-10 space-y-14">
+      <div className="mt-20 space-y-14">
         <Sliders />
-        <Sliders rtl/>
+        <Sliders rtl />
         <Sliders />
       </div>
     </div>
