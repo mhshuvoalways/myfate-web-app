@@ -20,34 +20,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <p className="text-2xl pb-2">Home</p>
           <hr />
           <div className="pt-3">
-            <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
-              Sign Up
-            </p>
-            <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
-              Login
-            </p>
-            <Link href="/storeLinks">
+            <Link href="/">
               <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
-                Store Links
+                Home
               </p>
             </Link>
-            <Link href="/pricing">
-              <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
-                Pricing
-              </p>
-            </Link>
-          </div>
-        </div>
-        <div className="py-5">
-          <p className="text-2xl pb-2">Home</p>
-          <hr />
-          <div className="pt-3">
-            <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
-              Sign Up
-            </p>
-            <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
-              Login
-            </p>
             <Link href="/storeLinks">
               <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
                 Store Links
