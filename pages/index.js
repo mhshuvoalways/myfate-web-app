@@ -7,6 +7,7 @@ import PromiseYou from "@/components/PromiseYou";
 import Reviews from "@/components/Reviews";
 import FormFound from "@/components/FormFound";
 import Pricing from "@/components/Pricing";
+import GswSl from "@/components/GswSl";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <Reviews />
       <FormFound />
       <Pricing />
+      <GswSl home/>
     </>
   );
 };

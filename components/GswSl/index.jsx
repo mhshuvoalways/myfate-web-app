@@ -5,11 +5,13 @@ import TextAnimation from "../TextAnimation";
 import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 import Storefront from "@/public/gswsl/storefront.webp";
 
-const index = ({ pricing }) => {
+const index = ({ home, pricing }) => {
   return (
     <div
-      className={`mt-32 py-28 bg-cover bg-no-repeat ${
-        pricing ? "pricing-gswsl" : "gswsl"
+      className={`py-28 bg-cover bg-no-repeat ${
+        (home && "mt-0 gswsl") ||
+        (pricing && "pricing-gswsl mt-32") ||
+        ((!home || !pricing) && "gswsl mt-32")
       }`}
     >
       <div className="mycontainer flex justify-center md:justify-between items-center flex-wrap md:flex-nowrap gap-10">
