@@ -7,7 +7,7 @@ const Sliders = ({ rtl }) => {
     dots: false,
     infinite: true,
     slidesToShow: 3,
-    slidesToScroll: 10,
+    slidesToScroll: 1,
     arrows: false,
     speed: 150000,
     autoplay: true,
