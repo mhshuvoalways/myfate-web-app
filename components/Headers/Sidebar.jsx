@@ -35,6 +35,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 Pricing
               </p>
             </Link>
+            <Link href="/login">
+              <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
+                Login
+              </p>
+            </Link>
           </div>
         </div>
       </div>

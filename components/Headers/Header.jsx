@@ -20,13 +20,17 @@ const Header = ({ toggleSidebar }) => {
           ☰
         </button>
         <div className="gap-2 hidden sm:flex">
-          <p className="cursor-pointer hover:text-gray-800 text-my-text-gray">
-            Sign Up
-          </p>
+          <Link href="signup">
+            <p className="cursor-pointer hover:text-gray-800 text-my-text-gray">
+              Sign Up
+            </p>
+          </Link>
           <p className="text-my-text-gray">/</p>
-          <p className="text-my-text-gray cursor-pointer hover:text-gray-800">
-            Login
-          </p>
+          <Link href="/login">
+            <p className="text-my-text-gray cursor-pointer hover:text-gray-800">
+              Login
+            </p>
+          </Link>
         </div>
       </div>
     </div>
