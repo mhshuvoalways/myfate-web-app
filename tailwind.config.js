@@ -15,6 +15,9 @@ module.exports = {
         "my-text-gray": "#7a7a7a",
         "my-bg-pastel": "#FEF6EB",
       },
+      screens: {
+        mobile: "340px",
+      },
     },
   },
   plugins: [],

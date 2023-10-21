@@ -42,9 +42,12 @@
     -moz-osx-font-smoothing: grayscale;
     padding: auto 100px !important;
   }
-  
+
   .font-gabarito {
     font-family: "Gabarito", cursive;
+  }
+  .nanum-font {
+    font-family: "Nanum Pen Script", cursive;
   }
 
   /* my container */
@@ -102,7 +105,6 @@
     }
   }
   /* global css end */
-
 
   /* Home page Intro */
   .intro {
@@ -225,5 +227,13 @@
     position: static !important;
     text-align: start !important;
     padding: 30px 0 0 7px !important;
+  }
+
+  /* Post life */
+  .pl-banner {
+    background-image: url("../public/pastlife/bg.png");
+  }
+  .pl-btn {
+    transform: translate(-50%, 0);
   }
 }
