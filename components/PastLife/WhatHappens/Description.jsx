@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const Description = () => {
   const [years, setYears] = useState([]);
   const [days, setDays] = useState([]);
+  const [seletGender, setSelectGender] = useState("");
 
   useEffect(() => {
     let currentYear = new Date().getFullYear();
@@ -22,6 +23,10 @@ const Description = () => {
     setDays(temp);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const selectGenderHandler = (value) => {
+    setSelectGender(value);
+  };
 
   return (
     <div className="w-full mobile:max-w-[340px] mx-auto space-y-5">
@@ -90,13 +95,28 @@ const Description = () => {
       <div className="pt-5">
         <p className="text-white text-2xl font-semibold">Gender</p>
         <div className="mt-5 flex gap-3 justify-between items-center">
-          <p className="bg-gray-900 p-3 w-full text-white border border-gray-600 rounded font-semibold text-center cursor-pointer">
+          <p
+            className={`p-3 w-full text-white border border-gray-600 rounded font-semibold text-center cursor-pointer ${
+              seletGender === "Other" ? "" : "bg-gray-900"
+            }`}
+            onClick={() => selectGenderHandler("Other")}
+          >
             Other
           </p>
-          <p className="bg-gray-900 p-3 w-full text-white border border-gray-600 rounded font-semibold text-center cursor-pointer">
+          <p
+            className={`p-3 w-full text-white border border-gray-600 rounded font-semibold text-center cursor-pointer ${
+              seletGender === "Female" ? "" : "bg-gray-900"
+            }`}
+            onClick={() => selectGenderHandler("Female")}
+          >
             Female
           </p>
-          <p className="bg-gray-900 p-3 w-full text-white border border-gray-600 rounded font-semibold text-center cursor-pointer">
+          <p
+            className={`p-3 w-full text-white border border-gray-600 rounded font-semibold text-center cursor-pointer ${
+              seletGender === "Not applicable" ? "" : "bg-gray-900"
+            }`}
+            onClick={() => selectGenderHandler("Not applicable")}
+          >
             Not applicable
           </p>
         </div>

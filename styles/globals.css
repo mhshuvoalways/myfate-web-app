@@ -5,18 +5,7 @@
 /* Global css */
 @layer {
   :root {
-    --blue: #54a8d0;
-    --red: #ed4337;
-    --bg-black: #0f1217;
-    --bg-gray: #f8f6f6;
     --text-black: #1b1b1b;
-    --text-gray-light: #b7bec6;
-    --button-primary: #1a291b;
-    --button-secondary: #f1ede8;
-    --button-black: #1c1c1c;
-    --border-gray: #bbb;
-    --border-gray-med: #e5e5e5;
-    --border-gray-light: #f8f8f8;
     --font-serif: "Gilda";
     --font-serif-medium: "Gilda Medium";
     --font-serif-bold: "Gilda Bold";
