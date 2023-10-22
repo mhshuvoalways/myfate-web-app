@@ -40,16 +40,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 Past Life
               </p>
             </Link>
-            <Link href="/past-life/what-happens">
-              <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
-                What Happens
-              </p>
-            </Link>
-            <Link href="/past-life/result">
-              <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
-                Result
-              </p>
-            </Link>
             <Link href="/login">
               <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
                 Login
