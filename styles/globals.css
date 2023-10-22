@@ -225,4 +225,8 @@
   .pl-btn {
     transform: translate(-50%, 0);
   }
+
+  .pl-scrollhide::-webkit-scrollbar {
+    display: none;
+  }
 }

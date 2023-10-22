@@ -8,7 +8,7 @@ const index = () => {
       <Banner />
       <div className="bg-black py-10 px-5 min-h-[110vh]">
         <Description />
-        <Button />
+        <Button seletGender nextPath="/past-life/what-happens" />
       </div>
     </div>
   );

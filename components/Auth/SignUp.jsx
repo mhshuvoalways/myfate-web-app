@@ -48,7 +48,7 @@ const Signup = () => {
               <i className="fa-solid fa-lock"></i>
               <input type="text" className="w-full outline-0" placeholder="Your Email" />
             </div>
-            <ReCAPTCHA sitekey="6LcOKZAlAAAAABb5dD5soPssIEKxI1u-d_M-qQ3q" />
+            <ReCAPTCHA sitekey={process.env.SITE_KEY} />
             <Button value={"SIGN UP"} />
           </div>
         </div>
