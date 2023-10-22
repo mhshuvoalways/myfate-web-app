@@ -4,6 +4,16 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <meta
+          name="description"
+          content="A business website template"
+          key="desc"
+        />
+        <meta property="og:title" content="A business website template" />
+        <meta property="og:description" content="A business website template" />
+        <meta property="og:image" content="" />
+        <link rel="icon" type="image/x-icon" href="favicon/favicon.png" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

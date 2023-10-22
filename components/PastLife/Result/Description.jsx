@@ -7,7 +7,7 @@ import ChatIcon from "@/public/pastlife/chat.svg";
 const Description = () => {
   return (
     <div className="w-full mobile:max-w-[340px] mx-auto space-y-8">
-      <Image src={SecondMsg} alt="" className="w-full" />
+      <Image src={SecondMsg} alt="" className="w-full rounded-xl" />
       <div className="border border-gray-600 rounded relative">
         <div className="flex items-center gap-5 absolute -top-[14px] left-[25%] bg-black">
           <Image src={StarIcon} alt="" />
