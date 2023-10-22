@@ -3,7 +3,7 @@ import Link from "next/link";
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <div
-      className={`bg-white h-screen transform transition-all duration-300 shadow-lg fixed z-50 ${
+      className={`bg-white h-screen transform transition-all duration-300 shadow-lg fixed z-[60] ${
         isOpen
           ? "translate-x-0 w-full sm:w-4/12"
           : "-translate-x-full w-0 opacity-0"

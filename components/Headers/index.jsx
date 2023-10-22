@@ -15,7 +15,7 @@ const TopHeader = () => {
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       {isOpen && (
         <p
-          className="bg-black fixed inset-0 opacity-40 z-40"
+          className="bg-black fixed inset-0 opacity-40 z-50"
           onClick={toggleSidebar}
         ></p>
       )}

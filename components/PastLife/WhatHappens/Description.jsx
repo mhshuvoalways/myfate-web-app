@@ -44,6 +44,26 @@ const Description = ({ seletGender, setSelectGender }) => {
     openToggle: false,
   });
 
+  const closeOptions = () => {
+    setSelectYear((prev) => ({ ...prev, openToggle: false }));
+    setSelectMonth((prev) => ({ ...prev, openToggle: false }));
+    setSelectDay((prev) => ({ ...prev, openToggle: false }));
+    setSelectHappen((prev) => ({ ...prev, openToggle: false }));
+  };
+
+  const handleOutsideClick = (e) => {
+    if (e.target && !e.target.closest(".select-option")) {
+      closeOptions();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
+
   useEffect(() => {
     let currentYear = new Date().getFullYear();
     const temp = [...years];
@@ -72,6 +92,10 @@ const Description = ({ seletGender, setSelectGender }) => {
       openToggle: !seletYear.openToggle,
       year: value,
     });
+
+    setSelectMonth((prev) => ({ ...prev, openToggle: false }));
+    setSelectDay((prev) => ({ ...prev, openToggle: false }));
+    setSelectHappen((prev) => ({ ...prev, openToggle: false }));
   };
 
   const selectMonthHandler = (value) => {
@@ -79,6 +103,10 @@ const Description = ({ seletGender, setSelectGender }) => {
       openToggle: !seletMonth.openToggle,
       month: value,
     });
+
+    setSelectYear((prev) => ({ ...prev, openToggle: false }));
+    setSelectDay((prev) => ({ ...prev, openToggle: false }));
+    setSelectHappen((prev) => ({ ...prev, openToggle: false }));
   };
 
   const selectDayHandler = (value) => {
@@ -86,6 +114,9 @@ const Description = ({ seletGender, setSelectGender }) => {
       openToggle: !seletDay.openToggle,
       day: value,
     });
+    setSelectYear((prev) => ({ ...prev, openToggle: false }));
+    setSelectMonth((prev) => ({ ...prev, openToggle: false }));
+    setSelectHappen((prev) => ({ ...prev, openToggle: false }));
   };
 
   const seletHappenHandler = (value) => {
@@ -93,6 +124,9 @@ const Description = ({ seletGender, setSelectGender }) => {
       openToggle: !seletHappen.openToggle,
       item: value,
     });
+    setSelectYear((prev) => ({ ...prev, openToggle: false }));
+    setSelectDay((prev) => ({ ...prev, openToggle: false }));
+    setSelectMonth((prev) => ({ ...prev, openToggle: false }));
   };
 
   return (
@@ -101,17 +135,17 @@ const Description = ({ seletGender, setSelectGender }) => {
         <p className="text-white text-2xl font-semibold">
           Birthday of this life
         </p>
-        <div className="mt-5 flex gap-3 justify-between items-center">
-          <div className="relative w-full">
+        <div className="mt-5 flex gap-3 justify-between items-center flex-wrap mobile:flex-nowrap">
+          <div className={`relative w-full ${seletYear.openToggle && "z-40"}`}>
             <div
-              className="flex items-center justify-between bg-[#191919] p-3 border border-gray-600 rounded text-center font-semibold cursor-pointer px-4 z-20"
+              className="flex items-center justify-between bg-[#191919] p-3 border border-gray-600 rounded text-center font-semibold cursor-pointer px-4 select-option"
               onClick={() => selectYearHandler(seletYear.year)}
             >
               <p className="text-white text-start">{seletYear.year}</p>
               <Image src={ArrowDown} alt="" />
             </div>
             {seletYear.openToggle && (
-              <div className="absolute top-12 left-0 right-0 bg-[#191919] text-center h-80 overflow-y-scroll border-b border-r border-l border-gray-600 rounded-b pl-scrollhide">
+              <div className="absolute top-12 left-0 right-0 bg-[#191919] text-center h-80 overflow-y-scroll border-b border-r border-l border-gray-600 rounded-b pl-scrollhide select-option">
                 {years.map((year) => (
                   <p
                     className="text-white font-semibold cursor-pointer hover:bg-gray-800 py-1 text-start px-4"
@@ -124,16 +158,16 @@ const Description = ({ seletGender, setSelectGender }) => {
               </div>
             )}
           </div>
-          <div className="relative w-full">
+          <div className={`relative w-full ${seletMonth.openToggle && "z-30"}`}>
             <div
-              className="flex items-center justify-between bg-[#191919] p-3 border border-gray-600 rounded text-center font-semibold cursor-pointer px-4 z-20"
+              className="flex items-center justify-between bg-[#191919] p-3 border border-gray-600 rounded text-center font-semibold cursor-pointer px-4 z-20 select-option"
               onClick={() => selectMonthHandler(seletMonth.month)}
             >
               <p className="text-white text-start">{seletMonth.month}</p>
               <Image src={ArrowDown} alt="" />
             </div>
             {seletMonth.openToggle && (
-              <div className="absolute top-12 left-0 right-0 bg-[#191919] text-center h-80 overflow-y-scroll border-b border-r border-l border-gray-600 rounded-b pl-scrollhide">
+              <div className="absolute top-12 left-0 right-0 bg-[#191919] text-center h-80 overflow-y-scroll border-b border-r border-l border-gray-600 rounded-b pl-scrollhide select-option">
                 {months.map((month) => (
                   <p
                     className="text-white font-semibold cursor-pointer hover:bg-gray-800 py-1 text-start px-4"
@@ -146,9 +180,9 @@ const Description = ({ seletGender, setSelectGender }) => {
               </div>
             )}
           </div>
-          <div className="relative w-full">
+          <div className={`relative w-full ${seletDay.openToggle && "z-20"}`}>
             <div
-              className="flex items-center justify-between bg-[#191919] p-3 border border-gray-600 rounded text-center font-semibold cursor-pointer px-4 z-20"
+              className="flex items-center justify-between bg-[#191919] p-3 border border-gray-600 rounded text-center font-semibold cursor-pointer px-4 z-20 select-option"
               onClick={() => selectDayHandler(seletDay.day)}
             >
               <p className="text-white text-start">{`${seletDay.day} ${
@@ -157,7 +191,7 @@ const Description = ({ seletGender, setSelectGender }) => {
               <Image src={ArrowDown} alt="" />
             </div>
             {seletDay.openToggle && (
-              <div className="absolute top-12 left-0 right-0 bg-[#191919] text-center h-80 overflow-y-scroll border-b border-r border-l border-gray-600 rounded-b pl-scrollhide">
+              <div className="absolute top-12 left-0 right-0 bg-[#191919] text-center h-80 overflow-y-scroll border-b border-r border-l border-gray-600 rounded-b pl-scrollhide select-option">
                 {days.map((day) => (
                   <p
                     className="text-white font-semibold cursor-pointer hover:bg-gray-800 py-1 text-start px-4"
@@ -174,7 +208,7 @@ const Description = ({ seletGender, setSelectGender }) => {
       </div>
       <div className="pt-5">
         <p className="text-white text-2xl font-semibold">Gender</p>
-        <div className="mt-5 flex gap-3 justify-between items-center">
+        <div className="mt-5 flex gap-3 justify-between items-center flex-wrap mobile:flex-nowrap">
           <p
             className={`px-3 py-4 w-full text-white border border-gray-600 rounded font-semibold text-center cursor-pointer ${
               seletGender === "Other"
@@ -209,16 +243,18 @@ const Description = ({ seletGender, setSelectGender }) => {
       </div>
       <div className="pt-5">
         <p className="text-white text-2xl font-semibold">What happened today</p>
-        <div className="relative w-full mt-5">
+        <div
+          className={`relative w-full mt-5 ${seletHappen.openToggle && "z-10"}`}
+        >
           <div
-            className="flex items-center justify-between bg-[#191919] p-3 border border-gray-600 rounded text-center font-semibold cursor-pointer px-4"
+            className="flex items-center justify-between bg-[#191919] p-3 border border-gray-600 rounded text-center font-semibold cursor-pointer px-4 select-option"
             onClick={() => seletHappenHandler(seletHappen.item)}
           >
             <p className="text-white text-start">{seletHappen.item}</p>
             <Image src={ArrowDown} alt="" />
           </div>
           {seletHappen.openToggle && (
-            <div className="absolute top-[70px] left-0 right-0 bg-[#191919] text-center h-48 overflow-y-scroll border-b border-r border-l border-gray-600 rounded-b pl-scrollhide z-10">
+            <div className="absolute top-[70px] left-0 right-0 bg-[#191919] text-center h-28 mobile:h-48 overflow-y-scroll border-b border-r border-l border-gray-600 rounded-b pl-scrollhide select-option">
               {whatHappen.map((item, index) => (
                 <p
                   className="text-white font-semibold cursor-pointer hover:bg-gray-800 py-1 text-start px-4"

@@ -9,7 +9,7 @@ const Index = () => {
   return (
     <div>
       <Banner />
-      <div className="bg-black py-10 px-5 h-screen">
+      <div className="bg-black pt-10 pb-28 mobile:py-10 px-5 h-full mobile:h-screen">
         <Description
           seletGender={seletGender}
           setSelectGender={setSelectGender}
