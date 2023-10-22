@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <div className="pl-banner bg-cover h-40 flex justify-center items-center">
+    <div className="pl-banner bg-cover h-48 flex justify-center items-center">
       <div className="text-center space-y-4 mycontainer">
         <p className="text-white text-2xl sm:text-4xl font-semibold">
           Why are you having a hard time today?
