@@ -93,6 +93,38 @@
       transform: translateY(-20px);
     }
   }
+
+  /*  */
+
+  .words-line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  @keyframes word-up {
+    from {
+      opacity: 0;
+      transform: translateY(var(--from));
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .anim-word-up {
+    --delay: 0s;
+    --from: -100%;
+    --duration: 0.75s;
+    opacity: 0;
+    transform: translateY(var(--from));
+    -webkit-backface-visibility: hidden;
+    position: relative;
+    animation: word-up cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+    animation-delay: var(--delay);
+    animation-duration: var(--duration);
+  }
+
   /* global css end */
 
   /* Home page Intro */

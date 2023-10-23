@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Zoom } from "react-reveal";
-import AnimationText from "../TextAnimation";
+import AnimationText from "../TextAnimation/TextAnimation";
 import Mobile from "@/public/intro/mobile.jpg";
 
 const index = () => {
@@ -10,7 +10,20 @@ const index = () => {
       <div className="h-auto sm:h-screen flex justify-between items-center gap-5 flex-wrap sm:flex-nowrap mycontainer">
         <div className="w-full sm:w-6/12 space-y-10">
           <AnimationText
-            letters={"Explore Your Future"}
+            letters={[
+              {
+                letter: "Explore",
+                delay: "0.15",
+              },
+              {
+                letter: "Your",
+                delay: "0.25",
+              },
+              {
+                letter: "Future",
+                delay: "0.45",
+              },
+            ]}
             className={
               "font-semibold leading-none pt-10 font-gabarito text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
             }
