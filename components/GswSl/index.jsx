@@ -19,11 +19,33 @@ const index = ({ home, pricing }) => {
           {pricing ? (
             <div>
               <TextAnimation
-                letters="Get started in"
+                letters={[
+                  {
+                    letter: "Get",
+                    delay: "0",
+                  },
+                  {
+                    letter: "started",
+                    delay: "0.20",
+                  },
+                  {
+                    letter: "in",
+                    delay: "0.40",
+                  },
+                ]}
                 className="text-4xl md:text-5xl lg:text-6xl font-semibold"
               />
               <TextAnimation
-                letters="5 minutes"
+                letters={[
+                  {
+                    letter: "5",
+                    delay: "0.60",
+                  },
+                  {
+                    letter: "minutes",
+                    delay: "0.80",
+                  },
+                ]}
                 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue"
               />
             </div>
@@ -31,11 +53,33 @@ const index = ({ home, pricing }) => {
             <div>
               <Fade top>
                 <TextAnimation
-                  letters={`Get started with`}
+                  letters={[
+                    {
+                      letter: "Get",
+                      delay: "0",
+                    },
+                    {
+                      letter: "started",
+                      delay: "0.20",
+                    },
+                    {
+                      letter: "with",
+                      delay: "0.40",
+                    },
+                  ]}
                   className={`text-4xl md:text-5xl lg:text-6xl font-semibold`}
                 />
                 <TextAnimation
-                  letters={"store links"}
+                  letters={[
+                    {
+                      letter: "store",
+                      delay: "0.60",
+                    },
+                    {
+                      letter: "links",
+                      delay: "0.80",
+                    },
+                  ]}
                   className={
                     "text-4xl md:text-5xl lg:text-6xl font-semibold text-my-yellow"
                   }

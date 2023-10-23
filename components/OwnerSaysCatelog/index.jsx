@@ -54,11 +54,37 @@ const index = () => {
       <div className="mycontainer mt-32 pt-16 sm:pt-28 pb-40">
         <div>
           <TextAnimation
-            letters={"What business owners"}
+            letters={[
+              {
+                letter: "What",
+                delay: "0",
+              },
+              {
+                letter: "business",
+                delay: "0.20",
+              },
+              {
+                letter: "owners",
+                delay: "0.40",
+              },
+            ]}
             className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
           />
           <TextAnimation
-            letters={"say about catlog"}
+            letters={[
+              {
+                letter: "say",
+                delay: "0.60",
+              },
+              {
+                letter: "about",
+                delay: "0.80",
+              },
+              {
+                letter: "catlog",
+                delay: "1",
+              },
+            ]}
             className={
               "text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-blue"
             }

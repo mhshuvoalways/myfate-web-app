@@ -89,12 +89,30 @@ const Index = () => {
             <Image src={ArrowDown} alt="" className="w-4 h-4 rounded-full" />
           </div>
           <TextAnimation
-            letters={"Our Affordable,"}
+            letters={[
+              {
+                letter: "Our",
+                delay: "0",
+              },
+              {
+                letter: "Affordable",
+                delay: "0.20",
+              },
+            ]}
             className="text-4xl md:text-5xl lg:text-7xl"
             textCenter
           />
           <TextAnimation
-            letters={"Fair Pricing"}
+            letters={[
+              {
+                letter: "Fair",
+                delay: "0.40",
+              },
+              {
+                letter: "Pricing",
+                delay: "0.60",
+              },
+            ]}
             className="text-4xl md:text-5xl lg:text-7xl font-semibold text-my-blue"
             textCenter
           />

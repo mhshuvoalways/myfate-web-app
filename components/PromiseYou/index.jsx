@@ -10,11 +10,33 @@ const index = () => {
     <div className="mt-32 mycontainer">
       <div>
         <AnimationText
-          letters={`Here's what we`}
+          letters={[
+            {
+              letter: `Here's`,
+              delay: "0",
+            },
+            {
+              letter: `what`,
+              delay: "0.20",
+            },
+            {
+              letter: `we`,
+              delay: "0.40",
+            },
+          ]}
           className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
         />
         <AnimationText
-          letters={"promise you!"}
+          letters={[
+            {
+              letter: "promise",
+              delay: "0.60",
+            },
+            {
+              letter: "you!",
+              delay: "0.80",
+            },
+          ]}
           className={
             "text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue mt-0 md:mt-4"
           }

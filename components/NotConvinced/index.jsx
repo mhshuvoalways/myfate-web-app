@@ -6,11 +6,29 @@ const index = () => {
     <div className="mt-32">
       <div className="mycontainer">
         <TextAnimation
-          letters={"Not convinced yet?"}
+          letters={[
+            {
+              letter: "Not",
+              delay: "0",
+            },
+            {
+              letter: "convinced",
+              delay: "0.20",
+            },
+            {
+              letter: "yet?",
+              delay: "0.40",
+            },
+          ]}
           className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
         />
         <TextAnimation
-          letters={`There's more!`}
+          letters={[
+            {
+              letter: `There's more!`,
+              delay: "0.60",
+            },
+          ]}
           className={
             "text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-yellow"
           }

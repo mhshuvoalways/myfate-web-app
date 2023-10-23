@@ -17,7 +17,20 @@ const Index = () => {
     <div className="bg-my-cream py-10 mt-32">
       <div className="mycontainer">
         <TextAnimation
-          letters={"Find Out Now"}
+          letters={[
+            {
+              letter: "Find",
+              delay: "0",
+            },
+            {
+              letter: "Out",
+              delay: "0.25",
+            },
+            {
+              letter: "Now",
+              delay: "0.35",
+            },
+          ]}
           className={
             "text-3xl md:text-4xl lg:text-5xl font-semibold text-center"
           }

@@ -119,11 +119,37 @@ const Index = () => {
       <div className="mt-32 py-28 mycontainer">
         <div>
           <TextAnimation
-            letters={"What you can sell"}
+            letters={[
+              {
+                letter: "What",
+                delay: "0",
+              },
+              {
+                letter: "you",
+                delay: "0.20",
+              },
+              {
+                letter: "can",
+                delay: "0.40",
+              },
+              {
+                letter: "sell",
+                delay: "0.60",
+              },
+            ]}
             className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
           />
           <TextAnimation
-            letters={"with Catlog"}
+            letters={[
+              {
+                letter: "with",
+                delay: "0.80",
+              },
+              {
+                letter: "Catlog",
+                delay: "1",
+              },
+            ]}
             className={
               "text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-blue"
             }

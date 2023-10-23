@@ -12,21 +12,31 @@ const Index = ({ letters, className, textCenter }) => {
 
   return (
     <VisibilitySensor onChange={handleVisibilityChange}>
-      <div className={textCenter && "text-center"}>
+      <div>
         {hasBeenVisible ? (
-          <div className={`waviy`}>
-            {letters.split(" ").map((letter, index) => (
-              <p
-                className={`mr-3 ${className}`}
-                style={{ "--i": index + 1 }}
+          <div className={`words-line ${textCenter && "text-center"}`}>
+            {letters.map((letter, index) => (
+              <span
                 key={index}
+                className={`mr-3 anim-word-up inline-block ${className}`}
+                style={{ "--delay": `${letter.delay}s` }}
               >
-                {letter}
-              </p>
+                {letter.letter}
+              </span>
             ))}
           </div>
         ) : (
-          <p className={`mr-3 ${className}`}>{letters}</p>
+          <div className={`opacity-0`}>
+            {letters.map((letter, index) => (
+              <span
+                key={index}
+                className={`mr-3 inline-block ${className}`}
+                style={{ "--delay": `${letter.delay}s` }}
+              >
+                {letter.letter}
+              </span>
+            ))}
+          </div>
         )}
       </div>
     </VisibilitySensor>

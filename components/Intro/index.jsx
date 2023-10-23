@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Zoom } from "react-reveal";
-import AnimationText from "../TextAnimation/TextAnimation";
+import AnimationText from "../TextAnimation";
 import Mobile from "@/public/intro/mobile.jpg";
 
 const index = () => {
@@ -25,7 +25,7 @@ const index = () => {
               },
             ]}
             className={
-              "font-semibold leading-none pt-10 font-gabarito text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
+              "font-semibold pt-10 font-gabarito text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
             }
           />
           <Zoom>

@@ -21,14 +21,22 @@ const Index = () => {
         <div>
           <div className="space-y-8 py-10 sm:py-24">
             <TextAnimation
-              letters="Take Orders Via Chat"
+              letters={[
+                { letter: "Take", delay: "0" },
+                { letter: "Orders", delay: "0.20" },
+                { letter: "Via", delay: "0.40" },
+                { letter: "Chat", delay: "0.60" },
+              ]}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
             />
-            <Fade top>
-              <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-my-blue font-semibold">
-                With One Link
-              </p>
-            </Fade>
+            <TextAnimation
+              letters={[
+                { letter: "With", delay: "0.80" },
+                { letter: "One", delay: "1" },
+                { letter: "Link", delay: "1.20" },
+              ]}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-my-blue font-semibold"
+            />
             <div className="flex items-center justify-center gap-5 flex-wrap">
               <Fade bottom>
                 <motion.button
