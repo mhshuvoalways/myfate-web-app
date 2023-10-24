@@ -1,23 +1,22 @@
-import { useEffect, useState } from 'react';
-import { createContainer } from 'unstated-next';
+import { useEffect, useState } from "react";
+import { createContainer } from "unstated-next";
 
 const usePagesLoaderContext = () => {
-  const [pages, setPages] = useState([]);
-  const [animationHasPlayed, setAnimationHasPlayed] = useState(false);
+  const [animationHasPlayed, setAnimationHasPlayed] = useState(
+    typeof window !== "undefined" &&
+      sessionStorage.getItem("loader-played") !== null
+  );
 
   useEffect(() => {
-    setAnimationHasPlayed(
-      pages.length > 0 || sessionStorage.getItem('loader-played') !== null
-    );
-    let newPages = [...pages, window.location.pathname];
-    setPages(newPages);
-    sessionStorage.setItem('loader-played', 'true');
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (!animationHasPlayed) {
+      setAnimationHasPlayed(true);
+      typeof window !== "undefined" &&
+        sessionStorage.setItem("loader-played", "true");
+    }
+  }, [animationHasPlayed]);
 
   return {
     animationHasPlayed,
-    setAnimationHasPlayed,
   };
 };
 

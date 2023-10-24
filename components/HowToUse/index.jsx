@@ -79,6 +79,7 @@ const HowItWorks = () => {
     Math.floor((animProgress - 0.01) * stepsCount),
     0
   );
+  
   const isActive = (index) =>
     animProgress > 0 &&
     Math.floor((animProgress - 0.01) * stepsCount) === index;
@@ -88,7 +89,6 @@ const HowItWorks = () => {
   const getSizedImage = (image, sizes, screen) => {
     const size = sizes[screen] ?? sizes?.default;
     const sizedUrl = image.replace("/upload/", `/upload/c_scale,${size}/`);
-
     return sizedUrl;
   };
 

@@ -6,7 +6,6 @@ import ShareIcon from "@/public/whatWeGet/share.svg";
 import WhatYouGetImg from "@/public/whatWeGet/woman.webp";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import "react-circular-progressbar/dist/styles.css";
 import { Fade, Zoom } from "react-reveal";
 import TextAnimation from "../Utils/TextAnimation";
 
