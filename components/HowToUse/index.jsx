@@ -31,24 +31,13 @@ import useScreenSize from "@/hooks/useScreenSize";
 import LazyImage from "../Utils/LazyImage";
 import CircularProgress from "./CircularProgress";
 import TextAnimation from "@/components/Utils/TextAnimation";
-import VisibilitySensor from "react-visibility-sensor";
 
 const HowItWorks = () => {
   const { screen } = useScreenSize();
   const [animProgress, setAnimProgress] = useState(0);
   const stepsCount = steps.length;
 
-  const [hasBeenVisible, setHasBeenVisible] = useState(false);
-
-  const handleVisibilityChange = (isVisible) => {
-    if (isVisible && !hasBeenVisible) {
-      setHasBeenVisible(true);
-    }
-  };
-
   useEffect(() => {
-    if (!hasBeenVisible) return;
-
     const stepsWrapper = document.querySelector(".steps-wrapper");
     const steps = document.querySelectorAll(".steps li");
 
@@ -79,7 +68,7 @@ const HowItWorks = () => {
     return () => {
       tl.kill();
     };
-  }, [hasBeenVisible, stepsCount]);
+  }, [stepsCount]);
 
   const activeIndex = Math.max(
     Math.floor((animProgress - 0.01) * stepsCount),
@@ -135,94 +124,92 @@ const HowItWorks = () => {
                   "text-4xl md:text-5xl lg:text-6xl font-semibold text-my-yellow mt-0 md:mt-4"
                 }
               />
-              <VisibilitySensor onChange={handleVisibilityChange}>
-                <div className="w-full grid md:grid-cols-[47%,53%] lg:grid-cols-[51%,49%] xl:grid-cols-[53%,47%] mt-20">
-                  <div className="col-span-1 w-full md:pr-3 mb-8 md:mb-0 relative">
-                    <div
-                      className="progress w-1 bg-[#EF940F] absolute left-0 top-0 z-10 steps-progress"
-                      style={{ height: `${animProgress * 100}%` }}
-                    ></div>
-                    <ul className="flex flex-col items-start md:max-w-[380px] lg:max-w-[410px] xl:max-w-[480px] relative overflow-hidden steps">
-                      {steps.map((step, index) => (
-                        <li
+              <div className="w-full grid md:grid-cols-[47%,53%] lg:grid-cols-[51%,49%] xl:grid-cols-[53%,47%] mt-20">
+                <div className="col-span-1 w-full md:pr-3 mb-8 md:mb-0 relative">
+                  <div
+                    className="progress w-1 bg-[#EF940F] absolute left-0 top-0 z-10 steps-progress"
+                    style={{ height: `${animProgress * 100}%` }}
+                  ></div>
+                  <ul className="flex flex-col items-start md:max-w-[380px] lg:max-w-[410px] xl:max-w-[480px] relative overflow-hidden steps">
+                    {steps.map((step, index) => (
+                      <li
+                        className={cx(
+                          `px-2.5 py-3.75 sm:px-3.75 sm:py-4 xl:px-5 lg:py-4.5 border-l-4 border-grey-fields-100 md:!top-0 md:!relative hiw-step`,
+                          {
+                            past: isPast(index),
+                            active: isActive(index),
+                            next: !isPast(index) && !isActive(index),
+                          }
+                        )}
+                        key={index}
+                      >
+                        <figure
                           className={cx(
-                            `px-2.5 py-3.75 sm:px-3.75 sm:py-4 xl:px-5 lg:py-4.5 border-l-4 border-grey-fields-100 md:!top-0 md:!relative hiw-step`,
+                            "w-8 h-8 sm:h-10 sm:w-10 rounded-full bg-grey-fields-200 font-display text-sm sm:text-base font-black flex items-center justify-center transition-all ease-out duration-300",
                             {
-                              past: isPast(index),
-                              active: isActive(index),
-                              next: !isPast(index) && !isActive(index),
+                              "text-grey-muted": !isActive(index),
+                              "text-page1": isActive(index),
                             }
                           )}
-                          key={index}
                         >
-                          <figure
-                            className={cx(
-                              "w-8 h-8 sm:h-10 sm:w-10 rounded-full bg-grey-fields-200 font-display text-sm sm:text-base font-black flex items-center justify-center transition-all ease-out duration-300",
-                              {
-                                "text-grey-muted": !isActive(index),
-                                "text-page1": isActive(index),
-                              }
-                            )}
-                          >
-                            0{index + 1}
-                          </figure>
-                          <p
-                            className={cx(
-                              "mt-3.75 text-1sm sm:text-base md:text-1sm lg:text-base xl:text-lg font-medium !leading-tight transition-all ease-out duration-300",
-                              {
-                                "text-dark": !isActive(index),
-                                "text-primary-900": isActive(index),
-                              }
-                            )}
-                          >
-                            {step.description}
-                          </p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="col-span-1 w-full bg-page-pastel min-w-0 rounded-3xl relative overflow-hidden pt-[115%] sm:pt-[85%] md:pt-0">
-                    <div className="flex items-center absolute top-5 right-5">
-                      <div className="text-page">
-                        <CircularProgress
-                          progress={animProgress}
-                          baseColor="#FFFFFF"
-                          width={24}
-                          outline={4}
-                        />
-                      </div>
-                      <span className="text-black font-bold text-sm inline-block ml-1.25 w-6">
-                        {Math.floor((animProgress - 0.01) * stepsCount) + 1}/
-                        {stepsCount}
-                      </span>
-                    </div>
-                    {steps.map((step, index) => (
-                      <>
-                        {activeIndex === index && (
-                          <figure
-                            className="w-[65%] sm:w-[50%] md:w-[68%] lg:w-[65%] xl:w-[57%] absolute left-1/2 transform -translate-x-1/2 top-[12.5%] story-image-appear mt-5 sm:mt-0"
-                            style={{
-                              "--from": step?.mockupConf?.from ?? "10%",
-                              "--to": step?.mockupConf?.to ?? "0",
-                            }}
-                          >
-                            <LazyImage
-                              src={getSizedImage(
-                                step.image,
-                                { xs: "w_600", default: "w_700" },
-                                screen
-                              )}
-                              alt={step.description}
-                              showLoader={false}
-                              className="w-full"
-                            />
-                          </figure>
-                        )}
-                      </>
+                          0{index + 1}
+                        </figure>
+                        <p
+                          className={cx(
+                            "mt-3.75 text-1sm sm:text-base md:text-1sm lg:text-base xl:text-lg font-medium !leading-tight transition-all ease-out duration-300",
+                            {
+                              "text-dark": !isActive(index),
+                              "text-primary-900": isActive(index),
+                            }
+                          )}
+                        >
+                          {step.description}
+                        </p>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
-              </VisibilitySensor>
+                <div className="col-span-1 w-full bg-page-pastel min-w-0 rounded-3xl relative overflow-hidden pt-[115%] sm:pt-[85%] md:pt-0">
+                  <div className="flex items-center absolute top-5 right-5">
+                    <div className="text-page">
+                      <CircularProgress
+                        progress={animProgress}
+                        baseColor="#FFFFFF"
+                        width={24}
+                        outline={4}
+                      />
+                    </div>
+                    <span className="text-black font-bold text-sm inline-block ml-1.25 w-6">
+                      {Math.floor((animProgress - 0.01) * stepsCount) + 1}/
+                      {stepsCount}
+                    </span>
+                  </div>
+                  {steps.map((step, index) => (
+                    <>
+                      {activeIndex === index && (
+                        <figure
+                          className="w-[65%] sm:w-[50%] md:w-[68%] lg:w-[65%] xl:w-[57%] absolute left-1/2 transform -translate-x-1/2 top-[12.5%] story-image-appear mt-5 sm:mt-0"
+                          style={{
+                            "--from": step?.mockupConf?.from ?? "10%",
+                            "--to": step?.mockupConf?.to ?? "0",
+                          }}
+                        >
+                          <LazyImage
+                            src={getSizedImage(
+                              step.image,
+                              { xs: "w_600", default: "w_700" },
+                              screen
+                            )}
+                            alt={step.description}
+                            showLoader={false}
+                            className="w-full"
+                          />
+                        </figure>
+                      )}
+                    </>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
         </div>
