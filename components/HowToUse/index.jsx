@@ -53,13 +53,12 @@ const HowItWorks = () => {
         start: "top top",
         pinSpacing: true,
         scrub: true,
-        end: "185% top",
+        end: "200% top",
         snap: 1 / stepsCount,
         anticipatePin: 0.1,
       },
       onUpdate: () => {
         const progress = tl.progress();
-
         setAnimProgress(progress);
       },
     });
@@ -79,7 +78,6 @@ const HowItWorks = () => {
     Math.floor((animProgress - 0.01) * stepsCount),
     0
   );
-  
   const isActive = (index) =>
     animProgress > 0 &&
     Math.floor((animProgress - 0.01) * stepsCount) === index;
@@ -192,7 +190,7 @@ const HowItWorks = () => {
                 <>
                   {activeIndex === index && (
                     <figure
-                      className="w-[65%] sm:w-[50%] md:w-[68%] lg:w-[65%] xl:w-[57%] absolute left-1/2 transform -translate-x-1/2 top-[12.5%] story-image-appear"
+                      className="w-[65%] sm:w-[50%] md:w-[68%] lg:w-[65%] xl:w-[57%] absolute left-1/2 transform -translate-x-1/2 top-[12.5%] story-image-appear mt-5 sm:mt-0"
                       style={{
                         "--from": step?.mockupConf?.from ?? "10%",
                         "--to": step?.mockupConf?.to ?? "0",
