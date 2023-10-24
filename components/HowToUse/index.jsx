@@ -53,7 +53,7 @@ const HowItWorks = () => {
         start: "top top",
         pinSpacing: true,
         scrub: true,
-        end: "200% top",
+        end: "185% top",
         snap: 1 / stepsCount,
         anticipatePin: 0.1,
       },

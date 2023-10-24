@@ -1,9 +1,10 @@
+import dynamic from "next/dynamic";
 import TextAnimation from "../Utils/TextAnimation";
-import Sliders from "./Sliders";
+const ContentScroller = dynamic(() => import("./ContentScroller"), { ssr: true })
 
-const index = () => {
+const StoreLinksExtras = () => {
   return (
-    <div className="mt-32">
+    <section className="body-padding body-y-padding">
       <div className="mycontainer">
         <TextAnimation
           letters={[
@@ -34,13 +35,109 @@ const index = () => {
           }
         />
       </div>
-      <div className="mt-20 space-y-14">
-        <Sliders />
-        <Sliders rtl />
-        <Sliders />
+      <div className="mt-20" style={{ "--delay": "0.8s" }}>
+        <ContentScroller list={extras} />
       </div>
-    </div>
+    </section>
   );
 };
 
-export default index;
+const extras = [
+  [
+    {
+      label: "Custom store links",
+      emoji: "🔗",
+    },
+    {
+      label: "Automatic SEO",
+      emoji: "🔎",
+    },
+    {
+      label: "Manage multiple product options",
+      emoji: "👠",
+    },
+    {
+      label: "Upload multiple products at once",
+      emoji: "📦",
+    },
+
+    {
+      label: "Add multiple whatsapp numbers",
+      emoji: "💬",
+    },
+    {
+      label: "Create discounts",
+      emoji: "🎁",
+    },
+    {
+      label: "Create coupons",
+      emoji: "🎟️",
+    },
+    {
+      label: "Configure how customers see your products",
+      emoji: "⚙️",
+    },
+  ],
+  [
+    {
+      label: "Link your social media profiles",
+      emoji: "🎈",
+    },
+    {
+      label: "Set prices for locations you deliver to",
+      emoji: "🚚",
+    },
+    {
+      label: "Set opening & closing hours",
+      emoji: "⏰",
+    },
+    {
+      label: "Links to single products",
+      emoji: "👖",
+    },
+    {
+      label: "Manage multiple stores from one account",
+      emoji: "🛒",
+    },
+    {
+      label: "Organize your products into categories",
+      emoji: "🗂",
+    },
+    {
+      label: "Add multiple store managers",
+      emoji: "🤵🏽",
+    },
+  ],
+  [
+    {
+      label: "Multiple currencies - coming soon",
+      emoji: "💸",
+    },
+    {
+      label: "Facebook Pixel - Coming soon",
+      emoji: "📈",
+    },
+    {
+      label: "Import products from Instagram - Coming soon",
+      emoji: "🎩",
+    },
+    {
+      label: "Advanced store customizations - coming soon",
+      emoji: "🏗",
+    },
+    {
+      label: "Gifs & Videos for products - coming soon",
+      emoji: "📹",
+    },
+    {
+      label: "Verification Badges - coming soon",
+      emoji: "❇️",
+    },
+    {
+      label: "Checkout to twitter & Instagram - coming soon",
+      emoji: "📥",
+    },
+  ],
+];
+
+export default StoreLinksExtras;
