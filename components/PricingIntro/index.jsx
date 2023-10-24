@@ -1,11 +1,11 @@
-import { useState } from "react";
-import Image from "next/image";
-import { Fade } from "react-reveal";
-import TextAnimation from "../TextAnimation";
-import PricingItem from "../Pricing/PricingItem";
-import ArrowPhoto from "@/public/pricing/arrow.svg";
-import Nigeria from "@/public/flag/ng.png";
 import ArrowDown from "@/public/buildgrowth/arrowDown.svg";
+import Nigeria from "@/public/flag/ng.png";
+import ArrowPhoto from "@/public/pricing/arrow.svg";
+import Image from "next/image";
+import { useState } from "react";
+import { Fade } from "react-reveal";
+import PricingItem from "../Pricing/PricingItem";
+import TextAnimation from "../Utils/TextAnimation";
 
 const Index = () => {
   const [selectPrice, setSelectPrice] = useState("monthly");

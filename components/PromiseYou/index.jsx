@@ -1,9 +1,9 @@
-import Image from "next/image";
-import { Fade } from "react-reveal";
-import AnimationText from "../TextAnimation";
-import User from "@/public/promise/user.svg";
 import Message from "@/public/promise/message.svg";
 import Support from "@/public/promise/support.svg";
+import User from "@/public/promise/user.svg";
+import Image from "next/image";
+import { Fade } from "react-reveal";
+import AnimationText from "../Utils/TextAnimation";
 
 const index = () => {
   return (

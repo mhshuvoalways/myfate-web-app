@@ -1,14 +1,14 @@
-import Image from "next/image";
-import { Fade, Zoom } from "react-reveal";
-import { motion } from "framer-motion";
-import "react-circular-progressbar/dist/styles.css";
-import TextAnimation from "../TextAnimation";
-import WhatYouGetImg from "@/public/whatWeGet/woman.webp";
-import ShareIcon from "@/public/whatWeGet/share.svg";
+import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 import BoxIcon from "@/public/whatWeGet/box.svg";
 import MsgIcon from "@/public/whatWeGet/msg.svg";
 import NetIcon from "@/public/whatWeGet/net.svg";
-import ArrowRight from "@/public/storeLinks/arrowRight.svg";
+import ShareIcon from "@/public/whatWeGet/share.svg";
+import WhatYouGetImg from "@/public/whatWeGet/woman.webp";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import "react-circular-progressbar/dist/styles.css";
+import { Fade, Zoom } from "react-reveal";
+import TextAnimation from "../Utils/TextAnimation";
 
 const Index = () => {
   return (

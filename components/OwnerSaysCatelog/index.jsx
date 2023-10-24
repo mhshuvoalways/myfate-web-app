@@ -1,18 +1,18 @@
-import Image from "next/image";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import TextAnimation from "../TextAnimation";
 import Img1 from "@/public/ownerSaysCatelog/1.webp";
 import Img2 from "@/public/ownerSaysCatelog/2.webp";
 import Img3 from "@/public/ownerSaysCatelog/3.webp";
 import Img4 from "@/public/ownerSaysCatelog/4.webp";
+import ArrowLeft from "@/public/ownerSaysCatelog/arrowLeft.svg";
+import ArrowRight from "@/public/ownerSaysCatelog/arrowRight.svg";
 import Icon1 from "@/public/ownerSaysCatelog/icon1.webp";
 import Icon2 from "@/public/ownerSaysCatelog/icon2.webp";
 import Icon3 from "@/public/ownerSaysCatelog/icon3.webp";
 import Icon4 from "@/public/ownerSaysCatelog/icon4.webp";
-import ArrowRight from "@/public/ownerSaysCatelog/arrowRight.svg";
-import ArrowLeft from "@/public/ownerSaysCatelog/arrowLeft.svg";
+import Image from "next/image";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import TextAnimation from "../Utils/TextAnimation";
 
 const PrevArrow = (props) => {
   const { onClick } = props;

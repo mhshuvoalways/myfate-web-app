@@ -1,5 +1,5 @@
+import TextAnimation from "../Utils/TextAnimation";
 import Sliders from "./Sliders";
-import TextAnimation from "../TextAnimation";
 
 const index = () => {
   return (

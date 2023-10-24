@@ -1,18 +1,18 @@
-import { useState } from "react";
-import Image from "next/image";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { motion } from "framer-motion";
-import TextAnimation from "../TextAnimation";
+import ArrowLeft from "@/public/ownerSaysCatelog/arrowLeft.svg";
+import ArrowRight from "@/public/ownerSaysCatelog/arrowRight.svg";
+import ArrowRightBlue from "@/public/ownerSaysCatelog/arrowRightBlue.svg";
 import Img1 from "@/public/whatcatlog/1.webp";
 import Img2 from "@/public/whatcatlog/2.webp";
 import Img3 from "@/public/whatcatlog/3.webp";
 import Img4 from "@/public/whatcatlog/4.webp";
 import Img5 from "@/public/whatcatlog/5.webp";
-import ArrowRight from "@/public/ownerSaysCatelog/arrowRight.svg";
-import ArrowLeft from "@/public/ownerSaysCatelog/arrowLeft.svg";
-import ArrowRightBlue from "@/public/ownerSaysCatelog/arrowRightBlue.svg";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import TextAnimation from "../Utils/TextAnimation";
 
 const items = [
   {

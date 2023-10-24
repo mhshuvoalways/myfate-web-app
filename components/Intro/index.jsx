@@ -1,8 +1,8 @@
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Zoom } from "react-reveal";
-import AnimationText from "../TextAnimation";
 import Mobile from "@/public/intro/mobile.jpg";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Zoom } from "react-reveal";
+import AnimationText from "../Utils/TextAnimation";
 
 const index = () => {
   return (

@@ -1,9 +1,9 @@
-import { useState } from "react";
-import Image from "next/image";
-import { Fade } from "react-reveal";
-import TextAnimation from "../TextAnimation";
-import PricingItem from "./PricingItem";
 import ArrowPhoto from "@/public/pricing/arrow.svg";
+import Image from "next/image";
+import { useState } from "react";
+import { Fade } from "react-reveal";
+import TextAnimation from "../Utils/TextAnimation";
+import PricingItem from "./PricingItem";
 
 const Index = () => {
   const [selectPrice, setSelectPrice] = useState("monthly");

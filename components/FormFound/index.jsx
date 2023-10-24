@@ -1,10 +1,10 @@
-import { useState } from "react";
-import Image from "next/image";
-import { Fade } from "react-reveal";
-import { motion } from "framer-motion";
-import TextAnimation from "../TextAnimation";
-import RadioBtn from "./RadioBtn";
 import FormPhoto from "@/public/form/form.webp";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useState } from "react";
+import { Fade } from "react-reveal";
+import TextAnimation from "../Utils/TextAnimation";
+import RadioBtn from "./RadioBtn";
 
 const Index = () => {
   const [selectBtn, setSelectBtn] = useState("am");

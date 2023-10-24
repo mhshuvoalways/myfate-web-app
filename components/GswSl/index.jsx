@@ -1,9 +1,9 @@
+import Storefront from "@/public/gswsl/storefront.webp";
+import ArrowRight from "@/public/storeLinks/arrowRight.svg";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { Fade } from "react-reveal";
-import { motion } from "framer-motion";
-import TextAnimation from "../TextAnimation";
-import ArrowRight from "@/public/storeLinks/arrowRight.svg";
-import Storefront from "@/public/gswsl/storefront.webp";
+import TextAnimation from "../Utils/TextAnimation";
 
 const index = ({ home, pricing }) => {
   return (

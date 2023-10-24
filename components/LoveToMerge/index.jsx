@@ -1,14 +1,14 @@
-import Image from "next/image";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import TextAnimation from "../TextAnimation";
 import Client1 from "@/public/testimonials/client1.jpeg";
 import Client2 from "@/public/testimonials/client2.jpeg";
 import Client3 from "@/public/testimonials/client3.jpeg";
 import Client4 from "@/public/testimonials/client4.jpeg";
 import Client5 from "@/public/testimonials/client5.jpeg";
 import Client6 from "@/public/testimonials/client6.jpeg";
+import Image from "next/image";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import TextAnimation from "../Utils/TextAnimation";
 
 const index = () => {
   const settings = {

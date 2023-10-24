@@ -1,12 +1,12 @@
-import { useState } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Fade } from "react-reveal";
-import Modal from "../Modal";
-import TextAnimation from "../TextAnimation";
 import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 import Play from "@/public/storeLinks/play.svg";
 import StoreFrontWhatsApp from "@/public/storeLinks/storeFrontWhatsapp.webp";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useState } from "react";
+import { Fade } from "react-reveal";
+import Modal from "../Modal";
+import TextAnimation from "../Utils/TextAnimation";
 
 const Index = () => {
   const [modal, setModal] = useState(false);

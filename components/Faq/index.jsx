@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import parse from "html-react-parser";
-import TextAnimation from "../TextAnimation";
+import { useState } from "react";
+import TextAnimation from "../Utils/TextAnimation";
 
 const Index = () => {
   const faqItems = [

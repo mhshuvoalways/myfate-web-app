@@ -9,7 +9,7 @@ const Button = ({ value, seletGender, nextPath }) => {
 
   return (
     <button
-      className={`text-white text-lg p-3 rounded font-bold fixed left-[50%] bottom-3 shadow-md pl-btn mobile:w-[340px] mx-auto w-[83%] ${
+      className={`text-white p-3 rounded font-bold fixed left-[50%] bottom-3 shadow-md pl-btn mobile:w-[340px] mx-auto w-[83%] ${
         !seletGender ? "bg-[#c3c8d9]" : "bg-[#6446ff] z-50"
       }`}
       onClick={clickNext}

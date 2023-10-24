@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { Fade, Zoom } from "react-reveal";
-import AnimationText from "../TextAnimation";
 import Efficient from "@/public/catelog/efficient.webp";
 import Money from "@/public/catelog/money.webp";
 import Standout from "@/public/catelog/standout.webp";
 import Visible from "@/public/catelog/visible.webp";
+import Image from "next/image";
+import { Fade, Zoom } from "react-reveal";
+import AnimationText from "../Utils/TextAnimation";
 
 const index = () => {
   return (

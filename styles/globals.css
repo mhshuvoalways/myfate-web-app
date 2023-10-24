@@ -24,9 +24,9 @@
 
   body {
     overflow-x: hidden;
-    font: 100%/1.5 sans-serif;
+    /* font: 100%/1.5 sans-serif; */
     line-height: 1.6;
-    font-family: var(--font-serif);
+    /* font-family: var(--font-serif); */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     padding: auto 100px !important;
@@ -244,4 +244,5 @@
   .pl-scrollhide::-webkit-scrollbar {
     display: none;
   }
+
 }
