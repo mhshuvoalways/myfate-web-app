@@ -11,7 +11,7 @@ const Header = ({ toggleSidebar }) => {
           ☰
         </button>
         <Link href="/">
-          <p className="text-2xl text-my-gold">My Fate</p>
+          <p className="text-2xl text-my-gold mr-0 sm:mr-2.5">My Fate</p>
         </Link>
         <button
           className="text-2xl text-black px-3 py-1 block sm:hidden"
