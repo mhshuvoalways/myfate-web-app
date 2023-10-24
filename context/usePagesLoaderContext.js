@@ -12,7 +12,7 @@ const usePagesLoaderContext = () => {
     let newPages = [...pages, window.location.pathname];
     setPages(newPages);
     sessionStorage.setItem('loader-played', 'true');
-  }, [pages]);
+  }, []);
 
   return {
     animationHasPlayed,
