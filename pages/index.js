@@ -1,6 +1,6 @@
 import Headers from "@/components/Headers";
 import Categories from "@/components/Headers/Categories";
-import Intro from "@/components/Intro";
+import StoreLinksIntro from "@/components/StoreLinksIntro";
 import Testimonials from "@/components/Testimonials";
 import WhyCatelog from "@/components/WhyCatelog";
 import PromiseYou from "@/components/PromiseYou";
@@ -14,7 +14,7 @@ const Index = () => {
     <>
       <Headers />
       <Categories />
-      <Intro />
+      <StoreLinksIntro />
       <Testimonials />
       <WhyCatelog />
       <PromiseYou />
