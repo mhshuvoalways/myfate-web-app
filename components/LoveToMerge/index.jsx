@@ -40,38 +40,38 @@ const extras = [
   [
     {
       name: "Custom store links",
-      title: "",
+      title: "Software Engineer",
       des: "Merge should make you and your end users’ lives easier: less work in building multiple integrations, real-time data syncing, and accurate data.",
       pic: Client1,
     },
     {
       name: "Custom store links",
-      title: "",
+      title: "Software Engineer",
       des: "Merge should make you and your end users’ lives easier: less work in building multiple integrations, real-time data syncing, and accurate data.",
       pic: Client2,
     },
     {
       name: "Custom store links",
-      title: "",
+      title: "Software Engineer",
       des: "Merge should make you and your end users’ lives easier: less work in building multiple integrations, real-time data syncing, and accurate data.",
       pic: Client3,
     },
 
     {
       name: "Custom store links",
-      title: "",
+      title: "Software Engineer",
       des: "Merge should make you and your end users’ lives easier: less work in building multiple integrations, real-time data syncing, and accurate data.",
       pic: Client4,
     },
     {
       name: "Custom store links",
-      title: "",
+      title: "Software Engineer",
       des: "Merge should make you and your end users’ lives easier: less work in building multiple integrations, real-time data syncing, and accurate data.",
       pic: Client5,
     },
     {
       name: "Custom store links",
-      title: "",
+      title: "Software Engineer",
       des: "Merge should make you and your end users’ lives easier: less work in building multiple integrations, real-time data syncing, and accurate data.",
       pic: Client6,
     },
