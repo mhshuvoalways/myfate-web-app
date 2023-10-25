@@ -5,7 +5,7 @@ const Header = ({ toggleSidebar }) => {
     <div className={`shadow-sm fixed left-0 right-0 bg-white z-50`}>
       <div className="mx-auto flex justify-between items-center flex-wrap py-3 mycontainer">
         <button
-          className="text-2xl text-black px-3 py-1 w-32 mr-auto text-start sm:block hidden"
+          className="text-[26px] text-black px-3 w-32 mr-auto text-start sm:block hidden"
           onClick={toggleSidebar}
         >
           ☰
@@ -14,7 +14,7 @@ const Header = ({ toggleSidebar }) => {
           <p className="text-2xl text-my-gold mr-0 sm:mr-2.5">My Fate</p>
         </Link>
         <button
-          className="text-2xl text-black px-3 py-1 block sm:hidden"
+          className="text-[26px] text-black px-3 block sm:hidden"
           onClick={toggleSidebar}
         >
           ☰
