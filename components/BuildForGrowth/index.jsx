@@ -8,8 +8,8 @@ import ArrowRight from "@/public/buildgrowth/arrowRight.svg";
 const index = () => {
   return (
     <div className="bg-blue-50 buildgrowth">
-      <div className="mycontainer border-l border-r px-5 py-32">
-        <div className="space-y-6 w-full md:w-7/12">
+      <div className="border-l border-r px-5 py-32">
+        <div className="mycontainer space-y-6 w-full">
           <p className="text-my-blue font-semibold text-xl">Built for growth</p>
           <p className="text-4xl font-bold">
             Take your startup farther, faster
@@ -22,7 +22,7 @@ const index = () => {
             and as far as you need.
           </p>
         </div>
-        <div className="flex md:justify-between justify-center mt-0 md:mt-20 gap-5 flex-wrap">
+        <div className="flex md:justify-between justify-center mt-0 md:mt-20 gap-5 flex-wrap mycontainer">
           <div className="mt-10 md:mt-36 space-y-7 w-full md:w-[48%]">
             <div className="parent">
               <div className="relative pt-16 px-5 md:px-20 border-white border-4 rounded-t-xl buildforgrowth-img-bg">

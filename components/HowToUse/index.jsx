@@ -185,7 +185,7 @@ const HowItWorks = () => {
                     </span>
                   </div>
                   {steps.map((step, index) => (
-                    <>
+                    <div key={index}>
                       {activeIndex === index && (
                         <figure
                           className="w-[65%] sm:w-[50%] md:w-[68%] lg:w-[65%] xl:w-[57%] absolute left-1/2 transform -translate-x-1/2 top-[12.5%] story-image-appear mt-5 sm:mt-0"
@@ -206,7 +206,7 @@ const HowItWorks = () => {
                           />
                         </figure>
                       )}
-                    </>
+                    </div>
                   ))}
                 </div>
               </div>

@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 
 const LazyImage = ({
   imgSrc,
@@ -37,7 +37,7 @@ const LazyImage = ({
           className={`h-full w-full absolute top-0 animate-pulse ${loaderClasses}`}
         ></div>
       )}
-      <Image
+      <img
         src={isVisible ? imgSrc : ""}
         {...props}
         className={
@@ -47,9 +47,6 @@ const LazyImage = ({
         ref={imageRef}
         onLoad={() => setHasLoaded(true)}
         alt=""
-        unoptimized
-        width={100}
-        height={100}
       />
     </>
   );

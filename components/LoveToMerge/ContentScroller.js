@@ -68,25 +68,25 @@ const ContentScroller = ({ list, spacing = "lg", whiteCards = false }) => {
 
   return (
     <ul className={wrapperClassnames}>
-      {list.map((group, _) => (
+      {list.map((group, index) => (
         <div
-          key={_}
+          key={index}
           className={`extras-section section-${
-            _ + 1
+            index + 1
           } flex space-x-5 sm:space-x-6 lg:space-x-8 ${
-            _ % 2 === 1 ? "flex-row-reverse !space-x-reverse" : ""
+            index % 2 === 1 ? "flex-row-reverse !space-x-reverse" : ""
           }`}
-          style={{ transform: `translateX(${translates[_]})` }}
+          style={{ transform: `translateX(${translates[index]})` }}
         >
           <ScrollerList
             group={group}
-            key={_}
+            key={index}
             index={0}
             whiteCards={whiteCards}
           />
           <ScrollerList
             group={group}
-            key={_}
+            key={index}
             index={1}
             whiteCards={whiteCards}
           />
