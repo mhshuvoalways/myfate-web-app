@@ -8,6 +8,7 @@ import LoveToMerge from "@/components/LoveToMerge";
 import BuildForGrowth from "@/components/BuildForGrowth";
 import NotConvinced from "@/components/NotConvinced";
 import GswSl from "@/components/GswSl";
+import Footer from "@/components/Footer";
 
 const About = () => {
   return (
@@ -22,6 +23,7 @@ const About = () => {
       <BuildForGrowth />
       <NotConvinced />
       <GswSl />
+      <Footer />
     </>
   );
 };

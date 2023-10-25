@@ -8,6 +8,7 @@ import Reviews from "@/components/Reviews";
 import FormFound from "@/components/FormFound";
 import Pricing from "@/components/Pricing";
 import GswSl from "@/components/GswSl";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -21,7 +22,8 @@ const Index = () => {
       <Reviews />
       <FormFound />
       <Pricing />
-      <GswSl home/>
+      <GswSl home />
+      <Footer />
     </>
   );
 };

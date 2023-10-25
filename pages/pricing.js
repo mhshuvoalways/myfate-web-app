@@ -6,6 +6,7 @@ import Faq from "@/components/Faq";
 import WhatSellCtlog from "@/components/WhatSellCtlog";
 import StayUpdCtlog from "@/components/StayUpdCtlog";
 import GswSl from "@/components/GswSl";
+import Footer from "@/components/Footer";
 
 const Pricing = () => {
   return (
@@ -18,6 +19,7 @@ const Pricing = () => {
       <WhatSellCtlog />
       <StayUpdCtlog />
       <GswSl pricing />
+      <Footer />
     </>
   );
 };
