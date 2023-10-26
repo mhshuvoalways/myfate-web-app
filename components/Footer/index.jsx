@@ -4,7 +4,7 @@ import AppLogo from "@/public/footer/app.svg";
 
 const index = () => {
   return (
-    <div className="bg-[#050537] py-10">
+    <div className="bg-[#050537] pt-20">
       <div className="flex items-start justify-between flex-wrap mycontainer">
         <div className="flex flex-col mr-8 mb-12.5">
           <Link href="/">
@@ -12,10 +12,10 @@ const index = () => {
           </Link>
           <p className="text-sm text-grey-fields-100 mt-3.75 max-w-[295px] md:max-w-[285px]">
             Take orders via chat, manage your business &amp; get paid seamlessly
-            with Catlog
+            with our My Fate
           </p>
           <figure className="mt-5 sm:mt-6.25">
-            <Image src={AppLogo} alt="Catlog app download banner" />
+            <Image src={AppLogo} alt= "My Fate app download banner" />
           </figure>
         </div>
         <div className="flex items-start flex-wrap justify-around flex-1 max-w-[700px] md:min-w-[450px]">

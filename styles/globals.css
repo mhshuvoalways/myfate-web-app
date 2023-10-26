@@ -38,7 +38,7 @@
   .nanum-font {
     font-family: "Nanum Pen Script", cursive;
   }
-
+  
   /* my container */
   .mycontainer {
     width: 100%;
@@ -214,29 +214,26 @@
     display: none;
   }
 
-
-
   /* MultiItemCarousel.css */
-.react-multi-carousel-item {
-  animation-duration: 20s; /* Adjust the duration as needed (4 seconds in this example) */
-  transition: transform 0.20s ease-in-out;
-}
-
-.react-multi-carousel-track {
-  display: flex;
-  transition: transform 0.20s ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateX(0);
+  .react-multi-carousel-item {
+    animation-duration: 20s; /* Adjust the duration as needed (4 seconds in this example) */
+    transition: transform 0.2s ease-in-out;
   }
-  100% {
-    transform: translateX(-100%);
-  }
-}
 
+  .react-multi-carousel-track {
+    display: flex;
+    transition: transform 0.2s ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }

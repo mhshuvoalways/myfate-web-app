@@ -25,7 +25,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 Home
               </p>
             </Link>
-            <Link href="/storeLinks">
+            <Link href="/store-links">
               <p className="cursor-pointer text-my-text-gray my-2 hover:text-gray-800">
                 Store Links
               </p>

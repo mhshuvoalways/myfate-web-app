@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import TickPhoto from "@/public/pricing/tick.svg";
 import ArrowDownBlue from "@/public/pricing/arrowDownBlue.svg";
@@ -28,14 +29,28 @@ const PricingItem = ({ pricingObj }) => {
         <p className="text-4xl font-semibold">{planTitle}</p>
         <p className="text-xl text-gray-500">{planTime}</p>
       </div>
-      <motion.p
-        whileTap={{ scale: 0.9 }}
-        className={`border border-gray-400 py-2 rounded font-semibold text-center cursor-pointer ${
-          planTitle !== "Free" && "bg-my-blue text-white"
-        }`}
-      >
-        {planTitle === "Free" ? "Try for free" : "Start 14 day trial"}
-      </motion.p>
+      {planTitle === "Free" ? (
+        <Link href={"/payment"}>
+          <motion.p
+            whileTap={{ scale: 0.9 }}
+            className={`border border-gray-400 py-2 rounded font-semibold text-center cursor-pointer ${
+              planTitle !== "Free" && "bg-my-blue text-white"
+            }`}
+          >
+            {planTitle === "Free" ? "Try for free" : "Start 14 day trial"}
+          </motion.p>
+        </Link>
+      ) : (
+        <motion.p
+          whileTap={{ scale: 0.9 }}
+          className={`border border-gray-400 py-2 rounded font-semibold text-center cursor-pointer ${
+            planTitle !== "Free" && "bg-my-blue text-white"
+          }`}
+        >
+          {planTitle === "Free" ? "Try for free" : "Start 14 day trial"}
+        </motion.p>
+      )}
+
       <div className="bg-gray-50 rounded-b-xl py-2 block md:hidden">
         <div
           className="flex items-center justify-center gap-2 cursor-pointer"

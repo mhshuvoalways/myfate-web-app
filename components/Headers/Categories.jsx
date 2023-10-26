@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 import SubMenus from "./SubMenus";
 
 const Categories = () => {
@@ -21,9 +22,11 @@ const Categories = () => {
             </p>
             <SubMenus menuName={menuName} setMenuName={setMenuName} />
           </div>
-          <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs">
-            Fun Tests
-          </p>
+          <Link href="/fun-tests-guide">
+            <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs">
+              Fun Tests
+            </p>
+          </Link>
           <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs">
             Celebrity Future
           </p>

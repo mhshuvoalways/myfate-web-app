@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Storefront from "@/public/gswsl/storefront.webp";
 import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 import { motion } from "framer-motion";
@@ -92,15 +93,17 @@ const index = ({ home, pricing }) => {
               Your customers buy from you on Whatsapp, don’t take them away,
               make it easier with Catlog.
             </p>
-            <motion.button
-              whileTap={{ scale: 0.9 }}
-              className="bg-my-blue rounded px-5 py-3 font-gabarito text-lg font-semibold flex items-center gap-2 mt-10"
-            >
-              <p className="text-white">
-                {pricing ? "Get stated for free" : "Start using links"}
-              </p>
-              <Image src={ArrowRight} alt="" />
-            </motion.button>
+            <Link href={"/payment"}>
+              <motion.button
+                whileTap={{ scale: 0.9 }}
+                className="bg-my-blue rounded px-5 py-3 font-gabarito text-lg font-semibold flex items-center gap-2 mt-10"
+              >
+                <p className="text-white">
+                  {pricing ? "Get stated for free" : "Start using links"}
+                </p>
+                <Image src={ArrowRight} alt="" />
+              </motion.button>
+            </Link>
           </Fade>
         </div>
         <div>
