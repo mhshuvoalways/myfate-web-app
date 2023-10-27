@@ -4,24 +4,48 @@ import Description from "./Description";
 import Button from "../Button";
 
 const Index = () => {
-  const [selectPic, setSelectPic] = useState({
-    itemNumber: "",
-    imgNumber: "",
-  });
+  const [selectedPics, setSelectedPics] = useState([]);
+
+  const selectHandler = (itemNumber, imgNumber) => {
+    const selectedPicIndex = selectedPics.findIndex(
+      (pic) => pic.itemNumber === itemNumber
+    );
+
+    if (selectedPicIndex !== -1) {
+      if (selectedPics[selectedPicIndex].imgNumber === imgNumber) {
+        setSelectedPics((prevSelectedPics) =>
+          prevSelectedPics.filter(
+            (pic) => pic !== selectedPics[selectedPicIndex]
+          )
+        );
+      } else {
+        setSelectedPics((prevSelectedPics) => [
+          ...prevSelectedPics.filter(
+            (pic) => pic !== selectedPics[selectedPicIndex]
+          ),
+          { itemNumber, imgNumber },
+        ]);
+      }
+    } else {
+      setSelectedPics((prevSelectedPics) => [
+        ...prevSelectedPics,
+        { itemNumber, imgNumber },
+      ]);
+    }
+  };
 
   return (
     <>
       <Banner />
       <div className="bg-black py-10">
-        <Description selectPic={selectPic} setSelectPic={setSelectPic} />
+        <Description
+          selectedPics={selectedPics}
+          selectHandler={selectHandler}
+        />
         <Button
           value="Go to draw the past life card"
-          seletGender={selectPic.itemNumber && selectPic.imgNumber}
-          nextPath={
-            selectPic.itemNumber &&
-            selectPic.imgNumber &&
-            "/past-life/what-happens"
-          }
+          selectedPicsCount={selectedPics.length}
+          nextPath={selectedPics.length && "/past-life/what-happens"}
         />
       </div>
     </>
