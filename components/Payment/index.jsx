@@ -14,8 +14,8 @@ const Index = () => {
   };
 
   return (
-    <div className="mycontainer my-20 flex justify-center gap-10">
-      <div className="w-5/12">
+    <div className="mycontainer my-20 flex justify-center gap-20 md:gap-10 flex-wrap">
+      <div className="w-10/12 md:w-5/12">
         <p className="font-semibold border-b border-gray-900 pb-3">
           CONTACT INFORMATION
         </p>
@@ -32,11 +32,11 @@ const Index = () => {
           </button>
         </div>
       </div>
-      <div className="w-5/12">
+      <div className="w-10/12 md:w-5/12">
         <div className="flex items-center justify-between border-b border-gray-900 pb-3">
           <div className="flex items-center gap-2">
             <p className="font-semibold">CART</p>
-            <p className="font-light">(TOTAL ITEMS: 1)</p>
+            <p className="font-light text-sm">(TOTAL ITEMS: 1)</p>
           </div>
           <Image src={CartIcon} alt="" />
         </div>

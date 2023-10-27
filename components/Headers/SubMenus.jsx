@@ -1,7 +1,7 @@
 const SubMenus = ({ menuName, setMenuName }) => {
   return (
     <div
-      className={`w-56 absolute bg-white mt-2 border border-gray-100 rounded transition-all duration-1000 ${
+      className={`w-56 absolute bg-white mt-2 border border-gray-100 rounded transition-all duration-200 ${
         menuName === "explorefuture" ? "opacity-100 z-10" : "opacity-0 -z-10"
       }`}
       onMouseEnter={() => setMenuName("explorefuture")}
