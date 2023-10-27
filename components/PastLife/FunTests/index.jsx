@@ -44,7 +44,7 @@ const Index = () => {
         />
         <Button
           value="Go to draw the past life card"
-          selectedPicsCount={selectedPics.length}
+          seletGender={selectedPics.length}
           nextPath={selectedPics.length && "/past-life/what-happens"}
         />
       </div>
