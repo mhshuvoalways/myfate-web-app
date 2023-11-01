@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global css */
+@layer {
+  :root {
+    --text-black: #1b1b1b;
+    --font-serif: "Gilda";
+    --font-serif-medium: "Gilda Medium";
+    --font-serif-bold: "Gilda Bold";
+  }
+
+  *,
+  :after,
+  :before {
+    box-sizing: border-box;
+    color: var(--text-black);
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+    /* font: 100%/1.5 sans-serif; */
+    line-height: 1.6;
+    /* font-family: var(--font-serif); */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: auto 100px !important;
+  }
+
+  .font-gabarito {
+    font-family: "Gabarito", cursive;
+  }
+  .nanum-font {
+    font-family: "Nanum Pen Script", cursive;
+  }
+  
+  /* my container */
+  .mycontainer {
+    width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+  }
+  @media (min-width: 640px) {
+    .mycontainer {
+      max-width: 640px;
+    }
+  }
+  @media (min-width: 768px) {
+    .mycontainer {
+      max-width: 768px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .mycontainer {
+      max-width: 1024px;
+      padding: 0 40px;
+    }
+  }
+  @media (min-width: 1280px) {
+    .mycontainer {
+      max-width: 1280px;
+      padding: 0 50px;
+    }
+  }
+
+  /* Slider */
+  .mySlider .slick-slide {
+    margin: 0 10px;
+  }
+
+  .slick-dots li button:before {
+    font-size: 14px !important;
+  }
+
+  /* global css end */
+
+  /* Home page Intro */
+  .intro {
+    background: linear-gradient(45deg, #ab60ea, #95dff8);
+  }
+  .intro::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  }
+
+  /* Store Page Intro */
+  .storeLinksIntro::after {
+    position: absolute;
+    z-index: -1;
+    height: 80%;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    background: linear-gradient(
+        117.78deg,
+        #fff9e6 4.58%,
+        rgba(255, 255, 255, 0) 86.1%
+      ),
+      radial-gradient(
+        96.79% 217.39% at 100% 104.38%,
+        rgba(222, 216, 255, 0.4) 0%,
+        #ffffff 100%
+      );
+    background-size: 250% 250%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Owner says catelog */
+  .ownersayscatelog .slick-dots li {
+    width: 10px !important;
+  }
+  .ownersayscatelog .slick-dots {
+    bottom: -48px !important;
+    left: 0 !important;
+    width: auto !important;
+  }
+
+  /* Build for growth */
+  .buildgrowth .last-element {
+    transition: all 0.5s;
+    display: flex;
+    opacity: 0;
+    gap: 10;
+  }
+  .buildgrowth .parent:hover .last-element {
+    display: flex;
+    opacity: 1;
+    gap: 10;
+    transform: translateY(-20px);
+  }
+
+  /* Build for growth components */
+  .buildforgrowth {
+    transition: all 0.5s;
+  }
+  .parent:hover .buildforgrowth {
+    transform: translateY(-35px);
+  }
+  .buildforgrowth-img-bg {
+    transition: all 0.5s;
+  }
+  .parent:hover .buildforgrowth-img-bg {
+    background: linear-gradient(45deg, #ffffff, #95dff8);
+  }
+
+  /* Not convince */
+  .notconvince {
+    display: flex !important;
+  }
+  .notc .slick-slide {
+    width: auto !important;
+    margin: 0 15px;
+  }
+
+  /* Get started */
+  .gswsl {
+    background-image: url("../public/gswsl/gswslBg.svg");
+  }
+
+  /* what sell catelog */
+  .whatsellcalelog .slick-dots li {
+    width: 10px !important;
+  }
+  .whatsellcalelog .slick-dots {
+    bottom: -10% !important;
+    width: 95% !important;
+  }
+
+  /* pricing get started */
+  .pricing-gswsl {
+    background-image: url("../public/gswsl/lightpurplepattern.svg");
+  }
+
+  /* what you can sell */
+  .whatsellcatlog .slick-dots {
+    position: static !important;
+    text-align: start !important;
+    padding: 30px 0 0 7px !important;
+  }
+
+  /* Post life */
+  .pl-banner {
+    background-image: url("../public/pastlife/bg.png");
+  }
+  .pl-btn {
+    transform: translate(-50%, 0);
+  }
+
+  .pl-scrollhide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* MultiItemCarousel.css */
+  .react-multi-carousel-item {
+    animation-duration: 20s; /* Adjust the duration as needed (4 seconds in this example) */
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .react-multi-carousel-track {
+    display: flex;
+    transition: transform 0.2s ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
