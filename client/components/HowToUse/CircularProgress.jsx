@@ -8,7 +8,7 @@ const CircularProgress = ({ baseColor, width, outline, progress }) => {
 
   const circleRadius = useMemo(
     () => circleProps.width / 2 - circleProps.outline,
-    [circleProps.width]
+    [circleProps.outline, circleProps.width]
   );
   const circleCircumfrence = 2 * Math.PI * circleRadius;
 

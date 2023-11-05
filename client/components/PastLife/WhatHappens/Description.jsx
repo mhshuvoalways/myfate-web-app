@@ -62,6 +62,7 @@ const Description = ({ seletGender, setSelectGender }) => {
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
