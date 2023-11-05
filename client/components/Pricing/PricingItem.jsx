@@ -53,11 +53,10 @@ const PricingItem = ({ pricingObj }) => {
             planTitle === "Free" ? 0 : planTitle
           )
         }
-        disabled={planType === title ? true : false}
         whileTap={{ scale: 0.9 }}
         className={`border border-gray-400 py-2 rounded font-semibold text-center w-full ${
           planTitle !== "Free" && "bg-my-blue text-white"
-        } ${planType !== title ? "cursor-pointer" : "opacity-50"}`}
+        }`}
       >
         {planTitle === "Free" ? "Try for free" : "Start 14 day trial"}
       </motion.button>
