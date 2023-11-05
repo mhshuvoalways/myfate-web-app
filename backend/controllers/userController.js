@@ -223,7 +223,9 @@ const findMail = (req, res) => {
               );
               if (authRes.strategy === "email") {
                 transporter(email, recoverPass(token));
-                res.status(200).json(response);
+                res
+                  .status(200)
+                  .json({ response, message: "Please check your email!" });
               } else {
                 res.status(400).json({
                   message: `User not found!`,

@@ -3,7 +3,6 @@ import enableBtn from "@/store/actions/btnAction";
 import notiAction from "@/store/actions/notiAction";
 import axios from "@/utils/axios";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import Button from "../common/Button";
@@ -12,7 +11,6 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
-  const router = useRouter();
   const dispatch = useDispatch();
 
   const findMail = (e) => {
@@ -21,8 +19,8 @@ const Signup = () => {
     dispatch(enableBtn(false));
     axios
       .post("/user/findmail", { email })
-      .then(() => {
-        router.push("/change_password");
+      .then((res) => {
+        dispatch(notiAction(res.data.message));
         dispatch(enableBtn(true));
       })
       .catch((err) => {
