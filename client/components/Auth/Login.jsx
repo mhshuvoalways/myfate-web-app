@@ -1,13 +1,14 @@
+import AuthImg from "@/public/auth/auth.png";
+import LoginBtn from "@/public/auth/loginbtn.png";
+import notiAction from "@/store/actions/notiAction";
+import { isAuthenticate, userLogin, userLoginwithGoogle } from "@/store/actions/userAction";
+import { useGoogleLogin } from "@react-oauth/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useGoogleLogin } from "@react-oauth/google";
-import AuthImg from "@/public/auth/auth.png";
-import LoginBtn from "@/public/auth/loginbtn.png";
-import Button from "./Button";
-import { userLogin, isAuthenticate } from "@/store/actions/userAction";
+import Button from "../common/Button";
 
 const Signup = () => {
   const [userData, setUserData] = useState({
@@ -28,7 +29,12 @@ const Signup = () => {
   };
 
   const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => {},
+    onSuccess: (credentialResponse) => {
+      dispatch(userLoginwithGoogle(credentialResponse.access_token, router));
+    },
+    onError: () => {
+      dispatch(notiAction("Login Failed"));
+    },
   });
 
   const onSubmitHandler = (event) => {
@@ -60,25 +66,55 @@ const Signup = () => {
         <form className="w-full md:w-7/12" onSubmit={onSubmitHandler}>
           <p className="tracking-widest text-3xl font-bold">LOGIN</p>
           <div className="space-y-7 mt-10">
-            <div className="flex gap-3 border-b-2 border-gray-400 pb-2">
-              <i className="fa-solid fa-user"></i>
-              <input
-                type="email"
-                className="w-full outline-0"
-                placeholder="Your Email"
-                name="email"
-                onChange={userChange}
-              />
+            <div>
+              <div
+                className={`flex gap-3 border-b-2 pb-2 ${
+                  userReducer.error?.email
+                    ? "border-red-500"
+                    : "border-gray-400"
+                }`}
+              >
+                <i className="fa-solid fa-user mt-1"></i>
+                <input
+                  type="text"
+                  className="w-full outline-0"
+                  placeholder="Your Email"
+                  name="email"
+                  onChange={userChange}
+                />
+              </div>
+              <p
+                className={`text-red-500 text-sm mt-1 ${
+                  userReducer.error?.email ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                {userReducer.error?.email}
+              </p>
             </div>
-            <div className="flex gap-3 border-b-2 border-gray-400 pb-2">
-              <i className="fa-solid fa-lock"></i>
-              <input
-                type="password"
-                className="w-full outline-0"
-                placeholder="Your Password"
-                name="password"
-                onChange={userChange}
-              />
+            <div>
+              <div
+                className={`flex gap-3 border-b-2 pb-2 ${
+                  userReducer.error?.password
+                    ? "border-red-500"
+                    : "border-gray-400"
+                }`}
+              >
+                <i className="fa-solid fa-lock mt-1"></i>
+                <input
+                  type="password"
+                  className="w-full outline-0"
+                  placeholder="Your Password"
+                  name="password"
+                  onChange={userChange}
+                />
+              </div>
+              <p
+                className={`text-red-500 text-sm mt-1 ${
+                  userReducer.error?.password ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                {userReducer.error?.password}
+              </p>
             </div>
             <p className="text-gray-400 text-end">
               <Link href={"/forgot-password"}>Forgot Password?</Link>

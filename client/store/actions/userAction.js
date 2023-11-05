@@ -3,12 +3,11 @@ import * as Types from "../constants/userTypes";
 import { CLEAR_DATA } from "../constants/clearDataType";
 import setAuthToken from "../../utils/setAuthToken";
 import axios from "../../utils/axios";
-import { notiAction, clearNotiAction } from "./notiAction";
+import notiAction from "./notiAction";
 import enableBtn from "./btnAction";
 
 export const register = (user, navigate) => (dispatch) => {
   dispatch(enableBtn(false));
-  dispatch(clearNotiAction(null));
   axios
     .post("/user/register", user)
     .then((response) => {
@@ -25,14 +24,13 @@ export const register = (user, navigate) => (dispatch) => {
           error: err.response.data,
         },
       });
-      dispatch(notiAction(err.response.data));
       dispatch(enableBtn(true));
+      dispatch(notiAction(err.response?.data.message));
     });
 };
 
 export const userLogin = (user, navigate) => (dispatch) => {
   dispatch(enableBtn(false));
-  dispatch(clearNotiAction(null));
   axios
     .post("/user/login", user)
     .then((response) => {
@@ -49,68 +47,45 @@ export const userLogin = (user, navigate) => (dispatch) => {
           error: err.response?.data,
         },
       });
-      dispatch(notiAction(err.response?.data));
       dispatch(enableBtn(true));
+      dispatch(notiAction(err.response?.data.message));
     });
 };
 
-export const findMail = (email, navigate) => (dispatch) => {
+export const userLoginwithGoogle = (access_token, navigate) => (dispatch) => {
   dispatch(enableBtn(false));
-  dispatch(clearNotiAction(null));
-  axios
-    .post("/user/findmail", email)
-    .then(() => {
-      dispatch({
-        type: Types.FIND_MAIL,
-        payload: true,
-      });
-      navigate("/checkmsg");
-      dispatch(enableBtn(true));
+  const userInfoEndpoint = "https://www.googleapis.com/oauth2/v2/userinfo";
+  fetch(userInfoEndpoint, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  })
+    .then((response) => response.json())
+    .then((response) => {
+      axios
+        .post("/user/registergoogle", response)
+        .then((finalRes) => {
+          setAuthToken(finalRes.data.token);
+          typeof window !== "undefined" &&
+            localStorage.setItem("token", finalRes.data.token);
+          navigate.push("/");
+          dispatch(enableBtn(true));
+        })
+        .catch((err) => {
+          dispatch({
+            type: Types.LOGIN_USER_ERROR_GOOGLE,
+            payload: {
+              error: err.response?.data,
+            },
+          });
+          dispatch(enableBtn(true));
+          dispatch(notiAction(err.response?.data.message));
+        });
     })
-    .catch((err) => {
-      dispatch({
-        type: Types.FIND_MAIL_ERROR,
-        payload: false,
-      });
-      dispatch(enableBtn(true));
-      dispatch(notiAction(err.response.data));
+    .catch(() => {
+      dispatch(notiAction("Login failed! Try again"));
     });
-};
-
-export const recoverPass = (value, navigate, from) => (dispatch) => {
-  dispatch(enableBtn(false));
-  dispatch(clearNotiAction(null));
-  if (value.password === value.confirmPassword) {
-    axios
-      .post("/user/recoverpass", value)
-      .then((response) => {
-        const decoded = jwtDecode(response.data.token);
-        dispatch({
-          type: Types.RECOVER_PASS,
-          payload: {
-            user: decoded,
-          },
-        });
-        dispatch(enableBtn(true));
-        setAuthToken(response.data.token);
-        localStorage.setItem("token", response.data.token);
-      })
-      .catch((err) => {
-        dispatch({
-          type: Types.RECOVER_PASS_ERROR,
-          payload: {
-            error: err.response,
-          },
-        });
-        dispatch(enableBtn(true));
-        dispatch(notiAction(err.response.data));
-      });
-  } else {
-    dispatch(
-      notiAction({ notMatch: "New password and confirm password don't match" })
-    );
-    dispatch(enableBtn(true));
-  }
 };
 
 export const isAuthenticate = () => (dispatch) => {
@@ -160,6 +135,26 @@ export const getMyAccount = () => (dispatch) => {
         type: Types.GET_MYACCOUT,
         payload: err.response?.data,
       });
+    });
+};
+
+export const userUpdate = (userValue, router) => (dispatch) => {
+  dispatch(enableBtn(false));
+  dispatch(notiAction(""));
+  axios
+    .put("/user/updateuser", userValue)
+    .then((res) => {
+      dispatch({
+        type: Types.USER_UPDATE,
+        payload: res.data.response,
+      });
+      dispatch(notiAction(res.data.message));
+      dispatch(enableBtn(true));
+      router.push("/");
+    })
+    .catch((err) => {
+      dispatch(notiAction(err.response?.data.message));
+      dispatch(enableBtn(true));
     });
 };
 

@@ -1,7 +1,7 @@
 const Modal = ({ children, modalHandler }) => {
   return (
     <div>
-      <div className="fixed mycontainer inset-0 z-[60] flex justify-center items-center">
+      <div className="fixed mycontainer inset-0 z-[100] flex justify-center items-center">
         <div className="bg-white shadow-lg rounded-lg w-full lg:w-6/12 max-h-[90vh] overflow-y-scroll modal">
           <p
             onClick={modalHandler}

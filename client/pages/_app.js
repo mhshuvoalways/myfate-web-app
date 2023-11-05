@@ -3,6 +3,7 @@ import setAuthToken from "../utils/setAuthToken";
 import { Provider } from "react-redux";
 import store from "../store";
 import Loading from "@/components/Loading/ClickedLoading";
+import Notify from "@/components/Notify";
 import "@/styles/external.css";
 import "@/styles/globals.css";
 import "@/styles/responsive.css";
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <div>
         <Loading />
+        <Notify />
         <Component {...pageProps} />
       </div>
     </Provider>

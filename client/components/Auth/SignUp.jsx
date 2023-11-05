@@ -1,14 +1,19 @@
+import AuthImg from "@/public/auth/auth.png";
+import LoginBtn from "@/public/auth/loginbtn.png";
+import notiAction from "@/store/actions/notiAction";
+import {
+  isAuthenticate,
+  register,
+  userLoginwithGoogle,
+} from "@/store/actions/userAction";
+import { useGoogleLogin } from "@react-oauth/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useGoogleLogin } from "@react-oauth/google";
+import { useEffect, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import AuthImg from "@/public/auth/auth.png";
-import LoginBtn from "@/public/auth/loginbtn.png";
-import Button from "./Button";
-import { register, isAuthenticate } from "@/store/actions/userAction";
+import { useDispatch, useSelector } from "react-redux";
+import Button from "../common/Button";
 
 const Signup = () => {
   const [userData, setUserData] = useState({
@@ -36,7 +41,12 @@ const Signup = () => {
   };
 
   const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => {},
+    onSuccess: (credentialResponse) => {
+      dispatch(userLoginwithGoogle(credentialResponse.access_token, router));
+    },
+    onError: () => {
+      dispatch(notiAction("Login Failed"));
+    },
   });
 
   const onSubmitHandler = (event) => {
@@ -83,30 +93,69 @@ const Signup = () => {
             <p>Or</p>
           </div>
           <form className="space-y-7 mt-8" onSubmit={onSubmitHandler}>
-            <div className="flex gap-3 border-b-2 border-gray-400 pb-2">
-              <i className="fa-solid fa-user"></i>
-              <input
-                type="text"
-                className="w-full outline-0"
-                placeholder="Your Email"
-                name="email"
-                onChange={userChange}
-              />
+            <div>
+              <div
+                className={`flex gap-3 border-b-2 pb-2 ${
+                  userReducer.error?.email
+                    ? "border-red-500"
+                    : "border-gray-400"
+                }`}
+              >
+                <i className="fa-solid fa-user mt-1"></i>
+                <input
+                  type="text"
+                  className="w-full outline-0"
+                  placeholder="Your Email"
+                  name="email"
+                  onChange={userChange}
+                />
+              </div>
+              <p
+                className={`text-red-500 text-sm mt-1 ${
+                  userReducer.error?.email ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                {userReducer.error?.email}
+              </p>
             </div>
-            <div className="flex gap-3 border-b-2 border-gray-400 pb-2">
-              <i className="fa-solid fa-lock"></i>
-              <input
-                type="password"
-                className="w-full outline-0"
-                placeholder="Your Password"
-                name="password"
-                onChange={userChange}
-              />
+            <div>
+              <div
+                className={`flex gap-3 border-b-2 pb-2 ${
+                  userReducer.error?.password
+                    ? "border-red-500"
+                    : "border-gray-400"
+                }`}
+              >
+                <i className="fa-solid fa-lock mt-1"></i>
+                <input
+                  type="password"
+                  className="w-full outline-0"
+                  placeholder="Your Password"
+                  name="password"
+                  onChange={userChange}
+                />
+              </div>
+              <p
+                className={`text-red-500 text-sm mt-1 ${
+                  userReducer.error?.password ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                {userReducer.error?.password}
+              </p>
             </div>
-            <ReCAPTCHA
-              sitekey={process.env.SITE_KEY}
-              onChange={captchaHandler}
-            />
+            <div>
+              <ReCAPTCHA
+                sitekey={process.env.SITE_KEY}
+                onChange={captchaHandler}
+              />
+              <p
+                className={`text-red-500 text-sm mt-1 ${
+                  userReducer.error?.recaptcha ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                {userReducer.error?.recaptcha}
+              </p>
+            </div>
             <Button value={"SIGN UP"} />
           </form>
         </div>

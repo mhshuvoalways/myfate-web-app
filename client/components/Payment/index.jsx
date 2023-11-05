@@ -2,11 +2,12 @@ import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Modal from "../Utils/Modal";
 import AddEdit from "./AddEdit";
 import TickIcon from "@/public/pricing/tick.svg";
-import Stripe from "./Stripe";
+import Paypal from "./Paypal";
+import { userUpdate } from "@/store/actions/userAction";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -17,6 +18,7 @@ const Index = () => {
   });
 
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const { plan, price } = router.query;
 
@@ -31,6 +33,21 @@ const Index = () => {
       ...emailValue,
       submit: true,
     });
+  };
+
+  const paymentHandler = () => {
+    const getLocalValues =
+      typeof window !== "undefined" &&
+      JSON.parse(localStorage.getItem("userValue"));
+    const newObj = getLocalValues;
+    newObj.planType = plan.charAt(0).toUpperCase() + plan.slice(1);
+    dispatch(userUpdate(newObj, router));
+    typeof window !== "undefined" && localStorage.removeItem("userValue");
+  };
+
+  const removeValue = () => {
+    setUserValue(null);
+    typeof window !== "undefined" && localStorage.removeItem("userValue");
   };
 
   return (
@@ -114,14 +131,13 @@ const Index = () => {
           >
             Set Details
           </motion.p>
-          {userValue && (
-            <motion.p
-              className="border-b-2 border-black border-dotted text-sm cursor-pointer"
-              whileTap={{ scale: 0.9 }}
-            >
-              Remove
-            </motion.p>
-          )}
+          <motion.p
+            className="border-b-2 border-black border-dotted text-sm cursor-pointer"
+            whileTap={{ scale: 0.9 }}
+            onClick={removeValue}
+          >
+            Remove
+          </motion.p>
         </div>
         <p className="border border-gray-300 mt-10 mb-5" />
         <div className="flex items-center justify-between">
@@ -131,7 +147,27 @@ const Index = () => {
           </div>
           <p className="text-xl">${price}</p>
         </div>
-        <Stripe />
+        {plan === "starter" ? (
+          <button
+            className={`bg-black p-2 w-full text-gray-200 font-bold tracking-widest mt-8 hover:bg-gray-800 rounded ${
+              userValue && emailValue.value && emailValue.submit
+                ? "opacity-100"
+                : "opacity-50"
+            }`}
+            onClick={paymentHandler}
+            disabled={
+              userValue && emailValue.value && emailValue.submit ? false : true
+            }
+          >
+            START WITHOUT PAY
+          </button>
+        ) : (
+          <Paypal
+            paymentHandler={paymentHandler}
+            userValue={userValue}
+            emailValue={emailValue}
+          />
+        )}
       </div>
       {modalOpen && (
         <Modal modalHandler={modalHandler}>

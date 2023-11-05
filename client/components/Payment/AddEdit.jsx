@@ -47,6 +47,8 @@ const AddEdit = ({ setUserValue, modalHandler }) => {
           : "",
       };
       setUserValue(formatUserDetails);
+      typeof window !== "undefined" &&
+        localStorage.setItem("userValue", JSON.stringify(formatUserDetails));
       modalHandler();
     }
   };

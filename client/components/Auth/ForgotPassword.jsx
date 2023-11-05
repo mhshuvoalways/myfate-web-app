@@ -1,25 +1,71 @@
-import Image from "next/image";
-import Link from "next/link";
 import AuthImg from "@/public/auth/auth.png";
-import Button from "./Button";
+import enableBtn from "@/store/actions/btnAction";
+import notiAction from "@/store/actions/notiAction";
+import axios from "@/utils/axios";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import Button from "../common/Button";
 
 const Signup = () => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+
+  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const findMail = (e) => {
+    e.preventDefault();
+    setError("");
+    dispatch(enableBtn(false));
+    axios
+      .post("/user/findmail", { email })
+      .then(() => {
+        router.push("/change_password");
+        dispatch(enableBtn(true));
+      })
+      .catch((err) => {
+        setError(err.response?.data.email);
+        dispatch(notiAction(err.response?.data.message));
+        dispatch(enableBtn(true));
+      });
+  };
+
   return (
     <div className="bg-my-cream p-10 h-full md:h-[100vh] flex justify-center items-center">
       <div className="bg-white max-w-3xl mx-auto flex flex-wrap md:flex-nowrap justify-between p-10 md:p-20 gap-12 items-center flex-col-reverse md:flex-row">
         <div className="w-8/12 md:w-5/12 mx-auto">
           <Image src={AuthImg} alt="" />
         </div>
-        <div className="w-full md:w-7/12 space-y-8">
+        <form className="w-full md:w-7/12 space-y-8" onSubmit={findMail}>
           <p className="text-gray-500 text-lg">
             Forgotten your password? Please enter your email below to reset it.
           </p>
-          <div className="flex gap-3 border-b-2 border-gray-400 pb-2">
-            <i className="fa-solid fa-lock"></i>
-            <input type="text" className="w-full outline-0" placeholder="Your Email" />
+          <div>
+            <div
+              className={`flex gap-3 border-b-2 pb-2 ${
+                error ? "border-red-500" : "border-gray-400"
+              }`}
+            >
+              <i className="fa-solid fa-user mt-1"></i>
+              <input
+                type="email"
+                className={`w-full outline-0`}
+                placeholder="Your Email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <p
+              className={`text-red-500 text-sm mt-1 ${
+                error ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              {error}
+            </p>
           </div>
           <Button value={"RESET PASSWORD"} />
-        </div>
+        </form>
       </div>
     </div>
   );

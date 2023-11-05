@@ -5,7 +5,6 @@ const init = {
   isAuthenticate: true,
   user: {},
   error: null,
-  findMail: false,
 };
 
 const userReudcer = (state = init, action) => {
@@ -59,32 +58,10 @@ const userReudcer = (state = init, action) => {
       };
     }
 
-    case Types.FIND_MAIL: {
-      return {
-        ...state,
-        findMail: action.payload,
-      };
-    }
-    case Types.FIND_MAIL_ERROR: {
-      return {
-        ...state,
-        findMail: action.payload,
-      };
-    }
-
     case Types.ISAUTHENTICATE: {
       return {
         ...state,
         isAuthenticate: action.payload.isAuthenticate,
-      };
-    }
-    case Types.LOGOUT_USER: {
-      return {
-        isAuthenticate: false,
-        user: {},
-        error: null,
-        findMail: false,
-        activeAccountMsg: "",
       };
     }
 
@@ -100,12 +77,19 @@ const userReudcer = (state = init, action) => {
         error: action.payload,
       };
     }
+
+    case Types.USER_UPDATE: {
+      return {
+        ...state,
+        user: action.payload,
+      };
+    }
+
     case ClearDataTypes.CLEAR_DATA: {
       return {
         isAuthenticate: false,
         user: {},
         error: null,
-        findMail: false,
       };
     }
     default:

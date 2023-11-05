@@ -42,6 +42,10 @@
     width: 0;
   }
 
+  .Toastify__toast-body > div:last-child {
+    color: #ffffff;
+  }
+
   /* my container */
   .mycontainer {
     width: 100%;
