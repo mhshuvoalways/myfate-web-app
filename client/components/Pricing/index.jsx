@@ -141,9 +141,9 @@ const Index = () => {
         </div>
         <div className="flex gap-5 flex-wrap justify-center mt-10">
           <Fade bottom>
-            <PricingItem pricingObj={pricingObj[0]} />
-            <PricingItem pricingObj={pricingObj[1]} />
-            <PricingItem pricingObj={pricingObj[2]} />
+            {pricingObj.map((el) => (
+              <PricingItem pricingObj={el} key={el.id} />
+            ))}
           </Fade>
         </div>
       </div>

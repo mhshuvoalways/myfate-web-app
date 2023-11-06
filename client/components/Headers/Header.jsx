@@ -32,7 +32,6 @@ const Header = ({ toggleSidebar, userReducer }) => {
         </button>
         <div className="gap-2 hidden sm:flex w-0 sm:w-32 ml-auto text-end">
           {userReducer.isAuthenticate ? (
-            userReducer.isAuthenticate &&
             userReducer.user?.subscriptionPlan?.planType ? (
               <Link
                 href={"https://personal-info-dashboard.vercel.app"}

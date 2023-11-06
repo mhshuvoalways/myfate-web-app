@@ -20,7 +20,7 @@ const TopHeader = () => {
       <Sidebar
         isOpen={isOpen}
         toggleSidebar={toggleSidebar}
-        isAuth={userReducer.isAuthenticate}
+        userReducer={userReducer}
       />
       {isOpen && (
         <p

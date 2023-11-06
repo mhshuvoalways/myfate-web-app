@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { logout } from "@/store/actions/userAction";
 import { useRouter } from "next/router";
 
-const Sidebar = ({ isOpen, toggleSidebar, isAuth }) => {
+const Sidebar = ({ isOpen, toggleSidebar, userReducer }) => {
   const dispatch = useDispatch();
   const router = useRouter();
   return (
@@ -45,19 +45,52 @@ const Sidebar = ({ isOpen, toggleSidebar, isAuth }) => {
                 Past Life
               </p>
             </Link>
-            {isAuth ? (
-              <p
-                className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800"
-                onClick={() => dispatch(logout(router))}
-              >
-                Logout
-              </p>
+            {userReducer.isAuthenticate ? (
+              userReducer.user?.subscriptionPlan?.planType ? (
+                <>
+                  <Link
+                    href={"https://personal-info-dashboard.vercel.app"}
+                    target="blank"
+                  >
+                    <p className="cursor-pointer hover:text-gray-800 text-my-text-gray">
+                      Dashboard
+                    </p>
+                  </Link>
+                  <p
+                    className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800"
+                    onClick={() => dispatch(logout(router))}
+                  >
+                    Logout
+                  </p>
+                </>
+              ) : (
+                <>
+                  <Link href={"/pricing?suggest=payment"}>
+                    <p className="cursor-pointer hover:text-gray-800 text-my-text-gray">
+                      Dashboard
+                    </p>
+                  </Link>
+                  <p
+                    className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800"
+                    onClick={() => dispatch(logout(router))}
+                  >
+                    Logout
+                  </p>
+                </>
+              )
             ) : (
-              <Link href="/login">
-                <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
-                  Login
-                </p>
-              </Link>
+              <>
+                <Link href={"/login"}>
+                  <p className="cursor-pointer hover:text-gray-800 text-my-text-gray">
+                    Dashboard
+                  </p>
+                </Link>
+                <Link href="/login">
+                  <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
+                    Login
+                  </p>
+                </Link>
+              </>
             )}
           </div>
         </div>
