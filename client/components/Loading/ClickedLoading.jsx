@@ -10,10 +10,7 @@ const ClickedLoading = () => {
       {!btnReducer && (
         <>
           <div className="fixed inset-0 flex justify-center items-center z-[150]">
-            <div>
-              <Image src={LoadingImg} alt="" />
-              <p className="mt-5 text-white text-2xl text-center">Please wait...</p>
-            </div>
+            <Image src={LoadingImg} alt="" />
           </div>
           <p className="fixed inset-0 z-[60] opacity-60 bg-gray-900"></p>
         </>

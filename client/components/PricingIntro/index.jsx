@@ -2,13 +2,19 @@ import ArrowDown from "@/public/buildgrowth/arrowDown.svg";
 import Nigeria from "@/public/flag/ng.png";
 import ArrowPhoto from "@/public/pricing/arrow.svg";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Fade } from "react-reveal";
 import PricingItem from "../Pricing/PricingItem";
 import TextAnimation from "../Utils/TextAnimation";
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import notiAction from "@/store/actions/notiAction";
 
 const Index = () => {
   const [selectPrice, setSelectPrice] = useState("monthly");
+
+  const router = useRouter();
+  const dispatch = useDispatch();
 
   const selectHandler = (value) => {
     setSelectPrice(value);
@@ -78,6 +84,12 @@ const Index = () => {
       ],
     },
   ];
+
+  useEffect(() => {
+    if (router.query.suggest === "payment") {
+      dispatch(notiAction("Please make a payment to connect to the future"));
+    }
+  }, [dispatch, router.query.suggest]);
 
   return (
     <div className="storeLinksIntro relative">

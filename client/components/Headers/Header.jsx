@@ -1,13 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect } from "react";
-import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { isAuthenticate, logout } from "@/store/actions/userAction";
+import { isAuthenticate } from "@/store/actions/userAction";
+import DashIcon from "@/public/header/dashboardicon.png";
 
-const Header = ({ toggleSidebar, isAuth }) => {
+const Header = ({ toggleSidebar, userReducer }) => {
   const dispatch = useDispatch();
-
-  const router = useRouter();
 
   useEffect(() => {
     dispatch(isAuthenticate());
@@ -32,13 +31,24 @@ const Header = ({ toggleSidebar, isAuth }) => {
           ☰
         </button>
         <div className="gap-2 hidden sm:flex w-0 sm:w-32 ml-auto text-end">
-          {isAuth ? (
-            <p
-              className="cursor-pointer hover:text-gray-800 text-my-text-gray w-0 sm:w-32 ml-auto hidden sm:block"
-              onClick={() => dispatch(logout(router))}
-            >
-              Logout
-            </p>
+          {userReducer.isAuthenticate ? (
+            userReducer.isAuthenticate &&
+            userReducer.user?.subscriptionPlan?.planType ? (
+              <Link
+                href={"https://personal-info-dashboard.vercel.app"}
+                target="blank"
+                className="w-0 sm:w-6 cursor-pointer ml-auto hidden sm:block"
+              >
+                <Image src={DashIcon} alt="" />
+              </Link>
+            ) : (
+              <Link
+                href={"/pricing?suggest=payment"}
+                className="w-0 sm:w-6 cursor-pointer ml-auto hidden sm:block"
+              >
+                <Image src={DashIcon} alt="" />
+              </Link>
+            )
           ) : (
             <>
               <Link href="signup">

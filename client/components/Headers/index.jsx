@@ -15,7 +15,7 @@ const TopHeader = () => {
     <div className="pb-[65px]">
       <Header
         toggleSidebar={toggleSidebar}
-        isAuth={userReducer.isAuthenticate}
+        userReducer={userReducer}
       />
       <Sidebar
         isOpen={isOpen}
