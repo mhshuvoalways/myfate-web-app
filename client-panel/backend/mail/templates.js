@@ -1,4 +1,4 @@
-const FRONTEND_URL = process.env.FRONTEND_URL;
+const FRONTEND_URL = process.env.CLIENT_PANEL_FRONTEND_URL;
 
 const recoverPass = (token) => {
   return `<div style="background-color: #efefef; padding: 30px">

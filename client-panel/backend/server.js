@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 
-app.use("/user", userRouter);
+app.use("/api/user", userRouter);
 
 app.get("/", (req, res) => {
   res.send("This is a business web app");
