@@ -4,7 +4,7 @@ const nextConfig = {
   env: {
     SITE_KEY: process.env.SITE_KEY,
     CLIENT_ID: process.env.CLIENT_ID,
-    BACKEND_URL: process.env.BACKEND_URL,
+    CLIENT_PANEL_BACKEND_URL: process.env.CLIENT_PANEL_BACKEND_URL,
     PAYPAL_CLIENT_ID: process.env.PAYPAL_CLIENT_ID,
   }
 }
