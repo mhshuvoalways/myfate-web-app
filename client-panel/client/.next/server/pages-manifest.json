@@ -1,6 +1,5 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/about": "pages/about.html",
   "/api/hello": "pages/api/hello.js",
@@ -11,13 +10,14 @@
   "/past-life/fun-tests": "pages/past-life/fun-tests.html",
   "/past-life": "pages/past-life.html",
   "/past-life/result": "pages/past-life/result.html",
-  "/past-life/what-happens": "pages/past-life/what-happens.html",
   "/payment": "pages/payment.html",
+  "/past-life/what-happens": "pages/past-life/what-happens.html",
   "/pricing": "pages/pricing.html",
   "/privacy": "pages/privacy.html",
-  "/recover_password": "pages/recover_password.html",
   "/signup": "pages/signup.html",
+  "/recover_password": "pages/recover_password.html",
   "/store-links": "pages/store-links.html",
   "/terms-of-service": "pages/terms-of-service.html",
+  "/_error": "pages/_error.js",
   "/404": "pages/404.html"
 }
