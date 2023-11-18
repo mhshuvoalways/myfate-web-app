@@ -8,7 +8,7 @@ type Props = {
   title: string;
   dataKey: string;
   number: number | string;
-  percentage: number;
+  percentage: string;
   chartData: object[];
 };
 
@@ -47,11 +47,20 @@ const ChartBox = (props: Props) => {
         <div className="texts">
           <span
             className="percentage"
-            style={{ color: props.percentage < 0 ? "tomato" : "limegreen" }}
+            style={{
+              color: Number(props.percentage) < 0 ? "tomato" : "limegreen",
+            }}
           >
-            {props.percentage}%
+            {props.percentage &&
+              (Number(props.percentage) < 0
+                ? "0%"
+                : `${props.percentage.toString().slice(2, 4)}%.${
+                    props.percentage.length === 5
+                      ? props.percentage.toString().slice(4)
+                      : 0
+                  }`)}
           </span>
-          <span className="duration">this month</span>
+          <span className="duration">This month</span>
         </div>
       </div>
     </div>

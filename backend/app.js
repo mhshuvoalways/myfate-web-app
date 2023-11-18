@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const db = require("./config/db");
 
 const userRouter = require("./routers/userRouter");
+const reportRouter = require("./routers/reportRouter");
 
 const app = express();
 app.use(express.json());
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(morgan("dev"));
 
 app.use("/api/user", userRouter);
+app.use("/api/report", reportRouter);
 
 app.get("/", (req, res) => {
   res.send("This is a business web app");

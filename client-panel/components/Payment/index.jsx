@@ -162,11 +162,7 @@ const Index = () => {
             START WITHOUT PAY
           </button>
         ) : (
-          <Paypal
-            paymentHandler={paymentHandler}
-            userValue={userValue}
-            emailValue={emailValue}
-          />
+          <Paypal paymentHandler={paymentHandler} />
         )}
       </div>
       {modalOpen && (

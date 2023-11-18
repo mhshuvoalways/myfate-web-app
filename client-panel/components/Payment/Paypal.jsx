@@ -1,6 +1,6 @@
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
-const Paypal = ({ paymentHandler, userValue, emailValue }) => {
+const Paypal = ({ paymentHandler }) => {
   return (
     <div className="mt-8">
       <PayPalScriptProvider
@@ -11,9 +11,6 @@ const Paypal = ({ paymentHandler, userValue, emailValue }) => {
         }}
       >
         <PayPalButtons
-          disabled={
-            userValue && emailValue.value && emailValue.submit ? false : true
-          }
           createSubscription={(_data, actions) => {
             return actions.subscription.create({
               plan_id: "P-4233795683088472FMVDGYMA",
