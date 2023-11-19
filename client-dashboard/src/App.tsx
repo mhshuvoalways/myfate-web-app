@@ -8,6 +8,7 @@ import Menu from "./components/menu/Menu";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
 import Notify from "./components/Notify";
+import Loading from "./components/Loading";
 import PrivateRoute from "./privateRoute";
 import "./styles/global.scss";
 
@@ -35,6 +36,7 @@ function App() {
           </div>
         </div>
         <Notify />
+        <Loading />
       </div>
     );
   };
