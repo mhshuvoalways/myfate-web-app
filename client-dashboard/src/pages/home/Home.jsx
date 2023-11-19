@@ -77,6 +77,7 @@ const Home = () => {
             icon="/userIcon.svg"
             title="Energy"
             dataKey="score"
+            dailyContent={energyData?.dailyContent}
           />
         </div>
         <div className="box box3">
@@ -90,6 +91,7 @@ const Home = () => {
             icon="/productIcon.svg"
             title="Mood"
             dataKey="score"
+            dailyContent={moodData?.dailyContent}
           />
         </div>
         <div className="box box4">
@@ -106,6 +108,7 @@ const Home = () => {
             icon="/conversionIcon.svg"
             title="Focus"
             dataKey="score"
+            dailyContent={focusData?.dailyContent}
           />
         </div>
         <div className="box box6">
@@ -119,6 +122,7 @@ const Home = () => {
             icon="/revenueIcon.svg"
             title="Spirit"
             dataKey="score"
+            dailyContent={spiritData?.dailyContent}
           />
         </div>
         <div className="box box7">

@@ -43,8 +43,8 @@ const Index = () => {
       description:
         "For growing businesses looking to handle their sales better",
       planTitle:
-        (selectPrice === "monthly" && "2,350") ||
-        (selectPrice === "quarterly" && "6,695"),
+        (selectPrice === "monthly" && "10") ||
+        (selectPrice === "quarterly" && "25"),
       planTime:
         (selectPrice === "monthly" && "Monthly") ||
         (selectPrice === "quarterly" && "Quarterly"),
@@ -66,8 +66,8 @@ const Index = () => {
       title: "Business+",
       description: "For bigger businesses looking to sell more efficiently",
       planTitle:
-        (selectPrice === "monthly" && "6,750") ||
-        (selectPrice === "quarterly" && "19,235"),
+        (selectPrice === "monthly" && "30") ||
+        (selectPrice === "quarterly" && "45"),
       planTime:
         (selectPrice === "monthly" && "Monthly") ||
         (selectPrice === "quarterly" && "Quarterly"),

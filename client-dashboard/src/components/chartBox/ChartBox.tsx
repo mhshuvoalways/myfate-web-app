@@ -10,6 +10,7 @@ type Props = {
   number: number;
   percentage: string;
   chartData: object[];
+  dailyContent: string;
 };
 
 const ChartBox = (props: Props) => {
@@ -44,6 +45,7 @@ const ChartBox = (props: Props) => {
             </LineChart>
           </ResponsiveContainer>
         </div>
+        <small className="pb-10">{props.dailyContent}</small>
         <div className="texts">
           <span
             className="percentage"

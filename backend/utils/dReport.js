@@ -60,7 +60,7 @@ module.exports = { getWeekdayName, loadSentencesFromDb };
 
 // Assuming loadSentencesFromDb and other required imports are already defined
 
-function generateContent(score, section, filePath = "dReportDB.json") {
+function generateContent(score, section, filePath = "./dReportDB.json") {
   // Define mean and standard deviation for each section
   const sectionStats = {
     energy: { mean: 61.46, sd: 3.14 },
