@@ -1,5 +1,6 @@
 // Import the required modules
 const fs = require("fs");
+const path = require("path");
 
 // Function to get the name of the weekday
 function getWeekdayName(weekdayNumber) {
@@ -59,8 +60,9 @@ function loadSentencesFromDb(filePath, section, score) {
 module.exports = { getWeekdayName, loadSentencesFromDb };
 
 // Assuming loadSentencesFromDb and other required imports are already defined
+const filePathDirectory = path.join(__dirname, "dReportDB.json");
 
-function generateContent(score, section, filePath = "./dReportDB.json") {
+function generateContent(score, section, filePath = filePathDirectory) {
   // Define mean and standard deviation for each section
   const sectionStats = {
     energy: { mean: 61.46, sd: 3.14 },
@@ -100,6 +102,7 @@ function generateContent(score, section, filePath = "./dReportDB.json") {
 module.exports = { generateContent };
 
 const { randomInt } = require("crypto"); // For secure random number generation
+const { log } = require("console");
 
 function generateScoresWithEnergyTrend(startDate, i) {
   // Calculate current date and day of the week
