@@ -9,11 +9,13 @@ const {
   getMyAccount,
   deleteUser,
   updateUser,
+  loginClientDashboard,
 } = require("../controllers/userController");
 const authenticate = require("../middlewares/authenticate");
 
 router.post("/register", register);
 router.post("/login", login);
+router.post("/loginclientdashboard", loginClientDashboard);
 router.post("/registergoogle", registerGoogle);
 router.post("/findmail", findMail);
 router.post("/recoverpass", recoverPassword);

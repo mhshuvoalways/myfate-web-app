@@ -149,8 +149,9 @@ const registerGoogle = (req, res) => {
     });
 };
 
-const login = (req, res) => {
+const loginCommon = (req, res) => {
   const { email, password } = req.body;
+  console.log(req.body);
   const validation = loginValidation({ email, password });
   if (validation.isValid) {
     User.findOne({ email })
@@ -201,6 +202,27 @@ const login = (req, res) => {
   } else {
     res.status(400).json(validation.error);
   }
+};
+
+const login = (req, res) => {
+  loginCommon(req, res);
+};
+
+const loginClientDashboard = (req, res) => {
+  const { email } = req.body;
+  User.findOne({ email: email })
+    .then((response) => {
+      if (response?.subscriptionPlan.planType) {
+        loginCommon(req, res);
+      } else {
+        res.status(400).json({
+          message: "Please purchase a plan!",
+        });
+      }
+    })
+    .catch(() => {
+      serverError(res);
+    });
 };
 
 const findMail = (req, res) => {
@@ -371,4 +393,5 @@ module.exports = {
   getMyAccount,
   deleteUser,
   updateUser,
+  loginClientDashboard,
 };

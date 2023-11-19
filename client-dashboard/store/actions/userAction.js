@@ -9,7 +9,7 @@ import enableBtn from "./btnAction";
 export const userLogin = (user, navigate) => (dispatch) => {
   dispatch(enableBtn(false));
   axios
-    .post("/user/login", user)
+    .post("/user/loginclientdashboard", user)
     .then((response) => {
       dispatch(enableBtn(true));
       setAuthToken(response.data.token);
