@@ -54,11 +54,11 @@ const ChartBox = (props: Props) => {
             {props.percentage &&
               (Number(props.percentage) < 0
                 ? "0%"
-                : `${props.percentage.toString().slice(2, 4)}%.${
+                : `${props.percentage.toString().slice(2, 4)}.${
                     props.percentage.length === 5
                       ? props.percentage.toString().slice(4)
                       : 0
-                  }`)}
+                  }%`)}
           </span>
           <span className="duration">This month</span>
         </div>
