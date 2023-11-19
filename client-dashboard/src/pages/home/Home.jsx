@@ -9,7 +9,6 @@ import Form from "../../components/form";
 import { barChartBoxRevenue, barChartBoxVisit } from "../../data";
 import "./home.scss";
 import moment from "moment";
-import axios from "../../../utils/axios";
 import { useDispatch, useSelector } from "react-redux";
 import { getReport } from "../../../store/actions/reportAction";
 
