@@ -41,7 +41,7 @@ export const userLoginwithGoogle = (access_token, navigate) => (dispatch) => {
     .then((response) => response.json())
     .then((response) => {
       axios
-        .post("/user/registergoogle", response)
+        .post("/user/registerclientgoogle", response)
         .then((finalRes) => {
           setAuthToken(finalRes.data.token);
           localStorage.setItem("token", finalRes.data.token);

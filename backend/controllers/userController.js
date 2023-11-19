@@ -77,7 +77,7 @@ const register = (req, res) => {
   }
 };
 
-const registerGoogle = (req, res) => {
+const registerClientCommon = (req, res) => {
   const { email } = req.body;
   User.findOne({ email })
     .then((findUser) => {
@@ -149,9 +149,29 @@ const registerGoogle = (req, res) => {
     });
 };
 
+const registerGoogle = (req, res) => {
+  registerClientCommon(req, res);
+};
+
+const registerClientGoogle = (req, res) => {
+  const { email } = req.body;
+  User.findOne({ email: email })
+    .then((response) => {
+      if (response?.subscriptionPlan.planType) {
+        registerClientCommon(req, res);
+      } else {
+        res.status(400).json({
+          message: "Please purchase a plan!",
+        });
+      }
+    })
+    .catch(() => {
+      serverError(res);
+    });
+};
+
 const loginCommon = (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body);
   const validation = loginValidation({ email, password });
   if (validation.isValid) {
     User.findOne({ email })
@@ -394,4 +414,5 @@ module.exports = {
   deleteUser,
   updateUser,
   loginClientDashboard,
+  registerClientGoogle,
 };

@@ -10,10 +10,12 @@ const {
   deleteUser,
   updateUser,
   loginClientDashboard,
+  registerClientGoogle,
 } = require("../controllers/userController");
 const authenticate = require("../middlewares/authenticate");
 
 router.post("/register", register);
+router.post("/registerclientgoogle", registerClientGoogle);
 router.post("/login", login);
 router.post("/loginclientdashboard", loginClientDashboard);
 router.post("/registergoogle", registerGoogle);
