@@ -5,20 +5,20 @@ export const menu = [
     listItems: [
       {
         id: 1,
-        title: "Homepage",
+        title: "Daily Report",
         url: "/",
         icon: "home.svg",
       },
       {
         id: 2,
-        title: "Second page",
-        url: "/second-page",
+        title: "Love",
+        url: "/love",
         icon: "home.svg",
       },
       {
         id: 2,
-        title: "Third page",
-        url: "/third-page",
+        title: "Finance",
+        url: "/finance ",
         icon: "home.svg",
       },
     ],
@@ -28,9 +28,9 @@ export const menu = [
     title: "Login",
     listItems: [
       {
-        id: 2,
+        id: 1,
         title: "Logout",
-        url: "/",
+        url: "/login",
         icon: "logout.svg",
       },
     ],

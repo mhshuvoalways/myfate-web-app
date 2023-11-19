@@ -10,6 +10,8 @@ import { barChartBoxRevenue, barChartBoxVisit } from "../../data";
 import "./home.scss";
 import moment from "moment";
 import axios from "../../../utils/axios";
+import { useDispatch, useSelector } from "react-redux";
+import { getReport } from "../../../store/actions/reportAction";
 
 const Home = () => {
   const [energyData, setEnergyData] = useState(null);
@@ -17,43 +19,47 @@ const Home = () => {
   const [focusData, setFocusData] = useState(null);
   const [spiritData, setSpiritData] = useState(null);
 
+  const reportReducer = useSelector((store) => store.reportReducer);
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    axios
-      .get("/report/getreports")
-      .then((res) => {
-        res.data[0].dReport?.Energy.dailyData.forEach((el) => {
-          const parsedDate = moment(el.date);
-          const formattedDate = parsedDate.format("YYYY-MM-DD");
-          if (moment(new Date()).format("YYYY-MM-DD") === formattedDate) {
-            setEnergyData(el);
-          }
-        });
-        res.data[0].dReport?.Mood.dailyData.forEach((el) => {
-          const parsedDate = moment(el.date);
-          const formattedDate = parsedDate.format("YYYY-MM-DD");
-          if (moment(new Date()).format("YYYY-MM-DD") === formattedDate) {
-            setMoodData(el);
-          }
-        });
-        res.data[0].dReport?.Focus.dailyData.forEach((el) => {
-          const parsedDate = moment(el.date);
-          const formattedDate = parsedDate.format("YYYY-MM-DD");
-          if (moment(new Date()).format("YYYY-MM-DD") === formattedDate) {
-            setFocusData(el);
-          }
-        });
-        res.data[0].dReport?.Spirit.dailyData.forEach((el) => {
-          const parsedDate = moment(el.date);
-          const formattedDate = parsedDate.format("YYYY-MM-DD");
-          if (moment(new Date()).format("YYYY-MM-DD") === formattedDate) {
-            setSpiritData(el);
-          }
-        });
-      })
-      .catch((err) => {
-        console.log(err);
+    dispatch(getReport());
+  }, [dispatch]);
+
+  useEffect(() => {
+    const response = reportReducer.dReports;
+    if (response) {
+      response.dReport?.Energy.dailyData.forEach((el) => {
+        const parsedDate = moment(el.date);
+        const formattedDate = parsedDate.format("YYYY-MM-DD");
+        if (moment(new Date()).format("YYYY-MM-DD") === formattedDate) {
+          setEnergyData(el);
+        }
       });
-  }, []);
+      response.dReport?.Mood.dailyData.forEach((el) => {
+        const parsedDate = moment(el.date);
+        const formattedDate = parsedDate.format("YYYY-MM-DD");
+        if (moment(new Date()).format("YYYY-MM-DD") === formattedDate) {
+          setMoodData(el);
+        }
+      });
+      response.dReport?.Focus.dailyData.forEach((el) => {
+        const parsedDate = moment(el.date);
+        const formattedDate = parsedDate.format("YYYY-MM-DD");
+        if (moment(new Date()).format("YYYY-MM-DD") === formattedDate) {
+          setFocusData(el);
+        }
+      });
+      response.dReport?.Spirit.dailyData.forEach((el) => {
+        const parsedDate = moment(el.date);
+        const formattedDate = parsedDate.format("YYYY-MM-DD");
+        if (moment(new Date()).format("YYYY-MM-DD") === formattedDate) {
+          setSpiritData(el);
+        }
+      });
+    }
+  }, [reportReducer]);
 
   return (
     <div>
@@ -64,7 +70,7 @@ const Home = () => {
         <div className="box box2">
           <ChartBox
             percentage={energyData?.dailyAnnualdiff[0]}
-            number={energyData?.averageScore}
+            number={Number(energyData?.averageScore)}
             chartData={energyData?.scores.map((el) => {
               return { score: el };
             })}
@@ -77,7 +83,7 @@ const Home = () => {
         <div className="box box3">
           <ChartBox
             percentage={moodData?.dailyAnnualdiff[0]}
-            number={moodData?.averageScore}
+            number={Number(moodData?.averageScore)}
             chartData={moodData?.scores.map((el) => {
               return { score: el };
             })}
@@ -93,7 +99,7 @@ const Home = () => {
         <div className="box box5">
           <ChartBox
             percentage={focusData?.dailyAnnualdiff[0]}
-            number={focusData?.averageScore}
+            number={Number(focusData?.averageScore)}
             chartData={focusData?.scores.map((el) => {
               return { score: el };
             })}
@@ -106,7 +112,7 @@ const Home = () => {
         <div className="box box6">
           <ChartBox
             percentage={spiritData?.dailyAnnualdiff[0]}
-            number={spiritData?.averageScore}
+            number={Number(spiritData?.averageScore)}
             chartData={spiritData?.scores.map((el) => {
               return { score: el };
             })}

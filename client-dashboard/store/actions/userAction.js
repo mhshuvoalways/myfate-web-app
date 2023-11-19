@@ -6,29 +6,6 @@ import axios from "../../utils/axios";
 import notiAction from "./notiAction";
 import enableBtn from "./btnAction";
 
-export const register = (user, navigate) => (dispatch) => {
-  dispatch(enableBtn(false));
-  axios
-    .post("/user/register", user)
-    .then((response) => {
-      dispatch(enableBtn(true));
-      setAuthToken(response.data.token);
-      typeof window !== "undefined" &&
-        localStorage.setItem("token", response.data.token);
-      navigate.push("/");
-    })
-    .catch((err) => {
-      dispatch({
-        type: Types.REGISTER_ERROR,
-        payload: {
-          error: err.response.data,
-        },
-      });
-      dispatch(enableBtn(true));
-      dispatch(notiAction(err.response?.data.message));
-    });
-};
-
 export const userLogin = (user, navigate) => (dispatch) => {
   dispatch(enableBtn(false));
   axios
@@ -36,9 +13,9 @@ export const userLogin = (user, navigate) => (dispatch) => {
     .then((response) => {
       dispatch(enableBtn(true));
       setAuthToken(response.data.token);
-      typeof window !== "undefined" &&
-        localStorage.setItem("token", response.data.token);
-      navigate.push("/");
+      localStorage.setItem("token", response.data.token);
+      dispatch(isAuthenticate());
+      navigate("/");
     })
     .catch((err) => {
       dispatch({
@@ -67,9 +44,8 @@ export const userLoginwithGoogle = (access_token, navigate) => (dispatch) => {
         .post("/user/registergoogle", response)
         .then((finalRes) => {
           setAuthToken(finalRes.data.token);
-          typeof window !== "undefined" &&
-            localStorage.setItem("token", finalRes.data.token);
-          navigate.push("/");
+          localStorage.setItem("token", finalRes.data.token);
+          navigate("/");
           dispatch(enableBtn(true));
         })
         .catch((err) => {
@@ -89,7 +65,7 @@ export const userLoginwithGoogle = (access_token, navigate) => (dispatch) => {
 };
 
 export const isAuthenticate = () => (dispatch) => {
-  const token = typeof window !== "undefined" && localStorage.getItem("token");
+  const token = localStorage.getItem("token");
   if (token) {
     var decoded = jwtDecode(token);
     var dateNow = new Date();
@@ -100,7 +76,8 @@ export const isAuthenticate = () => (dispatch) => {
           isAuthenticate: false,
         },
       });
-      typeof window !== "undefined" && localStorage.removeItem("token");
+      localStorage.removeItem("token");
+      setAuthToken("");
     } else {
       dispatch({
         type: Types.ISAUTHENTICATE,
@@ -138,34 +115,6 @@ export const getMyAccount = () => (dispatch) => {
     });
 };
 
-export const userUpdate = (userValue, router) => (dispatch) => {
-  dispatch(enableBtn(false));
-  dispatch(notiAction(""));
-  axios
-    .put("/user/updateuser", userValue)
-    .then((res) => {
-      axios
-        .post("/report/addreport")
-        .then(() => {
-          dispatch({
-            type: Types.USER_UPDATE,
-            payload: res.data.response,
-          });
-          dispatch(notiAction(res.data.message));
-          dispatch(enableBtn(true));
-          router.push("/");
-        })
-        .catch((err) => {
-          dispatch(notiAction(err.response?.data.message));
-          dispatch(enableBtn(true));
-        });
-    })
-    .catch((err) => {
-      dispatch(notiAction(err.response?.data.message));
-      dispatch(enableBtn(true));
-    });
-};
-
 export const logout = (navigate) => (dispatch) => {
   dispatch({
     type: Types.LOGOUT_USER,
@@ -176,7 +125,7 @@ export const logout = (navigate) => (dispatch) => {
   dispatch({
     type: CLEAR_DATA,
   });
-  typeof window !== "undefined" && localStorage.removeItem("token");
+  localStorage.removeItem("token");
   setAuthToken("");
-  navigate.push("/login");
+  navigate("/login");
 };

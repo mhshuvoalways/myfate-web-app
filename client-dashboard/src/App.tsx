@@ -1,19 +1,30 @@
-import Home from "./pages/home/Home";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Navbar from "./components/navbar/Navbar";
-import Menu from "./components/menu/Menu";
-import Login from "./pages/login/Login";
-import "./styles/global.scss";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { isAuthenticate } from "../store/actions/userAction";
+import Login from "./pages/Auth/Login";
+import Menu from "./components/menu/Menu";
+import Navbar from "./components/navbar/Navbar";
+import Home from "./pages/home/Home";
+import Notify from "./components/Notify";
+import PrivateRoute from "./privateRoute";
+import "./styles/global.scss";
 
 const queryClient = new QueryClient();
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(isAuthenticate());
+  }, [dispatch]);
+
   const Layout = () => {
     return (
       <div className="main">
         <Navbar />
-        <div className="container">
+        <div className="mycontainer">
           <div className="menuContainer">
             <Menu />
           </div>
@@ -23,6 +34,7 @@ function App() {
             </QueryClientProvider>
           </div>
         </div>
+        <Notify />
       </div>
     );
   };
@@ -34,15 +46,27 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: (
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          ),
         },
         {
-          path: "/second-page",
-          element: <Home />,
+          path: "/love",
+          element: (
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          ),
         },
         {
-          path: "/third-page",
-          element: <Home />,
+          path: "/finance",
+          element: (
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          ),
         },
       ],
     },

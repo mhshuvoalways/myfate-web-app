@@ -3,7 +3,11 @@ const { Schema, model } = mongoose;
 
 const reportSchema = new Schema(
   {
-    dReportWritings: Object,
+    userId: {
+      type: mongoose.Types.ObjectId,
+      ref: "user",
+    },
+    dReportWritings: Array,
     dReport: Object,
   },
   {

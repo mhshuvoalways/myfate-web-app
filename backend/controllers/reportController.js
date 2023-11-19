@@ -1,7 +1,16 @@
 const Report = require("../Model/Report");
+const DReport = require("../utils/dReport");
 
-const getReports = (req, res) => {
-  Report.find()
+const addReport = (req, res) => {
+  const { _id } = req.user;
+  const { dReportWritings, dReport } = JSON.parse(DReport);
+  const newObj = {
+    dReportWritings,
+    dReport,
+    userId: _id,
+  };
+  new Report(newObj)
+    .save()
     .then((response) => {
       res.status(200).json(response);
     })
@@ -10,6 +19,18 @@ const getReports = (req, res) => {
     });
 };
 
+const getReports = (req, res) => {
+  const { _id } = req.user;
+  Report.find({ userId: _id })
+    .then((response) => {
+      res.status(200).json(response[response.length - 1]);
+    })
+    .catch(() => {
+      serverError(res);
+    });
+};
+
 module.exports = {
+  addReport,
   getReports,
 };

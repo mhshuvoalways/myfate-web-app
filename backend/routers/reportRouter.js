@@ -1,6 +1,8 @@
 const router = require("express").Router();
-const { getReports } = require("../controllers/reportController");
+const { addReport, getReports } = require("../controllers/reportController");
+const authenticate = require("../middlewares/authenticate");
 
-router.get("/getreports", getReports);
+router.post("/addreport", authenticate, addReport);
+router.get("/getreports", authenticate, getReports);
 
 module.exports = router;
