@@ -7,6 +7,8 @@ import Login from "./pages/Auth/Login";
 import Menu from "./components/menu/Menu";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
+import Love from './pages/love/Love'
+import Finance from './pages/finance/Finance'
 import Notify from "./components/Notify";
 import Loading from "./components/Loading";
 import PrivateRoute from "./privateRoute";
@@ -58,7 +60,7 @@ function App() {
           path: "/love",
           element: (
             <PrivateRoute>
-              <Home />
+              <Love />
             </PrivateRoute>
           ),
         },
@@ -66,7 +68,7 @@ function App() {
           path: "/finance",
           element: (
             <PrivateRoute>
-              <Home />
+              <Finance />
             </PrivateRoute>
           ),
         },

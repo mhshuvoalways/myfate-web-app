@@ -1,15 +1,15 @@
-const Report = require("../Model/DReport");
-const DReport = require("../utils/dReport/dReport");
+const Finance = require("../Model/Finance");
+const FinanceReport = require("../utils/finance/financeAPI");
 
 const addReport = (req, res) => {
   const { _id } = req.user;
-  const { dReportWritings, dReport } = JSON.parse(DReport);
+  const { financeReportWritings, financeReport } = JSON.parse(FinanceReport);
   const newObj = {
-    dReportWritings,
-    dReport,
+    financeReportWritings,
+    financeReport,
     userId: _id,
   };
-  new Report(newObj)
+  new Finance(newObj)
     .save()
     .then((response) => {
       res.status(200).json(response);
@@ -21,7 +21,7 @@ const addReport = (req, res) => {
 
 const getReports = (req, res) => {
   const { _id } = req.user;
-  Report.find({ userId: _id })
+  Finance.find({ userId: _id })
     .then((response) => {
       res.status(200).json(response[response.length - 1]);
     })

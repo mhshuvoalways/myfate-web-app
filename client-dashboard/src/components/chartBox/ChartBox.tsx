@@ -45,7 +45,7 @@ const ChartBox = (props: Props) => {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <small className="pb-10 pt-5">{props.dailyContent}</small>
+        <small className="py-12 text-end">{props.dailyContent}</small>
         <div className="texts">
           <span
             className="percentage"

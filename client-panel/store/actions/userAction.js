@@ -138,27 +138,41 @@ export const getMyAccount = () => (dispatch) => {
     });
 };
 
+export const updateAllReports = () => (dispatch) => {
+  axios
+    .post("/report/addreport")
+    .then(() => {})
+    .catch((err) => {
+      dispatch(notiAction(err.response?.data.message));
+    });
+  axios
+    .post("/love/addlove")
+    .then(() => {})
+    .catch((err) => {
+      dispatch(notiAction(err.response?.data.message));
+    });
+  axios
+    .post("/finance/addfinance")
+    .then(() => {})
+    .catch((err) => {
+      dispatch(notiAction(err.response?.data.message));
+    });
+};
+
 export const userUpdate = (userValue, router) => (dispatch) => {
   dispatch(enableBtn(false));
   dispatch(notiAction(""));
   axios
     .put("/user/updateuser", userValue)
     .then((res) => {
-      axios
-        .post("/report/addreport")
-        .then(() => {
-          dispatch({
-            type: Types.USER_UPDATE,
-            payload: res.data.response,
-          });
-          dispatch(notiAction(res.data.message));
-          dispatch(enableBtn(true));
-          router.push("/");
-        })
-        .catch((err) => {
-          dispatch(notiAction(err.response?.data.message));
-          dispatch(enableBtn(true));
-        });
+      dispatch({
+        type: Types.USER_UPDATE,
+        payload: res.data.response,
+      });
+      dispatch(notiAction(res.data.message));
+      dispatch(enableBtn(true));
+      dispatch(updateAllReports());
+      router.push("/");
     })
     .catch((err) => {
       dispatch(notiAction(err.response?.data.message));

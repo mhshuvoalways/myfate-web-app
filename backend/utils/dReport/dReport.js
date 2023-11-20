@@ -335,7 +335,7 @@ function generateDReportForWeek(
     },
   };
 
-  for (let i = 0; i < 28; i++) {
+  for (let i = 0; i < 7; i++) {
     // Each day's data
     const current_date = new Date(startDate.getTime());
     current_date.setUTCDate(startDate.getUTCDate() + i);

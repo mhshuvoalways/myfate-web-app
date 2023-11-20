@@ -9,8 +9,8 @@ import Form from "../../components/form";
 import { barChartBoxRevenue, barChartBoxVisit } from "../../data";
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
-import { getdReport } from "../../../store/actions/reportAction";
-import "./home.scss";
+import { getFinance } from "../../../store/actions/reportAction";
+import "./finance.scss";
 
 const Home = () => {
   const [energyData, setEnergyData] = useState(null);
@@ -23,34 +23,34 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getdReport());
+    dispatch(getFinance());
   }, [dispatch]);
 
   useEffect(() => {
-    const response = reportReducer.dReports;
+    const response = reportReducer.finances;
     if (response) {
-      response.dReport?.Energy.dailyData.forEach((el) => {
+      response.financeReport?.Consistency.dailyData.forEach((el) => {
         const parsedDate = moment(el.date);
         const formattedDate = parsedDate.format("YYYY-MM-DD");
         if (moment(new Date()).format("YYYY-MM-DD") === formattedDate) {
           setEnergyData(el);
         }
       });
-      response.dReport?.Mood.dailyData.forEach((el) => {
+      response.financeReport?.Decision.dailyData.forEach((el) => {
         const parsedDate = moment(el.date);
         const formattedDate = parsedDate.format("YYYY-MM-DD");
         if (moment(new Date()).format("YYYY-MM-DD") === formattedDate) {
           setMoodData(el);
         }
       });
-      response.dReport?.Focus.dailyData.forEach((el) => {
+      response.financeReport?.Execution.dailyData.forEach((el) => {
         const parsedDate = moment(el.date);
         const formattedDate = parsedDate.format("YYYY-MM-DD");
         if (moment(new Date()).format("YYYY-MM-DD") === formattedDate) {
           setFocusData(el);
         }
       });
-      response.dReport?.Spirit.dailyData.forEach((el) => {
+      response.financeReport?.Insight.dailyData.forEach((el) => {
         const parsedDate = moment(el.date);
         const formattedDate = parsedDate.format("YYYY-MM-DD");
         if (moment(new Date()).format("YYYY-MM-DD") === formattedDate) {
@@ -75,7 +75,7 @@ const Home = () => {
             })}
             color="#8884d8"
             icon="/userIcon.svg"
-            title="Energy"
+            title="Consistency"
             dataKey="score"
             dailyContent={energyData?.dailyContent}
           />
@@ -89,7 +89,7 @@ const Home = () => {
             })}
             color="skyblue"
             icon="/productIcon.svg"
-            title="Mood"
+            title="Decision"
             dataKey="score"
             dailyContent={moodData?.dailyContent}
           />
@@ -106,7 +106,7 @@ const Home = () => {
             })}
             color="gold"
             icon="/conversionIcon.svg"
-            title="Focus"
+            title="Execution"
             dataKey="score"
             dailyContent={focusData?.dailyContent}
           />
@@ -120,7 +120,7 @@ const Home = () => {
             })}
             color="teal"
             icon="/revenueIcon.svg"
-            title="Spirit"
+            title="Insight"
             dataKey="score"
             dailyContent={spiritData?.dailyContent}
           />
