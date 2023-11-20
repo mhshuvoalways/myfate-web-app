@@ -69,13 +69,13 @@ const Home = () => {
         <div className="box box2">
           <ChartBox
             percentage={energyData?.dailyAnnualdiff[0]}
-            number={Number(energyData?.averageScore)}
+            strategy={"Perfect"}
             chartData={energyData?.scores.map((el) => {
               return { score: el };
             })}
             color="#8884d8"
             icon="/userIcon.svg"
-            title="Perfect"
+            title="Energy"
             dataKey="score"
             dailyContent={energyData?.dailyContent}
           />
@@ -83,13 +83,13 @@ const Home = () => {
         <div className="box box3">
           <ChartBox
             percentage={moodData?.dailyAnnualdiff[0]}
-            number={Number(moodData?.averageScore)}
+            strategy={"Moderate"}
             chartData={moodData?.scores.map((el) => {
               return { score: el };
             })}
             color="skyblue"
             icon="/productIcon.svg"
-            title="Moderate"
+            title="Mood"
             dataKey="score"
             dailyContent={moodData?.dailyContent}
           />
@@ -100,13 +100,13 @@ const Home = () => {
         <div className="box box5">
           <ChartBox
             percentage={focusData?.dailyAnnualdiff[0]}
-            number={Number(focusData?.averageScore)}
+            strategy={"Perfect"}
             chartData={focusData?.scores.map((el) => {
               return { score: el };
             })}
             color="gold"
             icon="/conversionIcon.svg"
-            title="Perfect"
+            title="Focus"
             dataKey="score"
             dailyContent={focusData?.dailyContent}
           />
@@ -114,13 +114,13 @@ const Home = () => {
         <div className="box box6">
           <ChartBox
             percentage={spiritData?.dailyAnnualdiff[0]}
-            number={Number(spiritData?.averageScore)}
+            strategy={"Need Improvement"}
             chartData={spiritData?.scores.map((el) => {
               return { score: el };
             })}
             color="teal"
             icon="/revenueIcon.svg"
-            title="Need Improvement"
+            title="Spirit"
             dataKey="score"
             dailyContent={spiritData?.dailyContent}
           />
