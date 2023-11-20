@@ -3,17 +3,16 @@ const path = require("path");
 
 function getWeekdayName(weekdayNumber) {
   const weekdays = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   return weekdays[weekdayNumber];
 }
-
 function roundTo(value, decimals) {
   return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
 }
@@ -56,9 +55,9 @@ function loadSentencesFromDb(filePath, section, score) {
 }
 
 module.exports = { getWeekdayName, loadSentencesFromDb };
+//score2eval
 
-const filePathDirectory = path.join(__dirname, "financeDB.json");
-function generateContent(score, section, filePath = filePathDirectory) {
+function scoreEval(score, section) {
   // Define mean and standard deviation for each section
   const sectionStats = {
     insight: { mean: 60.11, sd: 2 },
@@ -80,12 +79,29 @@ function generateContent(score, section, filePath = filePathDirectory) {
   // Determine score range
   let scoreRange;
   if (score < veryLowThreshold) {
-    scoreRange = "50"; // Very Low
+    scoreRange = "Challenging"; // Very Low
   } else if (score < lowThreshold) {
-    scoreRange = "60"; // Low
+    scoreRange = "Fair"; // Low
   } else if (score < highThreshold) {
-    scoreRange = "70"; // Medium
+    scoreRange = "Pleasant"; // Medium
   } else if (score < veryHighThreshold) {
+    scoreRange = "Great"; // High
+  } else {
+    scoreRange = "Perfect"; // Very High
+  }
+  return scoreRange;
+}
+
+const filePathDirectory = path.join(__dirname, "financeDB.json");
+function generateContent(score, section, filePath = filePathDirectory) {
+  // Determine score range
+  if (scoreEval(score, section) == "Challenging") {
+    scoreRange = "50"; // Very Low
+  } else if (scoreEval(score, section) == "Fair") {
+    scoreRange = "60"; // Low
+  } else if (scoreEval(score, section) == "Pleasant") {
+    scoreRange = "70"; // Medium
+  } else if (scoreEval(score, section) == "Great") {
     scoreRange = "80"; // High
   } else {
     scoreRange = "90"; // Very High
@@ -321,7 +337,7 @@ function generateFinanceReportForWeek(
     },
   };
 
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 10; i++) {
     // Each day's data
     const current_date = new Date(startDate.getTime());
     current_date.setUTCDate(startDate.getUTCDate() + i);
@@ -334,6 +350,7 @@ function generateFinanceReportForWeek(
       averageScore: 0,
       dailyAnnualdiff: [],
       dailyContent: "",
+      scoreEval: "",
     };
 
     // Insight
@@ -344,6 +361,7 @@ function generateFinanceReportForWeek(
       "insight"
     );
     dayData["dailyAnnualdiff"] = [roundTo(randomFloat(-0.15, 0.29), 3)];
+    dayData["scoreEval"] = scoreEval(dayData["averageScore"], "insight");
     financeReportData["financeReport"]["Insight"]["dailyData"].push({
       ...dayData,
     });
@@ -355,6 +373,7 @@ function generateFinanceReportForWeek(
       "decision"
     );
     dayData["dailyAnnualdiff"] = [roundTo(randomFloat(-0.15, 0.29), 3)];
+    dayData["scoreEval"] = scoreEval(dayData["averageScore"], "decision");
     financeReportData["financeReport"]["Decision"]["dailyData"].push({
       ...dayData,
     });
@@ -367,6 +386,7 @@ function generateFinanceReportForWeek(
       "execution"
     );
     dayData["dailyAnnualdiff"] = [roundTo(randomFloat(-0.15, 0.29), 3)];
+    dayData["scoreEval"] = scoreEval(dayData["averageScore"], "execution");
     financeReportData["financeReport"]["Execution"]["dailyData"].push({
       ...dayData,
     });
@@ -379,6 +399,7 @@ function generateFinanceReportForWeek(
       "consistency"
     );
     dayData["dailyAnnualdiff"] = [roundTo(randomFloat(-0.15, 0.29), 3)];
+    dayData["scoreEval"] = scoreEval(dayData["averageScore"], "consistency");
     financeReportData["financeReport"]["Consistency"]["dailyData"].push({
       ...dayData,
     });
@@ -399,7 +420,7 @@ const financeReportWeekData = generateFinanceReportForWeek(
   generateConsistencyScores,
   generateContent
 );
-// Convert the data to a JSON string with indentation
+
 const jsonData = JSON.stringify(financeReportWeekData, null, 4);
 
 module.exports = jsonData;

@@ -5,13 +5,13 @@ const path = require("path");
 // Function to get the name of the weekday
 function getWeekdayName(weekdayNumber) {
   const weekdays = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   return weekdays[weekdayNumber];
 }
@@ -59,10 +59,9 @@ function loadSentencesFromDb(filePath, section, score) {
 
 module.exports = { getWeekdayName, loadSentencesFromDb };
 
-// Assuming loadSentencesFromDb and other required imports are already defined
-const filePathDirectory = path.join(__dirname, "dReportDB.json");
+//score2eval
 
-function generateContent(score, section, filePath = filePathDirectory) {
+function scoreEval(score, section) {
   // Define mean and standard deviation for each section
   const sectionStats = {
     energy: { mean: 61.46, sd: 3.14 },
@@ -84,12 +83,29 @@ function generateContent(score, section, filePath = filePathDirectory) {
   // Determine score range
   let scoreRange;
   if (score < veryLowThreshold) {
-    scoreRange = "50"; // Very Low
+    scoreRange = "Challenging"; // Very Low
   } else if (score < lowThreshold) {
-    scoreRange = "60"; // Low
+    scoreRange = "Fair"; // Low
   } else if (score < highThreshold) {
-    scoreRange = "70"; // Medium
+    scoreRange = "Pleasant"; // Medium
   } else if (score < veryHighThreshold) {
+    scoreRange = "Great"; // High
+  } else {
+    scoreRange = "Perfect"; // Very High
+  }
+  return scoreRange;
+}
+
+
+const filePathDirectory = path.join(__dirname, "dReportDB.json");
+function generateContent(score, section, filePath = filePathDirectory) {
+  if (scoreEval(score, section) == "Challenging") {
+    scoreRange = "50"; // Very Low
+  } else if (scoreEval(score, section) == "Fair") {
+    scoreRange = "60"; // Low
+  } else if (scoreEval(score, section) == "Pleasant") {
+    scoreRange = "70"; // Medium
+  } else if (scoreEval(score, section) == "Great") {
     scoreRange = "80"; // High
   } else {
     scoreRange = "90"; // Very High
@@ -102,7 +118,6 @@ function generateContent(score, section, filePath = filePathDirectory) {
 module.exports = { generateContent };
 
 const { randomInt } = require("crypto"); // For secure random number generation
-const { log } = require("console");
 
 function generateScoresWithEnergyTrend(startDate, i) {
   // Calculate current date and day of the week
@@ -335,7 +350,7 @@ function generateDReportForWeek(
     },
   };
 
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 3; i++) {
     // Each day's data
     const current_date = new Date(startDate.getTime());
     current_date.setUTCDate(startDate.getUTCDate() + i);
@@ -348,6 +363,7 @@ function generateDReportForWeek(
       averageScore: 0,
       dailyAnnualdiff: [],
       dailyContent: "",
+      scoreEval: "",
     };
 
     // Generate random scores with trends throughout the day for each section
@@ -358,6 +374,7 @@ function generateDReportForWeek(
       "energy"
     );
     dayData["dailyAnnualdiff"] = [roundTo(randomFloat(-0.15, 0.29), 3)];
+    dayData["scoreEval"] = scoreEval(dayData["averageScore"], "energy");
     dreportData["dReport"]["Energy"]["dailyData"].push({ ...dayData });
 
     // Mood Section
@@ -365,6 +382,7 @@ function generateDReportForWeek(
     dayData["averageScore"] = calculateAverage(dayData["scores"]);
     dayData["dailyContent"] = generateContent(dayData["averageScore"], "mood");
     dayData["dailyAnnualdiff"] = [roundTo(randomFloat(-0.15, 0.29), 3)];
+    dayData["scoreEval"] = scoreEval(dayData["averageScore"], "mood");
     dreportData["dReport"]["Mood"]["dailyData"].push({ ...dayData });
 
     // Focus Section
@@ -372,6 +390,7 @@ function generateDReportForWeek(
     dayData["averageScore"] = calculateAverage(dayData["scores"]);
     dayData["dailyContent"] = generateContent(dayData["averageScore"], "focus");
     dayData["dailyAnnualdiff"] = [roundTo(randomFloat(-0.15, 0.29), 3)];
+    dayData["scoreEval"] = scoreEval(dayData["averageScore"], "focus");
     dreportData["dReport"]["Focus"]["dailyData"].push({ ...dayData });
 
     // Spirit Section
@@ -382,6 +401,7 @@ function generateDReportForWeek(
       "spirit"
     );
     dayData["dailyAnnualdiff"] = [roundTo(randomFloat(-0.15, 0.29), 3)];
+    dayData["scoreEval"] = scoreEval(dayData["averageScore"], "spirit");
     dreportData["dReport"]["Spirit"]["dailyData"].push({ ...dayData });
   }
 
@@ -406,5 +426,4 @@ const dreportWeekData = generateDReportForWeek(
 // Convert the data to a JSON string with indentation
 const jsonData = JSON.stringify(dreportWeekData, null, 4);
 
-// Print the JSON data
 module.exports = jsonData;

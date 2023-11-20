@@ -5,13 +5,13 @@ const path = require("path");
 // Function to get the name of the weekday
 function getWeekdayName(weekdayNumber) {
   const weekdays = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   return weekdays[weekdayNumber];
 }
@@ -59,10 +59,7 @@ function loadSentencesFromDb(filePath, section, score) {
 
 module.exports = { getWeekdayName, loadSentencesFromDb };
 
-// Assuming loadSentencesFromDb and other required imports are already defined
-
-const filePathDirectory = path.join(__dirname, "loveDB.json");
-function generateContent(score, section, filePath = filePathDirectory) {
+function scoreEval(score, section) {
   // Define mean and standard deviation for each section
   const sectionStats = {
     romance: { mean: 69.47, sd: 3.78 },
@@ -84,12 +81,29 @@ function generateContent(score, section, filePath = filePathDirectory) {
   // Determine score range
   let scoreRange;
   if (score < veryLowThreshold) {
-    scoreRange = "50"; // Very Low
+    scoreRange = "Challenging"; // Very Low
   } else if (score < lowThreshold) {
-    scoreRange = "60"; // Low
+    scoreRange = "Fair"; // Low
   } else if (score < highThreshold) {
-    scoreRange = "70"; // Medium
+    scoreRange = "Pleasant"; // Medium
   } else if (score < veryHighThreshold) {
+    scoreRange = "Great"; // High
+  } else {
+    scoreRange = "Perfect"; // Very High
+  }
+  return scoreRange;
+}
+
+const filePathDirectory = path.join(__dirname, "loveDB.json");
+function generateContent(score, section, filePath = filePathDirectory) {
+  // Determine score range
+  if (scoreEval(score, section) == "Challenging") {
+    scoreRange = "50"; // Very Low
+  } else if (scoreEval(score, section) == "Fair") {
+    scoreRange = "60"; // Low
+  } else if (scoreEval(score, section) == "Pleasant") {
+    scoreRange = "70"; // Medium
+  } else if (scoreEval(score, section) == "Great") {
     scoreRange = "80"; // High
   } else {
     scoreRange = "90"; // Very High
@@ -327,7 +341,7 @@ function generateLoveReportForWeek(
     },
   };
 
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 10; i++) {
     // Each day's data
     const current_date = new Date(startDate.getTime());
     current_date.setUTCDate(startDate.getUTCDate() + i);
@@ -340,6 +354,7 @@ function generateLoveReportForWeek(
       averageScore: 0,
       dailyAnnualdiff: [],
       dailyContent: "",
+      scoreEval: "",
     };
 
     // Romance
@@ -350,6 +365,7 @@ function generateLoveReportForWeek(
       "romance"
     );
     dayData["dailyAnnualdiff"] = [roundTo(randomFloat(-0.15, 0.29), 3)];
+    dayData["scoreEval"] = scoreEval(dayData["averageScore"], "romance");
     loveReportData["loveReport"]["Romance"]["dailyData"].push({ ...dayData });
 
     // Intimacy
@@ -360,6 +376,7 @@ function generateLoveReportForWeek(
       "intimacy"
     );
     dayData["dailyAnnualdiff"] = [roundTo(randomFloat(-0.15, 0.29), 3)];
+    dayData["scoreEval"] = scoreEval(dayData["averageScore"], "intimacy");
     loveReportData["loveReport"]["Intimacy"]["dailyData"].push({ ...dayData });
 
     // Connection
@@ -370,6 +387,7 @@ function generateLoveReportForWeek(
       "connection"
     );
     dayData["dailyAnnualdiff"] = [roundTo(randomFloat(-0.15, 0.29), 3)];
+    dayData["scoreEval"] = scoreEval(dayData["averageScore"], "connection");
     loveReportData["loveReport"]["Connection"]["dailyData"].push({
       ...dayData,
     });
@@ -382,6 +400,7 @@ function generateLoveReportForWeek(
       "destiny"
     );
     dayData["dailyAnnualdiff"] = [roundTo(randomFloat(-0.15, 0.29), 3)];
+    dayData["scoreEval"] = scoreEval(dayData["averageScore"], "destiny");
     loveReportData["loveReport"]["Destiny"]["dailyData"].push({ ...dayData });
   }
 

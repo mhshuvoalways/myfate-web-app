@@ -75,7 +75,7 @@ const Home = () => {
             })}
             color="#8884d8"
             icon="/userIcon.svg"
-            title="Consistency"
+            title="Perfect"
             dataKey="score"
             dailyContent={energyData?.dailyContent}
           />
@@ -89,7 +89,7 @@ const Home = () => {
             })}
             color="skyblue"
             icon="/productIcon.svg"
-            title="Decision"
+            title="Moderate"
             dataKey="score"
             dailyContent={moodData?.dailyContent}
           />
@@ -106,7 +106,7 @@ const Home = () => {
             })}
             color="gold"
             icon="/conversionIcon.svg"
-            title="Execution"
+            title="Perfect"
             dataKey="score"
             dailyContent={focusData?.dailyContent}
           />
@@ -120,7 +120,7 @@ const Home = () => {
             })}
             color="teal"
             icon="/revenueIcon.svg"
-            title="Insight"
+            title="Need Improvement"
             dataKey="score"
             dailyContent={spiritData?.dailyContent}
           />

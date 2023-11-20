@@ -4,6 +4,6 @@
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
   "/pricing": "pages/pricing.js",
-  "/payment": "pages/payment.js",
-  "/login": "pages/login.js"
+  "/login": "pages/login.js",
+  "/payment": "pages/payment.js"
 }
