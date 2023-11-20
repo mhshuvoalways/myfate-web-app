@@ -69,7 +69,7 @@ const Home = () => {
         <div className="box box2">
           <ChartBox
             percentage={energyData?.dailyAnnualdiff[0]}
-            strategy={"Perfect"}
+            scoreEval={energyData?.scoreEval}
             chartData={energyData?.scores.map((el) => {
               return { score: el };
             })}
@@ -83,7 +83,7 @@ const Home = () => {
         <div className="box box3">
           <ChartBox
             percentage={moodData?.dailyAnnualdiff[0]}
-            strategy={"Moderate"}
+            scoreEval={moodData?.scoreEval}
             chartData={moodData?.scores.map((el) => {
               return { score: el };
             })}
@@ -100,7 +100,7 @@ const Home = () => {
         <div className="box box5">
           <ChartBox
             percentage={focusData?.dailyAnnualdiff[0]}
-            strategy={"Perfect"}
+            scoreEval={focusData?.scoreEval}
             chartData={focusData?.scores.map((el) => {
               return { score: el };
             })}
@@ -114,7 +114,7 @@ const Home = () => {
         <div className="box box6">
           <ChartBox
             percentage={spiritData?.dailyAnnualdiff[0]}
-            strategy={"Need Improvement"}
+            scoreEval={spiritData?.scoreEval}
             chartData={spiritData?.scores.map((el) => {
               return { score: el };
             })}

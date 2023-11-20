@@ -7,7 +7,7 @@ type Props = {
   icon: string;
   title: string;
   dataKey: string;
-  strategy: string;
+  scoreEval: string;
   percentage: string;
   chartData: object[];
   dailyContent: string;
@@ -21,7 +21,7 @@ const ChartBox = (props: Props) => {
           <img src={props.icon} alt="" />
           <span>{props.title}</span>
         </div>
-        <h1>{props.strategy}</h1>
+        <h1>{props.scoreEval}</h1>
         <Link to="/" style={{ color: props.color }}>
           View all
         </Link>
