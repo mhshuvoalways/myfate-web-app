@@ -60,16 +60,6 @@ const Home = () => {
     }
   }, [reportReducer]);
 
-  const chartData = [
-    { time: 8, period: "am" },
-    { time: 11, period: "am" },
-    { time: 2, period: "pm" },
-    { time: 5, period: "pm" },
-    { time: 8, period: "pm" },
-    { time: 11, period: "pm" },
-    { time: 2, period: "am" },
-  ];
-
   return (
     <div>
       <div className="home">
@@ -80,10 +70,11 @@ const Home = () => {
           <ChartBox
             percentage={energyData?.dailyAnnualdiff[0]}
             scoreEval={energyData?.scoreEval}
-            chartData={chartData}
+            chartData={energyData?.scores.map((el) => el)}
             color="#8884d8"
             icon="/userIcon.svg"
             title="Energy"
+            dataKey="score"
             dailyContent={energyData?.dailyContent}
           />
         </div>
@@ -91,10 +82,11 @@ const Home = () => {
           <ChartBox
             percentage={moodData?.dailyAnnualdiff[0]}
             scoreEval={moodData?.scoreEval}
-            chartData={chartData}
+            chartData={moodData?.scores.map((el) => el)}
             color="skyblue"
             icon="/productIcon.svg"
             title="Mood"
+            dataKey="score"
             dailyContent={moodData?.dailyContent}
           />
         </div>
@@ -105,10 +97,11 @@ const Home = () => {
           <ChartBox
             percentage={focusData?.dailyAnnualdiff[0]}
             scoreEval={focusData?.scoreEval}
-            chartData={chartData}
+            chartData={focusData?.scores.map((el) => el)}
             color="gold"
             icon="/conversionIcon.svg"
             title="Focus"
+            dataKey="score"
             dailyContent={focusData?.dailyContent}
           />
         </div>
@@ -116,10 +109,11 @@ const Home = () => {
           <ChartBox
             percentage={spiritData?.dailyAnnualdiff[0]}
             scoreEval={spiritData?.scoreEval}
-            chartData={chartData}
+            chartData={spiritData?.scores.map((el) => el)}
             color="teal"
             icon="/revenueIcon.svg"
             title="Spirit"
+            dataKey="score"
             dailyContent={spiritData?.dailyContent}
           />
         </div>

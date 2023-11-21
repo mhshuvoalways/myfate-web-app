@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
-import "./chartBox.scss";
-import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts";
+import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
 
 type Props = {
   color: string;
@@ -14,46 +12,32 @@ type Props = {
 
 const ChartBox = (props: Props) => {
   return (
-    <div className="chartBox">
-      <div className="boxInfo">
-        <div className="title">
-          <img src={props.icon} alt="" />
-          <span>{props.title}</span>
-        </div>
-        <h1>{props.scoreEval}</h1>
-        <Link to="/" style={{ color: props.color }}>
-          View all
-        </Link>
+    <>
+      <div className="flex gap-2 items-center justify-between">
+        <img src={props.icon} alt="" />
+        <span>{props.title}</span>
       </div>
-      <div className="chartInfo">
-        <div className="chart">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={props.chartData}>
-              <Tooltip
-                contentStyle={{ background: "#384256", border: "none" }}
-                labelStyle={{ display: "none" }}
-                position={{ x: 0, y: 80 }}
-              />
-              <Line
-                type="monotone"
-                dataKey="time"
-                stroke={props.color}
-                strokeWidth={2}
-                dot={false}
-              />
-              <Line
-                type="monotone"
-                dataKey="period"
-                stroke={props.color}
-                strokeWidth={2}
-                dot={false}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-        <small className="py-12 text-end">{props.dailyContent}</small>
-        <div className="texts">
-          <span
+      <div className="w-full h-40">
+        <ResponsiveContainer width={"100%"} height={"100%"}>
+          <LineChart data={props.chartData}>
+            <Tooltip
+              contentStyle={{ background: "#384256", border: "none" }}
+              position={{ x: 0, y: 80 }}
+            />
+            <XAxis dataKey="time" className="hidden" />
+            <Line
+              type="monotone"
+              dataKey="score"
+              stroke={props.color}
+              strokeWidth={2}
+              dot={false}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="flex justify-between items-end">
+        <div>
+          <p
             className="percentage"
             style={{
               color: Number(props.percentage) < 0 ? "tomato" : "limegreen",
@@ -67,11 +51,18 @@ const ChartBox = (props: Props) => {
                       ? props.percentage.toString().slice(4)
                       : 0
                   }%`)}
-          </span>
-          <span className="duration">This month</span>
+          </p>
+          <small>This month</small>
+        </div>
+        <div>
+          <h1 style={{ color: props.color }} className="text-end">
+            {props.scoreEval}
+          </h1>
+          <small className="text-end">Score Eval</small>
         </div>
       </div>
-    </div>
+      <p className="mt-5 text-xs text-gray-200">{props.dailyContent}</p>
+    </>
   );
 };
 

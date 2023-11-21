@@ -96,7 +96,6 @@ function scoreEval(score, section) {
   return scoreRange;
 }
 
-
 const filePathDirectory = path.join(__dirname, "dReportDB.json");
 function generateContent(score, section, filePath = filePathDirectory) {
   if (scoreEval(score, section) == "Challenging") {
@@ -133,13 +132,13 @@ function generateScoresWithEnergyTrend(startDate, i) {
 
   // Define the score ranges for each time of the day
   const scoreRanges = {
-    0: [51, 55], // 8 AM
-    1: [51, 55], // 11 AM
-    2: [60, 75], // 2 PM
-    3: [60, 75], // 5 PM
-    4: [60, 75], // 8 PM
-    5: [51, 65], // 11 PM
-    6: [51, 65], // 2 AM
+    0: [51, 55, "8AM"], // 8 AM
+    1: [51, 55, "11AM"], // 11 AM
+    2: [60, 75, "2PM"], // 2 PM
+    3: [60, 75, "5PM"], // 5 PM
+    4: [60, 75, "8PM"], // 8 PM
+    5: [51, 65, "11PM"], // 11 PM
+    6: [51, 65, "2AM"], // 2 AM
   };
 
   // Adjust the score range based on the day of the week
@@ -157,14 +156,16 @@ function generateScoresWithEnergyTrend(startDate, i) {
   // Generate scores for each time of the day
   const scores = [];
   for (let timeSlot = 0; timeSlot < 7; timeSlot++) {
-    const [minScore, maxScore] = scoreRanges[timeSlot];
+    const [minScore, maxScore, time] = scoreRanges[timeSlot];
     let adjustedMin = Math.max(51, minScore + dayModifier); // Ensure score is within 51-99
     let adjustedMax = Math.min(99, maxScore + dayModifier); // Ensure score is within 51-99
 
     // Ensure adjustedMin is not greater than adjustedMax
     adjustedMin = Math.min(adjustedMin, adjustedMax);
-
-    scores.push(randomInt(adjustedMin, adjustedMax + 1)); // randomInt is inclusive at min and exclusive at max
+    scores.push({
+      score: randomInt(adjustedMin, adjustedMax + 1),
+      time,
+    }); // randomInt is inclusive at min and exclusive at max
   }
 
   return scores;
@@ -186,13 +187,13 @@ function generateMoodScores(startDate, i) {
 
   // Define the score ranges for each time of the day
   const scoreRanges = {
-    0: [51, 54], // 8 AM
-    1: [55, 59], // 11 AM
-    2: [55, 58], // 2 PM
-    3: [55, 60], // 5 PM
-    4: [80, 90], // 8 PM
-    5: [95, 99], // 11 PM
-    6: [80, 90], // 2 AM
+    0: [51, 54, "8AM"], // 8 AM
+    1: [55, 59, "11AM"], // 11 AM
+    2: [55, 58, "2PM"], // 2 PM
+    3: [55, 60, "5PM"], // 5 PM
+    4: [80, 90, "8PM"], // 8 PM
+    5: [95, 99, "11PM"], // 11 PM
+    6: [80, 90, "2AM"], // 2 AM
   };
 
   // Adjust the score range based on the day of the week
@@ -210,14 +211,17 @@ function generateMoodScores(startDate, i) {
   // Generate scores for each time of the day
   const scores = [];
   for (let i = 0; i < 7; i++) {
-    const [minScore, maxScore] = scoreRanges[i];
+    const [minScore, maxScore, time] = scoreRanges[i];
     let adjustedMin = Math.max(51, Math.min(99, minScore + dayModifier)); // Ensure score is within 51-99
     let adjustedMax = Math.min(99, Math.max(51, maxScore + dayModifier)); // Ensure score is within 51-99
 
     // Ensure adjustedMin is not greater than adjustedMax
     adjustedMin = Math.min(adjustedMin, adjustedMax);
 
-    scores.push(randomInt(adjustedMin, adjustedMax + 1)); // randomInt is inclusive at min and exclusive at max
+    scores.push({
+      score: randomInt(adjustedMin, adjustedMax + 1),
+      time,
+    }); // randomInt is inclusive at min and exclusive at max
   }
 
   return scores;
@@ -239,13 +243,13 @@ function generateFocusScores(startDate, i) {
 
   // Define the score ranges for each time of the day
   const scoreRanges = {
-    0: [70, 80], // 8 AM
-    1: [80, 95], // 11 AM
-    2: [75, 90], // 2 PM
-    3: [65, 75], // 5 PM
-    4: [57, 67], // 8 PM
-    5: [60, 70], // 11 PM
-    6: [65, 70], // 2 AM
+    0: [70, 80, "8AM"], // 8 AM
+    1: [80, 95, "11AM"], // 11 AM
+    2: [75, 90, "2PM"], // 2 PM
+    3: [65, 75, "5PM"], // 5 PM
+    4: [57, 67, "8PM"], // 8 PM
+    5: [60, 70, "11PM"], // 11 PM
+    6: [65, 70, "2AM"], // 2 AM
   };
 
   // Adjust the score range based on the day of the week
@@ -263,14 +267,17 @@ function generateFocusScores(startDate, i) {
   // Generate scores for each time of the day
   const scores = [];
   for (let i = 0; i < 7; i++) {
-    const [minScore, maxScore] = scoreRanges[i];
+    const [minScore, maxScore, time] = scoreRanges[i];
     let adjustedMin = Math.max(51, Math.min(99, minScore + dayModifier)); // Ensure score is within 51-99
     let adjustedMax = Math.min(99, Math.max(51, maxScore + dayModifier)); // Ensure score is within 51-99
 
     // Ensure adjustedMin is not greater than adjustedMax
     adjustedMin = Math.min(adjustedMin, adjustedMax);
 
-    scores.push(randomInt(adjustedMin, adjustedMax + 1)); // randomInt is inclusive at min and exclusive at max
+    scores.push({
+      score: randomInt(adjustedMin, adjustedMax + 1),
+      time,
+    }); // randomInt is inclusive at min and exclusive at max
   }
 
   return scores;
@@ -292,13 +299,13 @@ function generateSpiritScores(startDate, i) {
 
   // Define the score ranges for each time of the day
   const scoreRanges = {
-    0: [60, 70], // 8 AM
-    1: [55, 65], // 11 AM
-    2: [50, 60], // 2 PM
-    3: [60, 70], // 5 PM
-    4: [70, 80], // 8 PM
-    5: [80, 90], // 11 PM
-    6: [75, 85], // 2 AM
+    0: [60, 70, "8AM"], // 8 AM
+    1: [55, 65, "11AM"], // 11 AM
+    2: [50, 60, "2PM"], // 2 PM
+    3: [60, 70, "5PM"], // 5 PM
+    4: [70, 80, "8PM"], // 8 PM
+    5: [80, 90, "11PM"], // 11 PM
+    6: [75, 85, "2AM"], // 2 AM
   };
 
   // Adjust the score range based on the day of the week
@@ -316,14 +323,17 @@ function generateSpiritScores(startDate, i) {
   // Generate scores for each time of the day
   const scores = [];
   for (let i = 0; i < 7; i++) {
-    const [minScore, maxScore] = scoreRanges[i];
+    const [minScore, maxScore, time] = scoreRanges[i];
     let adjustedMin = Math.max(51, Math.min(99, minScore + dayModifier)); // Ensure score is within 51-99
     let adjustedMax = Math.min(99, Math.max(51, maxScore + dayModifier)); // Ensure score is within 51-99
 
     // Ensure adjustedMin is not greater than adjustedMax
     adjustedMin = Math.min(adjustedMin, adjustedMax);
 
-    scores.push(randomInt(adjustedMin, adjustedMax + 1)); // randomInt is inclusive at min and exclusive at max
+    scores.push({
+      score: randomInt(adjustedMin, adjustedMax + 1),
+      time,
+    }); // randomInt is inclusive at min and exclusive at max
   }
 
   return scores;
