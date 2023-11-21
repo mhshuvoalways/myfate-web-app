@@ -6,7 +6,6 @@ type Props = {
   color: string;
   icon: string;
   title: string;
-  dataKey: string;
   scoreEval: string;
   percentage: string;
   chartData: object[];
@@ -28,16 +27,23 @@ const ChartBox = (props: Props) => {
       </div>
       <div className="chartInfo">
         <div className="chart">
-          <ResponsiveContainer width="99%" height="100%">
+          <ResponsiveContainer width="100%" height="100%">
             <LineChart data={props.chartData}>
               <Tooltip
-                contentStyle={{ background: "transparent", border: "none" }}
+                contentStyle={{ background: "#384256", border: "none" }}
                 labelStyle={{ display: "none" }}
-                position={{ x: 10, y: 70 }}
+                position={{ x: 0, y: 80 }}
               />
               <Line
                 type="monotone"
-                dataKey={props.dataKey}
+                dataKey="time"
+                stroke={props.color}
+                strokeWidth={2}
+                dot={false}
+              />
+              <Line
+                type="monotone"
+                dataKey="period"
                 stroke={props.color}
                 strokeWidth={2}
                 dot={false}

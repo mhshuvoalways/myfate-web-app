@@ -60,6 +60,16 @@ const Home = () => {
     }
   }, [reportReducer]);
 
+  const chartData = [
+    { time: 8, period: "am" },
+    { time: 11, period: "am" },
+    { time: 2, period: "pm" },
+    { time: 5, period: "pm" },
+    { time: 8, period: "pm" },
+    { time: 11, period: "pm" },
+    { time: 2, period: "am" },
+  ];
+
   return (
     <div>
       <div className="home">
@@ -70,13 +80,10 @@ const Home = () => {
           <ChartBox
             percentage={energyData?.dailyAnnualdiff[0]}
             scoreEval={energyData?.scoreEval}
-            chartData={energyData?.scores.map((el) => {
-              return { score: el };
-            })}
+            chartData={chartData}
             color="#8884d8"
             icon="/userIcon.svg"
             title="Energy"
-            dataKey="score"
             dailyContent={energyData?.dailyContent}
           />
         </div>
@@ -84,13 +91,10 @@ const Home = () => {
           <ChartBox
             percentage={moodData?.dailyAnnualdiff[0]}
             scoreEval={moodData?.scoreEval}
-            chartData={moodData?.scores.map((el) => {
-              return { score: el };
-            })}
+            chartData={chartData}
             color="skyblue"
             icon="/productIcon.svg"
             title="Mood"
-            dataKey="score"
             dailyContent={moodData?.dailyContent}
           />
         </div>
@@ -101,13 +105,10 @@ const Home = () => {
           <ChartBox
             percentage={focusData?.dailyAnnualdiff[0]}
             scoreEval={focusData?.scoreEval}
-            chartData={focusData?.scores.map((el) => {
-              return { score: el };
-            })}
+            chartData={chartData}
             color="gold"
             icon="/conversionIcon.svg"
             title="Focus"
-            dataKey="score"
             dailyContent={focusData?.dailyContent}
           />
         </div>
@@ -115,13 +116,10 @@ const Home = () => {
           <ChartBox
             percentage={spiritData?.dailyAnnualdiff[0]}
             scoreEval={spiritData?.scoreEval}
-            chartData={spiritData?.scores.map((el) => {
-              return { score: el };
-            })}
+            chartData={chartData}
             color="teal"
             icon="/revenueIcon.svg"
             title="Spirit"
-            dataKey="score"
             dailyContent={spiritData?.dailyContent}
           />
         </div>
