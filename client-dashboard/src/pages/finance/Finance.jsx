@@ -82,7 +82,7 @@ const Home = () => {
           <ChartBox
             percentage={moodData?.dailyAnnualdiff[0]}
             scoreEval={moodData?.scoreEval}
-            chartData={energyData?.scores.map((el) => el)}
+            chartData={moodData?.scores.map((el) => el)}
             color="skyblue"
             icon="/productIcon.svg"
             title="Decision"
@@ -97,7 +97,7 @@ const Home = () => {
           <ChartBox
             percentage={focusData?.dailyAnnualdiff[0]}
             scoreEval={focusData?.scoreEval}
-            chartData={energyData?.scores.map((el) => el)}
+            chartData={focusData?.scores.map((el) => el)}
             color="gold"
             icon="/conversionIcon.svg"
             title="Execution"

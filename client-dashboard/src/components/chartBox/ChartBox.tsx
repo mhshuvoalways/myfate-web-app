@@ -38,7 +38,6 @@ const ChartBox = (props: Props) => {
       <div className="flex justify-between items-end">
         <div>
           <p
-            className="percentage"
             style={{
               color: Number(props.percentage) < 0 ? "tomato" : "limegreen",
             }}
