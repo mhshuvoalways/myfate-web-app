@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.subitem {
+  display: block;
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
