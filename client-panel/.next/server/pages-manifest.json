@@ -4,6 +4,7 @@
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
   "/login": "pages/login.js",
+  "/store-links": "pages/store-links.js",
   "/pricing": "pages/pricing.js",
   "/payment": "pages/payment.js"
 }

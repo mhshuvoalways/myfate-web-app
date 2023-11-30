@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PrivateRoute from "./pages/PrivateRoute";
 import Time from "./pages/Time";
 import DReport from "./pages/DReport";
+import Finance from "./pages/Finance";
+import Love from "./pages/Love";
 import Login from "./pages/Login";
 import Tostify from "./components/utils/Toastify";
 import Loading from "./components/utils/Loading";
@@ -33,6 +35,22 @@ const App = () => {
             element={
               <PrivateRoute>
                 <DReport />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/finance"
+            element={
+              <PrivateRoute>
+                <Finance />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/love"
+            element={
+              <PrivateRoute>
+                <Love />
               </PrivateRoute>
             }
           />

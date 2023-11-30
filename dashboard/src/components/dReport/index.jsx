@@ -2,7 +2,12 @@ import Chatjs from "../chart";
 import Timer from "../timer";
 import SubItem from "../subItem";
 
-const index = () => {
+const index = ({
+  selectSubItemValue,
+  setSelectSubItemValue,
+  selectSubItems,
+  data,
+}) => {
   return (
     <div>
       <p className="text-5xl">
@@ -19,7 +24,7 @@ const index = () => {
           </div>
           <p className="text-5xl mt-10">Total</p>
           <div className="mt-10">
-            <Chatjs />
+            <Chatjs data={data} />
           </div>
           <p className="font-semibold text-xl mt-5">
             Your dialogues today are building bridges that will span the test of
@@ -37,7 +42,11 @@ const index = () => {
         <div className="w-full lg:w-5/12 mt-0 lg:mt-16">
           <Timer />
           <div className="subitem">
-            <SubItem />
+            <SubItem
+              selectSubItemValue={selectSubItemValue}
+              setSelectSubItemValue={setSelectSubItemValue}
+              selectSubItems={selectSubItems}
+            />
           </div>
         </div>
       </div>

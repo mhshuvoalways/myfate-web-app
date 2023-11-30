@@ -3,11 +3,11 @@ import moment from "moment";
 import Sidebar from "../components/sidebar";
 import CalendarCompo from "../components/dReport";
 import { useDispatch, useSelector } from "react-redux";
-import { getdReport } from "../../store/actions/reportAction";
+import { getLoves } from "../../store/actions/reportAction";
 
 const Calendar = () => {
   const [selectSubItems, setSelectSubItems] = useState(null);
-  const [selectSubItemValue, setSelectSubItemValue] = useState("Energy");
+  const [selectSubItemValue, setSelectSubItemValue] = useState("Romance");
   const [data, setData] = useState(null);
 
   const reportReducer = useSelector((store) => store.reportReducer);
@@ -15,14 +15,14 @@ const Calendar = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getdReport());
+    dispatch(getLoves());
   }, [dispatch]);
 
-  const response = reportReducer.dReports;
+  const response = reportReducer.loves;
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getSub = (sub) => {
     if (response) {
-      const subItem = response?.dReport?.[sub].dailyData;
+      const subItem = response.loveReport?.[sub].dailyData;
       subItem.forEach((el) => {
         const parsedDate = moment(el.date);
         const formattedDate = parsedDate.format("YYYY-MM-DD");
@@ -38,8 +38,10 @@ const Calendar = () => {
   }, [getSub, selectSubItemValue]);
 
   useEffect(() => {
-    setSelectSubItems(response?.dReport);
-  }, [response?.dReport]);
+    if (response) {
+      setSelectSubItems(response.loveReport);
+    }
+  }, [response]);
 
   return (
     <Sidebar>

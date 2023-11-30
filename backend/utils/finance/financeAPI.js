@@ -129,13 +129,13 @@ function generateInsightScores(startDate, i) {
 
   // Define score ranges for each time of the day
   const scoreRanges = {
-    0: [35, 45, "8AM"], // 8 AM
-    1: [55, 65, "11AM"], // 11 AM
-    2: [50, 60, "2PM"], // 2 PM
-    3: [45, 55, "5PM"], // 5 PM
-    4: [65, 75, "8PM"], // 8 PM
-    5: [75, 85, "11PM"], // 11 PM
-    6: [25, 35, "2AM"], // 2 AM
+    0: [35, 45, 8], // 8 AM
+    1: [55, 65, 11], // 11 AM
+    2: [50, 60, 2], // 2 PM
+    3: [45, 55, 17], // 5 PM
+    4: [65, 75, 20], // 8 PM
+    5: [75, 85, 23], // 11 PM
+    6: [25, 35, 2], // 2 AM
   };
 
   // Adjust the score range based on the day of the week
@@ -182,13 +182,13 @@ function generateDecisionScores(startDate, i) {
 
   // Define score ranges for each time of the day
   const scoreRanges = {
-    0: [45, 55, "8AM"], // 8 AM
-    1: [75, 85, "11AM"], // 11 AM
-    2: [55, 65, "2PM"], // 2 PM
-    3: [65, 75, "5PM"], // 5 PM
-    4: [50, 60, "8PM"], // 8 PM
-    5: [35, 45, "11PM"], // 11 PM
-    6: [20, 30, "2AM"], // 2 AM
+    0: [45, 55, 8], // 8 AM
+    1: [75, 85, 11], // 11 AM
+    2: [55, 65, 2], // 2 PM
+    3: [65, 75, 17], // 5 PM
+    4: [50, 60, 20], // 8 PM
+    5: [35, 45, 23], // 11 PM
+    6: [20, 30, 2], // 2 AM
   };
 
   // Adjust the score range based on the day of the week
@@ -235,13 +235,13 @@ function generateExecutionScores(startDate, i) {
 
   // Define score ranges for each time of the day
   const scoreRanges = {
-    0: [55, 65], // 8 AM
-    1: [80, 90], // 11 AM
-    2: [60, 70], // 2 PM
-    3: [50, 60], // 5 PM
-    4: [35, 45], // 8 PM
-    5: [25, 35], // 11 PM
-    6: [15, 25], // 2 AM
+    0: [55, 65, 8], // 8 AM
+    1: [80, 90, 11], // 11 AM
+    2: [60, 70, 14], // 2 PM
+    3: [50, 60, 17], // 5 PM
+    4: [35, 45, 20], // 8 PM
+    5: [25, 35, 23], // 11 PM
+    6: [15, 25, 2], // 2 AM
   };
 
   // Adjust the score range based on the day of the week
@@ -288,13 +288,13 @@ function generateConsistencyScores(startDate, i) {
 
   // Define score ranges for each time of the day
   const scoreRanges = {
-    0: [65, 75, "8AM"], // 8 AM
-    1: [75, 85, "11AM"], // 11 AM
-    2: [70, 80, "2PM"], // 2 PM
-    3: [60, 70, "5PM"], // 5 PM
-    4: [45, 55, "8PM"], // 8 PM
-    5: [35, 45, "11PM"], // 11 PM
-    6: [25, 35, "2AM"], // 2 AM
+    0: [65, 75, 8], // 8 AM
+    1: [75, 85, 11], // 11 AM
+    2: [70, 80, 2], // 2 PM
+    3: [60, 70, 17], // 5 PM
+    4: [45, 55, 20], // 8 PM
+    5: [35, 45, 23], // 11 PM
+    6: [25, 35, 2], // 2 AM
   };
 
   // Adjust the score range based on the day of the week
