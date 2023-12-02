@@ -17,14 +17,14 @@ const SidebarHeader = ({ children }) => {
   return (
     <div className="sm:flex">
       <div
-        className={`bg-gray-900 text-gray-100 shadow-lg h-auto sm:h-screen sm:flex items-center justify-center fixed bottom-0 left-0 right-0 sm:right-auto sm:bottom-auto z-50`}
+        className={`bg-gray-900 text-gray-100 shadow-lg h-auto sm:h-screen flex items-center justify-center fixed bottom-0 left-0 right-0 sm:right-auto sm:bottom-auto z-50 w-full sm:w-[6%]`}
       >
-        <ul className="list-none flex sm:block justify-between w-full sm:w-auto px-10 sm:px-4 py-2 sm:space-y-5">
+        <ul className="list-none flex sm:block justify-between w-10/12 sm:w-auto px-0 sm:px-4 py-2 sm:space-y-5">
           <li>
             <Link to="/">
               <p>
                 <CiClock1
-                  className={`text-4xl sm:text-5xl rounded-xl p-1 ${
+                  className={`text-4xl rounded-xl p-1 ${
                     location.pathname === "/" && "bg-gray-600"
                   }`}
                 />
@@ -35,7 +35,7 @@ const SidebarHeader = ({ children }) => {
             <Link to="/d-report">
               <p>
                 <CiCalendar
-                  className={`text-4xl sm:text-5xl rounded-xl p-1 ${
+                  className={`text-4xl rounded-xl p-1 ${
                     location.pathname === "/d-report" && "bg-gray-600"
                   }`}
                 />
@@ -46,7 +46,7 @@ const SidebarHeader = ({ children }) => {
             <Link to="/finance">
               <p>
                 <CiDollar
-                  className={`text-4xl sm:text-5xl rounded-xl p-1 ${
+                  className={`text-4xl rounded-xl p-1 ${
                     location.pathname === "/finance" && "bg-gray-600"
                   }`}
                 />
@@ -57,7 +57,7 @@ const SidebarHeader = ({ children }) => {
             <Link to="/love">
               <p>
                 <CiHeart
-                  className={`text-4xl sm:text-5xl rounded-xl p-1 ${
+                  className={`text-4xl rounded-xl p-1 ${
                     location.pathname === "/love" && "bg-gray-600"
                   }`}
                 />
@@ -68,13 +68,13 @@ const SidebarHeader = ({ children }) => {
             <p>
               <PiUserCircle
                 onClick={() => dispatch(logout(navigate))}
-                className="text-4xl sm:text-5xl rounded-xl p-1 cursor-pointer"
+                className="text-4xl rounded-xl p-1 cursor-pointer"
               />
             </p>
           </li>
         </ul>
       </div>
-      <div className={`p-10 w-full text-gray-700 sm:ml-20`}>{children}</div>
+      <div className={`w-full sm:w-[94%] bg-[#fcfcfc] text-gray-700 ml-auto pb-20`}>{children}</div>
     </div>
   );
 };

@@ -10,13 +10,15 @@ const index = ({
 }) => {
   return (
     <div>
-      <p className="text-5xl">
-        Monitor health of <br /> your business
-      </p>
-      <p className="text-blue-400 mt-8 text-xl">
-        Control and analyze your data
-      </p>
-      <div className="flex justify-between items-start flex-wrap lg:flex-nowrap gap-10">
+      <div className="time-top py-10">
+        <div className="w-10/12 mx-auto mycontainer">
+          <p className="text-5xl">
+            Monitor health <br /> and Sajoo
+          </p>
+          <p className="text-blue-400 mt-8 text-xl">What is it?</p>
+        </div>
+      </div>
+      <div className="flex justify-between items-start flex-wrap lg:flex-nowrap gap-10 mycontainer">
         <div className="mt-16 w-full lg:w-7/12">
           <img src="/images/treesun.jpg" className="w-full rounded-3xl" />
           <div className="block lg:hidden">

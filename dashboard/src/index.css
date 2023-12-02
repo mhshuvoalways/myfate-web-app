@@ -8,3 +8,36 @@
     display: none;
   }
 }
+
+.time-top {
+  background-image: url("/images/banner-bg.png");
+  background-size: cover;
+}
+
+.mycontainer {
+  width: 100%;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+@media (min-width: 640px) {
+  .mycontainer {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .mycontainer {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .mycontainer {
+    max-width: 1024px;
+    padding: 0 40px;
+  }
+}
+@media (min-width: 1280px) {
+  .mycontainer {
+    max-width: 1280px;
+    padding: 0 50px;
+  }
+}
