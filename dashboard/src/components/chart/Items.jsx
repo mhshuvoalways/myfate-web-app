@@ -6,7 +6,7 @@ import { BsAward } from "react-icons/bs";
 const Items = ({ bgcolor, textcolor, title, number }) => {
   return (
     <div
-      className={`flex items-center p-5 rounded-xl gap-5 w-full md:w-4/12 justify-center ${bgcolor}`}
+      className={`flex items-center p-5 rounded-xl gap-5 w-full justify-center ${bgcolor}`}
     >
       <div>
         <p className="text-xl">{title}</p>
