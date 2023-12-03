@@ -1,8 +1,11 @@
+import { useSelector } from "react-redux";
 import Header from "../header";
 import Items from "../chart/Items";
 import List from "../list";
 
-const index = () => {
+const Index = () => {
+  const userReducer = useSelector((state) => state.userReducer);
+
   return (
     <div>
       <Header />
@@ -13,14 +16,14 @@ const index = () => {
             <Items
               textcolor={"text-red-800"}
               bgcolor={"bg-red-200"}
-              title="Total User"
-              number={10}
+              title="Name"
+              number={`${userReducer.user.profile?.firstName} ${userReducer.user.profile?.lastName}`}
             />
             <Items
               textcolor={"text-green-800"}
               bgcolor={"bg-green-200"}
-              title="Premium User"
-              number={2}
+              title="Plan Type"
+              number={userReducer.user.subscriptionPlan?.planType}
             />
           </div>
         </div>
@@ -61,4 +64,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
