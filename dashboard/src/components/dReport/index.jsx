@@ -1,3 +1,4 @@
+import Header from "../header";
 import Chatjs from "../chart";
 import Timer from "../timer";
 import SubItem from "../subItem";
@@ -10,14 +11,7 @@ const index = ({
 }) => {
   return (
     <div>
-      <div className="time-top py-10">
-        <div className="w-10/12 mx-auto mycontainer">
-          <p className="text-5xl">
-            Monitor health <br /> and Sajoo
-          </p>
-          <p className="text-blue-400 mt-8 text-xl">What is it?</p>
-        </div>
-      </div>
+      <Header />
       <div className="flex justify-between items-start flex-wrap lg:flex-nowrap gap-10 mycontainer">
         <div className="mt-16 w-full lg:w-7/12">
           <img src="/images/treesun.jpg" className="w-full rounded-3xl" />

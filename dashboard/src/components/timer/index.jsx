@@ -184,7 +184,7 @@ const TimerMain = () => {
   };
 
   return (
-    <div className="bg-white timer-main shadow-sm rounded-xl">
+    <div className="bg-white timer-main shadow rounded-xl">
       <div
         className="timer-container"
         style={{ background: "rgba(0, 0, 0, 0)" }}
