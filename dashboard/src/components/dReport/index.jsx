@@ -21,7 +21,7 @@ const index = ({
       <div className="flex justify-between items-start flex-wrap lg:flex-nowrap gap-10 mycontainer">
         <div className="mt-16 w-full lg:w-7/12">
           <img src="/images/treesun.jpg" className="w-full rounded-3xl" />
-          <div className="mt-10 space-y-10">
+          <div className="mt-10">
             <div className="flex sm:justify-between justify-center gap-5 mt-5 flex-wrap md:flex-nowrap">
               <Items
                 textcolor={"text-purple-800"}
@@ -42,12 +42,14 @@ const index = ({
                 number={data?.scoreEval}
               />
             </div>
-            <SubItem
-              selectSubItemValue={selectSubItemValue}
-              setSelectSubItemValue={setSelectSubItemValue}
-              selectSubItems={selectSubItems}
-            />
-            <Chatjs data={data} />
+            <div className="bg-white shadow rounded-xl p-5 space-y-5 mt-10">
+              <SubItem
+                selectSubItemValue={selectSubItemValue}
+                setSelectSubItemValue={setSelectSubItemValue}
+                selectSubItems={selectSubItems}
+              />
+              <Chatjs data={data} />
+            </div>
           </div>
           <p className="font-semibold text-xl mt-5">
             Your dialogues today are building bridges that will span the test of

@@ -9,7 +9,7 @@ import {
 
 const index = ({ data }) => {
   return (
-    <div className="h-80 w-full bg-white shadow rounded-xl p-5">
+    <div className="h-80 w-full">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart width={300} height={100} data={data?.scores}>
           <Line
