@@ -1,5 +1,5 @@
 import Header from "../header";
-import Items from "../dashboard/Items";
+import Items from "../chart/Items";
 import List from "../list";
 
 const index = () => {

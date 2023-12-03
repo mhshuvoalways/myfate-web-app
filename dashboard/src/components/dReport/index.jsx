@@ -1,7 +1,8 @@
 import Header from "../header";
-import Chatjs from "../chart";
+import Chatjs from "../chart/Chart";
 import Timer from "../timer";
 import SubItem from "../subItem";
+import Items from "../chart/Items";
 
 const index = ({
   selectSubItemValue,
@@ -9,6 +10,11 @@ const index = ({
   selectSubItems,
   data,
 }) => {
+  let sum = 0;
+  data?.scores.forEach((el) => {
+    sum = sum + el.score;
+  });
+
   return (
     <div>
       <Header />
@@ -18,8 +24,24 @@ const index = ({
           <div className="block lg:hidden">
             <SubItem top />
           </div>
-          <p className="text-5xl mt-10">Total</p>
-          <div className="mt-10">
+          <div className="mt-10 space-y-10">
+            <div className="flex sm:justify-between justify-center gap-5 mt-5 flex-wrap md:flex-nowrap">
+              <Items
+                mycolor={"purple"}
+                title="Total score"
+                number={data?.scores.length}
+              />
+              <Items
+                mycolor={"green"}
+                title="Avarage score"
+                number={(sum / data?.scores.length).toFixed(2)}
+              />
+              <Items
+                mycolor={"red"}
+                title="Score Eval"
+                number={data?.scoreEval}
+              />
+            </div>
             <Chatjs data={data} />
           </div>
           <p className="font-semibold text-xl mt-5">
