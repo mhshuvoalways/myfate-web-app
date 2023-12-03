@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { CiCalendar, CiDollar, CiHeart } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
@@ -39,24 +40,32 @@ const Index = () => {
         <AnimatePresence>
           {showItem === "dReport" && (
             <motion.div
-              className="my-3 space-y-2 px-2"
+              className="my-3 px-2"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.1 }}
             >
-              <p className="border rounded-full p-1 text-center cursor-pointer hover:bg-blue-50 bg-blue-50 font-semibold">
-                Project
-              </p>
-              <p className="border rounded-full p-1 text-center cursor-pointer hover:bg-blue-50">
-                Asset
-              </p>
-              <p className="border rounded-full p-1 text-center cursor-pointer hover:bg-blue-50">
-                Image
-              </p>
-              <p className="border rounded-full p-1 text-center cursor-pointer hover:bg-blue-50">
-                Person
-              </p>
+              <Link to={"/d-report"}>
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50 bg-blue-50 font-semibold">
+                  Project
+                </p>
+              </Link>
+              <Link to={"/d-report"}>
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
+                  Asset
+                </p>
+              </Link>
+              <Link to={"/d-report"}>
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
+                  Image
+                </p>
+              </Link>
+              <Link to={"/d-report"}>
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
+                  Person
+                </p>
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>
@@ -80,24 +89,32 @@ const Index = () => {
         <AnimatePresence>
           {showItem === "finance" && (
             <motion.div
-              className="my-3 space-y-2 px-2"
+              className="my-3 px-2"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.1 }}
             >
-              <p className="border rounded-full p-1 text-center cursor-pointer hover:bg-blue-50 bg-blue-50 font-semibold">
-                Project
-              </p>
-              <p className="border rounded-full p-1 text-center cursor-pointer hover:bg-blue-50">
-                Asset
-              </p>
-              <p className="border rounded-full p-1 text-center cursor-pointer hover:bg-blue-50">
-                Image
-              </p>
-              <p className="border rounded-full p-1 text-center cursor-pointer hover:bg-blue-50">
-                Person
-              </p>
+              <Link to={"/finance"}>
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50 bg-blue-50 font-semibold">
+                  Project
+                </p>
+              </Link>
+              <Link to={"/finance"}>
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
+                  Asset
+                </p>
+              </Link>
+              <Link to={"/finance"}>
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
+                  Image
+                </p>
+              </Link>
+              <Link to={"/finance"}>
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
+                  Person
+                </p>
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>
@@ -112,9 +129,7 @@ const Index = () => {
           />
           <IoIosArrowDown
             className={`text-xl transition-all ${
-              showItem === "love"
-                ? "rotate-180 text-blue-500"
-                : "text-gray-400"
+              showItem === "love" ? "rotate-180 text-blue-500" : "text-gray-400"
             }`}
           />
         </div>
@@ -127,18 +142,26 @@ const Index = () => {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.1 }}
             >
-              <p className="border rounded-full p-1 text-center cursor-pointer hover:bg-blue-50 bg-blue-50 font-semibold">
-                Project
-              </p>
-              <p className="border rounded-full p-1 text-center cursor-pointer hover:bg-blue-50">
-                Asset
-              </p>
-              <p className="border rounded-full p-1 text-center cursor-pointer hover:bg-blue-50">
-                Image
-              </p>
-              <p className="border rounded-full p-1 text-center cursor-pointer hover:bg-blue-50">
-                Person
-              </p>
+              <Link to={"/love"}>
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50 bg-blue-50 font-semibold">
+                  Project
+                </p>
+              </Link>
+              <Link to={"/love"}>
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
+                  Asset
+                </p>
+              </Link>
+              <Link to={"/love"}>
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
+                  Image
+                </p>
+              </Link>
+              <Link to={"/love"}>
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
+                  Person
+                </p>
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>

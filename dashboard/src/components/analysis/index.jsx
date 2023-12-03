@@ -31,7 +31,6 @@ const Index = () => {
         </div>
         <div className="flex justify-between items-start flex-wrap md:flex-nowrap flex-col-reverse md:flex-row">
           <div className="space-y-10 mt-16 w-full md:w-7/12 lg:w-8/12">
-            <p className="text-5xl">Life</p>
             <img src="/images/treesun.jpg" className="w-full rounded-3xl" />
             <p className="text-xl leading-loose text-justify">
               Shuvo displays the imaginative creativity of an artistic soul,

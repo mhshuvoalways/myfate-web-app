@@ -937,23 +937,23 @@ nav .nav-inner a {
   color: #000;
   line-height: 0.8;
   transition: 0.2s font-size ease-in-out;
-  font-size: 20vw;
+  font-size: 16vw;
   font-family: notosans;
-  margin: 5px 0;
+  margin: 20px 0;
   color: #ddd;
 }
 @media (min-width: 768px) {
   #countdownReadout,
   #intervalReadout,
   #timeReadout {
-    font-size: clamp(100px, 10vw + 1.2vmin, 200px);
+    font-size: clamp(100px, 2vw + 1vmin, 100px);
   }
 }
 @media (max-height: 500px) {
   #countdownReadout,
   #intervalReadout,
   #timeReadout {
-    font-size: 10vw;
+    font-size: 8vw;
   }
 }
 #unit-readout {

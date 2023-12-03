@@ -2,6 +2,7 @@ const index = ({
   selectSubItemValue,
   setSelectSubItemValue,
   selectSubItems,
+  bgColor,
 }) => {
   const keyOfObject = selectSubItems && Object.keys(selectSubItems);
   return (
@@ -10,7 +11,7 @@ const index = ({
         <p
           className={`${
             selectSubItemValue === el
-              ? "bg-blue-100 px-3 py-2 rounded-xl font-semibold cursor-pointer"
+              ? `${bgColor} text-white px-3 py-2 rounded-xl font-semibold cursor-pointer`
               : "cursor-pointer px-3 py-2"
           }`}
           key={index}

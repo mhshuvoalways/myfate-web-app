@@ -7,7 +7,7 @@ import {
   XAxis,
 } from "recharts";
 
-const index = ({ data }) => {
+const index = ({ data, chartColor }) => {
   return (
     <div className="h-80 w-full">
       <ResponsiveContainer width="100%" height="100%">
@@ -15,7 +15,7 @@ const index = ({ data }) => {
           <Line
             type="monotone"
             dataKey="score"
-            stroke="#8884d8"
+            stroke={chartColor}
             strokeWidth={2}
           />
           <Tooltip />
