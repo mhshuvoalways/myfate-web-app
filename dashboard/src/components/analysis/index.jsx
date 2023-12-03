@@ -8,7 +8,7 @@ const index = () => {
       <Header />
       <div className="w-10/12 mx-auto mycontainer">
         <div className="bg-white shadow rounded-xl p-5 mt-16">
-          <p className="text-4xl">Admin Dashboard</p>
+          <p className="text-4xl">Client Dashboard</p>
           <div className="flex sm:justify-between justify-center gap-5 mt-5 flex-wrap md:flex-nowrap">
             <Items mycolor={"purple"} title="Total User" number={13} />
             <Items mycolor={"green"} title="Premium User" number={3} />
