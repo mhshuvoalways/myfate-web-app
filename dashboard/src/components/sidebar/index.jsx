@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { isAuthenticate, logout } from "../../../store/actions/userAction";
-import { CiClock1, CiCalendar, CiDollar, CiHeart } from "react-icons/ci";
+import { CiCalendar, CiDollar, CiHeart } from "react-icons/ci";
+import { SiGoogleanalytics } from "react-icons/si";
 import { PiUserCircle } from "react-icons/pi";
 
 const SidebarHeader = ({ children }) => {
@@ -23,8 +24,8 @@ const SidebarHeader = ({ children }) => {
           <li>
             <Link to="/">
               <p>
-                <CiClock1
-                  className={`text-4xl rounded-xl p-1 ${
+                <SiGoogleanalytics
+                  className={`text-4xl rounded-xl p-2 ${
                     location.pathname === "/" && "bg-gray-600"
                   }`}
                 />
@@ -74,7 +75,11 @@ const SidebarHeader = ({ children }) => {
           </li>
         </ul>
       </div>
-      <div className={`w-full sm:w-[94%] bg-[#fcfcfc] text-gray-700 ml-auto pb-20`}>{children}</div>
+      <div
+        className={`w-full sm:w-[94%] bg-[#fcfcfc] text-gray-700 ml-auto pb-20`}
+      >
+        {children}
+      </div>
     </div>
   );
 };

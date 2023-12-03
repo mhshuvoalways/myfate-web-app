@@ -22,15 +22,17 @@ const Index = () => {
     <div className="bg-white shadow rounded-xl w-full md:w-3/12 mt-16">
       <div>
         <div
-          className="flex justify-between items-center cursor-pointer shadow-sm px-2 py-3"
+          className="flex justify-between items-center cursor-pointer shadow-sm p-5"
           onClick={() => itemHandler("dReport")}
         >
           <CiCalendar
             className={`text-2xl ${showItem === "dReport" && "text-blue-500"}`}
           />
           <IoIosArrowDown
-            className={`text-xl text-gray-400 transition-all ${
-              showItem === "dReport" && "rotate-180 text-blue-500"
+            className={`text-xl transition-all ${
+              showItem === "dReport"
+                ? "rotate-180 text-blue-500"
+                : "text-gray-400"
             }`}
           />
         </div>
@@ -61,15 +63,17 @@ const Index = () => {
       </div>
       <div>
         <div
-          className="flex justify-between items-center cursor-pointer shadow-sm px-2 py-3"
+          className="flex justify-between items-center cursor-pointer shadow-sm p-5"
           onClick={() => itemHandler("finance")}
         >
           <CiDollar
             className={`text-2xl ${showItem === "finance" && "text-blue-500"}`}
           />
           <IoIosArrowDown
-            className={`text-xl text-gray-400 transition-all ${
-              showItem === "finance" && "rotate-180 text-blue-500"
+            className={`text-xl transition-all ${
+              showItem === "finance"
+                ? "rotate-180 text-blue-500"
+                : "text-gray-400"
             }`}
           />
         </div>
@@ -100,15 +104,17 @@ const Index = () => {
       </div>
       <div>
         <div
-          className="flex justify-between items-center cursor-pointer shadow-sm px-2 py-3"
+          className="flex justify-between items-center cursor-pointer shadow-sm p-5"
           onClick={() => itemHandler("love")}
         >
           <CiHeart
             className={`text-2xl ${showItem === "love" && "text-blue-500"}`}
           />
           <IoIosArrowDown
-            className={`text-xl text-gray-400 transition-all ${
-              showItem === "love" && "rotate-180 text-blue-500"
+            className={`text-xl transition-all ${
+              showItem === "love"
+                ? "rotate-180 text-blue-500"
+                : "text-gray-400"
             }`}
           />
         </div>

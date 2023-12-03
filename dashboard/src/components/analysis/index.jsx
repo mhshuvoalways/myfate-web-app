@@ -7,11 +7,12 @@ const index = () => {
     <div>
       <Header />
       <div className="w-10/12 mx-auto mycontainer">
-        <div className="flex justify-between gap-5 mt-10 flex-wrap md:flex-nowrap">
-          <Items mycolor={"purple"} />
-          <Items mycolor={"green"} />
-          <Items mycolor={"orange"} />
-          <Items mycolor={"red"} />
+        <div className="bg-white shadow rounded-xl p-5 mt-16">
+          <p className="text-4xl">Admin Dashboard</p>
+          <div className="flex sm:justify-between justify-center gap-5 mt-5 flex-wrap md:flex-nowrap">
+            <Items mycolor={"purple"} title="Total User" number={13} />
+            <Items mycolor={"green"} title="Premium User" number={3} />
+          </div>
         </div>
         <div className="flex justify-between items-start flex-wrap md:flex-nowrap flex-col-reverse md:flex-row">
           <div className="space-y-10 mt-16 w-full md:w-7/12 lg:w-8/12">

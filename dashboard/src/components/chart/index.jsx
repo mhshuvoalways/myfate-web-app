@@ -8,9 +8,8 @@ import {
 } from "recharts";
 
 const index = ({ data }) => {
-  console.log(data);
   return (
-    <div className="h-80 w-full">
+    <div className="h-80 w-full bg-white shadow rounded-xl p-5">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart width={300} height={100} data={data?.scores}>
           <Line

@@ -1,5 +1,5 @@
 import Sidebar from "../components/sidebar";
-import TimeCompo from "../components/time";
+import TimeCompo from "../components/analysis";
 
 const Home = () => {
   return (

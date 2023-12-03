@@ -6,7 +6,7 @@ const index = ({
 }) => {
   const keyOfObject = selectSubItems && Object.keys(selectSubItems);
   return (
-    <div className="mt-10">
+    <div className="mt-10 bg-white shadow rounded-xl p-5">
       <div className="flex items-center gap-5 justify-center">
         {keyOfObject?.map((el, index) => (
           <p
