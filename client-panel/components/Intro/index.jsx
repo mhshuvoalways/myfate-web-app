@@ -1,55 +1,67 @@
-import Mobile from "@/public/intro/mobile.jpg";
+import Homebg from "@/public/intro/homebg.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Zoom } from "react-reveal";
+import Link from "next/link";
 import AnimationText from "../Utils/TextAnimation";
 
 const index = () => {
   return (
-    <div className="relative w-full intro pb-10 sm:pb-0">
-      <div className="h-auto sm:h-screen flex justify-between items-center gap-5 flex-wrap sm:flex-nowrap mycontainer">
-        <div className="w-full sm:w-6/12 space-y-10">
+    <div className="bg-[#FFFAF3] pt-20">
+      <div className="flex justify-center items-center mycontainer">
+        <div className="space-y-8">
           <AnimationText
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+            textCenter
             letters={[
               {
-                letter: "Explore",
+                letter: "Connect",
                 delay: "0.15",
               },
               {
-                letter: "Your",
+                letter: "to",
                 delay: "0.25",
+              },
+              {
+                letter: "Your",
+                delay: "0.35",
               },
               {
                 letter: "Future",
                 delay: "0.45",
               },
             ]}
-            className={
-              "font-semibold pt-10 font-gabarito text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
-            }
           />
-          <Zoom>
-            <p className="text-xl w-8/12 sm:w-full">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Vestibulum euismod, leo sit amet hendrerit facilisis, tortor
-              sapien elementum ligula, id lobortis dolor tortor eu massa.
-              Phasellus vitae auctor justo.
-            </p>
-          </Zoom>
-          <Zoom right>
-            <motion.button
+          <AnimationText
+            className="text-4xl sm:text-5xl md:text-6xl text-my-blue font-semibold"
+            textCenter
+            letters={[
+              {
+                letter: "Find",
+                delay: "0.55",
+              },
+              {
+                letter: "out",
+                delay: "0.65",
+              },
+              {
+                letter: "now",
+                delay: "0.75",
+              },
+            ]}
+          />
+          <p className="text-xl text-center">
+            Ancient Wisdom from Korea and Japan
+          </p>
+          <Link href={"/pricing"}>
+            <motion.p
               whileTap={{ scale: 0.9 }}
-              className="bg-gray-800 text-white rounded px-5 py-2 font-gabarito"
+              className="bg-gray-900 w-full text-white py-2 text-lg font-semibold rounded text-center sm:w-40 mx-auto mt-10"
             >
-              Explore More
-            </motion.button>
-          </Zoom>
+              Start now
+            </motion.p>
+          </Link>
+          <Image src={Homebg} alt="" className="" />
         </div>
-        <Zoom>
-          <div className="z-10 w-10/12 mx-auto sm:w-5/12 static sm:absolute right-0 top-10 hidden sm:block">
-            <Image src={Mobile} alt="" className="rounded-md w-full" />
-          </div>
-        </Zoom>
       </div>
     </div>
   );

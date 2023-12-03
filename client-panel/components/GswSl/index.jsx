@@ -12,7 +12,7 @@ const index = ({ home, pricing }) => {
       className={`py-28 bg-cover bg-no-repeat ${
         (home && "mt-0 gswsl") ||
         (pricing && "pricing-gswsl mt-32") ||
-        ((!home || !pricing) && "gswsl mt-32")
+        ((!home || !pricing) && "gswsl")
       }`}
     >
       <div className="mycontainer flex justify-center md:justify-between items-center flex-wrap md:flex-nowrap gap-10">

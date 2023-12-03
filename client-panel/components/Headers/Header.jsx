@@ -22,7 +22,7 @@ const Header = ({ toggleSidebar, userReducer }) => {
           ☰
         </button>
         <Link href="/">
-          <p className="text-2xl text-my-gold mr-0 sm:mr-2.5">My Fate</p>
+          <p className="text-2xl text-my-gold mr-0 sm:mr-2.5">My Fates</p>
         </Link>
         <button
           className="text-[26px] text-black block sm:hidden"

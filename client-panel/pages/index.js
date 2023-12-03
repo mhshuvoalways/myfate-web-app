@@ -1,6 +1,6 @@
 import Headers from "@/components/Headers";
 import Categories from "@/components/Headers/Categories";
-import StoreLinksIntro from "@/components/StoreLinksIntro";
+import StoreLinksIntro from "@/components/Intro";
 import Testimonials from "@/components/Testimonials";
 import WhyCatelog from "@/components/WhyCatelog";
 import PromiseYou from "@/components/PromiseYou";
