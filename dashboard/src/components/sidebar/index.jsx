@@ -20,7 +20,7 @@ const SidebarHeader = ({ children }) => {
       <div
         className={`bg-gray-900 text-gray-100 shadow-lg h-auto sm:h-screen flex items-center justify-center fixed bottom-0 left-0 right-0 sm:right-auto sm:bottom-auto z-50 w-full sm:w-[6%]`}
       >
-        <ul className="list-none flex sm:block justify-between w-10/12 sm:w-auto px-0 sm:px-4 py-2 sm:space-y-5">
+        <ul className="list-none flex sm:block justify-between w-10/12 sm:w-auto px-0 sm:px-4 py-2 sm:space-y-16">
           <li>
             <Link to="/">
               <p>

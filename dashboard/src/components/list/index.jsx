@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { CiCalendar, CiDollar, CiHeart } from "react-icons/ci";
+import { Link } from "react-scroll";
+import { CiDollar, CiHeart } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
+import { MdOutlineClearAll } from "react-icons/md";
 
 const Index = () => {
   const [showItem, setShowItem] = useState("dReport");
@@ -26,9 +27,14 @@ const Index = () => {
           className="flex justify-between items-center cursor-pointer shadow-sm p-5"
           onClick={() => itemHandler("dReport")}
         >
-          <CiCalendar
+          <MdOutlineClearAll
             className={`text-2xl ${showItem === "dReport" && "text-blue-500"}`}
           />
+          <p
+            className={showItem === "dReport" && `text-blue-500 font-semibold`}
+          >
+            All
+          </p>
           <IoIosArrowDown
             className={`text-xl transition-all ${
               showItem === "dReport"
@@ -41,27 +47,47 @@ const Index = () => {
           {showItem === "dReport" && (
             <motion.div
               className="my-3 px-2"
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.1 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
             >
-              <Link to={"/d-report"}>
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50 bg-blue-50 font-semibold">
+              <Link
+                activeClass="bg-blue-50 font-semibold"
+                smooth={true}
+                spy={true}
+                to={"project"}
+              >
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer">
                   Project
                 </p>
               </Link>
-              <Link to={"/d-report"}>
+              <Link
+                activeClass="bg-blue-50 font-semibold"
+                smooth={true}
+                spy={true}
+                to={"asset"}
+              >
                 <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
                   Asset
                 </p>
               </Link>
-              <Link to={"/d-report"}>
+              <Link
+                activeClass="bg-blue-50 font-semibold"
+                smooth={true}
+                spy={true}
+                to={"image"}
+              >
                 <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
                   Image
                 </p>
               </Link>
-              <Link to={"/d-report"}>
+              <Link
+                activeClass="bg-blue-50 font-semibold"
+                smooth={true}
+                spy={true}
+                to={"person"}
+              >
                 <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
                   Person
                 </p>
@@ -78,6 +104,11 @@ const Index = () => {
           <CiDollar
             className={`text-2xl ${showItem === "finance" && "text-blue-500"}`}
           />
+          <p
+            className={showItem === "finance" && `text-blue-500 font-semibold`}
+          >
+            Finance
+          </p>
           <IoIosArrowDown
             className={`text-xl transition-all ${
               showItem === "finance"
@@ -90,27 +121,47 @@ const Index = () => {
           {showItem === "finance" && (
             <motion.div
               className="my-3 px-2"
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.1 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
             >
-              <Link to={"/finance"}>
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50 bg-blue-50 font-semibold">
+              <Link
+                activeClass="bg-blue-50 font-semibold"
+                smooth={true}
+                spy={true}
+                to={"project"}
+              >
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer">
                   Project
                 </p>
               </Link>
-              <Link to={"/finance"}>
+              <Link
+                activeClass="bg-blue-50 font-semibold"
+                smooth={true}
+                spy={true}
+                to={"asset"}
+              >
                 <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
                   Asset
                 </p>
               </Link>
-              <Link to={"/finance"}>
+              <Link
+                activeClass="bg-blue-50 font-semibold"
+                smooth={true}
+                spy={true}
+                to={"image"}
+              >
                 <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
                   Image
                 </p>
               </Link>
-              <Link to={"/finance"}>
+              <Link
+                activeClass="bg-blue-50 font-semibold"
+                smooth={true}
+                spy={true}
+                to={"person"}
+              >
                 <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
                   Person
                 </p>
@@ -127,6 +178,9 @@ const Index = () => {
           <CiHeart
             className={`text-2xl ${showItem === "love" && "text-blue-500"}`}
           />
+          <p className={showItem === "love" && `text-blue-500 font-semibold`}>
+            Love
+          </p>
           <IoIosArrowDown
             className={`text-xl transition-all ${
               showItem === "love" ? "rotate-180 text-blue-500" : "text-gray-400"
@@ -136,28 +190,48 @@ const Index = () => {
         <AnimatePresence>
           {showItem === "love" && (
             <motion.div
-              className="my-3 space-y-2 px-2"
-              initial={{ opacity: 0, y: 10 }}
+              className="my-3 px-2"
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.1 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
             >
-              <Link to={"/love"}>
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50 bg-blue-50 font-semibold">
+              <Link
+                activeClass="bg-blue-50 font-semibold"
+                smooth={true}
+                spy={true}
+                to={"project"}
+              >
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer">
                   Project
                 </p>
               </Link>
-              <Link to={"/love"}>
+              <Link
+                activeClass="bg-blue-50 font-semibold"
+                smooth={true}
+                spy={true}
+                to={"asset"}
+              >
                 <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
                   Asset
                 </p>
               </Link>
-              <Link to={"/love"}>
+              <Link
+                activeClass="bg-blue-50 font-semibold"
+                smooth={true}
+                spy={true}
+                to={"image"}
+              >
                 <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
                   Image
                 </p>
               </Link>
-              <Link to={"/love"}>
+              <Link
+                activeClass="bg-blue-50 font-semibold"
+                smooth={true}
+                spy={true}
+                to={"person"}
+              >
                 <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
                   Person
                 </p>

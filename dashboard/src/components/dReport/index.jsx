@@ -33,13 +33,13 @@ const index = ({
           <div className="flex sm:justify-between justify-center gap-5 mt-5 flex-wrap md:flex-nowrap">
             <Items
               textcolor={"text-red-800"}
-              bgcolor={"bg-red-200"}
+              bgcolor={"bg-[#F1E7FF]"}
               title="Avarage score"
               number={(sum / data?.scores.length).toFixed(2)}
             />
             <Items
               textcolor={"text-green-800"}
-              bgcolor={"bg-green-200"}
+              bgcolor={"bg-[#E5F5FF]"}
               title="Score Eval"
               number={data?.scoreEval}
             />
@@ -57,16 +57,20 @@ const index = ({
           <Timer />
         </div>
         <div className="w-full lg:w-6/12 mt-0 lg:mt-16 space-y-10">
+          <img
+            src="/images/treesun.jpg"
+            className="w-full rounded-3xl hidden lg:block opacity-0"
+          />
           <div className="flex sm:justify-between justify-center gap-5 flex-wrap md:flex-nowrap">
             <Items
               textcolor={"text-red-800"}
-              bgcolor={"bg-red-200"}
+              bgcolor={"bg-[#F1E7FF]"}
               title="Avarage score"
               number={(sumNext / dataNext?.scores.length).toFixed(2)}
             />
             <Items
               textcolor={"text-green-800"}
-              bgcolor={"bg-green-200"}
+              bgcolor={"bg-[#E5F5FF]"}
               title="Score Eval"
               number={dataNext?.scoreEval}
             />
@@ -84,14 +88,14 @@ const index = ({
           <div>
             <p className="text-4xl">Prayers</p>
             <div className="bg-blue-100 rounded-xl p-5 mt-5">
-              <motion.button
+              <motion.p
                 whileTap={{
                   scale: 0.9,
                 }}
-                className="border border-gray-400 px-5 py-2 rounded-xl font-semibold"
+                className="border border-gray-400 px-5 py-2 rounded-xl font-semibold w-full sm:w-24 text-center ml-auto"
               >
                 Submit
-              </motion.button>
+              </motion.p>
             </div>
           </div>
         </div>
