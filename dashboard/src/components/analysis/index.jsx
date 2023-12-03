@@ -10,8 +10,18 @@ const index = () => {
         <div className="bg-white shadow rounded-xl p-5 mt-16">
           <p className="text-4xl">Client Dashboard</p>
           <div className="flex sm:justify-between justify-center gap-5 mt-5 flex-wrap md:flex-nowrap">
-            <Items mycolor={"purple"} title="Total User" number={13} />
-            <Items mycolor={"green"} title="Premium User" number={3} />
+            <Items
+              textcolor={"text-red-800"}
+              bgcolor={"bg-red-200"}
+              title="Total User"
+              number={10}
+            />
+            <Items
+              textcolor={"text-green-800"}
+              bgcolor={"bg-green-200"}
+              title="Premium User"
+              number={2}
+            />
           </div>
         </div>
         <div className="flex justify-between items-start flex-wrap md:flex-nowrap flex-col-reverse md:flex-row">

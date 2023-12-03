@@ -33,14 +33,14 @@ const index = ({
                 number={data?.scores.length}
               />
               <Items
-                textcolor={"text-green-800"}
-                bgcolor={"bg-green-200"}
+                textcolor={"text-red-800"}
+                bgcolor={"bg-red-200"}
                 title="Avarage score"
                 number={(sum / data?.scores.length).toFixed(2)}
               />
               <Items
-                textcolor={"text-red-800"}
-                bgcolor={"bg-red-200"}
+                textcolor={"text-green-800"}
+                bgcolor={"bg-green-200"}
                 title="Score Eval"
                 number={data?.scoreEval}
               />
