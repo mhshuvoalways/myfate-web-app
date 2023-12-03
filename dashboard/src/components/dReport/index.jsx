@@ -27,17 +27,20 @@ const index = ({
           <div className="mt-10 space-y-10">
             <div className="flex sm:justify-between justify-center gap-5 mt-5 flex-wrap md:flex-nowrap">
               <Items
-                mycolor={"purple"}
+                textcolor={"text-purple-800"}
+                bgcolor={"bg-purple-200"}
                 title="Total score"
                 number={data?.scores.length}
               />
               <Items
-                mycolor={"green"}
+                textcolor={"text-green-800"}
+                bgcolor={"bg-green-200"}
                 title="Avarage score"
                 number={(sum / data?.scores.length).toFixed(2)}
               />
               <Items
-                mycolor={"red"}
+                textcolor={"text-red-800"}
+                bgcolor={"bg-red-200"}
                 title="Score Eval"
                 number={data?.scoreEval}
               />
