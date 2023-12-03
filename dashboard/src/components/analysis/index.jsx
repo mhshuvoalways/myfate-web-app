@@ -17,13 +17,15 @@ const Index = () => {
               textcolor={"text-red-800"}
               bgcolor={"bg-red-200"}
               title="Name"
-              number={`${userReducer.user.profile?.firstName} ${userReducer.user.profile?.lastName}`}
+              number={`${userReducer.user.profile?.firstName || ""} ${
+                userReducer.user.profile?.lastName || ""
+              }`}
             />
             <Items
               textcolor={"text-green-800"}
               bgcolor={"bg-green-200"}
               title="Plan Type"
-              number={userReducer.user.subscriptionPlan?.planType}
+              number={userReducer.user.subscriptionPlan?.planType || ""}
             />
           </div>
         </div>
