@@ -99,7 +99,7 @@ const index = ({
             </div>
             <div>
               <p className="text-4xl title-font">Prayers</p>
-              <div className="bg-blue-100 rounded-xl p-5 mt-5 flex justify-between items-center gap-5">
+              <div className="bg-blue-100 rounded-xl p-5 mt-5 flex justify-between items-center gap-5 flex-wrap sm:flex-nowrap">
                 <input
                   type="text"
                   className="border border-gray-400 px-2 py-2 rounded-xl font-semibold w-full outline-0"

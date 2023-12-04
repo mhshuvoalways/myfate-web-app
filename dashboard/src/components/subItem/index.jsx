@@ -6,7 +6,7 @@ const index = ({
 }) => {
   const keyOfObject = selectSubItems && Object.keys(selectSubItems);
   return (
-    <div className="flex items-center gap-5 justify-center">
+    <div className="flex items-center gap-0 sm:gap-5 justify-center flex-wrap sm:flex-nowrap">
       {keyOfObject?.map((el, index) => (
         <p
           className={`${
