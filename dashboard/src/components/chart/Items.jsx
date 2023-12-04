@@ -10,12 +10,8 @@ const Items = ({ bgcolor, textcolor, title, number }) => {
     >
       <div>
         <p className="text-xl title-font">{title}</p>
-        {number ? (
+        {number && (
           <p className={`font-semibold text-4xl ${textcolor}`}>{number}</p>
-        ) : (
-          <p className={`font-semibold mt-3 ${textcolor}`}>
-            Your plan will be expire tomorrow
-          </p>
         )}
       </div>
       {title === "Total User" && (
