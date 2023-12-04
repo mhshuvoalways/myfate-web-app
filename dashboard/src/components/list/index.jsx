@@ -1,50 +1,53 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { Link } from "react-scroll";
 import { CiDollar, CiHeart } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
-import { AnimatePresence, motion } from "framer-motion";
 import { MdOutlineClearAll } from "react-icons/md";
+import { Link } from "react-scroll";
 
 const Index = () => {
-  const [showItem, setShowItem] = useState("dReport");
+  const [showItem, setShowItem] = useState([]);
 
   const itemHandler = (value) => {
-    if (showItem) {
-      if (showItem === value) {
-        setShowItem("");
-      } else {
-        setShowItem(value);
-      }
+    const temp = [...showItem];
+    if (showItem.includes(value)) {
+      const newShowItems = temp.filter((el) => el !== value);
+      setShowItem(newShowItems);
     } else {
-      setShowItem(value);
+      temp.push(value);
+      setShowItem(temp);
     }
   };
 
   return (
-    <div className="bg-white shadow rounded-xl w-full md:w-3/12 mt-16">
+    <div className="bg-white shadow rounded-xl w-full md:w-3/12 mt-16 sticky top-10">
       <div>
         <div
           className="flex justify-between items-center cursor-pointer shadow-sm p-5"
           onClick={() => itemHandler("dReport")}
         >
           <MdOutlineClearAll
-            className={`text-2xl ${showItem === "dReport" && "text-blue-500"}`}
+            className={`text-2xl ${
+              showItem.includes("dReport") && "text-blue-500"
+            }`}
           />
           <p
-            className={showItem === "dReport" && `text-blue-500 font-semibold`}
+            className={
+              showItem.includes("dReport") && `text-blue-500 font-semibold`
+            }
           >
             All
           </p>
           <IoIosArrowDown
             className={`text-xl transition-all ${
-              showItem === "dReport"
+              showItem.includes("dReport")
                 ? "rotate-180 text-blue-500"
                 : "text-gray-400"
             }`}
           />
         </div>
         <AnimatePresence>
-          {showItem === "dReport" && (
+          {showItem.includes("dReport") && (
             <motion.div
               className="my-3 px-2"
               initial={{ opacity: 0, y: 20 }}
@@ -102,23 +105,27 @@ const Index = () => {
           onClick={() => itemHandler("finance")}
         >
           <CiDollar
-            className={`text-2xl ${showItem === "finance" && "text-blue-500"}`}
+            className={`text-2xl ${
+              showItem.includes("finance") && "text-blue-500"
+            }`}
           />
           <p
-            className={showItem === "finance" && `text-blue-500 font-semibold`}
+            className={
+              showItem.includes("finance") && `text-blue-500 font-semibold`
+            }
           >
             Finance
           </p>
           <IoIosArrowDown
             className={`text-xl transition-all ${
-              showItem === "finance"
+              showItem.includes("finance")
                 ? "rotate-180 text-blue-500"
                 : "text-gray-400"
             }`}
           />
         </div>
         <AnimatePresence>
-          {showItem === "finance" && (
+          {showItem.includes("finance") && (
             <motion.div
               className="my-3 px-2"
               initial={{ opacity: 0, y: 20 }}
@@ -176,19 +183,27 @@ const Index = () => {
           onClick={() => itemHandler("love")}
         >
           <CiHeart
-            className={`text-2xl ${showItem === "love" && "text-blue-500"}`}
+            className={`text-2xl ${
+              showItem.includes("love") && "text-blue-500"
+            }`}
           />
-          <p className={showItem === "love" && `text-blue-500 font-semibold`}>
+          <p
+            className={
+              showItem.includes("love") && `text-blue-500 font-semibold`
+            }
+          >
             Love
           </p>
           <IoIosArrowDown
             className={`text-xl transition-all ${
-              showItem === "love" ? "rotate-180 text-blue-500" : "text-gray-400"
+              showItem.includes("love")
+                ? "rotate-180 text-blue-500"
+                : "text-gray-400"
             }`}
           />
         </div>
         <AnimatePresence>
-          {showItem === "love" && (
+          {showItem.includes("love") && (
             <motion.div
               className="my-3 px-2"
               initial={{ opacity: 0, y: 20 }}

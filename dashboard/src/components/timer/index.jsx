@@ -384,6 +384,7 @@ const TimerMain = () => {
           )}
           {activeTab === 2 && (
             <div className="list-item-content" data-tab-link="duration">
+              <p className="!mt-5">Meditaion time:</p>
               <div aria-label="37:00 Minutes" tabIndex={0} id="timeReadout">
                 {duration < 10 && "0"}
                 {duration}:00
