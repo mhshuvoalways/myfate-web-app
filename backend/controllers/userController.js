@@ -11,6 +11,7 @@ const {
 } = require("../validations/userValidation");
 const transporter = require("../mail/transporter");
 const { recoverPass } = require("../mail/templates");
+const moment = require("moment");
 
 const register = (req, res) => {
   const { email, password, recaptcha } = req.body;
@@ -158,7 +159,16 @@ const registerClientGoogle = (req, res) => {
   User.findOne({ email: email })
     .then((response) => {
       if (response?.subscriptionPlan.planType) {
-        registerClientCommon(req, res);
+        if (
+          response?.subscriptionPlan.expireDate >=
+          moment(new Date()).format("YYYY-MM-DD")
+        ) {
+          registerClientCommon(req, res);
+        } else {
+          res.status(400).json({
+            message: "Your plan is expired. Please purchase a plan!",
+          });
+        }
       } else {
         res.status(400).json({
           message: "Please purchase a plan!",
@@ -233,7 +243,16 @@ const loginClientDashboard = (req, res) => {
   User.findOne({ email: email })
     .then((response) => {
       if (response?.subscriptionPlan.planType) {
-        loginCommon(req, res);
+        if (
+          response?.subscriptionPlan.expireDate >=
+          moment(new Date()).format("YYYY-MM-DD")
+        ) {
+          loginCommon(req, res);
+        } else {
+          res.status(400).json({
+            message: "Your plan is expired. Please purchase a plan!",
+          });
+        }
       } else {
         res.status(400).json({
           message: "Please purchase a plan!",
@@ -380,6 +399,10 @@ const deleteUser = (req, res) => {
 const updateUser = (req, res) => {
   const { email } = req.user;
   const { firstName, lastName, birthDate, birthTime, planType } = req.body;
+  let today = new Date();
+  let expireDate = new Date(today);
+  expireDate.setDate(today.getDate() + 10);
+
   const userObj = {
     profile: {
       firstName,
@@ -389,6 +412,7 @@ const updateUser = (req, res) => {
     },
     subscriptionPlan: {
       planType: planType,
+      expireDate: moment(expireDate).format("YYYY-MM-DD"),
     },
   };
   User.findOneAndUpdate({ email }, userObj, { new: true })

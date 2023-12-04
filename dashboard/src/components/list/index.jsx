@@ -58,7 +58,7 @@ const Index = () => {
                 spy={true}
                 to={"project"}
               >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer">
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
                   Project
                 </p>
               </Link>
@@ -132,7 +132,7 @@ const Index = () => {
                 spy={true}
                 to={"project"}
               >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer">
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
                   Project
                 </p>
               </Link>
@@ -202,7 +202,7 @@ const Index = () => {
                 spy={true}
                 to={"project"}
               >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer">
+                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
                   Project
                 </p>
               </Link>

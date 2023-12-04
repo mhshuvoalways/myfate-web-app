@@ -25,7 +25,7 @@ const userSchema = new Schema(
     },
     subscriptionPlan: {
       planType: String,
-      planChangedDate: Date,
+      expireDate: String,
     },
   },
   {

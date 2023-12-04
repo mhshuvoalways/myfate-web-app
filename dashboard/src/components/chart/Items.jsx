@@ -6,11 +6,17 @@ import { BsAward } from "react-icons/bs";
 const Items = ({ bgcolor, textcolor, title, number }) => {
   return (
     <div
-      className={`flex items-center p-5 rounded-xl gap-5 w-full justify-center ${bgcolor}`}
+      className={`flex items-center p-5 rounded-xl gap-5 w-full justify-center h-32 ${bgcolor}`}
     >
       <div>
-        <p className="text-xl">{title}</p>
-        <p className={`font-semibold text-4xl ${textcolor}`}>{number}</p>
+        <p className="text-xl title-font">{title}</p>
+        {number ? (
+          <p className={`font-semibold text-4xl ${textcolor}`}>{number}</p>
+        ) : (
+          <p className={`font-semibold mt-3 ${textcolor}`}>
+            Your plan will be expire tomorrow
+          </p>
+        )}
       </div>
       {title === "Total User" && (
         <PiUsersLight className={`text-5xl ${textcolor}`} />

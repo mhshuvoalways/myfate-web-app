@@ -12,7 +12,7 @@ const Index = () => {
       <Header />
       <div className="w-10/12 mx-auto mycontainer">
         <div className="bg-white shadow rounded-xl p-5 mt-16">
-          <p className="text-4xl">Client Dashboard</p>
+          <p className="text-4xl title-font">Client Dashboard</p>
           <div className="flex sm:justify-between justify-center gap-5 mt-5 flex-wrap md:flex-nowrap">
             <Items
               textcolor={"text-red-800"}

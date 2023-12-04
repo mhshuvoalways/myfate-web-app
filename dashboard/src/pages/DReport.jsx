@@ -7,6 +7,7 @@ import { getdReport } from "../../store/actions/reportAction";
 
 const Calendar = () => {
   const [selectSubItems, setSelectSubItems] = useState(null);
+  const [reportWriting, setReportWriting] = useState([]);
   const [selectSubItemValue, setSelectSubItemValue] = useState("Energy");
   const [selectSubItemValueNext, setSelectSubItemValueNext] =
     useState("Energy");
@@ -63,8 +64,9 @@ const Calendar = () => {
   }, [getSubNext, selectSubItemValueNext]);
 
   useEffect(() => {
+    setReportWriting(response?.dReportWritings);
     setSelectSubItems(response?.dReport);
-  }, [response?.dReport]);
+  }, [response?.dReport, response?.dReportWritings]);
 
   return (
     <Sidebar>
@@ -76,6 +78,7 @@ const Calendar = () => {
         selectSubItems={selectSubItems}
         data={data}
         dataNext={dataNext}
+        reportWriting={reportWriting}
       />
     </Sidebar>
   );

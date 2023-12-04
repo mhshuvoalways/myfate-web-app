@@ -8,7 +8,10 @@ import { getLoves } from "../../store/actions/reportAction";
 const Calendar = () => {
   const [selectSubItems, setSelectSubItems] = useState(null);
   const [selectSubItemValue, setSelectSubItemValue] = useState("Romance");
+  const [selectSubItemValueNext, setSelectSubItemValueNext] =
+    useState("Romance");
   const [data, setData] = useState(null);
+  const [dataNext, setDataNext] = useState(null);
 
   const reportReducer = useSelector((store) => store.reportReducer);
 
@@ -18,16 +21,34 @@ const Calendar = () => {
     dispatch(getLoves());
   }, [dispatch]);
 
+  let today = new Date();
+  let nextDay = new Date(today);
+  nextDay.setDate(today.getDate() + 1);
+
   const response = reportReducer.loves;
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getSub = (sub) => {
     if (response) {
-      const subItem = response.loveReport?.[sub].dailyData;
+      const subItem = response?.loveReport?.[sub].dailyData;
       subItem.forEach((el) => {
         const parsedDate = moment(el.date);
         const formattedDate = parsedDate.format("YYYY-MM-DD");
-        if (moment(new Date()).format("YYYY-MM-DD") === formattedDate) {
+        if (moment(today).format("YYYY-MM-DD") === formattedDate) {
           setData(el);
+        }
+      });
+    }
+  };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const getSubNext = (sub) => {
+    if (response) {
+      const subItem = response?.loveReport?.[sub].dailyData;
+      subItem.forEach((el) => {
+        const parsedDate = moment(el.date);
+        const formattedDate = parsedDate.format("YYYY-MM-DD");
+        if (moment(nextDay).format("YYYY-MM-DD") === formattedDate) {
+          setDataNext(el);
         }
       });
     }
@@ -38,18 +59,23 @@ const Calendar = () => {
   }, [getSub, selectSubItemValue]);
 
   useEffect(() => {
-    if (response) {
-      setSelectSubItems(response.loveReport);
-    }
-  }, [response]);
+    getSubNext(selectSubItemValueNext);
+  }, [getSubNext, selectSubItemValueNext]);
+
+  useEffect(() => {
+    setSelectSubItems(response?.loveReport);
+  }, [response?.loveReport]);
 
   return (
     <Sidebar>
       <CalendarCompo
         selectSubItemValue={selectSubItemValue}
         setSelectSubItemValue={setSelectSubItemValue}
+        selectSubItemValueNext={selectSubItemValueNext}
+        setSelectSubItemValueNext={setSelectSubItemValueNext}
         selectSubItems={selectSubItems}
         data={data}
+        dataNext={dataNext}
       />
     </Sidebar>
   );
