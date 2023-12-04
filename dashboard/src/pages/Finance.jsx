@@ -7,6 +7,7 @@ import { getFinance } from "../../store/actions/reportAction";
 
 const Calendar = () => {
   const [selectSubItems, setSelectSubItems] = useState(null);
+  const [reportWriting, setReportWriting] = useState([]);
   const [selectSubItemValue, setSelectSubItemValue] = useState("Insight");
   const [selectSubItemValueNext, setSelectSubItemValueNext] =
     useState("Insight");
@@ -63,8 +64,9 @@ const Calendar = () => {
   }, [getSubNext, selectSubItemValueNext]);
 
   useEffect(() => {
+    setReportWriting(response?.financeReportWritings);
     setSelectSubItems(response?.financeReport);
-  }, [response?.financeReport]);
+  }, [response?.financeReport, response?.financeReportWritings]);
 
   return (
     <Sidebar>
@@ -76,6 +78,7 @@ const Calendar = () => {
         selectSubItems={selectSubItems}
         data={data}
         dataNext={dataNext}
+        reportWriting={reportWriting}
       />
     </Sidebar>
   );

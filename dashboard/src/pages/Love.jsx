@@ -7,6 +7,7 @@ import { getLoves } from "../../store/actions/reportAction";
 
 const Calendar = () => {
   const [selectSubItems, setSelectSubItems] = useState(null);
+  const [reportWriting, setReportWriting] = useState([]);
   const [selectSubItemValue, setSelectSubItemValue] = useState("Romance");
   const [selectSubItemValueNext, setSelectSubItemValueNext] =
     useState("Romance");
@@ -63,8 +64,9 @@ const Calendar = () => {
   }, [getSubNext, selectSubItemValueNext]);
 
   useEffect(() => {
+    setReportWriting(response?.loveReportWritings);
     setSelectSubItems(response?.loveReport);
-  }, [response?.loveReport]);
+  }, [response?.loveReport, response?.loveReportWritings]);
 
   return (
     <Sidebar>
@@ -76,6 +78,7 @@ const Calendar = () => {
         selectSubItems={selectSubItems}
         data={data}
         dataNext={dataNext}
+        reportWriting={reportWriting}
       />
     </Sidebar>
   );
