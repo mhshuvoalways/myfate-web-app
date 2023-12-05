@@ -18,12 +18,13 @@ const index = ({
   const sum = data?.scores.reduce((a, b) => {
     return a + b.score;
   }, 0);
-  const average = (sum / data?.scores.length).toFixed(2);
+  const average = sum !== undefined && (sum / data?.scores.length).toFixed(2);
 
   const sumNext = dataNext?.scores.reduce((a, b) => {
     return a + b.score;
   }, 0);
-  const averageNext = (sumNext / dataNext?.scores.length).toFixed(2);
+  const averageNext =
+    sumNext !== undefined && (sumNext / dataNext?.scores.length).toFixed(2);
 
   return (
     <div>
