@@ -15,15 +15,15 @@ const index = ({
   dataNext,
   reportWriting,
 }) => {
-  let sum = 0;
-  data?.scores.forEach((el) => {
-    sum = sum + el.score;
-  });
+  const sum = data?.scores.reduce((a, b) => {
+    return a + b.score;
+  }, 0);
+  const average = (sum / data?.scores.length).toFixed(2);
 
-  let sumNext = 0;
-  dataNext?.scores.forEach((el) => {
-    sumNext = sumNext + el.score;
-  });
+  const sumNext = dataNext?.scores.reduce((a, b) => {
+    return a + b.score;
+  }, 0);
+  const averageNext = (sumNext / dataNext?.scores.length).toFixed(2);
 
   return (
     <div>
@@ -40,7 +40,7 @@ const index = ({
                 textcolor={"text-red-800"}
                 bgcolor={"bg-[#F1E7FF]"}
                 title="Avarage score"
-                number={sum !== 0 && (sum / data?.scores.length).toFixed(2)}
+                number={average}
               />
               <Items
                 textcolor={"text-green-800"}
@@ -71,10 +71,7 @@ const index = ({
                 textcolor={"text-red-800"}
                 bgcolor={"bg-[#F1E7FF]"}
                 title="Avarage score"
-                number={
-                  sumNext !== 0 &&
-                  (sumNext / dataNext?.scores.length).toFixed(2)
-                }
+                number={averageNext}
               />
               <Items
                 textcolor={"text-green-800"}
