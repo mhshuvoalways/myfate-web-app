@@ -3,7 +3,7 @@ import BoxIcon from "@/public/whatWeGet/box.svg";
 import MsgIcon from "@/public/whatWeGet/msg.svg";
 import NetIcon from "@/public/whatWeGet/net.svg";
 import ShareIcon from "@/public/whatWeGet/share.svg";
-import WhatYouGetImg from "@/public/whatWeGet/woman.webp";
+import WhatYouGetImg from "@/public/whatWeGet/kid.jpeg";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Fade, Zoom } from "react-reveal";
@@ -17,20 +17,16 @@ const Index = () => {
           <TextAnimation
             letters={[
               {
-                letter: "What",
+                letter: `What`,
+                delay: "0",
+              },
+              {
+                letter: `do`,
+                delay: "0.10",
+              },
+              {
+                letter: `you`,
                 delay: "0.20",
-              },
-              {
-                letter: "do",
-                delay: "0.40",
-              },
-              {
-                letter: "you",
-                delay: "0.60",
-              },
-              {
-                letter: "get",
-                delay: "0.80",
               },
             ]}
             className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
@@ -38,20 +34,24 @@ const Index = () => {
           <TextAnimation
             letters={[
               {
-                letter: "with",
-                delay: "1",
+                letter: `get`,
+                delay: "0.30",
               },
               {
-                letter: "store",
-                delay: "1.20",
+                letter: `with`,
+                delay: "0.40",
               },
               {
-                letter: "links",
-                delay: "1.40",
+                letter: `our`,
+                delay: "0.50",
+              },
+              {
+                letter: `report`,
+                delay: "0.60",
               },
             ]}
             className={
-              "text-4xl md:text-5xl lg:text-6xl font-semibold text-my-yellow mt-0 md:mt-4"
+              "text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue mt-0 md:mt-4"
             }
           />
         </div>
@@ -86,7 +86,8 @@ const Index = () => {
                   <Image src={ShareIcon} alt="" />
                 </div>
                 <p className="text-2xl mt-5">
-                  One link you can share everywhere and anywhere
+                  Unlock Your Potential: Insights for Life, Love, and Career
+                  Success.
                 </p>
               </div>
               <div className="bg-white rounded-3xl p-6 shadow-sm">
@@ -94,7 +95,7 @@ const Index = () => {
                   <Image src={BoxIcon} alt="" />
                 </div>
                 <p className="text-2xl mt-5">
-                  A beautiful storefront to showcase your products
+                  Personalized Reports Guiding You to Your Destiny.
                 </p>
               </div>
               <div className="bg-white rounded-3xl p-6 shadow-sm">
@@ -102,7 +103,7 @@ const Index = () => {
                   <Image src={MsgIcon} alt="" />
                 </div>
                 <p className="text-2xl mt-5">
-                  Get order & delivery details as a message on whatsapp
+                  Navigate Life with Confidence: Expert Analysis for Every Step.
                 </p>
               </div>
               <div className="bg-white rounded-3xl p-6 shadow-sm">
@@ -110,7 +111,7 @@ const Index = () => {
                   <Image src={NetIcon} alt="" />
                 </div>
                 <p className="text-2xl mt-5">
-                  A dashboard to track how well your store is performing
+                  Your Blueprint for Personal and Professional Fulfillment.
                 </p>
               </div>
             </Fade>

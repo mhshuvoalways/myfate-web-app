@@ -1,23 +1,25 @@
 const steps = [
   {
-    description: "Create an store and add your products - then you get a link",
+    description:
+      "Full report: A complete overview of your life, offering insights into everything",
     image:
       "https://res.cloudinary.com/catlog/image/upload/v1670791956/front-pages/mockups/store-link-setup-complete.webp",
   },
   {
     description:
-      "Add your link to your social profiles and share to customers when they reach out",
+      "Daily Report: Daily updates providing guidance to align daily actions with your long-term destiny",
     image:
       "https://res.cloudinary.com/catlog/image/upload/v1670792011/front-pages/mockups/customer-initiates-conversation.webp",
   },
   {
-    description: "Customers visit your link and select items they want to buy",
+    description:
+      "Love: Detailed analysis of your romantic relationships, focusing on compatibility and deeper connections.",
     image:
       "https://res.cloudinary.com/catlog/image/upload/v1670791986/front-pages/mockups/selection-made-on-store.webp",
   },
   {
     description:
-      "The order is sent to your whatsapp so you can chat with the customer and close your sales",
+      "Finance: Strategic financial advice for wealth management, and long-term financial security",
     image:
       "https://res.cloudinary.com/catlog/image/upload/v1670792029/front-pages/mockups/customer-sends-order.webp",
   },
@@ -95,16 +97,20 @@ const HowItWorks = () => {
               <TextAnimation
                 letters={[
                   {
-                    letter: `How`,
+                    letter: `What`,
                     delay: "0",
                   },
                   {
-                    letter: `to`,
+                    letter: `you`,
                     delay: "0.20",
                   },
                   {
-                    letter: `use`,
+                    letter: `get`,
                     delay: "0.40",
+                  },
+                  {
+                    letter: `with`,
+                    delay: "0.50",
                   },
                 ]}
                 className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
@@ -112,16 +118,16 @@ const HowItWorks = () => {
               <TextAnimation
                 letters={[
                   {
-                    letter: `store`,
+                    letter: `Myfates`,
                     delay: "0.60",
                   },
                   {
-                    letter: `links`,
-                    delay: "0.80",
+                    letter: `.com`,
+                    delay: "0.70",
                   },
                 ]}
                 className={
-                  "text-4xl md:text-5xl lg:text-6xl font-semibold text-my-yellow mt-0 md:mt-4"
+                  "text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue mt-0 md:mt-4"
                 }
               />
               <div className="w-full grid md:grid-cols-[47%,53%] lg:grid-cols-[51%,49%] xl:grid-cols-[53%,47%] mt-20">

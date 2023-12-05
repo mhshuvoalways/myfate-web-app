@@ -48,14 +48,14 @@ const Sidebar = ({ isOpen, toggleSidebar, userReducer }) => {
             {userReducer.isAuthenticate ? (
               userReducer.user?.subscriptionPlan?.planType ? (
                 <>
-                  <Link
+                  {/* <Link
                     href={"https://personal-info-dashboard.vercel.app"}
                     target="blank"
                   >
                     <p className="cursor-pointer hover:text-gray-800 text-my-text-gray">
                       Dashboard
                     </p>
-                  </Link>
+                  </Link> */}
                   <p
                     className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800"
                     onClick={() => dispatch(logout(router))}
@@ -65,11 +65,11 @@ const Sidebar = ({ isOpen, toggleSidebar, userReducer }) => {
                 </>
               ) : (
                 <>
-                  <Link href={"/pricing?suggest=payment"}>
+                  {/* <Link href={"/pricing?suggest=payment"}>
                     <p className="cursor-pointer hover:text-gray-800 text-my-text-gray">
                       Dashboard
                     </p>
-                  </Link>
+                  </Link> */}
                   <p
                     className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800"
                     onClick={() => dispatch(logout(router))}
@@ -80,11 +80,11 @@ const Sidebar = ({ isOpen, toggleSidebar, userReducer }) => {
               )
             ) : (
               <>
-                <Link href={"/login"}>
+                {/* <Link href={"/login"}>
                   <p className="cursor-pointer hover:text-gray-800 text-my-text-gray">
                     Dashboard
                   </p>
-                </Link>
+                </Link> */}
                 <Link href="/login">
                   <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
                     Login

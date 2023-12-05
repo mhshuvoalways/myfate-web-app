@@ -185,7 +185,7 @@
 
   /* Get started */
   .gswsl {
-    background-image: url("../public/gswsl/gswslBg.svg");
+    background-image: url("../public/gswsl/gswslBg.png");
   }
 
   /* what sell catelog */
@@ -195,11 +195,6 @@
   .whatsellcalelog .slick-dots {
     bottom: -10% !important;
     width: 95% !important;
-  }
-
-  /* pricing get started */
-  .pricing-gswsl {
-    background-image: url("../public/gswsl/lightpurplepattern.svg");
   }
 
   /* what you can sell */

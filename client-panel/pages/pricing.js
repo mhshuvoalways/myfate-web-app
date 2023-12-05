@@ -18,7 +18,7 @@ const Pricing = () => {
       <Faq />
       <WhatSellCtlog />
       <StayUpdCtlog />
-      <GswSl pricing />
+      <GswSl pricing/>
       <Footer />
     </>
   );

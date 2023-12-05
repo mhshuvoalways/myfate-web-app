@@ -22,7 +22,7 @@ const Index = () => {
       <Reviews />
       <FormFound />
       <Pricing />
-      <GswSl home />
+      <GswSl />
       <Footer />
     </>
   );

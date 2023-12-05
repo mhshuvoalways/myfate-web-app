@@ -10,16 +10,18 @@ const index = () => {
     <div className="bg-blue-50 buildgrowth">
       <div className="border-l border-r px-5 py-32">
         <div className="mycontainer space-y-6 w-full">
-          <p className="text-my-blue font-semibold text-xl">Built for growth</p>
+          <p className="text-my-blue font-semibold text-xl">
+            All you wantto know
+          </p>
           <p className="text-4xl font-bold">
-            Take your startup farther, faster
+            Take a look into celebrities ’ futur
           </p>
           <p className="text-xl">
-            Startups build on Stripe to launch faster, adapt as they grow, and
-            automate workflows to do more with less. Build your own API-based
-            integration or use our low- to no-code solutions, which are simple
-            enough for easy implementation and powerful enough to scale as fast
-            and as far as you need.
+            For celebrities, our reports are particularly intriguing as they
+            offer insights into their destinies, career paths, personal
+            relationship, and potential future successes or challenges. a unique
+            tapestry woven with the year, month, day, and characteristics, each
+            represented by a specific sign and elementin the Korean zodiac.
           </p>
         </div>
         <div className="flex md:justify-between justify-center mt-0 md:mt-20 gap-5 flex-wrap mycontainer">
@@ -34,12 +36,9 @@ const index = () => {
                   <Image src={AtlasIcon} alt="" />
                   <p className="font-semibold">Atlas</p>
                 </div>
-                <p className="text-3xl font-semibold">
-                  Incorporate your company
-                </p>
+                <p className="text-3xl font-semibold">Kylie Jenner</p>
                 <p className="text-xl text-gray-600">
-                  Form a legal entity, issue stock, and start accepting
-                  payments.
+                  Entrepreneurial success and personal growth
                 </p>
                 <div className="last-element pt-8 cursor-pointer">
                   <p className="text-my-blue text-xl font-semibold pb-1">
@@ -59,10 +58,9 @@ const index = () => {
                   <Image src={PaymentIcon} alt="" />
                   <p className="font-semibold">Checkout</p>
                 </div>
-                <p className="text-3xl font-semibold">Sell to consumers</p>
+                <p className="text-3xl font-semibold">Taylor Swift</p>
                 <p className="text-xl text-gray-600">
-                  Launch a B2C business with a prebuilt payment page that’s
-                  optimized for conversion.
+                  Artistic evolution and relational dynamics.
                 </p>
                 <div className="last-element pt-8 cursor-pointer">
                   <p className="text-my-blue text-xl font-semibold pb-1">{`Start with checkout`}</p>
@@ -82,10 +80,9 @@ const index = () => {
                   <Image src={PaymentIcon} alt="" />
                   <p className="font-semibold">Checkout</p>
                 </div>
-                <p className="text-3xl font-semibold">Validate your idea</p>
+                <p className="text-3xl font-semibold">Harry Styles</p>
                 <p className="text-xl text-gray-600">
-                  Test your product idea by launching payments with little to no
-                  code.
+                  Musical versatility and personal balance.
                 </p>
                 <div className="last-element pt-8 cursor-pointer">
                   <p className="text-my-blue text-xl font-semibold pb-1">
@@ -105,10 +102,9 @@ const index = () => {
                   <Image src={IncomingIcon} alt="" />
                   <p className="font-semibold">Checkout</p>
                 </div>
-                <p className="text-3xl font-semibold">Sell to businesses</p>
+                <p className="text-3xl font-semibold">Timothee Chalamet</p>
                 <p className="text-xl text-gray-600">
-                  Launch a B2B business and collect one-time or recurring
-                  payments from customers.
+                  Rising acting career and future potentials
                 </p>
                 <div className="last-element pt-8 cursor-pointer">
                   <p className="text-my-blue text-xl font-semibold pb-1">

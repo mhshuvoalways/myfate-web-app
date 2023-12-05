@@ -1,5 +1,26 @@
 const customers = [
   {
+    name: "Bangladesh",
+    logo: "https://flagcdn.com/w320/bd.png",
+    storeLink:
+      "https://www.google.com/maps/place/Bangladesh/@23.4521645,85.845406,6z/data=!3m1!4b1!4m5!3m4!1s0x30adaaed80e18ba7:0xf2d28e0c4e1fc6b!8m2!3d23.684994!4d90.356331?shorturl=1",
+  },
+  {
+    name: "South Korean",
+    logo: "https://flagcdn.com/w320/kr.png",
+    storeLink: "https://goo.gl/maps/7ecjaJXefjAQhxjGA",
+  },
+  {
+    name: "India",
+    logo: "https://flagcdn.com/w320/in.png",
+    storeLink: "https://goo.gl/maps/WSk3fLwG4vtPQetp7",
+  },
+  {
+    name: "Japan",
+    logo: "https://flagcdn.com/w320/jp.png",
+    storeLink: "https://goo.gl/maps/NGTLSCSrA8bMrvnX9",
+  },
+  {
     name: "Bernadines Bistro",
     logo: "https://res.cloudinary.com/catlog/image/upload/c_scale,w_100/v1670305498/website-store-logos/bernadines.webp",
     storeLink: "https://catlog.shop/pfbjxwquk5xsde82",
@@ -119,14 +140,15 @@ const customers = [
 import LazyImage from "../Utils/LazyImage";
 import Link from "next/link";
 
-const ContentScroller = ({ storeLinks }) => {
+const ContentScroller = () => {
   return (
     <div className="w-full mt-32">
-      {storeLinks && (
-        <p className="font-semibold text-2xl text-center w-10/12 mx-auto mb-20">
-          Trusted by thousands of Merchants
-        </p>
-      )}
+      <p className="font-semibold text-3xl text-center w-10/12 mx-auto">
+        Millions of Saju users
+      </p>
+      <p className="font-semibold text-center w-10/12 mx-auto mb-20 mt-5">
+        Trusted by thousands of Merchants
+      </p>
       <div
         className={`flex marquee-container full relative h-14 sm:h-16 md:h-20 left-0`}
       >
