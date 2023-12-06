@@ -1,11 +1,5 @@
 const customers = [
   {
-    name: "Bangladesh",
-    logo: "https://flagcdn.com/w320/bd.png",
-    storeLink:
-      "https://www.google.com/maps/place/Bangladesh/@23.4521645,85.845406,6z/data=!3m1!4b1!4m5!3m4!1s0x30adaaed80e18ba7:0xf2d28e0c4e1fc6b!8m2!3d23.684994!4d90.356331?shorturl=1",
-  },
-  {
     name: "South Korean",
     logo: "https://flagcdn.com/w320/kr.png",
     storeLink: "https://goo.gl/maps/7ecjaJXefjAQhxjGA",

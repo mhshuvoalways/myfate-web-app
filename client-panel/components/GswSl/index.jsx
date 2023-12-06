@@ -1,7 +1,5 @@
 import Link from "next/link";
-import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Fade } from "react-reveal";
 import TextAnimation from "../Utils/TextAnimation";
 
@@ -61,11 +59,12 @@ const index = ({ pricing }) => {
             </div>
             <Link href={"/payment"}>
               <motion.button
-                whileTap={{ scale: 0.9 }}
-                className="bg-my-blue rounded px-5 py-3 font-gabarito text-lg font-semibold flex items-center gap-2"
+                whileTap={{
+                  scale: 0.9,
+                }}
+                className="bg-gray-900 px-5 text-white py-2 text-lg font-semibold rounded"
               >
-                <p className="text-white">Start Now</p>
-                <Image src={ArrowRight} alt="" />
+                Start Now
               </motion.button>
             </Link>
           </Fade>

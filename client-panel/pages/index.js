@@ -4,7 +4,9 @@ import StoreLinksIntro from "@/components/Intro";
 import Testimonials from "@/components/Testimonials";
 import WhyCatelog from "@/components/WhyCatelog";
 import PromiseYou from "@/components/PromiseYou";
+import HowToUse from "@/components/HowToUse";
 import Reviews from "@/components/Reviews";
+import WhatYouGet from "@/components/WhatYouGet";
 import FormFound from "@/components/FormFound";
 import Pricing from "@/components/Pricing";
 import GswSl from "@/components/GswSl";
@@ -18,6 +20,8 @@ const Index = () => {
       <StoreLinksIntro />
       <Testimonials />
       <WhyCatelog />
+      <HowToUse />
+      <WhatYouGet />
       <PromiseYou />
       <Reviews />
       <FormFound />

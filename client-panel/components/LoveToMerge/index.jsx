@@ -39,39 +39,39 @@ const StoreLinksExtras = () => {
 const extras = [
   [
     {
-      name: "Custom store links",
+      name: "Emmey lian",
       title: "Software Engineer",
-      des: "Merge should make you and your end users’ lives easier: less work in building multiple integrations, real-time data syncing, and accurate data.",
+      des: "I had three different appointments at Conceptions, and each time the staff was well informed, friendly, and kind. You could see they really care about their customers. There are no words to thank them enough",
       pic: Client1,
     },
     {
-      name: "Custom store links",
+      name: "John doe",
       title: "Software Engineer",
       des: "Merge should make you and your end users’ lives easier: less work in building multiple integrations, real-time data syncing, and accurate data.",
       pic: Client2,
     },
     {
-      name: "Custom store links",
+      name: "Nay nam",
       title: "Software Engineer",
-      des: "Merge should make you and your end users’ lives easier: less work in building multiple integrations, real-time data syncing, and accurate data.",
+      des: "We cannot praise him enough for the exceptional care we received throughout our fertility journey. Dr. Diarn and the entire team were attentive, and always available to address our concerns.",
       pic: Client3,
     },
 
     {
-      name: "Custom store links",
+      name: "Rohan tyson",
       title: "Software Engineer",
-      des: "Merge should make you and your end users’ lives easier: less work in building multiple integrations, real-time data syncing, and accurate data.",
+      des: "Thank you so much for your kind words and for sharing your experience with MyFates. We are thrilled to hear that our team provided excellent service during your recent visit, leaving a strong impression. ",
       pic: Client4,
     },
     {
-      name: "Custom store links",
-      title: "Software Engineer",
+      name: "Gian jeson",
+      title: "Designeer",
       des: "Merge should make you and your end users’ lives easier: less work in building multiple integrations, real-time data syncing, and accurate data.",
       pic: Client5,
     },
     {
-      name: "Custom store links",
-      title: "Software Engineer",
+      name: "Paul walker",
+      title: "Product manager",
       des: "Merge should make you and your end users’ lives easier: less work in building multiple integrations, real-time data syncing, and accurate data.",
       pic: Client6,
     },

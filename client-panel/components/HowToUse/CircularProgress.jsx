@@ -31,7 +31,7 @@ const CircularProgress = ({ baseColor, width, outline, progress }) => {
         cx={circleProps.width / 2}
         cy={circleProps.width / 2}
         r={circleRadius}
-        stroke="#EF940F"
+        stroke="#332089"
         stroke-width={circleProps.outline}
         className="progress-circle transform -rotate-90 origin-center"
         strokeDasharray={circleCircumfrence}

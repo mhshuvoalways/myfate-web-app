@@ -2,7 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/store-links": "pages/store-links.js",
-  "/pricing": "pages/pricing.js",
-  "/past-life": "pages/past-life.js"
+  "/": "pages/index.js",
+  "/store-links": "pages/store-links.js"
 }

@@ -185,7 +185,7 @@
 
   /* Get started */
   .gswsl {
-    background-image: url("../public/gswsl/gswslBg.png");
+    background-image: url("../public/gswsl/prevbg.svg");
   }
 
   /* what sell catelog */
@@ -237,5 +237,46 @@
     100% {
       transform: translateX(-100%);
     }
+  }
+
+  .template {
+    background-image: linear-gradient(-45deg, #720948, transparent),
+      linear-gradient(45deg, #135058, transparent),
+      linear-gradient(135deg, #195792, transparent),
+      linear-gradient(-135deg, #282d52, transparent);
+    background-size: 150% 150%;
+    -webkit-animation: gradientBG 10s ease infinite;
+    animation: gradientBG 10s ease infinite;
+  }
+  .template-btn {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.75rem 0 0.75rem 0;
+    border: 1px solid white !important;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+  }
+  @keyframes gradientBG {
+    0% {
+      background-position: 100% 25%;
+    }
+    25% {
+      background-position: 0% 100%;
+    }
+    50% {
+      background-position: 100% 25%;
+    }
+    75% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 25%;
+    }
+  }
+  .result-bg {
+    background-image: linear-gradient(#0c0b22 0%, #2a5a93 100%);
+    background-attachment: fixed;
+  }
+  .text-shadow {
+    text-shadow: 0px 0px 4px #ffffff;
   }
 }
