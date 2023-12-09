@@ -30,6 +30,10 @@
     padding: auto 100px !important;
   }
 
+  .font-title {
+    font-family: "Zilla Slab", serif;
+  }
+
   .font-gabarito {
     font-family: "Gabarito", cursive;
   }
@@ -185,7 +189,7 @@
 
   /* Get started */
   .gswsl {
-    background-image: url("../public/gswsl/prevbg.svg");
+    background-image: url("../public/gswsl/gswslBg.png");
   }
 
   /* what sell catelog */

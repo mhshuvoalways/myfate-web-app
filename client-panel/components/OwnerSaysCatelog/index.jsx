@@ -38,7 +38,7 @@ const NextArrow = (props) => {
   );
 };
 
-const index = () => {
+const index = ({ home }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -50,8 +50,8 @@ const index = () => {
   };
 
   return (
-    <div className="bg-gray-50 ownersayscatelog">
-      <div className="mycontainer mt-32 pt-16 sm:pt-28 pb-40">
+    <div className={`ownersayscatelog ${home ? "bg-my-bg-pastel" : "bg-gray-50 mt-32"}`}>
+      <div className="mycontainer pt-16 sm:pt-28 pb-40">
         <div>
           <TextAnimation
             letters={[

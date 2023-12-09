@@ -1,8 +1,8 @@
 import Homebg from "@/public/intro/homebg.png";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import AnimationText from "../Utils/TextAnimation";
+import Button from "../common/Button";
 
 const index = () => {
   return (
@@ -53,12 +53,9 @@ const index = () => {
             Ancient Wisdom from Korea and Japan
           </p>
           <Link href={"/pricing"}>
-            <motion.p
-              whileTap={{ scale: 0.9 }}
-              className="bg-gray-900 w-full text-white py-2 text-lg font-semibold rounded text-center sm:w-40 mx-auto mt-10"
-            >
-              Start now
-            </motion.p>
+            <div className="mt-10">
+              <Button value={"Start now"} btnCenter />
+            </div>
           </Link>
           <Image src={Homebg} alt="" className="" />
         </div>

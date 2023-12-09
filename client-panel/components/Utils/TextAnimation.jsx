@@ -12,7 +12,7 @@ const Index = ({ letters, className, textCenter }) => {
 
   return (
     <VisibilitySensor onChange={handleVisibilityChange}>
-      <div>
+      <div className="font-title">
         {hasBeenVisible ? (
           <div className={`words-line ${textCenter && "text-center"}`}>
             {letters.map((letter, index) => (

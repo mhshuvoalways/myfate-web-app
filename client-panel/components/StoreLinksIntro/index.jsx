@@ -1,4 +1,3 @@
-import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 import Play from "@/public/storeLinks/play.svg";
 import StoreFrontWhatsApp from "@/public/storeLinks/storeFrontWhatsapp.webp";
 import { motion } from "framer-motion";
@@ -7,6 +6,7 @@ import { useState } from "react";
 import { Fade } from "react-reveal";
 import Modal from "../Modal";
 import TextAnimation from "../Utils/TextAnimation";
+import Button from "../common/Button";
 
 const Index = () => {
   const [modal, setModal] = useState(false);
@@ -39,13 +39,7 @@ const Index = () => {
             />
             <div className="flex items-center justify-center gap-5 flex-wrap">
               <Fade bottom>
-                <motion.button
-                  whileTap={{ scale: 0.9 }}
-                  className="bg-my-blue rounded px-5 py-3 font-gabarito text-lg font-semibold flex items-center gap-2"
-                >
-                  <p className="text-white">Start using links</p>
-                  <Image src={ArrowRight} alt="" />
-                </motion.button>
+                <Button value={"Start using links"} />
                 <motion.button
                   whileTap={{ scale: 0.9 }}
                   className="bg-white rounded px-5 py-3 font-gabarito text-lg font-semibold flex items-center gap-2"

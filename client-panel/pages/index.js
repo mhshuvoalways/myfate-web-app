@@ -5,11 +5,15 @@ import Testimonials from "@/components/Testimonials";
 import WhyCatelog from "@/components/WhyCatelog";
 import PromiseYou from "@/components/PromiseYou";
 import HowToUse from "@/components/HowToUse";
-import Reviews from "@/components/Reviews";
+import BuildForGrowth from "@/components/BuildForGrowth";
 import WhatYouGet from "@/components/WhatYouGet";
+import OwnerSaysCatelog from "@/components/OwnerSaysCatelog";
 import FormFound from "@/components/FormFound";
 import Pricing from "@/components/Pricing";
+import LoveToMerge from "@/components/LoveToMerge";
 import GswSl from "@/components/GswSl";
+import NotConvinced from "@/components/NotConvinced";
+import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -22,10 +26,12 @@ const Index = () => {
       <WhyCatelog />
       <HowToUse />
       <WhatYouGet />
-      <PromiseYou />
-      <Reviews />
-      <FormFound />
+      <OwnerSaysCatelog home/>
+      <LoveToMerge />
+      <BuildForGrowth />
+      <NotConvinced />
       <Pricing />
+      <Faq />
       <GswSl />
       <Footer />
     </>

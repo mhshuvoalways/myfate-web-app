@@ -100,7 +100,7 @@ const Index = () => {
   };
 
   return (
-    <div className="mycontainer mt-32 py-10">
+    <div className="mycontainer py-32">
       <TextAnimation
         letters={[
           {

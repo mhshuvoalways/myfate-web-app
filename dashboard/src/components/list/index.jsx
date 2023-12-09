@@ -19,7 +19,7 @@ const Index = ({ reports, setState }) => {
   };
 
   return (
-    <div className="bg-white shadow rounded-xl w-full md:w-3/12 mt-16 sticky top-10">
+    <div className="bg-white shadow rounded-xl w-full md:w-3/12 mt-16 static md:sticky top-10">
       {reports &&
         Object.keys(reports.reports).map((el) => {
           return (
@@ -65,7 +65,9 @@ const Index = ({ reports, setState }) => {
                           spy={true}
                           to={val[0]}
                           key={val[0]}
-                          onClick={() => setState(reports.reports[el])}
+                          onClick={() => {
+                            setState(reports.reports[el]);
+                          }}
                         >
                           <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
                             {val[0]}

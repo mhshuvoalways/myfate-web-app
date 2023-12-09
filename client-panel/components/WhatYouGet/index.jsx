@@ -1,13 +1,12 @@
-import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 import BoxIcon from "@/public/whatWeGet/box.svg";
 import MsgIcon from "@/public/whatWeGet/msg.svg";
 import NetIcon from "@/public/whatWeGet/net.svg";
 import ShareIcon from "@/public/whatWeGet/share.svg";
 import WhatYouGetImg from "@/public/whatWeGet/kid.jpeg";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { Fade, Zoom } from "react-reveal";
 import TextAnimation from "../Utils/TextAnimation";
+import Button from "../common/Button";
 
 const Index = () => {
   return (
@@ -69,13 +68,9 @@ const Index = () => {
                   <br />
                   orders easily?
                 </p>
-                <motion.button
-                  whileTap={{ scale: 0.9 }}
-                  className="bg-my-blue rounded px-5 py-3 font-gabarito text-lg font-semibold flex items-center gap-2 mt-10"
-                >
-                  <p className="text-white">Start using links</p>
-                  <Image src={ArrowRight} alt="" />
-                </motion.button>
+                <div className="mt-10">
+                  <Button value={"Start using links"} />
+                </div>
               </div>
             </Zoom>
           </div>

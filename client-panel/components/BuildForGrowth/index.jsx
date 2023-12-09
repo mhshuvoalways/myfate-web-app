@@ -14,7 +14,7 @@ const index = () => {
             All you wantto know
           </p>
           <p className="text-4xl font-bold">
-            Take a look into celebrities ’ futur
+            Take a look into celebrities’ future
           </p>
           <p className="text-xl">
             For celebrities, our reports are particularly intriguing as they

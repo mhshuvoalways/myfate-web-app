@@ -116,7 +116,7 @@ const Index = () => {
 
   return (
     <div className="bg-gray-50 whatsellcatlog">
-      <div className="mt-32 py-28 mycontainer">
+      <div className="py-28 mycontainer">
         <div>
           <TextAnimation
             letters={[
