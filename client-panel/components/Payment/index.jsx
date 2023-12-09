@@ -2,12 +2,10 @@ import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import Modal from "../Utils/Modal";
 import AddEdit from "./AddEdit";
 import TickIcon from "@/public/pricing/tick.svg";
-import Paypal from "./Paypal";
-import { userUpdate } from "@/store/actions/userAction";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -18,7 +16,6 @@ const Index = () => {
   });
 
   const router = useRouter();
-  const dispatch = useDispatch();
 
   const { plan, price } = router.query;
 
@@ -33,16 +30,6 @@ const Index = () => {
       ...emailValue,
       submit: true,
     });
-  };
-
-  const paymentHandler = () => {
-    const getLocalValues =
-      typeof window !== "undefined" &&
-      JSON.parse(localStorage.getItem("userValue"));
-    const newObj = getLocalValues;
-    newObj.planType = plan.charAt(0).toUpperCase() + plan.slice(1);
-    dispatch(userUpdate(newObj, router));
-    typeof window !== "undefined" && localStorage.removeItem("userValue");
   };
 
   const removeValue = () => {
@@ -124,13 +111,13 @@ const Index = () => {
           )}
         </div>
         <div className="flex items-center gap-3 mt-8">
-          <motion.p
-            className="border-b-2 border-black border-dotted text-sm cursor-pointer"
+          <motion.button
+            className="bg-black p-2 w-full text-gray-200 font-bold tracking-widest mt-8 hover:bg-gray-800 rounded"
             whileTap={{ scale: 0.9 }}
             onClick={modalHandler}
           >
-            Set Details
-          </motion.p>
+            SET DETAILS
+          </motion.button>
           <motion.p
             className="border-b-2 border-black border-dotted text-sm cursor-pointer"
             whileTap={{ scale: 0.9 }}
@@ -147,27 +134,27 @@ const Index = () => {
           </div>
           <p className="text-xl">${price}</p>
         </div>
-        {plan === "starter" ? (
-          <button
-            className={`bg-black p-2 w-full text-gray-200 font-bold tracking-widest mt-8 hover:bg-gray-800 rounded ${
-              userValue && emailValue.value && emailValue.submit
-                ? "opacity-100"
-                : "opacity-50"
-            }`}
-            onClick={paymentHandler}
-            disabled={
-              userValue && emailValue.value && emailValue.submit ? false : true
-            }
-          >
-            START WITHOUT PAY
-          </button>
-        ) : (
-          <Paypal paymentHandler={paymentHandler} />
-        )}
+        <motion.button
+          className={`p-2 w-full text-gray-200 font-bold tracking-widest mt-8 hover:bg-gray-800 rounded ${
+            userValue
+              ? "bg-black cursor-pointer"
+              : "bg-gray-500 cursor-not-allowed"
+          }`}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => router.push("/answers")}
+          disabled={userValue ? false : true}
+        >
+          NEXT
+        </motion.button>
       </div>
       {modalOpen && (
         <Modal modalHandler={modalHandler}>
-          <AddEdit setUserValue={setUserValue} modalHandler={modalHandler} />
+          <AddEdit
+            setUserValue={setUserValue}
+            modalHandler={modalHandler}
+            plan={plan}
+            price={price}
+          />
         </Modal>
       )}
     </div>

@@ -8,6 +8,7 @@ const userRouter = require("./routers/userRouter");
 const reportRouter = require("./routers/reportRouter");
 const loveRouter = require("./routers/loveRouter");
 const financeRouter = require("./routers/financeRouter");
+const reportsRouter = require("./routers/reportsRouter");
 
 const app = express();
 app.use(express.json());
@@ -18,9 +19,18 @@ app.use("/api/user", userRouter);
 app.use("/api/report", reportRouter);
 app.use("/api/love", loveRouter);
 app.use("/api/finance", financeRouter);
+app.use("/api/reports", reportsRouter);
 
 app.get("/", (req, res) => {
   res.send("This is a business web app");
 });
 
 db(app);
+
+const obj = {
+  a: 1, 
+  b:3
+}
+Object.entries(obj).forEach(el => {
+  console.log(el);
+})

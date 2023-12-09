@@ -2,11 +2,12 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import RadioBtn from "../FormFound/RadioBtn";
 
-const AddEdit = ({ setUserValue, modalHandler }) => {
+const AddEdit = ({ setUserValue, modalHandler, plan, price }) => {
   const [dontKnow, setDontKnow] = useState(false);
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
+    gender: "Male",
     birthDateMM: "",
     birthDateDD: "",
     birthDateYYYY: "",
@@ -40,11 +41,14 @@ const AddEdit = ({ setUserValue, modalHandler }) => {
       const formatUserDetails = {
         firstName: userDetails.firstName,
         lastName: userDetails.lastName,
+        gender: userDetails.gender,
         birthDate: `${userDetails.birthDateYYYY}-${userDetails.birthDateMM}-${userDetails.birthDateDD}`,
         birthTime: userDetails.birthTimeHH
           ? userDetails.birthTimeMM &&
             `${hrCalculate}:${userDetails.birthTimeMM}:00`
           : "",
+        planType: plan.charAt(0).toUpperCase() + plan.slice(1),
+        price: price,
       };
       setUserValue(formatUserDetails);
       typeof window !== "undefined" &&
@@ -81,6 +85,18 @@ const AddEdit = ({ setUserValue, modalHandler }) => {
             onChange={onChangeHandler}
             name="lastName"
           />
+        </div>
+        <div className="mt-8">
+          <p>Gender:</p>
+          <select
+            className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
+            required
+            onChange={onChangeHandler}
+            name="gender"
+          >
+            <option>Male</option>
+            <option>Female</option>
+          </select>
         </div>
         <div className="mt-8">
           <p>Birth Date & Time:</p>

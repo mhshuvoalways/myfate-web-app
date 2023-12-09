@@ -1,11 +1,10 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { CiDollar, CiHeart } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdOutlineClearAll } from "react-icons/md";
 import { Link } from "react-scroll";
 
-const Index = () => {
+const Index = ({ reports, setState }) => {
   const [showItem, setShowItem] = useState([]);
 
   const itemHandler = (value) => {
@@ -21,240 +20,65 @@ const Index = () => {
 
   return (
     <div className="bg-white shadow rounded-xl w-full md:w-3/12 mt-16 sticky top-10">
-      <div>
-        <div
-          className="flex justify-between items-center cursor-pointer shadow-sm p-5"
-          onClick={() => itemHandler("dReport")}
-        >
-          <MdOutlineClearAll
-            className={`text-2xl ${
-              showItem.includes("dReport") && "text-blue-500"
-            }`}
-          />
-          <p
-            className={
-              showItem.includes("dReport") && `text-blue-500 font-semibold`
-            }
-          >
-            All
-          </p>
-          <IoIosArrowDown
-            className={`text-xl transition-all ${
-              showItem.includes("dReport")
-                ? "rotate-180 text-blue-500"
-                : "text-gray-400"
-            }`}
-          />
-        </div>
-        <AnimatePresence>
-          {showItem.includes("dReport") && (
-            <motion.div
-              className="my-3 px-2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Link
-                activeClass="bg-blue-50 font-semibold"
-                smooth={true}
-                spy={true}
-                to={"project"}
+      {reports &&
+        Object.keys(reports.reports).map((el) => {
+          return (
+            <div key={el}>
+              <div
+                className="flex justify-between items-center cursor-pointer shadow-sm p-5"
+                onClick={() => itemHandler(el)}
               >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
-                  Project
+                <MdOutlineClearAll
+                  className={`text-2xl ${
+                    showItem.includes(el) && "text-blue-500"
+                  }`}
+                />
+                <p
+                  className={
+                    showItem.includes(el) && `text-blue-500 font-semibold`
+                  }
+                >
+                  {el}
                 </p>
-              </Link>
-              <Link
-                activeClass="bg-blue-50 font-semibold"
-                smooth={true}
-                spy={true}
-                to={"asset"}
-              >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
-                  Asset
-                </p>
-              </Link>
-              <Link
-                activeClass="bg-blue-50 font-semibold"
-                smooth={true}
-                spy={true}
-                to={"image"}
-              >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
-                  Image
-                </p>
-              </Link>
-              <Link
-                activeClass="bg-blue-50 font-semibold"
-                smooth={true}
-                spy={true}
-                to={"person"}
-              >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
-                  Person
-                </p>
-              </Link>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-      <div>
-        <div
-          className="flex justify-between items-center cursor-pointer shadow-sm p-5"
-          onClick={() => itemHandler("finance")}
-        >
-          <CiDollar
-            className={`text-2xl ${
-              showItem.includes("finance") && "text-blue-500"
-            }`}
-          />
-          <p
-            className={
-              showItem.includes("finance") && `text-blue-500 font-semibold`
-            }
-          >
-            Finance
-          </p>
-          <IoIosArrowDown
-            className={`text-xl transition-all ${
-              showItem.includes("finance")
-                ? "rotate-180 text-blue-500"
-                : "text-gray-400"
-            }`}
-          />
-        </div>
-        <AnimatePresence>
-          {showItem.includes("finance") && (
-            <motion.div
-              className="my-3 px-2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Link
-                activeClass="bg-blue-50 font-semibold"
-                smooth={true}
-                spy={true}
-                to={"project"}
-              >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
-                  Project
-                </p>
-              </Link>
-              <Link
-                activeClass="bg-blue-50 font-semibold"
-                smooth={true}
-                spy={true}
-                to={"asset"}
-              >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
-                  Asset
-                </p>
-              </Link>
-              <Link
-                activeClass="bg-blue-50 font-semibold"
-                smooth={true}
-                spy={true}
-                to={"image"}
-              >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
-                  Image
-                </p>
-              </Link>
-              <Link
-                activeClass="bg-blue-50 font-semibold"
-                smooth={true}
-                spy={true}
-                to={"person"}
-              >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
-                  Person
-                </p>
-              </Link>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-      <div>
-        <div
-          className="flex justify-between items-center cursor-pointer shadow-sm p-5"
-          onClick={() => itemHandler("love")}
-        >
-          <CiHeart
-            className={`text-2xl ${
-              showItem.includes("love") && "text-blue-500"
-            }`}
-          />
-          <p
-            className={
-              showItem.includes("love") && `text-blue-500 font-semibold`
-            }
-          >
-            Love
-          </p>
-          <IoIosArrowDown
-            className={`text-xl transition-all ${
-              showItem.includes("love")
-                ? "rotate-180 text-blue-500"
-                : "text-gray-400"
-            }`}
-          />
-        </div>
-        <AnimatePresence>
-          {showItem.includes("love") && (
-            <motion.div
-              className="my-3 px-2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Link
-                activeClass="bg-blue-50 font-semibold"
-                smooth={true}
-                spy={true}
-                to={"project"}
-              >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
-                  Project
-                </p>
-              </Link>
-              <Link
-                activeClass="bg-blue-50 font-semibold"
-                smooth={true}
-                spy={true}
-                to={"asset"}
-              >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
-                  Asset
-                </p>
-              </Link>
-              <Link
-                activeClass="bg-blue-50 font-semibold"
-                smooth={true}
-                spy={true}
-                to={"image"}
-              >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
-                  Image
-                </p>
-              </Link>
-              <Link
-                activeClass="bg-blue-50 font-semibold"
-                smooth={true}
-                spy={true}
-                to={"person"}
-              >
-                <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
-                  Person
-                </p>
-              </Link>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+                <IoIosArrowDown
+                  className={`text-xl transition-all ${
+                    showItem.includes("dReport")
+                      ? "rotate-180 text-blue-500"
+                      : "text-gray-400"
+                  }`}
+                />
+              </div>
+              <AnimatePresence>
+                {showItem.includes(el) && (
+                  <motion.div
+                    className="my-3 px-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {Object.entries(reports.reports[el]).map((val) => {
+                      return (
+                        <Link
+                          activeClass="bg-blue-50 font-semibold"
+                          smooth={true}
+                          spy={true}
+                          to={val[0]}
+                          key={val[0]}
+                          onClick={() => setState(reports.reports[el])}
+                        >
+                          <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
+                            {val[0]}
+                          </p>
+                        </Link>
+                      );
+                    })}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          );
+        })}
     </div>
   );
 };

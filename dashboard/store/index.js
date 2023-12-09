@@ -9,6 +9,7 @@ import userReducer from "./reducers/userReducer";
 import notiReducer from "./reducers/notiReducer";
 import btnReducer from "./reducers/btnReducer";
 import reportReducer from "./reducers/reportReducer";
+import reportsReducer from "./reducers/reportsReducer";
 
 const middlewares = [thunk];
 const middlewareEnhancer = applyMiddleware(...middlewares);
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   notiReducer,
   btnReducer,
   reportReducer,
+  reportsReducer,
 });
 
 const store = createStore(rootReducer, composedEnhancers);

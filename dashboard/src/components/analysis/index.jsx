@@ -1,11 +1,21 @@
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Element } from "react-scroll";
 import Header from "../header";
 import Items from "../chart/Items";
 import List from "../list";
+import { getreports } from "../../../store/actions/reportsAction";
 
 const Index = () => {
+  const [state, setState] = useState(null);
   const userReducer = useSelector((state) => state.userReducer);
+  const reportsReducer = useSelector((state) => state.reportsReducer);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getreports());
+  }, [dispatch]);
 
   return (
     <div>
@@ -34,49 +44,17 @@ const Index = () => {
           <div className="space-y-10 mt-16 w-full md:w-7/12 lg:w-8/12">
             <img src="/images/treesun.jpg" className="w-full rounded-3xl" />
             <div className="text-xl leading-loose text-justify">
-              <Element name="project">
-                Shuvo displays the imaginative creativity of an artistic soul,
-                expressive and original. his presence is a celebration of
-                individuality, inspiring others to embrace their own creative
-                talents and to express themselves authentically. Shuvo displays
-                the imaginative creativity of an artistic soul, expressive and
-                original. his presence is a celebration of individuality,
-                inspiring others to embrace their own creative talents and to
-                express themselves authentically.
-              </Element>
-              <Element name="asset">
-                Shuvo displays the imaginative creativity of an artistic soul,
-                expressive and original. his presence is a celebration of
-                individuality, inspiring others to embrace their own creative
-                talents and to express themselves authentically. Shuvo displays
-                the imaginative creativity of an artistic soul, expressive and
-                original. his presence is a celebration of individuality,
-                inspiring others to embrace their own creative talents and to
-                express themselves authentically.
-              </Element>
-              <Element name="image">
-                Shuvo displays the imaginative creativity of an artistic soul,
-                expressive and original. his presence is a celebration of
-                individuality, inspiring others to embrace their own creative
-                talents and to express themselves authentically. Shuvo displays
-                the imaginative creativity of an artistic soul, expressive and
-                original. his presence is a celebration of individuality,
-                inspiring others to embrace their own creative talents and to
-                express themselves authentically.
-              </Element>
-              <Element name="person">
-                Shuvo displays the imaginative creativity of an artistic soul,
-                expressive and original. his presence is a celebration of
-                individuality, inspiring others to embrace their own creative
-                talents and to express themselves authentically. Shuvo displays
-                the imaginative creativity of an artistic soul, expressive and
-                original. his presence is a celebration of individuality,
-                inspiring others to embrace their own creative talents and to
-                express themselves authentically.
-              </Element>
+              {state &&
+                Object.entries(state).map((el, index) => {
+                  return (
+                    <Element name={el[0]} key={index} className="pb-5">
+                      {el[1]}
+                    </Element>
+                  );
+                })}
             </div>
           </div>
-          <List />
+          <List reports={reportsReducer.reports} setState={setState} />
         </div>
       </div>
     </div>

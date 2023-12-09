@@ -10,6 +10,7 @@ const userSchema = new Schema(
     profile: {
       firstName: String,
       lastName: String,
+      gender: String,
       birthDate: String,
       birthTime: String,
       sixMonthPrediction: [],

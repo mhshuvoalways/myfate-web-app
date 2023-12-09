@@ -40,11 +40,6 @@ const Sidebar = ({ isOpen, toggleSidebar, userReducer }) => {
                 Pricing
               </p>
             </Link>
-            <Link href="/template">
-              <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
-                Template
-              </p>
-            </Link>
             <Link href="/past-life">
               <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
                 Past Life
