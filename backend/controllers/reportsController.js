@@ -29,13 +29,16 @@ const filePaths = [
   path.join(__dirname, "reports/work-academic/decade.json"),
 ];
 
-const addReports = (userId, firstName, lastName, gender, res) => {
+const addReports = (req, res) => {
+  const { _id } = req.user;
+  const { firstName, lastName, gender } = req.body;
+
   const personalityType = "KGBX";
   const userName = `${firstName}${lastName}`.trim().toLowerCase();
   finalAPI(filePaths, personalityType, userName, gender)
     .then((createRes) => {
       const newObj = {
-        userId,
+        userId: _id,
         title: createRes.title,
         date: createRes.date,
         reports: {

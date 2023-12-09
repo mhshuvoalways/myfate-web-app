@@ -42,7 +42,7 @@ const Index = ({ reports, setState }) => {
                 </p>
                 <IoIosArrowDown
                   className={`text-xl transition-all ${
-                    showItem.includes("dReport")
+                    showItem.includes(el)
                       ? "rotate-180 text-blue-500"
                       : "text-gray-400"
                   }`}

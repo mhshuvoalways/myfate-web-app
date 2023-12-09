@@ -165,14 +165,22 @@ export const userUpdate = (userValue, router) => (dispatch) => {
   axios
     .put("/user/updateuser", userValue)
     .then((res) => {
-      dispatch({
-        type: Types.USER_UPDATE,
-        payload: res.data.response,
-      });
-      dispatch(notiAction(res.data.message));
-      dispatch(enableBtn(true));
-      dispatch(updateAllReports());
-      router.push("/");
+      axios
+        .post("/reports/addreports", userValue)
+        .then(() => {
+          dispatch({
+            type: Types.USER_UPDATE,
+            payload: res.data.response,
+          });
+          dispatch(notiAction(res.data.message));
+          dispatch(enableBtn(true));
+          dispatch(updateAllReports());
+          router.push("/");
+        })
+        .catch(() => {
+          dispatch(notiAction(err.response?.data.message));
+          dispatch(enableBtn(true));
+        });
     })
     .catch((err) => {
       dispatch(notiAction(err.response?.data.message));

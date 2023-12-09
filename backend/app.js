@@ -26,11 +26,3 @@ app.get("/", (req, res) => {
 });
 
 db(app);
-
-const obj = {
-  a: 1, 
-  b:3
-}
-Object.entries(obj).forEach(el => {
-  console.log(el);
-})

@@ -12,7 +12,6 @@ const {
 const transporter = require("../mail/transporter");
 const { recoverPass } = require("../mail/templates");
 const moment = require("moment");
-const { addReports } = require("./reportsController");
 
 const register = (req, res) => {
   const { email, password, recaptcha } = req.body;
@@ -398,7 +397,7 @@ const deleteUser = (req, res) => {
 };
 
 const updateUser = (req, res) => {
-  const { email, _id } = req.user;
+  const { email } = req.user;
   const { firstName, lastName, birthDate, birthTime, planType, gender } =
     req.body;
   let today = new Date();
@@ -423,7 +422,6 @@ const updateUser = (req, res) => {
         message: "Your plan has been successfully updated!",
         response,
       });
-      addReports(_id, firstName, lastName, gender, res);
     })
     .catch(() => {
       serverError(res);
