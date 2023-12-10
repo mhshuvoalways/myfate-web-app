@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Fade } from "react-reveal";
 import { useDispatch } from "react-redux";
@@ -80,6 +80,12 @@ const Template = () => {
 
   const myItem = questions[stepQuestions];
 
+  useEffect(() => {
+    if (!getLocalValues) {
+      router.push("/pricing");
+    }
+  }, []);
+
   return (
     <div
       className={`h-screen ${start !== "result" ? "template" : "result-bg"}`}
@@ -153,15 +159,21 @@ const Template = () => {
               <p className="text-white text-xl">
                 First Name: {getLocalValues.firstName}
               </p>
-              <p className="text-white text-xl">Last Name: {getLocalValues.lastName}</p>
+              <p className="text-white text-xl">
+                Last Name: {getLocalValues.lastName}
+              </p>
               <p className="text-white text-xl">
                 Birth Date: {getLocalValues.birthDate}
               </p>
               {getLocalValues.birthTime && (
                 <p>Birth Time: {getLocalValues.birthTime}</p>
               )}
-              <p className="text-white text-xl">Plan: {getLocalValues.planType}</p>
-              <p className="text-white text-xl">Price: {getLocalValues.price}</p>
+              <p className="text-white text-xl">
+                Plan: {getLocalValues.planType}
+              </p>
+              <p className="text-white text-xl">
+                Price: {getLocalValues.price}
+              </p>
             </div>
             {getLocalValues.planType === "Starter" ? (
               <button

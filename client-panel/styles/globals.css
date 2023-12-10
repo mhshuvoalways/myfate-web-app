@@ -72,12 +72,6 @@
       padding: 0 40px;
     }
   }
-  @media (min-width: 1280px) {
-    .mycontainer {
-      max-width: 1280px;
-      padding: 0 50px;
-    }
-  }
 
   /* Slider */
   .mySlider .slick-slide {
