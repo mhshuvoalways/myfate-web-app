@@ -155,19 +155,16 @@ const ContentScroller = () => {
       <div
         className={`flex marquee-container full relative h-14 sm:h-16 md:h-20 left-0`}
       >
-        <ScrollerList customers={allContents} index={0} />
-        <ScrollerList customers={allContents} index={1} />
+        <ScrollerList customers={allContents} />
       </div>
     </div>
   );
 };
 
-const ScrollerList = ({ customers, index }) => {
+const ScrollerList = ({ customers }) => {
   return (
     <ul
-      className={`flex items-center gap-5 justify-between mx-auto py-2 px-[5.5vw] sm:px-[4.5vw] lg:py-3 lg:px-[3.5vw] xl:px-[3.8vw] marquee ${
-        index === 1 ? "marquee2" : ""
-      }`}
+      className={`flex items-center gap-5 justify-between mx-auto py-2 px-[5.5vw] sm:px-[4.5vw] lg:py-3 lg:px-[3.5vw] xl:px-[3.8vw] marquee`}
     >
       {customers?.map((customer, i) => (
         <li className="py-1.5" key={i}>
