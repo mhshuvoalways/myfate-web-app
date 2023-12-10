@@ -7,11 +7,11 @@ import ArrowRight from "@/public/buildgrowth/arrowRight.svg";
 
 const index = () => {
   return (
-    <div className="bg-blue-50 buildgrowth">
+    <div className="bg-[#FFFAF3] buildgrowth">
       <div className="border-l border-r px-5 py-32">
         <div className="mycontainer space-y-6 w-full">
           <p className="text-my-blue font-semibold text-xl">
-            All you wantto know
+            All you want to know
           </p>
           <p className="text-4xl font-bold">
             Take a look into celebrities’ future

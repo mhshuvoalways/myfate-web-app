@@ -77,8 +77,8 @@ const HowItWorks = () => {
     0
   );
   const isActive = (index) =>
-    animProgress > 0 &&
-    Math.floor((animProgress - 0.01) * stepsCount) === index;
+    animProgress > 0 && Math.floor((animProgress - 0.01) * stepsCount) >= index;
+
   const isPast = (index) =>
     index < Math.floor((animProgress - 0.01) * stepsCount);
 
