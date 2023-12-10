@@ -1,70 +1,5 @@
 const customers = [
   {
-    name: "South Korean",
-    logo: "https://flagcdn.com/w320/kr.png",
-    storeLink: "",
-  },
-  {
-    name: "India",
-    logo: "https://flagcdn.com/w320/in.png",
-    storeLink: "",
-  },
-  {
-    name: "Japan",
-    logo: "https://flagcdn.com/w320/jp.png",
-    storeLink: "",
-  },
-  {
-    name: "Indonesia",
-    logo: "https://flagcdn.com/w320/id.png",
-    storeLink: "",
-  },
-  {
-    name: "China",
-    logo: "https://flagcdn.com/w320/mo.png",
-    storeLink: "",
-  },
-  {
-    name: "Thailand",
-    logo: "https://flagcdn.com/w320/th.png",
-    storeLink: "",
-  },
-  {
-    name: "Singapore",
-    logo: "https://flagcdn.com/w320/sg.png",
-    storeLink: "",
-  },
-  {
-    name: "Philippines",
-    logo: "https://flagcdn.com/w320/ph.png",
-    storeLink: "",
-  },
-  {
-    name: "Vietnam",
-    logo: "https://flagcdn.com/w320/vn.png",
-    storeLink: "",
-  },
-  {
-    name: "Israel",
-    logo: "https://flagcdn.com/w320/il.png",
-    storeLink: "",
-  },
-  {
-    name: "Malaysia",
-    logo: "https://flagcdn.com/w320/my.png",
-    storeLink: "",
-  },
-  {
-    name: "Palestine",
-    logo: "https://flagcdn.com/w320/ps.png",
-    storeLink: "",
-  },
-  {
-    name: "Saudi Arabia",
-    logo: "https://flagcdn.com/w320/sa.png",
-    storeLink: "",
-  },
-  {
     name: "Bernadines Bistro",
     logo: "https://res.cloudinary.com/catlog/image/upload/c_scale,w_100/v1670305498/website-store-logos/bernadines.webp",
     storeLink: "https://catlog.shop/pfbjxwquk5xsde82",
@@ -181,10 +116,34 @@ const customers = [
   },
 ];
 
+import { useEffect, useState } from "react";
 import LazyImage from "../Utils/LazyImage";
 import Link from "next/link";
+import axios from "axios";
 
 const ContentScroller = () => {
+  const [allContents, setAllContents] = useState(customers);
+
+  useEffect(() => {
+    const temp = [...allContents];
+    axios
+      .get("https://restcountries.com/v3.1/region/asia")
+      .then((res) => {
+        res.data.forEach((el) => {
+          const newObj = {
+            name: el.name.common,
+            logo: el.flags.png,
+            storeLink: el.maps.googleMaps,
+          };
+          temp.push(newObj);
+        });
+        setAllContents(temp);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <div className="w-full mt-32">
       <p className="font-semibold text-3xl text-center w-10/12 mx-auto">
@@ -196,8 +155,8 @@ const ContentScroller = () => {
       <div
         className={`flex marquee-container full relative h-14 sm:h-16 md:h-20 left-0`}
       >
-        <ScrollerList customers={customers} index={0} />
-        <ScrollerList customers={customers} index={1} />
+        <ScrollerList customers={allContents} index={0} />
+        <ScrollerList customers={allContents} index={1} />
       </div>
     </div>
   );
@@ -206,7 +165,7 @@ const ContentScroller = () => {
 const ScrollerList = ({ customers, index }) => {
   return (
     <ul
-      className={`flex items-center justify-between mx-auto py-2 px-[5.5vw] sm:px-[4.5vw] lg:py-3 lg:px-[3.5vw] xl:px-[3.8vw] marquee ${
+      className={`flex items-center gap-5 justify-between mx-auto py-2 px-[5.5vw] sm:px-[4.5vw] lg:py-3 lg:px-[3.5vw] xl:px-[3.8vw] marquee ${
         index === 1 ? "marquee2" : ""
       }`}
     >
