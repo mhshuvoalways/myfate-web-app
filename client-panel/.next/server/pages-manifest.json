@@ -4,5 +4,5 @@
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
   "/template": "pages/template.js",
-  "/fun-tests-guide": "pages/fun-tests-guide.js"
+  "/store-links": "pages/store-links.js"
 }

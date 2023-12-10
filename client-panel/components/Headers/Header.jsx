@@ -38,13 +38,9 @@ const Header = ({ toggleSidebar, userReducer }) => {
         <div className="gap-2 hidden sm:flex w-0 sm:w-32 ml-auto text-end">
           {userReducer.isAuthenticate ? (
             userReducer.user?.subscriptionPlan?.planType ? (
-              <Link
-                href={"https://personal-info-dashboard.vercel.app"}
-                target="blank"
-                className="w-0 sm:w-6 cursor-pointer ml-auto hidden sm:block"
-              >
+              <div className="w-0 sm:w-6 cursor-pointer ml-auto hidden sm:block">
                 <Image src={DashIcon} alt="" />
-              </Link>
+              </div>
             ) : (
               <Link
                 href={"/pricing?suggest=payment"}
