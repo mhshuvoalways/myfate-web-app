@@ -48,7 +48,7 @@ const HowItWorks = () => {
       scrollTrigger: {
         trigger: stepsWrapper,
         pin: true,
-        start: "100 top",
+        start: "-90 top",
         pinSpacing: true,
         scrub: true,
         end: "185% top",
@@ -91,7 +91,7 @@ const HowItWorks = () => {
   return (
     <>
       <div>
-        <div className="pin-spacer h-[2000px] sm:h-[2485px] md:h-[2085px] lg:h-[2285px] pt-[100px]">
+        <div className="pin-spacer h-[2000px] sm:h-[2485px] md:h-[2085px] lg:h-[2285px] mt-48">
           <section className="body-padding section-spacing steps-wrapper">
             <div className="mycontainer">
               <TextAnimation

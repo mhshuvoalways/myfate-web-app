@@ -2,17 +2,67 @@ const customers = [
   {
     name: "South Korean",
     logo: "https://flagcdn.com/w320/kr.png",
-    storeLink: "https://goo.gl/maps/7ecjaJXefjAQhxjGA",
+    storeLink: "",
   },
   {
     name: "India",
     logo: "https://flagcdn.com/w320/in.png",
-    storeLink: "https://goo.gl/maps/WSk3fLwG4vtPQetp7",
+    storeLink: "",
   },
   {
     name: "Japan",
     logo: "https://flagcdn.com/w320/jp.png",
-    storeLink: "https://goo.gl/maps/NGTLSCSrA8bMrvnX9",
+    storeLink: "",
+  },
+  {
+    name: "Indonesia",
+    logo: "https://flagcdn.com/w320/id.png",
+    storeLink: "",
+  },
+  {
+    name: "China",
+    logo: "https://flagcdn.com/w320/mo.png",
+    storeLink: "",
+  },
+  {
+    name: "Thailand",
+    logo: "https://flagcdn.com/w320/th.png",
+    storeLink: "",
+  },
+  {
+    name: "Singapore",
+    logo: "https://flagcdn.com/w320/sg.png",
+    storeLink: "",
+  },
+  {
+    name: "Philippines",
+    logo: "https://flagcdn.com/w320/ph.png",
+    storeLink: "",
+  },
+  {
+    name: "Vietnam",
+    logo: "https://flagcdn.com/w320/vn.png",
+    storeLink: "",
+  },
+  {
+    name: "Israel",
+    logo: "https://flagcdn.com/w320/il.png",
+    storeLink: "",
+  },
+  {
+    name: "Malaysia",
+    logo: "https://flagcdn.com/w320/my.png",
+    storeLink: "",
+  },
+  {
+    name: "Palestine",
+    logo: "https://flagcdn.com/w320/ps.png",
+    storeLink: "",
+  },
+  {
+    name: "Saudi Arabia",
+    logo: "https://flagcdn.com/w320/sa.png",
+    storeLink: "",
   },
   {
     name: "Bernadines Bistro",
