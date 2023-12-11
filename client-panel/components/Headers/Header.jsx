@@ -22,12 +22,9 @@ const Header = ({ toggleSidebar, userReducer }) => {
           ☰
         </button>
         <Link href="/">
-          <Image
-            src={"/header/logo.png"}
-            className="mr-0 sm:mr-2.5 w-16"
-            width={200}
-            height={200}
-          />
+          <p className="mr-0 sm:mr-2.5 font-title text-3xl font-semibold">
+            MyFates
+          </p>
         </Link>
         <button
           className="text-[26px] text-black block sm:hidden"

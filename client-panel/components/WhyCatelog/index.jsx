@@ -5,6 +5,7 @@ import Visible from "@/public/catelog/visible.webp";
 import Image from "next/image";
 import { Fade, Zoom } from "react-reveal";
 import AnimationText from "../Utils/TextAnimation";
+import { Element } from "react-scroll";
 
 const index = () => {
   return (
@@ -31,52 +32,44 @@ const index = () => {
         />
       </div>
       <Zoom top>
-        <div className="mt-20 flex gap-6 justify-center flex-wrap">
+        <Element name="reports" className="mt-20 flex gap-6 justify-center flex-wrap">
           <div className="bg-my-cream rounded-xl px-10 lg:py-20 py-10 w-full lg:w-[48%] space-y-5">
             <Image src={Money} alt="" className="w-36" />
             <Fade bottom>
-              <p className="text-2xl md:text-4xl font-semibold">
-                Make More Money
-              </p>
+              <p className="text-2xl md:text-4xl font-semibold">Full Report</p>
               <p className="text-xl md:text-2xl mt-5">
-                {`With catlog, everyone sees all the items you sell, which would
-            prevent you from loosing sales because buyers didn't know what you
-            sell.`}
+                {`A complete overview of your life, offering insights into career, relationships, and personal growth`}
               </p>
             </Fade>
           </div>
           <div className="bg-my-cream rounded-xl px-10 lg:py-20 py-10 w-full lg:w-[48%] space-y-5">
             <Image src={Efficient} alt="" className="w-36" />
             <Fade bottom>
-              <p className="text-2xl md:text-4xl font-semibold">
-                Be More Efficient
-              </p>
+              <p className="text-2xl md:text-4xl font-semibold">Daily Report</p>
               <p className="text-xl md:text-2xl mt-5">
-                {`With Catlog you won't have to keep answering same questions from customers everytime especially if they won't end up buying.`}
+                {`Daily updates providing guidance and advice to align daily actions with your long-term goals`}
               </p>
             </Fade>
           </div>
           <div className="bg-my-cream rounded-xl px-10 lg:py-20 py-10 w-full lg:w-[48%] space-y-5">
             <Image src={Visible} alt="" className="w-36" />
             <Fade bottom>
-              <p className="text-2xl md:text-4xl font-semibold">
-                Be More Visible
-              </p>
+              <p className="text-2xl md:text-4xl font-semibold">Love</p>
               <p className="text-xl md:text-2xl mt-5">
-                {`With Catlog you won't have to keep answering same questions from customers everytime especially if they won't end up buying.`}
+                {`Detailed analysis of your romantic relationships, focusing on compatibility and deeper connections.`}
               </p>
             </Fade>
           </div>
           <div className="bg-my-cream rounded-xl px-10 lg:py-20 py-10 w-full lg:w-[48%] space-y-5">
             <Image src={Standout} alt="" className="w-36" />
             <Fade bottom>
-              <p className="text-2xl md:text-4xl font-semibold">Stand Out</p>
+              <p className="text-2xl md:text-4xl font-semibold">Finance</p>
               <p className="text-xl md:text-2xl mt-5">
-                {`With Catlog you won't have to keep answering same questions from customers everytime especially if they won't end up buying.`}
+                {`Strategic financial advice for wealth management, investment, and long-term financial security.`}
               </p>
             </Fade>
           </div>
-        </div>
+        </Element>
       </Zoom>
     </div>
   );

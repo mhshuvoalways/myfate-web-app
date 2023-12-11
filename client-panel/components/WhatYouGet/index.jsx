@@ -63,7 +63,7 @@ const Index = () => {
                 className="rounded-3xl object-cover h-[615px]"
               />
               <div className="bg-my-bg-pastel rounded-3xl mt-5 p-8">
-                <p className="text-4xl font-semibold">
+                <p className="text-xl md:text-3xl lg:text-2xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
                   Ready to take
                   <br />
                   orders easily?
@@ -80,7 +80,7 @@ const Index = () => {
                 <div className="bg-gray-50 w-16 h-16 rounded-full flex justify-center items-center p-4">
                   <Image src={ShareIcon} alt="" />
                 </div>
-                <p className="text-2xl mt-5">
+                <p className="mt-5 text-xl md:text-2xl lg:text-2xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
                   Unlock Your Potential: Insights for Life, Love, and Career
                   Success.
                 </p>
@@ -89,7 +89,7 @@ const Index = () => {
                 <div className="bg-gray-50 w-16 h-16 rounded-full flex justify-center items-center p-4">
                   <Image src={BoxIcon} alt="" />
                 </div>
-                <p className="text-2xl mt-5">
+                <p className="mt-5 text-xl md:text-2xl lg:text-2xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
                   Personalized Reports Guiding You to Your Destiny.
                 </p>
               </div>
@@ -97,7 +97,7 @@ const Index = () => {
                 <div className="bg-gray-50 w-16 h-16 rounded-full flex justify-center items-center p-4">
                   <Image src={MsgIcon} alt="" />
                 </div>
-                <p className="text-2xl mt-5">
+                <p className="mt-5 text-xl md:text-2xl lg:text-2xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
                   Navigate Life with Confidence: Expert Analysis for Every Step.
                 </p>
               </div>
@@ -105,7 +105,7 @@ const Index = () => {
                 <div className="bg-gray-50 w-16 h-16 rounded-full flex justify-center items-center p-4">
                   <Image src={NetIcon} alt="" />
                 </div>
-                <p className="text-2xl mt-5">
+                <p className="mt-5 text-xl md:text-2xl lg:text-2xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
                   Your Blueprint for Personal and Professional Fulfillment.
                 </p>
               </div>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Fade } from "react-reveal";
 import TextAnimation from "../Utils/TextAnimation";
+import Button from "../common/Button";
 
 const index = ({ pricing }) => {
   return (
@@ -58,14 +59,7 @@ const index = ({ pricing }) => {
               <p className="text-xl text-my-blue">Find out now</p>
             </div>
             <Link href={"/payment"}>
-              <motion.button
-                whileTap={{
-                  scale: 0.9,
-                }}
-                className="bg-gray-900 px-5 text-white py-2 text-lg font-semibold rounded"
-              >
-                Start Now
-              </motion.button>
+              <Button value={"Start Now"} />
             </Link>
           </Fade>
         </div>
