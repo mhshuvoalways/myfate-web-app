@@ -19,17 +19,7 @@ const Index = () => {
       description: "For businesses just starting out with few products",
       planTitle: "Free",
       planTime: "Forever",
-      inclueds: [
-        "One Store",
-        "Store Link",
-        "Upload up to 10 Products",
-        "Manage Orders & Customers",
-        "Manage Discounts",
-        "Search Engine Optimization",
-        "Payments and Invoices",
-        "Bank Account (NG)",
-        "SMS Marketing [soon]",
-      ],
+      inclueds: ["Fun Tests", "Celebrity Insights", "Free Access"],
     },
     {
       id: 2,
@@ -42,19 +32,7 @@ const Index = () => {
       planTime:
         (selectPrice === "monthly" && "Monthly") ||
         (selectPrice === "quarterly" && "Quarterly"),
-      inclueds: [
-        "Everything in Starter",
-        "Customizable Store Link",
-        "Upload up to 100 Products",
-        "Manage Product Options",
-        "Manage Discounts & Coupons",
-        "Generate Receipts from Orders",
-        "Book Deliveries",
-        "Store Customizations [soon]",
-        "Upload Products from Instagram [soon]",
-        "AI Product Optimization [soon]",
-        "Spend Management [soon]",
-      ],
+      inclueds: ["Comprehensive Analysis", "Daily Guidance", "Full Report"],
     },
     {
       id: 3,
@@ -67,15 +45,9 @@ const Index = () => {
         (selectPrice === "monthly" && "Monthly") ||
         (selectPrice === "quarterly" && "Quarterly"),
       inclueds: [
-        "Everything in Basic",
-        "Upload Unlimited Products",
-        "Unlimited Stores in one Account",
-        "Multiple Store Managers",
-        "Sell in Multiple Currencies",
-        "Custom Domain Names [soon]",
-        "Advanced Store Customizations [soon]",
-        "Advanced Analytics [soon]",
-        "Facebook Pixel Tracking [soon]",
+        "Daily Love Dynamics",
+        "Daily Financial Strategy",
+        "Exclusive Insights",
       ],
     },
   ];

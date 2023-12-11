@@ -50,6 +50,15 @@
     color: #ffffff;
   }
 
+  .mybutton {
+    transition: 0.3s;
+    border-radius: 4px;
+  }
+
+  .mybutton:hover {
+    border-radius: 100px;
+  }
+
   /* my container */
   .mycontainer {
     width: 100%;
