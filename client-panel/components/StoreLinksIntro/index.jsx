@@ -42,7 +42,7 @@ const Index = () => {
                 <Button value={"Start using links"} />
                 <motion.button
                   whileTap={{ scale: 0.9 }}
-                  className="bg-white rounded px-5 py-3 font-gabarito text-lg font-semibold flex items-center gap-2"
+                  className="bg-white rounded px-5 py-2.5 font-gabarito text-lg font-semibold flex items-center gap-2"
                   onClick={modalHandler}
                 >
                   <p className="text-black">See how it works</p>

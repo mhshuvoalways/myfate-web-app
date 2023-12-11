@@ -63,7 +63,7 @@ const index = () => {
             <Link href={"/pricing"}>
               <motion.button
                 whileTap={{ scale: 0.9 }}
-                className="border-gray-200 border-2 text-gray-200 py-3 font-semibold mybutton px-10"
+                className="border-gray-200 border-2 text-gray-200 py-2.5 font-semibold mybutton px-10"
               >
                 Start your journey
               </motion.button>
@@ -71,7 +71,7 @@ const index = () => {
             <ScrollList to={"reports"} smooth spy>
               <motion.button
                 whileTap={{ scale: 0.9 }}
-                className="py-3 font-semibold hover:rounded-full transition-all rounded px-10 flex items-center gap-2"
+                className="py-2.5 font-semibold hover:rounded-full transition-all rounded px-10 flex items-center gap-2"
               >
                 <p className="text-gray-200">See our Reports</p>
                 <Image src={ArrowRight} alt="" />
