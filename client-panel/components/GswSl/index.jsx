@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Fade } from "react-reveal";
 import TextAnimation from "../Utils/TextAnimation";
 import Button from "../common/Button";

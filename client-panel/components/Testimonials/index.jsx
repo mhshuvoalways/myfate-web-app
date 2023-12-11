@@ -24,7 +24,7 @@ const ContentScroller = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [allContents]);
+  }, []);
 
   return (
     <div className="w-full mt-32">
