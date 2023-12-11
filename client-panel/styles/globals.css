@@ -70,7 +70,7 @@
   /* my container */
   .mycontainer {
     width: 100%;
-    padding: 0 30px;
+    padding: 0 10px;
     margin: 0 auto;
   }
   @media (min-width: 640px) {
@@ -86,7 +86,6 @@
   @media (min-width: 1024px) {
     .mycontainer {
       max-width: 1024px;
-      padding: 0 40px;
     }
   }
 
