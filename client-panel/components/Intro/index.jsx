@@ -4,16 +4,15 @@ import Image from "next/image";
 import { Link as ScrollList } from "react-scroll";
 import Link from "next/link";
 import AnimationText from "../Utils/TextAnimation";
-import Button from "../common/Button";
-import ArrowRight from "@/public/buildgrowth/arrowRight.svg";
+import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 
 const index = () => {
   return (
-    <div className="bg-[#FFFAF3] pt-20">
+    <div className="pt-20 firstintro">
       <div className="flex justify-center items-center mycontainer">
         <div className="space-y-8">
           <AnimationText
-            className="text-[48px] leading-[56px] lg:text-[96px] lg:leading-[112px] font-semibold break-words"
+            className="text-[48px] leading-[56px] lg:text-[96px] lg:leading-[112px] font-semibold break-words text-white font-zilla-slab"
             textCenter
             letters={[
               {
@@ -31,47 +30,50 @@ const index = () => {
             ]}
           />
           <AnimationText
-            className="text-[18px] lg:text-[20px] text-my-blue font-semibold"
+            className="text-[18px] lg:text-[20px] text-gray-200 font-semibold mr-[0.5rem] font-nanum-myeongjo"
             textCenter
             letters={[
               {
-                letter: "Connect",
+                letter: "Ancient",
                 delay: "0.55",
               },
               {
-                letter: "with",
+                letter: "Wisdom",
                 delay: "0.65",
               },
               {
-                letter: "your",
+                letter: "from",
                 delay: "0.75",
               },
               {
-                letter: "future",
+                letter: "Korea",
                 delay: "0.75",
               },
               {
-                letter: "with",
+                letter: "and",
                 delay: "0.85",
               },
               {
-                letter: "us",
+                letter: "Japan",
                 delay: "0.95",
               },
             ]}
           />
           <div className="mt-10 flex gap-2 justify-center items-center flex-wrap">
             <Link href={"/pricing"}>
-              <div>
-                <Button value={"Start your journey"} btnCenter className={""} />
-              </div>
+              <motion.button
+                whileTap={{ scale: 0.9 }}
+                className="border-gray-200 border-2 text-gray-200 py-3 font-semibold mybutton px-10"
+              >
+                Start your journey
+              </motion.button>
             </Link>
             <ScrollList to={"reports"} smooth spy>
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 className="py-3 font-semibold hover:rounded-full transition-all rounded px-10 flex items-center gap-2"
               >
-                <p className="text-black">See our Reports</p>
+                <p className="text-gray-200">See our Reports</p>
                 <Image src={ArrowRight} alt="" />
               </motion.button>
             </ScrollList>

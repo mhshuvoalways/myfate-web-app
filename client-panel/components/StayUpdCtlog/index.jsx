@@ -6,6 +6,7 @@ import Img2 from "@/public/stayupdctlog/2.svg";
 import Img3 from "@/public/stayupdctlog/3.svg";
 import ArrowRightBlue from "@/public/ownerSaysCatelog/arrowRightBlue.svg";
 import ArrowRight from "@/public/storeLinks/arrowRight.svg";
+import Button from "../common/Button";
 
 const index = () => {
   return (
@@ -25,7 +26,7 @@ const index = () => {
           <Zoom right>
             <motion.button
               whileTap={{ scale: 0.9 }}
-              className="bg-my-blue rounded px-5 py-3 font-gabarito text-lg font-semibold flex items-center gap-2 mt-10 md:mt-36"
+              className="bg-gray-900 text-white py-3 font-semibold mybutton px-10 flex items-center gap-2 mt-10 md:mt-36"
             >
               <p className="text-white">Read Blog</p>
               <Image src={ArrowRight} alt="" />

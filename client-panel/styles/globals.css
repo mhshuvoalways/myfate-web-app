@@ -41,6 +41,14 @@
     font-family: "Nanum Pen Script", cursive;
   }
 
+  .font-zilla-slab {
+    font-family: "Zilla Slab", serif;
+  }
+
+  .font-nanum-myeongjo {
+    font-family: "Nanum Myeongjo", serif;
+  }
+
   .modal::-webkit-scrollbar {
     display: none;
     width: 0;
@@ -94,18 +102,8 @@
   /* global css end */
 
   /* Home page Intro */
-  .intro {
-    background: linear-gradient(45deg, #ab60ea, #95dff8);
-  }
-  .intro::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 40%;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  .firstintro {
+    background-image: url("../public/intro/bg.jpg");
   }
 
   /* Store Page Intro */
