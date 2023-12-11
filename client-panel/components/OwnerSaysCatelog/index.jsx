@@ -50,7 +50,7 @@ const index = ({ home }) => {
   };
 
   return (
-    <div className={`ownersayscatelog ${home ? "bg-my-bg-pastel" : "bg-gray-50 mt-32"}`}>
+    <div className={`ownersayscatelog ${home ? "bg-my-bg-pastel" : "bg-gray-50"}`}>
       <div className="mycontainer pt-16 sm:pt-28 pb-40">
         <div>
           <TextAnimation

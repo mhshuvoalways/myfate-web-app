@@ -23,7 +23,7 @@ const Index = () => {
     },
     {
       id: 2,
-      title: "Basic",
+      title: "Base",
       description:
         "For growing businesses looking to handle their sales better",
       planTitle:
@@ -36,7 +36,7 @@ const Index = () => {
     },
     {
       id: 3,
-      title: "Business+",
+      title: "Premium",
       description: "For bigger businesses looking to sell more efficiently",
       planTitle:
         (selectPrice === "monthly" && "30") ||
