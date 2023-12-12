@@ -17,6 +17,12 @@ const Index = () => {
     dispatch(getreports());
   }, [dispatch]);
 
+  useEffect(() => {
+    if (!state) {
+      setState(reportsReducer.reports?.reports.full);
+    }
+  }, [reportsReducer.reports?.reports.full, state]);
+
   return (
     <div>
       <Header />
@@ -40,9 +46,9 @@ const Index = () => {
             />
           </div>
         </div>
-        <div className="flex justify-between items-start flex-wrap md:flex-nowrap flex-col-reverse md:flex-row relative">
-          <div className="space-y-10 mt-16 w-full md:w-7/12 lg:w-8/12">
-            <img src="/images/treesun.jpg" className="w-full rounded-3xl" />
+        <img src="/images/treesun.png" className="w-full rounded-3xl mt-10" />
+        <div className="flex justify-between items-start flex-wrap md:flex-nowrap flex-col-reverse md:flex-row relative mt-10 gap-5">
+          <div className="w-full md:w-7/12 lg:w-8/12">
             <div className="text-xl leading-loose text-justify">
               {state &&
                 Object.entries(state).map((el, index) => {

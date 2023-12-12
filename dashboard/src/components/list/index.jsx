@@ -5,21 +5,25 @@ import { MdOutlineClearAll } from "react-icons/md";
 import { Link } from "react-scroll";
 
 const Index = ({ reports, setState }) => {
-  const [showItem, setShowItem] = useState([]);
+  const [showItem, setShowItem] = useState(["full"]);
 
   const itemHandler = (value) => {
-    const temp = [...showItem];
+    let temp = [...showItem];
     if (showItem.includes(value)) {
       const newShowItems = temp.filter((el) => el !== value);
       setShowItem(newShowItems);
     } else {
       temp.push(value);
       setShowItem(temp);
+      setTimeout(() => {
+        const newShowItems = temp.filter((el) => el === value);
+        setShowItem(newShowItems);
+      }, 300);
     }
   };
 
   return (
-    <div className="bg-white shadow rounded-xl w-full md:w-3/12 mt-16 static md:sticky top-10">
+    <div className="bg-white shadow rounded-xl w-full md:w-3/12 static md:sticky top-10">
       {reports &&
         Object.keys(reports.reports).map((el) => {
           return (
