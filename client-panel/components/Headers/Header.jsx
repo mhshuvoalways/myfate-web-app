@@ -23,7 +23,7 @@ const Header = ({ toggleSidebar, userReducer }) => {
           ☰
         </button>
         <Link href="/">
-          <Image src={Logo} className="mr-0 sm:mr-2.5 w-48" alt="" />
+          <Image src={Logo} className="mr-0 sm:mr-2.5 w-44" alt="" />
         </Link>
         <button
           className="text-[26px] text-black block sm:hidden"
