@@ -1,8 +1,5 @@
 import Image from "next/image";
 import Img1 from "@/public/funtests/img1.png";
-import Img2 from "@/public/funtests/img2.png";
-import Img3 from "@/public/funtests/img3.png";
-import Img4 from "@/public/funtests/img4.png";
 import Link from "next/link";
 
 const index = () => {
@@ -17,14 +14,21 @@ const index = () => {
                 Find start that best suits you
               </p>
             </div>
-            <div className="w-full sm:w-6/12 space-y-1">
-              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+            <div className="space-y-1">
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
+              <div className="flex gap-2 pt-2">
+                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md">
+                  NEW
+                </small>
+                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md">
+                  HOT
+                </small>
+              </div>
             </div>
           </Link>
         </div>
-        <div className="space-y-2 w-full sm:w-[48%] lg:w-[23%]">
+        <div className="space-y-2 -mb-5 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
             <div className="relative">
               <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
@@ -32,14 +36,21 @@ const index = () => {
                 Find start that best suits you
               </p>
             </div>
-            <div className="w-full sm:w-6/12 space-y-1">
-              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+            <div className="space-y-1">
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
+              <div className="flex gap-2 pt-2">
+                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md">
+                  NEW
+                </small>
+                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md">
+                  HOT
+                </small>
+              </div>
             </div>
           </Link>
         </div>
-        <div className="space-y-2 w-full sm:w-[48%] lg:w-[23%]">
+        <div className="space-y-2 -mb-5 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
             <div className="relative">
               <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
@@ -47,14 +58,21 @@ const index = () => {
                 Find start that best suits you
               </p>
             </div>
-            <div className="w-full sm:w-6/12 space-y-1">
-              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+            <div className="space-y-1">
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
+              <div className="flex gap-2 pt-2">
+                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md">
+                  NEW
+                </small>
+                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md">
+                  HOT
+                </small>
+              </div>
             </div>
           </Link>
         </div>
-        <div className="space-y-2 w-full sm:w-[48%] lg:w-[23%]">
+        <div className="space-y-2 -mb-5 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
             <div className="relative">
               <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
@@ -62,14 +80,21 @@ const index = () => {
                 Find start that best suits you
               </p>
             </div>
-            <div className="w-full sm:w-6/12 space-y-1">
-              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+            <div className="space-y-1">
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
+              <div className="flex gap-2 pt-2">
+                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md">
+                  NEW
+                </small>
+                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md">
+                  HOT
+                </small>
+              </div>
             </div>
           </Link>
         </div>
-        <div className="space-y-2 w-full sm:w-[48%] lg:w-[23%]">
+        <div className="space-y-2 -mb-5 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
             <div className="relative">
               <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
@@ -77,14 +102,21 @@ const index = () => {
                 Find start that best suits you
               </p>
             </div>
-            <div className="w-full sm:w-6/12 space-y-1">
-              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+            <div className="space-y-1">
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
+              <div className="flex gap-2 pt-2">
+                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md">
+                  NEW
+                </small>
+                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md">
+                  HOT
+                </small>
+              </div>
             </div>
           </Link>
         </div>
-        <div className="space-y-2 w-full sm:w-[48%] lg:w-[23%]">
+        <div className="space-y-2 -mb-5 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
             <div className="relative">
               <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
@@ -92,14 +124,21 @@ const index = () => {
                 Find start that best suits you
               </p>
             </div>
-            <div className="w-full sm:w-6/12 space-y-1">
-              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+            <div className="space-y-1">
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
+              <div className="flex gap-2 pt-2">
+                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md">
+                  NEW
+                </small>
+                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md">
+                  HOT
+                </small>
+              </div>
             </div>
           </Link>
         </div>
-        <div className="space-y-2 w-full sm:w-[48%] lg:w-[23%]">
+        <div className="space-y-2 -mb-5 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
             <div className="relative">
               <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
@@ -107,14 +146,21 @@ const index = () => {
                 Find start that best suits you
               </p>
             </div>
-            <div className="w-full sm:w-6/12 space-y-1">
-              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+            <div className="space-y-1">
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
+              <div className="flex gap-2 pt-2">
+                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md">
+                  NEW
+                </small>
+                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md">
+                  HOT
+                </small>
+              </div>
             </div>
           </Link>
         </div>
-        <div className="space-y-2 w-full sm:w-[48%] lg:w-[23%]">
+        <div className="space-y-2 -mb-5 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
             <div className="relative">
               <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
@@ -122,10 +168,17 @@ const index = () => {
                 Find start that best suits you
               </p>
             </div>
-            <div className="w-full sm:w-6/12 space-y-1">
-              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+            <div className="space-y-1">
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
+              <div className="flex gap-2 pt-2">
+                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md">
+                  NEW
+                </small>
+                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md">
+                  HOT
+                </small>
+              </div>
             </div>
           </Link>
         </div>

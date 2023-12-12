@@ -10,7 +10,7 @@ const Sidebar = ({ isOpen, toggleSidebar, userReducer }) => {
     <div
       className={`bg-white h-screen transform transition-all duration-300 shadow-lg fixed ${
         isOpen
-          ? "translate-x-0 w-full sm:w-4/12 z-[60]"
+          ? "translate-x-0 w-full sm:w-3/12 z-[60]"
           : "-translate-x-full w-0 opacity-0 -z-10"
       }`}
     >
