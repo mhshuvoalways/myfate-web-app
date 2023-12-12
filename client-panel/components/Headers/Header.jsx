@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { isAuthenticate } from "@/store/actions/userAction";
 import DashIcon from "@/public/header/dashboardicon.png";
+import Logo from "@/public/header/logo.png";
 
 const Header = ({ toggleSidebar, userReducer }) => {
   const dispatch = useDispatch();
@@ -22,9 +23,7 @@ const Header = ({ toggleSidebar, userReducer }) => {
           ☰
         </button>
         <Link href="/">
-          <p className="mr-0 sm:mr-2.5 font-title text-3xl font-semibold">
-            MyFates
-          </p>
+          <Image src={Logo} className="mr-0 sm:mr-2.5 w-48" alt="" />
         </Link>
         <button
           className="text-[26px] text-black block sm:hidden"
