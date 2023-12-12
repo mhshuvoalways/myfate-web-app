@@ -11,90 +11,122 @@ const index = () => {
       <div className="flex justify-center lg:justify-between gap-5 flex-wrap items-center space-y-5">
         <div className="space-y-2 -mb-5 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
-            <Image src={Img1} alt="" className="w-full mb-2" />
-            <small>SYNASTRY</small>
-            <p className="">Sun / Chiron Aspects in Synastry</p>
-            <p className="text-sm">
-              The interpretation for Sun/Chiron Aspects within a Synastry
-              relationship chart
-            </p>
+            <div className="relative">
+              <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
+              <p className="text-2xl text-center absolute top-0 left-0 p-5 text-white font-zilla-slab flex justify-center items-center h-full w-full">
+                Find start that best suits you
+              </p>
+            </div>
+            <div className="w-full sm:w-6/12 space-y-1">
+              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+              <p className="font-semibold">Find start that best suits you</p>
+              <p className="text-sm">Find start that best suits you</p>
+            </div>
           </Link>
         </div>
         <div className="space-y-2 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
-            <Image src={Img2} alt="" className="w-full mb-2" />
-            <small>SYNASTRY</small>
-            <p className="">Sun / Chiron Aspects in Synastry</p>
-            <p className="text-sm">
-              The interpretation for Sun/Chiron Aspects within a Synastry
-              relationship chart
-            </p>
+            <div className="relative">
+              <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
+              <p className="text-2xl text-center absolute top-0 left-0 p-5 text-white font-zilla-slab flex justify-center items-center h-full w-full">
+                Find start that best suits you
+              </p>
+            </div>
+            <div className="w-full sm:w-6/12 space-y-1">
+              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+              <p className="font-semibold">Find start that best suits you</p>
+              <p className="text-sm">Find start that best suits you</p>
+            </div>
           </Link>
         </div>
         <div className="space-y-2 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
-            <Image src={Img3} alt="" className="w-full mb-2" />
-            <small>SYNASTRY</small>
-            <p className="">Sun / Chiron Aspects in Synastry</p>
-            <p className="text-sm">
-              The interpretation for Sun/Chiron Aspects within a Synastry
-              relationship chart
-            </p>
+            <div className="relative">
+              <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
+              <p className="text-2xl text-center absolute top-0 left-0 p-5 text-white font-zilla-slab flex justify-center items-center h-full w-full">
+                Find start that best suits you
+              </p>
+            </div>
+            <div className="w-full sm:w-6/12 space-y-1">
+              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+              <p className="font-semibold">Find start that best suits you</p>
+              <p className="text-sm">Find start that best suits you</p>
+            </div>
           </Link>
         </div>
         <div className="space-y-2 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
-            <Image src={Img4} alt="" className="w-full mb-2" />
-            <small>SYNASTRY</small>
-            <p className="">Sun / Chiron Aspects in Synastry</p>
-            <p className="text-sm">
-              The interpretation for Sun/Chiron Aspects within a Synastry
-              relationship chart
-            </p>
+            <div className="relative">
+              <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
+              <p className="text-2xl text-center absolute top-0 left-0 p-5 text-white font-zilla-slab flex justify-center items-center h-full w-full">
+                Find start that best suits you
+              </p>
+            </div>
+            <div className="w-full sm:w-6/12 space-y-1">
+              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+              <p className="font-semibold">Find start that best suits you</p>
+              <p className="text-sm">Find start that best suits you</p>
+            </div>
           </Link>
         </div>
         <div className="space-y-2 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
-            <Image src={Img1} alt="" className="w-full mb-2" />
-            <small>SYNASTRY</small>
-            <p className="">Sun / Chiron Aspects in Synastry</p>
-            <p className="text-sm">
-              The interpretation for Sun/Chiron Aspects within a Synastry
-              relationship chart
-            </p>
+            <div className="relative">
+              <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
+              <p className="text-2xl text-center absolute top-0 left-0 p-5 text-white font-zilla-slab flex justify-center items-center h-full w-full">
+                Find start that best suits you
+              </p>
+            </div>
+            <div className="w-full sm:w-6/12 space-y-1">
+              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+              <p className="font-semibold">Find start that best suits you</p>
+              <p className="text-sm">Find start that best suits you</p>
+            </div>
           </Link>
         </div>
         <div className="space-y-2 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
-            <Image src={Img2} alt="" className="w-full mb-2" />
-            <small>SYNASTRY</small>
-            <p className="">Sun / Chiron Aspects in Synastry</p>
-            <p className="text-sm">
-              The interpretation for Sun/Chiron Aspects within a Synastry
-              relationship chart
-            </p>
+            <div className="relative">
+              <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
+              <p className="text-2xl text-center absolute top-0 left-0 p-5 text-white font-zilla-slab flex justify-center items-center h-full w-full">
+                Find start that best suits you
+              </p>
+            </div>
+            <div className="w-full sm:w-6/12 space-y-1">
+              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+              <p className="font-semibold">Find start that best suits you</p>
+              <p className="text-sm">Find start that best suits you</p>
+            </div>
           </Link>
         </div>
         <div className="space-y-2 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
-            <Image src={Img3} alt="" className="w-full mb-2" />
-            <small>SYNASTRY</small>
-            <p className="">Sun / Chiron Aspects in Synastry</p>
-            <p className="text-sm">
-              The interpretation for Sun/Chiron Aspects within a Synastry
-              relationship chart
-            </p>
+            <div className="relative">
+              <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
+              <p className="text-2xl text-center absolute top-0 left-0 p-5 text-white font-zilla-slab flex justify-center items-center h-full w-full">
+                Find start that best suits you
+              </p>
+            </div>
+            <div className="w-full sm:w-6/12 space-y-1">
+              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+              <p className="font-semibold">Find start that best suits you</p>
+              <p className="text-sm">Find start that best suits you</p>
+            </div>
           </Link>
         </div>
         <div className="space-y-2 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
-            <Image src={Img4} alt="" className="w-full mb-2" />
-            <small>SYNASTRY</small>
-            <p className="">Sun / Chiron Aspects in Synastry</p>
-            <p className="text-sm">
-              The interpretation for Sun/Chiron Aspects within a Synastry
-              relationship chart
-            </p>
+            <div className="relative">
+              <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
+              <p className="text-2xl text-center absolute top-0 left-0 p-5 text-white font-zilla-slab flex justify-center items-center h-full w-full">
+                Find start that best suits you
+              </p>
+            </div>
+            <div className="w-full sm:w-6/12 space-y-1">
+              <small className="bg-blue-300 py-1 px-3 rounded-md">HOT</small>
+              <p className="font-semibold">Find start that best suits you</p>
+              <p className="text-sm">Find start that best suits you</p>
+            </div>
           </Link>
         </div>
       </div>
