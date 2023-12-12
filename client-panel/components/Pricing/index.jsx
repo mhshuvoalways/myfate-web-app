@@ -14,28 +14,18 @@ const Index = () => {
 
   const pricingObj = [
     {
-      id: 2,
+      id: 1,
       title: "Base",
       description:
         "For growing businesses looking to handle their sales better",
-      planTitle:
-        (selectPrice === "monthly" && "10") ||
-        (selectPrice === "quarterly" && "25"),
-      planTime:
-        (selectPrice === "monthly" && "Monthly") ||
-        (selectPrice === "quarterly" && "Quarterly"),
+      planTitle: 10,
       inclueds: ["Comprehensive Analysis", "Daily Guidance", "Full Report"],
     },
     {
-      id: 3,
+      id: 2,
       title: "Premium",
       description: "For bigger businesses looking to sell more efficiently",
-      planTitle:
-        (selectPrice === "monthly" && "30") ||
-        (selectPrice === "quarterly" && "45"),
-      planTime:
-        (selectPrice === "monthly" && "Monthly") ||
-        (selectPrice === "quarterly" && "Quarterly"),
+      planTitle: 30,
       inclueds: [
         "Daily Love Dynamics",
         "Daily Financial Strategy",
@@ -77,22 +67,6 @@ const Index = () => {
           }
           textCenter
         />
-        <div className="bg-gray-100 flex w-60 mx-auto p-1 rounded-full mt-20 relative">
-          <p
-            className={
-              selectPrice === "monthly"
-                ? "bg-white text-xl rounded-full p-4 shadow-lg cursor-pointer font-semibold text-my-blue w-6/12 text-center"
-                : "text-xl rounded-full p-4 w-6/12 text-center cursor-pointer"
-            }
-            onClick={() => selectHandler("monthly")}
-          >
-            Monthly
-          </p>
-          <div className="absolute -right-0 top-16 md:-right-28 md:top-4 flex gap-2 items-center">
-            <Image src={ArrowPhoto} alt="" />
-            <p className="text-lg font-semibold">5% off</p>
-          </div>
-        </div>
         <div className="flex gap-5 flex-wrap justify-center mt-10">
           <Fade bottom>
             {pricingObj.map((el) => (
