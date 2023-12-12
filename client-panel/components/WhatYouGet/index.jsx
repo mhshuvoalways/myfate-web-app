@@ -10,7 +10,7 @@ import Button from "../common/Button";
 
 const Index = () => {
   return (
-    <div className="bg-gray-50 py-16 sm:py-28 mt-32">
+    <div className="bg-gray-50 py-16 sm:py-28">
       <div className="mycontainer">
         <div>
           <TextAnimation

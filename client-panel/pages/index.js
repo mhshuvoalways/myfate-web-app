@@ -1,9 +1,6 @@
 import Headers from "@/components/Headers";
 import Categories from "@/components/Headers/Categories";
 import StoreLinksIntro from "@/components/Intro";
-import Testimonials from "@/components/Testimonials";
-import WhyCatelog from "@/components/WhyCatelog";
-import PromiseYou from "@/components/PromiseYou";
 import HowToUse from "@/components/HowToUse";
 import BuildForGrowth from "@/components/BuildForGrowth";
 import WhatYouGet from "@/components/WhatYouGet";
@@ -21,16 +18,14 @@ const Index = () => {
       <Headers />
       <Categories />
       <StoreLinksIntro />
-      <Testimonials />
-      <WhyCatelog />
-      <HowToUse />
-      <WhatYouGet />
       <OwnerSaysCatelog home/>
+      <WhatYouGet />
+      <HowToUse />
       <LoveToMerge />
       <BuildForGrowth />
-      <NotConvinced />
       <Pricing />
       <Faq />
+      <NotConvinced />
       <GswSl />
       <Footer />
     </>

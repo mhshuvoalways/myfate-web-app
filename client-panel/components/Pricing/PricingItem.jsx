@@ -21,7 +21,7 @@ const PricingItem = ({ pricingObj }) => {
   return (
     <div className="space-y-5 bg-white rounded-xl shadow p-5 min-w-[280px] max-w-[340px] overflow-hidden">
       <div>
-        {title === "Basic" ? (
+        {title === "Base" ? (
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1">
               <p className="text-3xl font-semibold">{title}</p>
@@ -38,27 +38,15 @@ const PricingItem = ({ pricingObj }) => {
             {planType === title && <p className="text-sm">(current)</p>}
           </div>
         )}
-        <p className="text-xl text-gray-500">{description}</p>
+        <p className="text-xl text-gray-500 mt-2">{description}</p>
       </div>
-      <div>
-        <p className="text-2xl font-semibold">
-          {planTitle === "Free" ? planTitle : `USD ${planTitle}`}
-        </p>
-        <p className="text-xl text-gray-500">{planTime}</p>
-      </div>
+      <p className="text-2xl font-semibold">{`USD ${planTitle}`}</p>
       <motion.button
-        onClick={() =>
-          clickHandler(
-            title.toLowerCase(),
-            planTitle === "Free" ? 0 : planTitle
-          )
-        }
+        onClick={() => clickHandler(title.toLowerCase(), planTitle)}
         whileTap={{ scale: 0.9 }}
-        className={`border border-gray-400 py-2 rounded font-semibold text-center w-full ${
-          planTitle !== "Free" && "bg-my-blue text-white"
-        }`}
+        className={`border border-gray-400 py-2 rounded font-semibold text-center w-full bg-my-blue text-white`}
       >
-        {planTitle === "Free" ? "Try for free" : "Start 14 day trial"}
+        Start 14 day trial
       </motion.button>
       <div className="bg-gray-50 rounded-b-xl py-2 block md:hidden">
         <div

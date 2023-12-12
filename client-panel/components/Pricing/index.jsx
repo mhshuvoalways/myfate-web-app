@@ -14,14 +14,6 @@ const Index = () => {
 
   const pricingObj = [
     {
-      id: 1,
-      title: "Starter",
-      description: "For businesses just starting out with few products",
-      planTitle: "Free",
-      planTime: "Forever",
-      inclueds: ["Fun Tests", "Celebrity Insights", "Free Access"],
-    },
-    {
       id: 2,
       title: "Base",
       description:
@@ -95,16 +87,6 @@ const Index = () => {
             onClick={() => selectHandler("monthly")}
           >
             Monthly
-          </p>
-          <p
-            className={
-              selectPrice === "quarterly"
-                ? "bg-white text-xl rounded-full p-4 shadow-lg cursor-pointer font-semibold text-my-blue w-6/12 text-center"
-                : "text-xl rounded-full p-4 w-6/12 text-center cursor-pointer"
-            }
-            onClick={() => selectHandler("quarterly")}
-          >
-            Quarterly
           </p>
           <div className="absolute -right-0 top-16 md:-right-28 md:top-4 flex gap-2 items-center">
             <Image src={ArrowPhoto} alt="" />

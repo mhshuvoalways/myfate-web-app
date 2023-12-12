@@ -91,7 +91,7 @@ const HowItWorks = () => {
   return (
     <>
       <div>
-        <div className="pin-spacer h-[2000px] sm:h-[2485px] md:h-[2085px] lg:h-[2285px] mt-48">
+        <div className="pin-spacer h-[2000px] sm:h-[2485px] md:h-[2085px] lg:h-[2285px] mt-48 mb-32">
           <section className="body-padding section-spacing steps-wrapper">
             <div className="mycontainer">
               <TextAnimation
