@@ -156,7 +156,7 @@ const Signup = () => {
                 {userReducer.error?.recaptcha}
               </p>
             </div>
-            <Button value={"SIGN UP"} />
+            <Button value={"SIGN UP"} className={"w-full"} />
           </form>
         </div>
       </div>

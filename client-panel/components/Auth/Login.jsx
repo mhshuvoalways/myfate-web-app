@@ -119,10 +119,9 @@ const Signup = () => {
             <p className="text-gray-400 text-end">
               <Link href={"/forgot-password"}>Forgot Password?</Link>
             </p>
-            <Button value={"LOGIN"} />
+            <Button value={"LOGIN"} className={'w-full'}/>
           </div>
-          <div className="mt-5 space-y-5 flex items-center gap-5">
-            <p>Or:</p>
+          <div className="mt-5 space-y-5 flex items-center justify-end gap-5">
             <Image
               src={LoginBtn}
               alt=""
