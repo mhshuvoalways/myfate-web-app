@@ -8,7 +8,7 @@ import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 
 const index = () => {
   return (
-    <div className="pt-20 firstintro">
+    <div className="pt-20 firstintro bg-cover">
       <div className="flex justify-center items-center mycontainer">
         <div className="space-y-8">
           <AnimationText
