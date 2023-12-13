@@ -8,7 +8,7 @@ const Categories = () => {
   return (
     <div>
       <div className="border-b border-gray-100 hidden sm:block">
-        <div className="flex justify-evenly gap-5 mycontainer">
+        <div className="flex justify-center gap-14 mycontainer">
           <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs py-2">
             Home
           </p>
