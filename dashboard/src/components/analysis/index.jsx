@@ -21,7 +21,7 @@ const Index = () => {
     if (!state) {
       setState(reportsReducer.reports?.reports.full);
     }
-  }, [reportsReducer.reports?.reports.full, state]);
+  }, [reportsReducer.reports?.reports?.full, state]);
 
   return (
     <div>
@@ -34,15 +34,15 @@ const Index = () => {
               textcolor={"text-red-800"}
               bgcolor={"bg-[#F1E7FF]"}
               title="Name"
-              number={`${userReducer.user.profile?.firstName || ""} ${
-                userReducer.user.profile?.lastName || ""
+              number={`${userReducer.user?.profile?.firstName || ""} ${
+                userReducer.user?.profile?.lastName || ""
               }`}
             />
             <Items
               textcolor={"text-green-800"}
               bgcolor={"bg-[#E5F5FF]"}
               title="Plan Type"
-              number={userReducer.user.subscriptionPlan?.planType || ""}
+              number={userReducer.user?.subscriptionPlan?.planType || ""}
             />
           </div>
         </div>
