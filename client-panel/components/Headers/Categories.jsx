@@ -14,17 +14,17 @@ const Categories = () => {
             onMouseEnter={() => setMenuName("explorefuture")}
             onMouseLeave={() => setMenuName("")}
           >
-            <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs py-2">
+            <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs py-3">
               Explore Future
             </p>
             <SubMenus menuName={menuName} setMenuName={setMenuName} />
           </div>
           <Link href="/fun-tests-guide">
-            <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs py-2">
+            <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs py-3">
               Fun Tests
             </p>
           </Link>
-          <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs py-2">
+          <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs py-3">
             Celebrity Future
           </p>
         </div>
