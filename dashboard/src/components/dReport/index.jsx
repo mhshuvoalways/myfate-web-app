@@ -4,8 +4,10 @@ import Chatjs from "../chart/Chart";
 import Timer from "../timer";
 import SubItem from "../subItem";
 import Items from "../chart/Items";
+import Modal from "../utils/Modal";
+import { useState } from "react";
 
-const index = ({
+const Index = ({
   selectSubItemValue,
   setSelectSubItemValue,
   selectSubItemValueNext,
@@ -15,6 +17,9 @@ const index = ({
   dataNext,
   reportWriting,
 }) => {
+  const [value, setValue] = useState("");
+  const [submit, setSubmit] = useState(false);
+
   const sum = data?.scores.reduce((a, b) => {
     return a + b.score;
   }, 0);
@@ -30,7 +35,7 @@ const index = ({
     <div>
       <Header />
       <div className="mycontainer">
-        <img src="/images/treesun.jpg" className="w-full rounded-3xl mt-10" />
+        <img src="/images/treesun.png" className="w-full rounded-3xl mt-10" />
         <p className="text-3xl mt-10 title-font capitalize">
           {reportWriting?.length && reportWriting[0] + ". " + reportWriting[1]}
         </p>
@@ -97,27 +102,51 @@ const index = ({
             </div>
             <div>
               <p className="text-4xl title-font">Prayers</p>
-              <div className="bg-blue-100 rounded-xl p-5 mt-5 flex justify-between items-center gap-5 flex-wrap sm:flex-nowrap">
+              <form className="bg-blue-100 rounded-xl p-5 mt-5 flex justify-between items-center gap-5 flex-wrap sm:flex-nowrap">
                 <input
                   type="text"
                   className="border border-gray-400 px-2 py-2 rounded-xl font-semibold w-full outline-0"
-                  placeholder="Something"
+                  placeholder="What you wish for"
+                  onChange={(e) => {
+                    setValue(e.target.value);
+                    setSubmit(false);
+                  }}
+                  value={value}
+                  required
                 />
-                <motion.p
+                <motion.button
                   whileTap={{
                     scale: 0.9,
+                  }}
+                  onClick={(e) => {
+                    setSubmit(true);
+                    if (value) {
+                      e.preventDefault();
+                    }
                   }}
                   className="border border-gray-400 px-5 py-2 rounded-xl font-semibold w-full sm:w-24 text-center ml-auto cursor-pointer"
                 >
                   Submit
-                </motion.p>
-              </div>
+                </motion.button>
+              </form>
             </div>
           </div>
         </div>
       </div>
+      {submit && value && (
+        <Modal
+          modalHandler={() => {
+            setSubmit(false);
+            setValue("");
+          }}
+        >
+          <p className="text-xl font-semibold text-center pb-16">
+            Your prayers will be heard
+          </p>
+        </Modal>
+      )}
     </div>
   );
 };
 
-export default index;
+export default Index;

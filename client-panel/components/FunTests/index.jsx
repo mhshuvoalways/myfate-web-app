@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const index = () => {
   return (
-    <div className="mycontainer my-24">
+    <div className="mycontainer mt-10 mb-20">
       <div className="flex justify-center lg:justify-between gap-5 flex-wrap items-center space-y-5">
         <div className="space-y-2 -mb-5 w-full sm:w-[48%] lg:w-[23%]">
           <Link href={"/template"}>
