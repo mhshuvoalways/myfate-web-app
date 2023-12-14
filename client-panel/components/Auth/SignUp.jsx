@@ -79,8 +79,8 @@ const Signup = () => {
           <div className="space-y-5">
             <p className="tracking-widest text-4xl font-gabarito">WELCOME</p>
             <p className="text-gray-500 text-lg">
-              Create a free account to save your astrology charts. Sign up using
-              your google account or by entering an email and password below.
+              Create a free account to experience full MyFates service. Sign in
+              with Google or enter an email and password below.
             </p>
           </div>
           <div className="mt-10 space-y-5">

@@ -2,8 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/fun-tests-guide": "pages/fun-tests-guide.js",
-  "/template": "pages/template.js",
-  "/store-links": "pages/store-links.js"
+  "/": "pages/index.js"
 }
