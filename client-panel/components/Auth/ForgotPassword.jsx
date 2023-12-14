@@ -38,8 +38,8 @@ const Signup = () => {
         </div>
         <form className="w-full md:w-7/12 space-y-8" onSubmit={findMail}>
           <p className="text-gray-500 text-lg">
-            Need to reset your password? Simply provide your email address below
-            and we'll help you with the process.
+            {`Need to reset your password? Simply provide your email address below
+            and we'll help you with the process.`}
           </p>
           <div>
             <div
