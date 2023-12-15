@@ -23,13 +23,15 @@ const Index = ({ reports, setState }) => {
   };
 
   return (
-    <div className="bg-white shadow rounded-xl w-full md:w-3/12 static md:sticky top-10">
+    <div
+      className="bg-white w-full md:flex mt-10 justify-between border shadow-sm rounded-xl relative flex-wrap"
+    >
       {reports &&
         Object.keys(reports.reports).map((el) => {
           return (
             <div key={el}>
               <div
-                className="flex justify-between items-center cursor-pointer shadow-sm p-5"
+                className="flex gap-2 md:gap-5 justify-between items-center cursor-pointer shadow-sm p-5"
                 onClick={() => itemHandler(el)}
               >
                 <MdOutlineClearAll
@@ -55,7 +57,7 @@ const Index = ({ reports, setState }) => {
               <AnimatePresence>
                 {showItem.includes(el) && (
                   <motion.div
-                    className="my-3 px-2"
+                    className="my-3 p-2 static md:absolute top-14 bg-white w-full md:w-[20%] shadow rounded-3xl"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}

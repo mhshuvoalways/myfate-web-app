@@ -3,12 +3,10 @@ import { Fade } from "react-reveal";
 import TextAnimation from "../Utils/TextAnimation";
 import Button from "../common/Button";
 
-const index = ({ pricing }) => {
+const index = () => {
   return (
     <div
-      className={`py-28 bg-center bg-no-repeat gswsl flex items-center ${
-        pricing && "mt-20"
-      }`}
+      className={`py-16 bg-center bg-no-repeat gswsl flex items-center`}
     >
       <div className="mycontainer">
         <div className="w-full md:w-7/12 space-y-10">

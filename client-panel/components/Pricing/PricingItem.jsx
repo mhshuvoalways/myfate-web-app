@@ -44,13 +44,13 @@ const PricingItem = ({ pricingObj }) => {
           )}
           <p className="text-lg text-gray-500 mt-2">{description}</p>
         </div>
-        <p className="text-2xl font-semibold">{`USD ${planTitle}`}</p>
+        <p className="text-2xl font-semibold">{`USD $${planTitle}`}</p>
         <motion.button
           onClick={() => clickHandler(title.toLowerCase(), planTitle)}
           whileTap={{ scale: 0.9 }}
           className={`border border-gray-400 py-2 rounded font-semibold text-center w-full bg-my-blue text-white`}
         >
-          Start 14 day trial
+          Start your journey
         </motion.button>
         <div className="bg-gray-50 rounded-b-xl py-2 block md:hidden">
           <div
@@ -76,7 +76,17 @@ const PricingItem = ({ pricingObj }) => {
               {inclueds.map((item) => (
                 <div className="flex gap-2" key={item}>
                   <Image src={TickPhoto} alt="" />
-                  <p className="text-gray-600">{item}</p>
+                  <p
+                    className={
+                      item === "Doctor’s Full Analysis once a month" ||
+                      item === `Doctor’s Full Analysis twice a month` ||
+                      item === `Doctor’s Q&A`
+                        ? "text-[#B8621B]"
+                        : "text-gray-600"
+                    }
+                  >
+                    {item}
+                  </p>
                 </div>
               ))}
             </div>

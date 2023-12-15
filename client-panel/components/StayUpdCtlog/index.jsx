@@ -6,7 +6,6 @@ import Img2 from "@/public/stayupdctlog/2.svg";
 import Img3 from "@/public/stayupdctlog/3.svg";
 import ArrowRightBlue from "@/public/ownerSaysCatelog/arrowRightBlue.svg";
 import ArrowRight from "@/public/storeLinks/arrowRight.svg";
-import Button from "../common/Button";
 
 const index = () => {
   return (

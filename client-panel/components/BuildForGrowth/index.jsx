@@ -13,15 +13,11 @@ const index = () => {
           <p className="text-my-blue font-semibold text-xl">
             All you want to know
           </p>
-          <p className="text-4xl font-bold">
-            Take a look into celebrities’ future
+          <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
+            What about celebrities?
           </p>
           <p className="text-xl">
-            For celebrities, our reports are particularly intriguing as they
-            offer insights into their destinies, career paths, personal
-            relationship, and potential future successes or challenges. a unique
-            tapestry woven with the year, month, day, and characteristics, each
-            represented by a specific sign and elementin the Korean zodiac.
+            {`For celebrities, our reports are particularly intriguing as they offer insights into their destinies, career paths, personal relationship, and potential future successes or challenges.`}
           </p>
         </div>
         <div className="flex md:justify-between justify-center mt-0 md:mt-20 gap-5 flex-wrap mycontainer">

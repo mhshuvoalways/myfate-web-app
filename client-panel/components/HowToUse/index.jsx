@@ -1,27 +1,28 @@
+import Pic1 from "@/public/howtoget/t1.png";
+import Pic2 from "@/public/howtoget/t2.png";
+import Pic3 from "@/public/howtoget/t3.png";
+import Pic4 from "@/public/howtoget/t4.png";
+
 const steps = [
   {
     description:
       "Full report: A complete overview of your life, offering insights into everything",
-    image:
-      "https://res.cloudinary.com/catlog/image/upload/v1670791956/front-pages/mockups/store-link-setup-complete.webp",
+    image: Pic1,
   },
   {
     description:
       "Daily Report: Daily updates providing guidance to align daily actions with your long-term destiny",
-    image:
-      "https://res.cloudinary.com/catlog/image/upload/v1670792011/front-pages/mockups/customer-initiates-conversation.webp",
+    image: Pic2,
   },
   {
     description:
       "Love: Detailed analysis of your romantic relationships, focusing on compatibility and deeper connections.",
-    image:
-      "https://res.cloudinary.com/catlog/image/upload/v1670791986/front-pages/mockups/selection-made-on-store.webp",
+    image: Pic3,
   },
   {
     description:
       "Finance: Strategic financial advice for wealth management, and long-term financial security",
-    image:
-      "https://res.cloudinary.com/catlog/image/upload/v1670792029/front-pages/mockups/customer-sends-order.webp",
+    image: Pic4,
   },
 ];
 
@@ -82,12 +83,6 @@ const HowItWorks = () => {
   const isPast = (index) =>
     index < Math.floor((animProgress - 0.01) * stepsCount);
 
-  const getSizedImage = (image, sizes, screen) => {
-    const size = sizes[screen] ?? sizes?.default;
-    const sizedUrl = image.replace("/upload/", `/upload/c_scale,${size}/`);
-    return sizedUrl;
-  };
-
   return (
     <>
       <div>
@@ -146,18 +141,14 @@ const HowItWorks = () => {
                     <div key={index}>
                       {activeIndex === index && (
                         <figure
-                          className="w-[65%] sm:w-[50%] md:w-[68%] lg:w-[65%] xl:w-[57%] absolute left-1/2 transform -translate-x-1/2 top-[12.5%] story-image-appear mt-5 sm:mt-0"
+                          className="w-10/12 absolute left-1/2 transform -translate-x-1/2 top-[12.5%] story-image-appear mt-5 sm:mt-0"
                           style={{
                             "--from": step?.mockupConf?.from ?? "10%",
                             "--to": step?.mockupConf?.to ?? "0",
                           }}
                         >
                           <LazyImage
-                            src={getSizedImage(
-                              step.image,
-                              { xs: "w_600", default: "w_700" },
-                              screen
-                            )}
+                            imgSrc={step.image}
                             alt={step.description}
                             showLoader={false}
                             className="w-full"

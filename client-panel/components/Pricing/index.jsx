@@ -6,9 +6,9 @@ const Index = () => {
   const pricingObj = [
     {
       id: 1,
-      title: "Pro plan",
+      title: "Pro",
       description: "For anyone who wants to know deeper about themselves",
-      planTitle: 35,
+      planTitle: 30,
       inclueds: [
         "Life Total Analysis",
         "Life Advice",
@@ -26,10 +26,10 @@ const Index = () => {
     },
     {
       id: 2,
-      title: "Premium plan",
+      title: "Premium",
       description:
         "For anyone who wants to get a personalized analysis from a doctor who has been in Sajoo for decades",
-      planTitle: 185,
+      planTitle: 150,
       inclueds: [
         "Doctor’s Full Analysis once a month",
         "Life Total Analysis",
@@ -48,10 +48,10 @@ const Index = () => {
     },
     {
       id: 3,
-      title: "Premium Max plan",
+      title: "Premium Max",
       description:
         "For anyone who wants to get a personalized+ analysis from a doctor who has been in Sajoo for decades",
-      planTitle: 285,
+      planTitle: 300,
       inclueds: [
         "Doctor’s Full Analysis twice a month",
         "Doctor’s Q&A",

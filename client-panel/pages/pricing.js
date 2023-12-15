@@ -3,8 +3,8 @@ import Categories from "@/components/Headers/Categories";
 import PricingIntro from "@/components/PricingIntro";
 import OwnerSaysCatelog from "@/components/OwnerSaysCatelog";
 import Faq from "@/components/Faq";
-import WhatSellCtlog from "@/components/WhatSellCtlog";
-import StayUpdCtlog from "@/components/StayUpdCtlog";
+// import WhatSellCtlog from "@/components/WhatSellCtlog";
+// import StayUpdCtlog from "@/components/StayUpdCtlog";
 import GswSl from "@/components/GswSl";
 import Footer from "@/components/Footer";
 
@@ -16,9 +16,9 @@ const Pricing = () => {
       <PricingIntro />
       <OwnerSaysCatelog />
       <Faq />
-      <WhatSellCtlog />
-      <StayUpdCtlog />
-      <GswSl pricing/>
+      {/* <WhatSellCtlog />
+      <StayUpdCtlog /> */}
+      <GswSl />
       <Footer />
     </>
   );

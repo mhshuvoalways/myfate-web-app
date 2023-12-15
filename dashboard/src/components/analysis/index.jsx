@@ -47,20 +47,16 @@ const Index = () => {
           </div>
         </div>
         <img src="/images/treesun.png" className="w-full rounded-3xl mt-10" />
-        <div className="flex justify-between items-start flex-wrap md:flex-nowrap flex-col-reverse md:flex-row relative mt-10 gap-5">
-          <div className="w-full md:w-7/12 lg:w-8/12">
-            <div className="text-xl leading-loose text-justify">
-              {state &&
-                Object.entries(state).map((el, index) => {
-                  return (
-                    <Element name={el[0]} key={index} className="pb-5">
-                      {el[1]}
-                    </Element>
-                  );
-                })}
-            </div>
-          </div>
-          <List reports={reportsReducer.reports} setState={setState} />
+        <List reports={reportsReducer.reports} setState={setState} />
+        <div className="text-xl leading-loose text-justify mt-5">
+          {state &&
+            Object.entries(state).map((el, index) => {
+              return (
+                <Element name={el[0]} key={index} className="pb-5">
+                  {el[1]}
+                </Element>
+              );
+            })}
         </div>
       </div>
     </div>

@@ -18,10 +18,10 @@ const index = () => {
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
               <div className="flex gap-2 pt-2">
-                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#06243F] text-white py-1 px-2 rounded-md font-semibold">
                   NEW
                 </small>
-                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#5E17EB] text-white py-1 px-2 rounded-md font-semibold">
                   HOT
                 </small>
               </div>
@@ -40,10 +40,10 @@ const index = () => {
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
               <div className="flex gap-2 pt-2">
-                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#06243F] text-white py-1 px-2 rounded-md font-semibold">
                   NEW
                 </small>
-                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#5E17EB] text-white py-1 px-2 rounded-md font-semibold">
                   HOT
                 </small>
               </div>
@@ -62,10 +62,10 @@ const index = () => {
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
               <div className="flex gap-2 pt-2">
-                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#06243F] text-white py-1 px-2 rounded-md font-semibold">
                   NEW
                 </small>
-                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#5E17EB] text-white py-1 px-2 rounded-md font-semibold">
                   HOT
                 </small>
               </div>
@@ -84,10 +84,10 @@ const index = () => {
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
               <div className="flex gap-2 pt-2">
-                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#06243F] text-white py-1 px-2 rounded-md font-semibold">
                   NEW
                 </small>
-                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#5E17EB] text-white py-1 px-2 rounded-md font-semibold">
                   HOT
                 </small>
               </div>
@@ -106,10 +106,10 @@ const index = () => {
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
               <div className="flex gap-2 pt-2">
-                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#06243F] text-white py-1 px-2 rounded-md font-semibold">
                   NEW
                 </small>
-                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#5E17EB] text-white py-1 px-2 rounded-md font-semibold">
                   HOT
                 </small>
               </div>
@@ -128,10 +128,10 @@ const index = () => {
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
               <div className="flex gap-2 pt-2">
-                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#06243F] text-white py-1 px-2 rounded-md font-semibold">
                   NEW
                 </small>
-                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#5E17EB] text-white py-1 px-2 rounded-md font-semibold">
                   HOT
                 </small>
               </div>
@@ -150,10 +150,10 @@ const index = () => {
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
               <div className="flex gap-2 pt-2">
-                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#06243F] text-white py-1 px-2 rounded-md font-semibold">
                   NEW
                 </small>
-                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#5E17EB] text-white py-1 px-2 rounded-md font-semibold">
                   HOT
                 </small>
               </div>
@@ -172,10 +172,10 @@ const index = () => {
               <p className="font-semibold">Find start that best suits you</p>
               <p className="text-sm">Find start that best suits you</p>
               <div className="flex gap-2 pt-2">
-                <small className="bg-[#06243F] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#06243F] text-white py-1 px-2 rounded-md font-semibold">
                   NEW
                 </small>
-                <small className="bg-[#5E17EB] text-white py-1 px-3 rounded-md font-semibold">
+                <small className="bg-[#5E17EB] text-white py-1 px-2 rounded-md font-semibold">
                   HOT
                 </small>
               </div>

@@ -1,6 +1,8 @@
 import dynamic from "next/dynamic";
 import TextAnimation from "../Utils/TextAnimation";
-const ContentScroller = dynamic(() => import("./ContentScroller"), { ssr: true })
+const ContentScroller = dynamic(() => import("./ContentScroller"), {
+  ssr: true,
+});
 
 const StoreLinksExtras = () => {
   return (
@@ -45,97 +47,170 @@ const StoreLinksExtras = () => {
 const extras = [
   [
     {
-      label: "Custom store links",
-      emoji: "🔗",
+      label: "Inspire Innovation",
+      emoji: "💡",
     },
     {
-      label: "Automatic SEO",
-      emoji: "🔎",
+      label: "Foster Originality",
+      emoji: "🌱",
     },
     {
-      label: "Manage multiple product options",
-      emoji: "👠",
+      label: "Foster Endurance",
+      emoji: "🏃🏻‍♂️",
     },
     {
-      label: "Upload multiple products at once",
-      emoji: "📦",
+      label: "Expand Self-awareness",
+      emoji: "🔍",
     },
 
     {
-      label: "Add multiple whatsapp numbers",
-      emoji: "💬",
+      label: "Energy Harnessing",
+      emoji: "🦾",
     },
     {
-      label: "Create discounts",
-      emoji: "🎁",
+      label: "Boost Vitality",
+      emoji: "🚀",
     },
     {
-      label: "Create coupons",
-      emoji: "🎟️",
+      label: "Enhance Power",
+      emoji: "💪🏻",
     },
     {
-      label: "Configure how customers see your products",
-      emoji: "⚙️",
-    },
-  ],
-  [
-    {
-      label: "Link your social media profiles",
-      emoji: "🎈",
+      label: "Mood Enhancement",
+      emoji: "😄",
     },
     {
-      label: "Set prices for locations you deliver to",
-      emoji: "🚚",
+      label: "Balance Emotionss",
+      emoji: "😉",
     },
     {
-      label: "Set opening & closing hours",
-      emoji: "⏰",
+      label: "Elevate State,",
+      emoji: "🌟",
     },
     {
-      label: "Links to single products",
-      emoji: "👖",
+      label: "Focus Optimization",
+      emoji: "🧑🏻‍💻",
     },
     {
-      label: "Manage multiple stores from one account",
-      emoji: "🛒",
+      label: "Sharpen Concentration",
+      emoji: "👁️‍🗨️",
     },
     {
-      label: "Organize your products into categories",
-      emoji: "🗂",
+      label: "Achieve Clarity",
+      emoji: "🪄",
     },
     {
-      label: "Add multiple store managers",
-      emoji: "🤵🏽",
+      label: "Spirit Nurturing",
+      emoji: "👩‍👦",
+    },
+    {
+      label: "Cultivate Essence",
+      emoji: "🍼",
     },
   ],
   [
     {
-      label: "Multiple currencies - coming soon",
-      emoji: "💸",
+      label: "Enrich Soul",
+      emoji: "💎",
     },
     {
-      label: "Facebook Pixel - Coming soon",
+      label: "Insight Development",
+      emoji: "📊",
+    },
+    {
+      label: "Expand Understanding",
+      emoji: "🧠",
+    },
+    {
+      label: "Increase Perception",
+      emoji: "🧐",
+    },
+    {
+      label: "Decision Making",
+      emoji: "🤝",
+    },
+    {
+      label: "Improve Choices",
+      emoji: "✅",
+    },
+
+    {
+      label: "Refine Judgment",
+      emoji: "🗳️",
+    },
+    {
+      label: "Execution Strategy",
       emoji: "📈",
     },
     {
-      label: "Import products from Instagram - Coming soon",
+      label: "Streamline Implementation",
+      emoji: "📖",
+    },
+    {
+      label: "Drive Action",
+      emoji: "🗣️",
+    },
+    {
+      label: "Consistency Building",
+      emoji: "📏",
+    },
+    {
+      label: "Foster Regularity",
+      emoji: "🏃🏻‍♀️",
+    },
+  ],
+  [
+    {
+      label: "Maintain Stability",
+      emoji: "💍",
+    },
+    {
+      label: "Romance Cultivation",
+      emoji: "❣️",
+    },
+    {
+      label: "Ignite Love",
+      emoji: "❤️‍🔥",
+    },
+    {
+      label: "Spark Passion",
+      emoji: "🔥",
+    },
+    {
+      label: "Intimacy Deepening",
+      emoji: "🧑‍❤️‍👩",
+    },
+    {
+      label: "Strengthen Closeness",
+      emoji: "🙌🏻",
+    },
+    {
+      label: "Enhance Affection",
+      emoji: "💌",
+    },
+    {
+      label: "Connection Fostering",
+      emoji: "🧵",
+    },
+    {
+      label: "Create Bonds",
+      emoji: "👨‍👩‍👧‍👦",
+    },
+    {
+      label: "Establish Links",
+      emoji: "🔗",
+    },
+    {
+      label: "Destiny Shaping",
+      emoji: "🔮",
+    },
+    {
+      label: "Guide Fate",
       emoji: "🎩",
     },
     {
-      label: "Advanced store customizations - coming soon",
-      emoji: "🏗",
-    },
-    {
-      label: "Gifs & Videos for products - coming soon",
-      emoji: "📹",
-    },
-    {
-      label: "Verification Badges - coming soon",
-      emoji: "❇️",
-    },
-    {
-      label: "Checkout to twitter & Instagram - coming soon",
-      emoji: "📥",
+      label: "Influence Future",
+      emoji: "📽️",
     },
   ],
 ];
