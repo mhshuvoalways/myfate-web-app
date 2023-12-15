@@ -1,7 +1,8 @@
-import Img1 from "@/public/ownerSaysCatelog/1.webp";
-import Img2 from "@/public/ownerSaysCatelog/2.webp";
-import Img3 from "@/public/ownerSaysCatelog/3.webp";
-import Img4 from "@/public/ownerSaysCatelog/4.webp";
+import Img1 from "@/public/ownerSaysCatelog/taylor.jpeg";
+import Img2 from "@/public/ownerSaysCatelog/harry.jpeg";
+import Img3 from "@/public/ownerSaysCatelog/olivia.jpeg";
+import Img4 from "@/public/ownerSaysCatelog/kim.jpeg";
+import Img5 from "@/public/ownerSaysCatelog/billie.jpeg";
 import ArrowLeft from "@/public/ownerSaysCatelog/arrowLeft.svg";
 import ArrowRight from "@/public/ownerSaysCatelog/arrowRight.svg";
 import Icon1 from "@/public/ownerSaysCatelog/icon1.webp";
@@ -108,16 +109,16 @@ const index = ({ home }) => {
                     className="w-16 h-16 rounded-full"
                   />
                   <p className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
-                    “I love that customers just visit my Catlog link, pick what
-                    they want and I just get a message on WhatsApp with what
-                    they want to order, and their delivery details, it’s just
-                    too sweet
+                    Taylor Swift, thrives on deep connections, balancing her
+                    heartfelt career with an unwavering commitment to friends,
+                    and social causes. She's genuinely empathetic, creative, and
+                    resilient, embodying the essence of her destiny.
                   </p>
                   <div>
                     <p className="text-2xl font-semibold text-my-blue">
-                      Chukwuma Rejoice
+                      Taylor Swift
                     </p>
-                    <p className="text-xl">Bernadines Bistro (Cloud kitchen)</p>
+                    <p className="text-xl">Born to be Super Woman</p>
                   </div>
                 </div>
               </div>
@@ -136,16 +137,16 @@ const index = ({ home }) => {
                     className="w-16 h-16 rounded-full"
                   />
                   <p className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
-                    “Catlog has saved me from having long and sometimes
-                    unnecessary conversations with customers in the name of
-                    placing orders. I have all the information on their orders
-                    at a glance.
+                    Harry Styles, was born with profound empathy and charismatic
+                    presence. Destined for innovative career with a strong
+                    dedication to meaningful relationships. His innate
+                    creativity will shape his path as an influential person.
                   </p>
                   <div>
                     <p className="text-2xl font-semibold text-my-blue">
-                      Chidinma Onyeiwu
+                      Harry Styles
                     </p>
-                    <p className="text-xl">Pancake Boss (Breakfast Store)</p>
+                    <p className="text-xl">Destined for Greatness</p>
                   </div>
                 </div>
               </div>
@@ -164,16 +165,16 @@ const index = ({ home }) => {
                     className="w-16 h-16 rounded-full"
                   />
                   <p className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
-                    “Catlog helps me save time, I no longer have to send 40
-                    pictures to customers before they buy. With Catlog, my
-                    customers are able to easily purchase sneakers or add to
-                    cart to buy later.
+                    Olivia Rodrigo, was born with a natural affinity for
+                    emotional expression and connection. With a charisma that
+                    effortlessly resonates with her audience, Olivia's path
+                    seems destined for impactful storytelling.
                   </p>
                   <div>
                     <p className="text-2xl font-semibold text-my-blue">
-                      Surprise Ayodele
+                      Olivia Rodrigo
                     </p>
-                    <p className="text-xl">Jisstore NG (Sneaker Store)</p>
+                    <p className="text-xl">Destined Storyteller</p>
                   </div>
                 </div>
               </div>
@@ -192,16 +193,17 @@ const index = ({ home }) => {
                     className="w-16 h-16 rounded-full"
                   />
                   <p className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
-                    “Catlog has helped cut 50% of the conversations we have with
-                    customers. Instead of going back and forth with every
-                    customer, we just send a link and they are able to select
-                    what they want.
+                    Kim Kardashian, often perceived through the lens of her
+                    public persona, exhibits strong traits such as a sense of
+                    responsibility, dedication, and practicality. She was born
+                    with a talent for organization and an acute attention to
+                    detail.
                   </p>
                   <div>
                     <p className="text-2xl font-semibold text-my-blue">
-                      Adeola Owosho
+                      Kim Kardashian
                     </p>
-                    <p className="text-xl">{`Mazzini's Box (Workspace Accessories)`}</p>
+                    <p className="text-xl">Everything is not what it seems</p>
                   </div>
                 </div>
               </div>
@@ -209,7 +211,7 @@ const index = ({ home }) => {
             <div>
               <div className="flex gap-10 md:gap-20 justify-between px-1 flex-wrap md:flex-nowrap">
                 <Image
-                  src={Img3}
+                  src={Img5}
                   alt=""
                   className="w-full md:w-6/12 rounded-3xl object-cover h-[500px]"
                 />
@@ -220,16 +222,18 @@ const index = ({ home }) => {
                     className="w-16 h-16 rounded-full"
                   />
                   <p className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
-                    “Catlog helps me save time, I no longer have to send 40
-                    pictures to customers before they buy. With Catlog, my
-                    customers are able to easily purchase sneakers or add to
-                    cart to buy later.
+                    Billie Eilish was born with an innate talent for art and
+                    artistic sensibility. She possesses maximum ability to
+                    convey complex emotions. Her destiny is clear to be
+                    prosperous. However, much self care is needed.
                   </p>
                   <div>
                     <p className="text-2xl font-semibold text-my-blue">
-                      Surprise Ayodele
+                      Billie Eilish
                     </p>
-                    <p className="text-xl">Jisstore NG (Sneaker Store)</p>
+                    <p className="text-xl">
+                      Born Artist with a Destiny for Prosperity
+                    </p>
                   </div>
                 </div>
               </div>

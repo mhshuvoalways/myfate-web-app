@@ -1,9 +1,7 @@
 import ArrowDown from "@/public/buildgrowth/arrowDown.svg";
 import Nigeria from "@/public/flag/ng.png";
-import ArrowPhoto from "@/public/pricing/arrow.svg";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Fade } from "react-reveal";
+import { useEffect } from "react";
 import PricingItem from "../Pricing/PricingItem";
 import TextAnimation from "../Utils/TextAnimation";
 import { useRouter } from "next/router";
@@ -14,28 +12,71 @@ const Index = () => {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const selectHandler = (value) => {
-    setSelectPrice(value);
-  };
-
   const pricingObj = [
     {
       id: 1,
-      title: "Base",
-      description:
-        "For growing businesses looking to handle their sales better",
-      planTitle: 10,
-      inclueds: ["Comprehensive Analysis", "Daily Guidance", "Full Report"],
+      title: "Pro plan",
+      description: "For anyone who wants to know deeper about themselves",
+      planTitle: 35,
+      inclueds: [
+        "Life Total Analysis",
+        "Life Advice",
+        "Romance Compatibility Analysis",
+        "Ideal Partner Analysis",
+        "Financial Analysis",
+        "Financial Risk Analysis",
+        "Academic Advice",
+        "Personalized Daily Energy Overview",
+        "Personalized Daily Romance Overview",
+        "Personalized Daily Finance Overview",
+        "Daily Sayings",
+        "Daily Prayers",
+      ],
     },
     {
       id: 2,
-      title: "Premium",
-      description: "For bigger businesses looking to sell more efficiently",
-      planTitle: 30,
+      title: "Premium plan",
+      description:
+        "For anyone who wants to get a personalized analysis from a doctor who has been in Sajoo for decades",
+      planTitle: 185,
       inclueds: [
-        "Daily Love Dynamics",
-        "Daily Financial Strategy",
-        "Exclusive Insights",
+        "Doctor’s Full Analysis once a month",
+        "Life Total Analysis",
+        "Life Advice",
+        "Romance Compatibility Analysis",
+        "Ideal Partner Analysis",
+        "Financial Analysis",
+        "Financial Risk Analysis",
+        "Academic Advice",
+        "Personalized Daily Energy Overview",
+        "Personalized Daily Romance Overview",
+        "Personalized Daily Finance Overview",
+        "Daily Sayings",
+        "Daily Prayers",
+      ],
+    },
+    {
+      id: 3,
+      title: "Premium Max plan",
+      description:
+        "For anyone who wants to get a personalized+ analysis from a doctor who has been in Sajoo for decades",
+      planTitle: 285,
+      inclueds: [
+        "Doctor’s Full Analysis twice a month",
+        "Doctor’s Q&A",
+        "Maximum Details",
+        "Life Total Analysis",
+        "Life Advice",
+        "Romance Compatibility Analysis",
+        "Ideal Partner Analysis",
+        "Financial Analysis",
+        "Financial Risk Analysis",
+        "Academic Advice",
+        "Personalized Daily Energy Overview",
+        "Personalized Daily Romance Overview",
+        "Personalized Daily Finance Overview",
+        "Daily Sayings",
+        "Daily Prayers",
       ],
     },
   ];
@@ -58,12 +99,12 @@ const Index = () => {
           <TextAnimation
             letters={[
               {
-                letter: "Our",
+                letter: "Tiny",
                 delay: "0",
               },
               {
-                letter: "Affordable",
-                delay: "0.20",
+                letter: "Investment",
+                delay: "0.10",
               },
             ]}
             className="text-4xl md:text-5xl lg:text-7xl"
@@ -72,22 +113,25 @@ const Index = () => {
           <TextAnimation
             letters={[
               {
-                letter: "Fair",
+                letter: "And",
+                delay: "0.30",
+              },
+              {
+                letter: "Get",
                 delay: "0.40",
               },
               {
-                letter: "Pricing",
-                delay: "0.60",
+                letter: "Everything",
+                delay: "0.50",
               },
             ]}
             className="text-4xl md:text-5xl lg:text-7xl font-semibold text-my-blue"
             textCenter
           />
           <div className="flex gap-5 justify-center flex-wrap mt-10">
-            <Fade bottom>
-              <PricingItem pricingObj={pricingObj[0]} />
-              <PricingItem pricingObj={pricingObj[1]} />
-            </Fade>
+            {pricingObj.map((el) => (
+              <PricingItem pricingObj={el} key={el.id} />
+            ))}
           </div>
         </div>
       </div>

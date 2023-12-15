@@ -22,7 +22,17 @@ function randomFloat(min, max) {
 }
 
 function calculateAverage(scores) {
-  return scores.reduce((a, b) => a + b, 0) / scores.length;
+  if (scores.length === 0) {
+    console.error("Empty scores array");
+    return 0; // or handle this scenario appropriately
+  }
+
+  // Sum up the 'score' property of each object in the array
+  const sum = scores.reduce((a, b) => a + b.score, 0);
+  const average = sum / scores.length;
+
+  // Limit the average to two decimal places
+  return average.toFixed(2);
 }
 
 function loadSentencesFromDb(filePath, section, score) {

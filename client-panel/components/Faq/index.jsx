@@ -7,85 +7,38 @@ const Index = () => {
   const faqItems = [
     {
       id: 1,
-      faqTitle: "What is Catlog?",
-      faqDes: `Catlog helps businesses sell easily on social media.
-      <br />
-      <br />
-      With Catlog, you can create a simple list of all your products and
-      get a link you can share with customers anytime, customers can use
-      this link to select items they want to buy and send their orders
-      directly to your Whatsapp.
-      <br />
-      <br />
-      Catlog also helps you manage your orders and customers, get a bank
-      account and collect payment via cards, transfers & split payments.`,
+      faqTitle: "What is MyFates?",
+      faqDes: `MyFates is a Japanese-Korean self empowering service that was made to give deeper understanding about oneself. Myfates uses traditional horoscope and psychological methods to give maximum insight about oneself.`,
     },
     {
       id: 2,
-      faqTitle: "How do I receive orders from my store?",
-      faqDes: `On Catlog you receive orders on Whatsapp.
-      <br />
-      <br />
-      When you send your link to customers, they select the items they want to purchase. After selecting items, they provide their delivery information. The order and delivery info is then automatically sent to your Whatsapp.`,
+      faqTitle: "How can it be so accurate?",
+      faqDes: `The report made for each person is totally special. No two people would get the same report. That is, each individual would get an individualized result, giving the best accuracy in the world.`,
     },
     {
       id: 3,
-      faqTitle: "Does Catlog help me get customers?",
-      faqDes: `We don't currently showcase everyone's products for people to buy, but we help with search engine optimization for your store. So mainly, you have to use your store link - by adding it to your social media bio & sending it to customers when they reach out.`,
+      faqTitle: "Does it tell me the real me?",
+      faqDes: `It tells you what you are born with based on our horoscope and psychology method. Our goal is to give positive insights that will eventually motivate you to grow.`,
     },
     {
       id: 4,
-      faqTitle: "Does Catlog have a mobile app?",
-      faqDes: `Right now, Catlog doesn't have a mobile app but the web app was built in a way that allows you to add it to your phone like an app for easy access to your store. See how to add catlog to your phone
-      <br />
-      <br />
-      Also, Anticipate our mobile app soon!`,
+      faqTitle: "Will it help me get a romantic partner?",
+      faqDes: `It will give you a strategic insight to get yourself a partner that best suits you. To get what you want, you have to know yourself. Our report will definitely help.`,
     },
     {
       id: 5,
-      faqTitle: "Does Catlog have a mobile app?",
-      faqDes: `Yes, you can use Catlog for free. However there are paid plans that gives you access to more features, read more about this here`,
+      faqTitle: "Will it give me insights about finance?",
+      faqDes: `Yes. it can provide valuable insights about your financial choices. Every single person has different personality that can significantly impact their financial decisions. Our goal is to provide analysis of the personality.`,
     },
     {
       id: 6,
-      faqTitle: "What is Catlog?",
-      faqDes: `Catlog helps businesses sell easily on social media.
-      <br />
-      <br />
-      With Catlog, you can create a simple list of all your products and
-      get a link you can share with customers anytime, customers can use
-      this link to select items they want to buy and send their orders
-      directly to your Whatsapp.
-      <br />
-      <br />
-      Catlog also helps you manage your orders and customers, get a bank
-      account and collect payment via cards, transfers & split payments.`,
+      faqTitle: "Why does the premium plan get sold out?",
+      faqDes: `As the owner herself, doctor Ji spends much time to give each people maximum insight. Therefore, we stop receiving orders when she believes that we are not capable of meeting our high standards.`,
     },
     {
       id: 7,
-      faqTitle: "How do I receive orders from my store?",
-      faqDes: `On Catlog you receive orders on Whatsapp.
-      <br />
-      <br />
-      When you send your link to customers, they select the items they want to purchase. After selecting items, they provide their delivery information. The order and delivery info is then automatically sent to your Whatsapp.`,
-    },
-    {
-      id: 8,
-      faqTitle: "Does Catlog help me get customers?",
-      faqDes: `We don't currently showcase everyone's products for people to buy, but we help with search engine optimization for your store. So mainly, you have to use your store link - by adding it to your social media bio & sending it to customers when they reach out.`,
-    },
-    {
-      id: 9,
-      faqTitle: "Does Catlog have a mobile app?",
-      faqDes: `Right now, Catlog doesn't have a mobile app but the web app was built in a way that allows you to add it to your phone like an app for easy access to your store. See how to add catlog to your phone
-      <br />
-      <br />
-      Also, Anticipate our mobile app soon!`,
-    },
-    {
-      id: 10,
-      faqTitle: "Does Catlog have a mobile app?",
-      faqDes: `Yes, you can use Catlog for free. However there are paid plans that gives you access to more features, read more about this here`,
+      faqTitle: "Who made MyFates?",
+      faqDes: `Dr. Ji. A pediatrician who studied horoscope and psychology for decades. She made myfates.com to provide deeper understanding about oneself and provide positive advice to young people that are lost in this rapidly changing world.`,
     },
   ];
 
