@@ -109,10 +109,10 @@ const index = ({ home }) => {
                     className="w-16 h-16 rounded-full"
                   />
                   <p className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
-                    Taylor Swift, thrives on deep connections, balancing her
+                    {`Taylor Swift, thrives on deep connections, balancing her
                     heartfelt career with an unwavering commitment to friends,
                     and social causes. She's genuinely empathetic, creative, and
-                    resilient, embodying the essence of her destiny.
+                    resilient, embodying the essence of her destiny.`}
                   </p>
                   <div>
                     <p className="text-2xl font-semibold text-my-blue">
@@ -165,10 +165,10 @@ const index = ({ home }) => {
                     className="w-16 h-16 rounded-full"
                   />
                   <p className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
-                    Olivia Rodrigo, was born with a natural affinity for
+                    {`Olivia Rodrigo, was born with a natural affinity for
                     emotional expression and connection. With a charisma that
                     effortlessly resonates with her audience, Olivia's path
-                    seems destined for impactful storytelling.
+                    seems destined for impactful storytelling.`}
                   </p>
                   <div>
                     <p className="text-2xl font-semibold text-my-blue">
@@ -193,11 +193,11 @@ const index = ({ home }) => {
                     className="w-16 h-16 rounded-full"
                   />
                   <p className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
-                    Kim Kardashian, often perceived through the lens of her
+                    {`Kim Kardashian, often perceived through the lens of her
                     public persona, exhibits strong traits such as a sense of
                     responsibility, dedication, and practicality. She was born
                     with a talent for organization and an acute attention to
-                    detail.
+                    detail.`}
                   </p>
                   <div>
                     <p className="text-2xl font-semibold text-my-blue">
@@ -222,10 +222,10 @@ const index = ({ home }) => {
                     className="w-16 h-16 rounded-full"
                   />
                   <p className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
-                    Billie Eilish was born with an innate talent for art and
+                    {`Billie Eilish was born with an innate talent for art and
                     artistic sensibility. She possesses maximum ability to
                     convey complex emotions. Her destiny is clear to be
-                    prosperous. However, much self care is needed.
+                    prosperous. However, much self care is needed.`}
                   </p>
                   <div>
                     <p className="text-2xl font-semibold text-my-blue">
