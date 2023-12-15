@@ -31,7 +31,7 @@ const StoreLinksExtras = () => {
             },
           ]}
           className={
-            "text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-yellow"
+            "text-4xl md:text-5xl lg:text-6xl mt-0 md:mt-4 font-semibold text-my-blue"
           }
         />
       </div>

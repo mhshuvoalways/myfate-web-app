@@ -59,16 +59,12 @@ const index = ({ home }) => {
           <TextAnimation
             letters={[
               {
-                letter: "What",
+                letter: "Surprisingly",
                 delay: "0",
               },
               {
-                letter: "business",
-                delay: "0.20",
-              },
-              {
-                letter: "owners",
-                delay: "0.40",
+                letter: "Accurate",
+                delay: "0.10",
               },
             ]}
             className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
@@ -76,16 +72,16 @@ const index = ({ home }) => {
           <TextAnimation
             letters={[
               {
-                letter: "say",
-                delay: "0.60",
+                letter: "Everything",
+                delay: "0.20",
               },
               {
                 letter: "about",
-                delay: "0.80",
+                delay: "0.30",
               },
               {
-                letter: "catlog",
-                delay: "1",
+                letter: "you",
+                delay: "0.40",
               },
             ]}
             className={

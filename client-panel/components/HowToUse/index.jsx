@@ -127,7 +127,7 @@ const HowItWorks = () => {
                 }
               />
               <div className="w-full grid md:grid-cols-[53%,47%] lg:grid-cols-[49%,51%] xl:grid-cols-[47%,53%] gap-5 mt-20">
-                <div className="col-span-1 w-full bg-page-pastel min-w-0 rounded-3xl relative overflow-hidden pt-[115%] sm:pt-[85%] md:pt-0">
+                <div className="col-span-1 w-full bg-my-bg-pastel min-w-0 rounded-3xl relative overflow-hidden pt-[115%] sm:pt-[85%] md:pt-0">
                   <div className="flex items-center absolute top-5 right-5">
                     <div className="text-page">
                       <CircularProgress

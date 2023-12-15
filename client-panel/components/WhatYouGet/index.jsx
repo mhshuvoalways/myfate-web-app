@@ -20,11 +20,11 @@ const Index = () => {
                 delay: "0",
               },
               {
-                letter: `do`,
+                letter: `you`,
                 delay: "0.10",
               },
               {
-                letter: `you`,
+                letter: `get`,
                 delay: "0.20",
               },
             ]}
@@ -33,20 +33,16 @@ const Index = () => {
           <TextAnimation
             letters={[
               {
-                letter: `get`,
+                letter: `with`,
                 delay: "0.30",
               },
               {
-                letter: `with`,
+                letter: `our`,
                 delay: "0.40",
               },
               {
-                letter: `our`,
-                delay: "0.50",
-              },
-              {
                 letter: `report`,
-                delay: "0.60",
+                delay: "0.50",
               },
             ]}
             className={
@@ -64,12 +60,12 @@ const Index = () => {
               />
               <div className="bg-my-bg-pastel rounded-3xl mt-5 p-8">
                 <p className="text-xl md:text-3xl lg:text-2xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
-                  Ready to take
+                  Ready to connect
                   <br />
-                  orders easily?
+                  to the future?
                 </p>
                 <div className="mt-10">
-                  <Button value={"Start using links"} />
+                  <Button value={"Start your journey"} />
                 </div>
               </div>
             </Zoom>
