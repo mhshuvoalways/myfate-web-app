@@ -74,6 +74,7 @@ const Index = () => {
                   </Element>
                 );
               })}
+              <p className="h-0 md:h-80"></p>
           </div>
           <List
             reports={reportsReducer.reports}

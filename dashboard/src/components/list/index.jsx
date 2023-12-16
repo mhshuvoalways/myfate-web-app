@@ -31,7 +31,10 @@ const Index = ({ reports, setState, showItem, setShowItem }) => {
             <div key={el}>
               <div
                 className="flex justify-between items-center cursor-pointer shadow-sm p-5"
-                onClick={() => itemHandler(el)}
+                onClick={() => {
+                  itemHandler(el);
+                  setState(reports.reports[el]);
+                }}
               >
                 {el === "entireLife" && (
                   <IoIosMan
