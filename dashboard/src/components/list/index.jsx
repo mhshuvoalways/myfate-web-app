@@ -26,7 +26,7 @@ const Index = ({ reports, setState }) => {
     <div
       className="bg-white w-full md:flex mt-10 justify-between border shadow-sm rounded-xl relative flex-wrap"
     >
-      {reports &&
+      {reports && reports.reports &&
         Object.keys(reports.reports).map((el) => {
           return (
             <div key={el}>

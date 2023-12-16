@@ -69,7 +69,7 @@
         },
         "two": {
             "content": {
-                "intro": "[NAME] shines as a supportive and sociable individual, always eager to help and make others feel comfortable. [THEY] possess a natural warmth and are often the first to lend a hand in times of need.",
+                "intro": "[NAME] shines as a supportive and sociable individual, always eager to help and make others feel comfortable. [THEY] possesses a natural warmth and are often the first to lend a hand in times of need.",
                 "strengths_weaknesses": "[NAME]'s empathetic nature and strong communication skills are [THEIR] greatest assets. [THEY] excel in roles that require care and attention to others' needs. However, [THEY] may sometimes take on too much responsibility for others' well-being, and [THEIR] aversion to conflict can lead to challenges in addressing issues directly.",
                 "social_economic_aspect": "[NAME] has a talent for coordinating and managing group activities, making [THEM] an asset in community and work settings. [THEY] is keenly aware of social hierarchies and norms, which helps [THEM] navigate complex social networks effectively.",
                 "relationships": "In relationships, [NAME] is nurturing and considerate, always striving to maintain harmony and understanding. [THEY] value stability and security, but [THEY] might struggle with change or when [THEIR] efforts aren't acknowledged as [THEY] expect.",
@@ -127,7 +127,7 @@
         },
         "two": {
             "content": {
-                "intro": "[NAME] is a natural-born leader, exuding authority and determination. [THEY] possess a clear vision for the future and are adept at rallying others around their goals and ideas.",
+                "intro": "[NAME] is a natural-born leader, exuding authority and determination. [THEY] possesses a clear vision for the future and are adept at rallying others around their goals and ideas.",
                 "strengths_weaknesses": "[NAME]'s key strength is [THEIR] ability to analyze situations and devise effective solutions quickly. [THEY] is confident and articulate, capable of inspiring others. However, [THEY] can sometimes be overly assertive or dismissive of others' opinions, especially in high-pressure situations.",
                 "social_economic_aspect": "[NAME] thrives in competitive environments, where [THEIR] strategic thinking and problem-solving skills can be put to good use. [THEY] is goal-oriented and have a strong drive to succeed, which often leads [THEM] to excel in business and leadership roles.",
                 "relationships": "[NAME] values efficiency and directness in [THEIR] relationships. [THEY] is loyal and dependable but may need to be more mindful of [THEIR] partner's emotional needs and the importance of empathy in nurturing relationships.",
@@ -165,7 +165,7 @@
         },
         "three": {
             "content": {
-                "intro": "[NAME] is an intellectual explorer, always on the lookout for new theories and concepts to dissect and discuss. [THEY] possess a sharp wit and a natural ability to spot inconsistencies and flaws in arguments.",
+                "intro": "[NAME] is an intellectual explorer, always on the lookout for new theories and concepts to dissect and discuss. [THEY] possesses a sharp wit and a natural ability to spot inconsistencies and flaws in arguments.",
                 "strengths_weaknesses": "[NAME]'s ability to quickly understand complex ideas and think critically is a key strength. [THEY] excel in environments that allow for intellectual freedom and creativity. On the downside, [THEY] might be perceived as argumentative or indifferent to more practical or routine matters.",
                 "social_economic_aspect": "[NAME] thrives in innovative and dynamic settings, especially those that allow [THEM] to challenge conventional thinking. [THEY] is adept at coming up with unique solutions to problems and can be an effective strategist in business or technology sectors.",
                 "relationships": "In [THEIR] personal life, [NAME] is often the spark that ignites lively discussions and thought-provoking debates. [THEY] value relationships that are intellectually stimulating but might need to focus more on the emotional aspects to build deeper connections.",
@@ -176,7 +176,7 @@
     "POER": {
         "one": {
             "content": {
-                "intro": "[NAME] is a natural leader, known for [THEIR] charisma and ability to inspire those around [THEM]. [THEY] possess a unique blend of empathy and assertiveness, often advocating for positive change and encouraging others to reach their full potential.",
+                "intro": "[NAME] is a natural leader, known for [THEIR] charisma and ability to inspire those around [THEM]. [THEY] possesses a unique blend of empathy and assertiveness, often advocating for positive change and encouraging others to reach their full potential.",
                 "strengths_weaknesses": "[NAME]'s key strengths include [THEIR] exceptional interpersonal skills and [THEIR] ability to deeply understand and motivate others. [THEY] is often seen as a mentor or guide. However, [THEY] can sometimes be overly idealistic or sensitive to criticism, which may lead to challenges in facing harsh realities.",
                 "social_economic_aspect": "[NAME] excels in roles that involve nurturing and developing others' talents and potentials, such as education, counseling, or leadership in social organizations. [THEY] has a strong sense of community and are driven by the desire to make a meaningful impact.",
                 "relationships": "[NAME] values deep, harmonious relationships and often goes out of [THEIR] way to ensure the well-being of [THEIR] loved ones. [THEY] is compassionate and supportive, but [THEY] might sometimes neglect [THEIR] own needs while focusing on those of others.",

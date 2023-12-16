@@ -1,8 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/pricing": "pages/pricing.js",
-  "/": "pages/index.js",
-  "/store-links": "pages/store-links.js"
-}
+{}
