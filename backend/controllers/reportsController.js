@@ -40,13 +40,13 @@ const addReports = (req, res) => {
         title: createRes.title,
         date: createRes.date,
         reports: {
-          full: {
+          entireLife: {
             advice: createRes.fullAdvice,
             lifeCycle: createRes.fullLifeCycle,
             nature: createRes.fullNature,
             overview: createRes.fullOverview,
             relationship: createRes.fullRelationship,
-            swot: createRes.fullSwot,
+            "strength&Weakness": createRes.fullSwot,
           },
           love: {
             idealPartner: createRes.loveIdealPartner,
@@ -56,13 +56,13 @@ const addReports = (req, res) => {
             needs: createRes.loveNeeds,
             overview: createRes.loveOverview,
           },
-          money: {
+          finance: {
             outlook: createRes.financeOutlook,
             outlook2: createRes.financeOutlook2,
             overview: createRes.financeOverview,
             risk: createRes.financeRisk,
           },
-          workAcademic: {
+          "learning&Career": {
             idealCareer: createRes.academicIdealCareer,
             learning: createRes.academicLearning,
             overview: createRes.academicOverview,

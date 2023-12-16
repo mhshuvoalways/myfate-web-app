@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Head>
-        <title>Explore Future</title>
+        <title>MyFates Future Connection</title>
       </Head>
       <div>
         <Loading />

@@ -10,32 +10,32 @@ const reportSchema = new Schema(
     title: String,
     date: String,
     reports: {
-      full: {
-        advice: String,
+      entireLife: {
+        overview: String,
         lifeCycle: String,
         nature: String,
-        overview: String,
+        "strength&Weakness": String,
         relationship: String,
-        swot: String,
+        advice: String,
       },
       love: {
-        idealPartner: String,
-        kids: String,
+        overview: String,
+        needs: String,
         lifeCycle: String,
         marriage: String,
-        needs: String,
-        overview: String,
+        kids: String,
+        idealPartner: String,
       },
-      money: {
+      finance: {
+        overview: String,
         outlook: String,
         outlook2: String,
-        overview: String,
         risk: String,
       },
-      workAcademic: {
+      "learning&Career": {
+        overview: String,
         idealCareer: String,
         learning: String,
-        overview: String,
       },
     },
   },

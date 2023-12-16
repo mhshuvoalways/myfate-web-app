@@ -8,6 +8,7 @@ import { getreports } from "../../../store/actions/reportsAction";
 
 const Index = () => {
   const [state, setState] = useState(null);
+  const [showItem, setShowItem] = useState(["entireLife"]);
   const userReducer = useSelector((state) => state.userReducer);
   const reportsReducer = useSelector((state) => state.reportsReducer);
 
@@ -19,9 +20,17 @@ const Index = () => {
 
   useEffect(() => {
     if (!state) {
-      setState(reportsReducer.reports?.reports.full);
+      setState(reportsReducer.reports?.reports.entireLife);
     }
-  }, [reportsReducer.reports?.reports?.full, state]);
+  }, [reportsReducer.reports?.reports?.entireLife, state]);
+
+  const individualWord = (item) => {
+    if (item) {
+      const words = item.replace(/([a-z])([A-Z])/g, "$1 $2").toLowerCase();
+      const formattedString = words.replace(/&/g, " & ");
+      return formattedString.replace(/\b\w/g, (char) => char.toUpperCase());
+    }
+  };
 
   return (
     <div>
@@ -47,16 +56,31 @@ const Index = () => {
           </div>
         </div>
         <img src="/images/treesun.png" className="w-full rounded-3xl mt-10" />
-        <List reports={reportsReducer.reports} setState={setState} />
-        <div className="text-xl leading-loose text-justify mt-5">
-          {state &&
-            Object.entries(state).map((el, index) => {
-              return (
-                <Element name={el[0]} key={index} className="pb-5">
-                  {el[1]}
-                </Element>
-              );
-            })}
+        <div className="flex justify-between items-start flex-wrap md:flex-nowrap flex-col-reverse md:flex-row relative mt-10 gap-5">
+          <div className="w-full md:w-7/12 lg:w-8/12">
+            <p className="text-4xl font-bold mb-10">
+              {individualWord(showItem[0])}
+            </p>
+            {state &&
+              Object.entries(state).map((el, index) => {
+                return (
+                  <Element name={el[0]} key={index} className="mb-10">
+                    <p className="font-semibold text-3xl mb-5 sticky top-0 bg-[#fcfcfc] py-2">
+                      {individualWord(el[0])}
+                    </p>
+                    <p className="text-xl leading-loose text-justify">
+                      {el[1]}
+                    </p>
+                  </Element>
+                );
+              })}
+          </div>
+          <List
+            reports={reportsReducer.reports}
+            setState={setState}
+            showItem={showItem}
+            setShowItem={setShowItem}
+          />
         </div>
       </div>
     </div>

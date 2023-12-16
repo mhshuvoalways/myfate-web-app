@@ -1,50 +1,72 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
-import { MdOutlineClearAll } from "react-icons/md";
+import { IoIosArrowDown, IoIosMan, IoMdHeart } from "react-icons/io";
+import { HiCurrencyDollar } from "react-icons/hi2";
+import { FaBook } from "react-icons/fa";
 import { Link } from "react-scroll";
 
-const Index = ({ reports, setState }) => {
-  const [showItem, setShowItem] = useState(["full"]);
-
+const Index = ({ reports, setState, showItem, setShowItem }) => {
   const itemHandler = (value) => {
     let temp = [...showItem];
-    if (showItem.includes(value)) {
-      const newShowItems = temp.filter((el) => el !== value);
+    temp.push(value);
+    setShowItem(temp);
+    setTimeout(() => {
+      const newShowItems = temp.filter((el) => el === value);
       setShowItem(newShowItems);
-    } else {
-      temp.push(value);
-      setShowItem(temp);
-      setTimeout(() => {
-        const newShowItems = temp.filter((el) => el === value);
-        setShowItem(newShowItems);
-      }, 300);
+    }, 300);
+  };
+
+  const individualWord = (item) => {
+    if (item) {
+      const words = item.replace(/([a-z])([A-Z])/g, "$1 $2").toLowerCase();
+      const formattedString = words.replace(/&/g, " & ");
+      return formattedString.replace(/\b\w/g, (char) => char.toUpperCase());
     }
   };
 
   return (
-    <div
-      className="bg-white w-full md:flex mt-10 justify-between border shadow-sm rounded-xl relative flex-wrap"
-    >
-      {reports && reports.reports &&
+    <div className="bg-white shadow rounded-xl w-full md:w-3/12 static md:sticky top-10">
+      {reports &&
         Object.keys(reports.reports).map((el) => {
           return (
             <div key={el}>
               <div
-                className="flex gap-2 md:gap-5 justify-between items-center cursor-pointer shadow-sm p-5"
+                className="flex justify-between items-center cursor-pointer shadow-sm p-5"
                 onClick={() => itemHandler(el)}
               >
-                <MdOutlineClearAll
-                  className={`text-2xl ${
-                    showItem.includes(el) && "text-blue-500"
-                  }`}
-                />
+                {el === "entireLife" && (
+                  <IoIosMan
+                    className={`text-2xl ${
+                      showItem.includes(el) && "text-blue-500"
+                    }`}
+                  />
+                )}
+                {el === "love" && (
+                  <IoMdHeart
+                    className={`text-2xl ${
+                      showItem.includes(el) && "text-blue-500"
+                    }`}
+                  />
+                )}
+                {el === "finance" && (
+                  <HiCurrencyDollar
+                    className={`text-2xl ${
+                      showItem.includes(el) && "text-blue-500"
+                    }`}
+                  />
+                )}
+                {el === "learning&Career" && (
+                  <FaBook
+                    className={`text-xl ${
+                      showItem.includes(el) && "text-blue-500"
+                    }`}
+                  />
+                )}
                 <p
                   className={
                     showItem.includes(el) && `text-blue-500 font-semibold`
                   }
                 >
-                  {el}
+                  {individualWord(el)}
                 </p>
                 <IoIosArrowDown
                   className={`text-xl transition-all ${
@@ -57,7 +79,7 @@ const Index = ({ reports, setState }) => {
               <AnimatePresence>
                 {showItem.includes(el) && (
                   <motion.div
-                    className="my-3 p-2 static md:absolute top-14 bg-white w-full md:w-[20%] shadow rounded-3xl"
+                    className="my-3 px-2"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
@@ -76,7 +98,7 @@ const Index = ({ reports, setState }) => {
                           }}
                         >
                           <p className="border rounded-full p-1 mt-2 text-center cursor-pointer hover:bg-blue-50">
-                            {val[0]}
+                            {individualWord(val[0])}
                           </p>
                         </Link>
                       );
