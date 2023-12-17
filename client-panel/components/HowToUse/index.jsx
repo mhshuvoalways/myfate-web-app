@@ -49,7 +49,7 @@ const HowItWorks = () => {
       scrollTrigger: {
         trigger: stepsWrapper,
         pin: true,
-        start: "-90 top",
+        start: "-70 top",
         pinSpacing: true,
         scrub: true,
         end: "185% top",
@@ -121,7 +121,7 @@ const HowItWorks = () => {
                   "text-4xl md:text-5xl lg:text-6xl font-semibold text-my-blue mt-0 md:mt-4"
                 }
               />
-              <div className="w-full grid md:grid-cols-[53%,47%] lg:grid-cols-[49%,51%] xl:grid-cols-[47%,53%] gap-5 mt-20">
+              <div className="w-full grid md:grid-cols-[53%,47%] lg:grid-cols-[49%,51%] xl:grid-cols-[47%,53%] gap-5 mt-10">
                 <div className="col-span-1 w-full bg-my-bg-pastel min-w-0 rounded-3xl relative overflow-hidden pt-[115%] sm:pt-[85%] md:pt-0">
                   <div className="flex items-center absolute top-5 right-5">
                     <div className="text-page">
@@ -141,7 +141,7 @@ const HowItWorks = () => {
                     <div key={index}>
                       {activeIndex === index && (
                         <figure
-                          className="w-10/12 absolute left-1/2 transform -translate-x-1/2 top-[12.5%] story-image-appear mt-5 sm:mt-0"
+                          className="w-10/12 absolute left-1/2 transform -translate-x-1/2 top-[13%] story-image-appear"
                           style={{
                             "--from": step?.mockupConf?.from ?? "10%",
                             "--to": step?.mockupConf?.to ?? "0",

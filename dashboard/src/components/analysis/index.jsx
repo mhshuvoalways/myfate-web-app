@@ -34,7 +34,7 @@ const Index = () => {
 
   return (
     <div>
-      <Header />
+      <Header reports={reportsReducer.reports} user={userReducer.user} />
       <div className="w-10/12 mx-auto mycontainer">
         <div className="bg-white shadow rounded-xl p-5 mt-16">
           <p className="text-4xl title-font">Client Dashboard</p>
@@ -49,8 +49,14 @@ const Index = () => {
             />
             <Items
               textcolor={"text-green-800"}
+              bgcolor={"bg-[#FEF6EB]"}
+              title="Date of Birth"
+              number={userReducer.user?.profile?.birthDate}
+            />
+            <Items
+              textcolor={"text-green-800"}
               bgcolor={"bg-[#E5F5FF]"}
-              title="Plan Type"
+              title="Last Plan Type"
               number={userReducer.user?.subscriptionPlan?.planType || ""}
             />
           </div>
@@ -74,7 +80,7 @@ const Index = () => {
                   </Element>
                 );
               })}
-              <p className="h-0 md:h-80"></p>
+            <p className="h-0 md:h-80"></p>
           </div>
           <List
             reports={reportsReducer.reports}
