@@ -141,7 +141,7 @@ const HowItWorks = () => {
                     <div key={index}>
                       {activeIndex === index && (
                         <figure
-                          className="w-10/12 absolute left-1/2 transform -translate-x-1/2 top-[13%] story-image-appear"
+                          className="w-10/12 md:w-9/12 absolute left-1/2 transform -translate-x-1/2 top-[13%] story-image-appear"
                           style={{
                             "--from": step?.mockupConf?.from ?? "10%",
                             "--to": step?.mockupConf?.to ?? "0",
