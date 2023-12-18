@@ -1,6 +1,7 @@
 const path = require("path");
 const Reports = require("../Model/Reports");
 const finalAPI = require("./reports/finalAPI");
+const igdop = require("./igdop/imageList");
 const serverError = require("../utils/serverError");
 
 const filePaths = [
@@ -28,11 +29,31 @@ const filePaths = [
   path.join(__dirname, "reports/work-academic/overview.json"),
 ];
 
+// Example usage
+const personalityDbPaths = [
+  path.join(__dirname, "igdop/nature/nature.json"),
+  path.join(__dirname, "igdop/animal/animal.json"),
+  path.join(__dirname, "igdop/castle/castle.json"),
+  path.join(__dirname, "igdop/space/space.json"),
+];
+
+const generalDbPaths = [
+  path.join(__dirname, "igdop/love/love.json"),
+  path.join(__dirname, "igdop/marriage/marriage.json"),
+  path.join(__dirname, "igdop/animalLove/animalLove.json"),
+
+  path.join(__dirname, "igdop/money/money.json"),
+
+  path.join(__dirname, "igdop/learn/learn.json"),
+  path.join(__dirname, "igdop/career/career.json"),
+];
+
 const addReports = (req, res) => {
   const { _id } = req.user;
   const { firstName, lastName, gender } = req.body;
   const personalityType = "KGBX";
   const userName = `${firstName} ${lastName}`;
+  const result = igdop(personalityType, personalityDbPaths, generalDbPaths);
   finalAPI(filePaths, personalityType, userName, gender)
     .then((createRes) => {
       const newObj = {
@@ -41,31 +62,79 @@ const addReports = (req, res) => {
         date: createRes.date,
         reports: {
           entireLife: {
-            advice: createRes.fullAdvice,
-            lifeCycle: createRes.fullLifeCycle,
-            nature: createRes.fullNature,
-            overview: createRes.fullOverview,
-            relationship: createRes.fullRelationship,
-            "strength&Weakness": createRes.fullSwot,
+            advice: {
+              data: createRes.fullAdvice,
+            },
+            lifeCycle: {
+              data: createRes.fullLifeCycle,
+            },
+            nature: {
+              data: createRes.fullNature,
+              image: result.animal,
+            },
+            overview: {
+              data: createRes.fullOverview,
+              image: result.nature,
+            },
+            relationship: {
+              data: createRes.fullRelationship,
+              image: result.space,
+            },
+            "strength&Weakness": {
+              data: createRes.fullSwot,
+              image: result.castle,
+            },
           },
           love: {
-            idealPartner: createRes.loveIdealPartner,
-            kids: createRes.loveKids,
-            lifeCycle: createRes.loveLifeCycle,
-            marriage: createRes.loveMarriage,
-            needs: createRes.loveNeeds,
-            overview: createRes.loveOverview,
+            idealPartner: {
+              data: createRes.loveIdealPartner,
+              image: result.animalLove,
+            },
+            kids: {
+              data: createRes.loveKids,
+            },
+            lifeCycle: {
+              data: createRes.loveLifeCycle,
+            },
+            marriage: {
+              data: createRes.loveMarriage,
+              image: result.marriage,
+            },
+            needs: {
+              data: createRes.loveNeeds,
+            },
+            overview: {
+              data: createRes.loveOverview,
+              image: result.love,
+            },
           },
           finance: {
-            outlook: createRes.financeOutlook,
-            outlook2: createRes.financeOutlook2,
-            overview: createRes.financeOverview,
-            risk: createRes.financeRisk,
+            outlook: {
+              data: createRes.financeOutlook,
+            },
+            outlook2: {
+              data: createRes.financeOutlook2,
+            },
+            overview: {
+              data: createRes.financeOverview,
+              image: result.money,
+            },
+            risk: {
+              data: createRes.financeRisk,
+            },
           },
           "learning&Career": {
-            idealCareer: createRes.academicIdealCareer,
-            learning: createRes.academicLearning,
-            overview: createRes.academicOverview,
+            idealCareer: {
+              data: createRes.academicIdealCareer,
+              image: result.career,
+            },
+            learning: {
+              data: createRes.academicLearning,
+            },
+            overview: {
+              data: createRes.academicOverview,
+              image: result.learn,
+            },
           },
         },
       };

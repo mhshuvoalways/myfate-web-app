@@ -74,8 +74,9 @@ const Index = () => {
                     <p className="font-semibold text-3xl mb-5 sticky top-0 bg-[#fcfcfc] py-2">
                       {individualWord(el[0])}
                     </p>
-                    <p className="text-xl leading-loose text-justify">
-                      {el[1]}
+                    <img src={el[1].image} alt="" className="rounded-xl" />
+                    <p className="text-xl leading-loose text-justify mt-2">
+                      {el[1].data}
                     </p>
                   </Element>
                 );

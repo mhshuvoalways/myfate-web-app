@@ -11,31 +11,88 @@ const reportSchema = new Schema(
     date: String,
     reports: {
       entireLife: {
-        overview: String,
-        lifeCycle: String,
-        nature: String,
-        "strength&Weakness": String,
-        relationship: String,
-        advice: String,
+        overview: {
+          data: String,
+          image: String,
+        },
+        lifeCycle: {
+          data: String,
+          image: String,
+        },
+        nature: {
+          data: String,
+          image: String,
+        },
+        "strength&Weakness": {
+          data: String,
+          image: String,
+        },
+        relationship: {
+          data: String,
+          image: String,
+        },
+        advice: {
+          data: String,
+          image: String,
+        },
       },
       love: {
-        overview: String,
-        needs: String,
-        lifeCycle: String,
-        marriage: String,
-        kids: String,
-        idealPartner: String,
+        overview: {
+          data: String,
+          image: String,
+        },
+        needs: {
+          data: String,
+          image: String,
+        },
+        lifeCycle: {
+          data: String,
+          image: String,
+        },
+        marriage: {
+          data: String,
+          image: String,
+        },
+        kids: {
+          data: String,
+          image: String,
+        },
+        idealPartner: {
+          data: String,
+          image: String,
+        },
       },
       finance: {
-        overview: String,
-        outlook: String,
-        outlook2: String,
-        risk: String,
+        overview: {
+          data: String,
+          image: String,
+        },
+        outlook: {
+          data: String,
+          image: String,
+        },
+        outlook2: {
+          data: String,
+          image: String,
+        },
+        risk: {
+          data: String,
+          image: String,
+        },
       },
       "learning&Career": {
-        overview: String,
-        idealCareer: String,
-        learning: String,
+        overview: {
+          data: String,
+          image: String,
+        },
+        idealCareer: {
+          data: String,
+          image: String,
+        },
+        learning: {
+          data: String,
+          image: String,
+        },
       },
     },
   },
