@@ -21,7 +21,7 @@ const Categories = () => {
           </div>
           <Link href="/fun-tests-guide">
             <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs py-3">
-              Fun Tests
+              Free Horoscope
             </p>
           </Link>
           <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs py-3">

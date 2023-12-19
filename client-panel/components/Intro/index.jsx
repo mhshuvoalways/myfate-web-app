@@ -59,7 +59,7 @@ const index = () => {
               },
             ]}
           />
-          <div className="mt-10 flex gap-2 justify-center items-center flex-wrap">
+          <div className="mt-10 flex gap-2 sm:gap-0 justify-center items-center flex-wrap">
             <Link href={"/pricing"}>
               <motion.button
                 whileTap={{ scale: 0.9 }}
@@ -71,10 +71,12 @@ const index = () => {
             <ScrollList to={"reports"} smooth spy>
               <motion.button
                 whileTap={{ scale: 0.9 }}
-                className="py-2.5 font-semibold hover:rounded-full transition-all rounded px-10 flex items-center gap-2"
+                className="py-2.5 font-semibold hover:rounded-full transition-all rounded px-10 flex items-center gap-1"
               >
                 <p className="text-gray-200">See our Reports</p>
-                <Image src={ArrowRight} alt="" />
+                <motion.div initial={{ rotate: -90 }}>
+                  <Image src={ArrowRight} alt="" />
+                </motion.div>
               </motion.button>
             </ScrollList>
           </div>

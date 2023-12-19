@@ -1,11 +1,12 @@
 const Love = require("../Model/Love");
 const LoveReport = require("../utils/love/loveReport");
+const sentenceFinal = require("../utils/sayings/sentenceFinal");
 
 const addReport = (req, res) => {
   const { _id } = req.user;
-  const { loveReportWritings, loveReport } = JSON.parse(LoveReport);
+  const { loveReport } = JSON.parse(LoveReport);
   const newObj = {
-    loveReportWritings,
+    loveReportWritings: sentenceFinal("love"),
     loveReport,
     userId: _id,
   };

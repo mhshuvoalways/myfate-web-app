@@ -27,20 +27,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/answers": [
+    "/store-links": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/answers.js"
-    ],
-    "/payment": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/payment.js"
-    ],
-    "/pricing": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/pricing.js"
+      "static/chunks/pages/store-links.js"
     ]
   },
   "ampFirstPages": []

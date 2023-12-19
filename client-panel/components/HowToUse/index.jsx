@@ -1,3 +1,10 @@
+import React, { useEffect, useState } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import cx from "classnames";
+import LazyImage from "../Utils/LazyImage";
+import CircularProgress from "./CircularProgress";
+import TextAnimation from "@/components/Utils/TextAnimation";
 import Pic1 from "@/public/howtoget/t1.png";
 import Pic2 from "@/public/howtoget/t2.png";
 import Pic3 from "@/public/howtoget/t3.png";
@@ -26,17 +33,7 @@ const steps = [
   },
 ];
 
-import React, { useEffect, useState } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import cx from "classnames";
-import useScreenSize from "@/hooks/useScreenSize";
-import LazyImage from "../Utils/LazyImage";
-import CircularProgress from "./CircularProgress";
-import TextAnimation from "@/components/Utils/TextAnimation";
-
 const HowItWorks = () => {
-  const { screen } = useScreenSize();
   const [animProgress, setAnimProgress] = useState(0);
   const stepsCount = steps.length;
 

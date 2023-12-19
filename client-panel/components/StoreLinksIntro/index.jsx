@@ -1,5 +1,5 @@
 import Play from "@/public/storeLinks/play.svg";
-import StoreFrontWhatsApp from "@/public/storeLinks/storeFrontWhatsapp.webp";
+import StoreFrontWhatsApp from "@/public/storeLinks/storeFrontWhatsapp.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
@@ -51,7 +51,7 @@ const Index = () => {
               </Fade>
             </div>
           </div>
-          <Image src={StoreFrontWhatsApp} alt="" className="w-full" />
+          <Image src={StoreFrontWhatsApp} alt="" className="w-full pb-5" />
         </div>
       </div>
       {modal && (

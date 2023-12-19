@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import LazyImage from "../Utils/LazyImage";
-import Link from "next/link";
 import axios from "axios";
 
 const ContentScroller = () => {

@@ -9,7 +9,7 @@ const SubMenus = ({ menuName }) => {
     >
       <Link href={"/store-links"}>
         <p className="border-t border-b border-gray-100 cursor-pointer hover:bg-gray-800 hover:text-white px-5 py-2">
-          My Fate
+          Full Report
         </p>
       </Link>
       <Link href={"/store-links"}>

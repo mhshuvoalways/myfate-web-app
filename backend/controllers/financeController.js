@@ -1,11 +1,12 @@
 const Finance = require("../Model/Finance");
 const FinanceReport = require("../utils/finance/financeAPI");
+const sentenceFinal = require("../utils/sayings/sentenceFinal");
 
 const addReport = (req, res) => {
   const { _id } = req.user;
   const { financeReportWritings, financeReport } = JSON.parse(FinanceReport);
   const newObj = {
-    financeReportWritings,
+    financeReportWritings: sentenceFinal('finance'),
     financeReport,
     userId: _id,
   };

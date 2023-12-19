@@ -5,7 +5,8 @@ import Timer from "../timer";
 import SubItem from "../subItem";
 import Items from "../chart/Items";
 import Modal from "../utils/Modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import moment from "moment";
 
 const Index = ({
   selectSubItemValue,
@@ -19,6 +20,7 @@ const Index = ({
 }) => {
   const [value, setValue] = useState("");
   const [submit, setSubmit] = useState(false);
+  const [todaySentence, setTodaySentence] = useState(null);
 
   const sum = data?.scores.reduce((a, b) => {
     return a + b.score;
@@ -31,13 +33,23 @@ const Index = ({
   const averageNext =
     sumNext !== undefined && (sumNext / dataNext?.scores.length).toFixed(2);
 
+  useEffect(() => {
+    const today = new Date();
+    reportWriting?.forEach((el) => {
+      if (moment(today).format("YYYY-MM-DD") === el.date) {
+        console.log(el);
+        setTodaySentence(el);
+      }
+    });
+  }, [reportWriting]);
+
   return (
     <div>
       <Header />
       <div className="mycontainer">
         <img src="/images/treesun.png" className="w-full rounded-3xl mt-10" />
         <p className="text-3xl mt-10 title-font capitalize">
-          {reportWriting?.length && reportWriting[0] + ". " + reportWriting[1]}
+          {todaySentence?.sentence}
         </p>
         <div className="flex justify-between items-start flex-wrap lg:flex-nowrap gap-10 mt-10">
           <div className="w-full lg:w-6/12 space-y-10">

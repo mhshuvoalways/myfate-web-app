@@ -2,9 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/login": "pages/login.js",
-  "/pricing": "pages/pricing.js",
-  "/payment": "pages/payment.js",
-  "/answers": "pages/answers.js"
+  "/past-life": "pages/past-life.js",
+  "/store-links": "pages/store-links.js",
+  "/": "pages/index.js"
 }

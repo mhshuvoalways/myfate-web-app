@@ -1,11 +1,12 @@
 const Report = require("../Model/DReport");
 const DReport = require("../utils/dReport/dReport");
+const sentenceFinal = require("../utils/sayings/sentenceFinal");
 
 const addReport = (req, res) => {
   const { _id } = req.user;
-  const { dReportWritings, dReport } = JSON.parse(DReport);
+  const { dReport } = JSON.parse(DReport);
   const newObj = {
-    dReportWritings,
+    dReportWritings: sentenceFinal("daily"),
     dReport,
     userId: _id,
   };
