@@ -1,20 +1,12 @@
-import Play from "@/public/storeLinks/play.svg";
-import StoreFrontWhatsApp from "@/public/storeLinks/storeFrontWhatsapp.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
-import { Fade } from "react-reveal";
-import Modal from "../Modal";
+import Link from "next/link";
+import { Link as ScrollList } from "react-scroll";
 import TextAnimation from "../Utils/TextAnimation";
-import Button from "../common/Button";
+import StoreFrontWhatsApp from "@/public/storeLinks/storeFrontWhatsapp.png";
+import ArrowRight from "@/public/storeLinks/arrowRight.svg";
 
 const Index = () => {
-  const [modal, setModal] = useState(false);
-
-  const modalHandler = () => {
-    setModal(!modal);
-  };
-
   return (
     <div className="storeLinksIntro relative">
       <div className="mycontainer flex justify-center items-center text-center">
@@ -37,37 +29,31 @@ const Index = () => {
               ]}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-my-blue font-semibold"
             />
-            <div className="flex items-center justify-center gap-5 flex-wrap">
-              <Fade bottom>
-                <Button value={"Start using links"} />
+            <div className="mt-10 flex gap-5 justify-center items-center flex-wrap">
+              <Link href={"/pricing"}>
                 <motion.button
                   whileTap={{ scale: 0.9 }}
-                  className="bg-white rounded px-5 py-2.5 font-gabarito text-lg font-semibold flex items-center gap-2"
-                  onClick={modalHandler}
+                  className="bg-gray-900 text-white py-2.5 font-semibold mybutton px-10 capitalize"
                 >
-                  <p className="text-black">See how it works</p>
-                  <Image src={Play} alt="" />
+                  Start your journey
                 </motion.button>
-              </Fade>
+              </Link>
+              <ScrollList to={"reports"} smooth spy>
+                <motion.button
+                  whileTap={{ scale: 0.9 }}
+                  className="bg-gray-900 text-white py-2.5 font-semibold mybutton px-10 capitalize flex items-center gap-1"
+                >
+                  <p className="text-gray-200">See our Reports</p>
+                  <motion.div initial={{ rotate: -90 }}>
+                    <Image src={ArrowRight} alt="" />
+                  </motion.div>
+                </motion.button>
+              </ScrollList>
             </div>
           </div>
           <Image src={StoreFrontWhatsApp} alt="" className="w-full pb-5" />
         </div>
       </div>
-      {modal && (
-        <Modal modalHandler={modalHandler}>
-          <iframe
-            src="https://www.youtube.com/embed/lBHhOtG3wL8?si=8XjpkerIR23-GekO"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            className="w-full"
-            style={{
-              height: "83vh",
-            }}
-          ></iframe>
-        </Modal>
-      )}
     </div>
   );
 };

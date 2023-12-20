@@ -45,13 +45,23 @@ const PricingItem = ({ pricingObj }) => {
           <p className="text-lg text-gray-500 mt-2">{description}</p>
         </div>
         <p className="text-2xl font-semibold">{`USD $${planTitle}`}</p>
-        <motion.button
-          onClick={() => clickHandler(title.toLowerCase(), planTitle)}
-          whileTap={{ scale: 0.9 }}
-          className={`border border-gray-400 py-2 rounded font-semibold text-center w-full bg-my-blue text-white`}
-        >
-          Start your journey
-        </motion.button>
+        {title === "Premium Max" ? (
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            className={`border border-gray-400 py-2 rounded font-semibold text-center w-full bg-gray-500 cursor-not-allowed text-white capitalize`}
+            disabled
+          >
+            Sold Out
+          </motion.button>
+        ) : (
+          <motion.button
+            onClick={() => clickHandler(title.toLowerCase(), planTitle)}
+            whileTap={{ scale: 0.9 }}
+            className={`border border-gray-400 py-2 rounded font-semibold text-center w-full bg-my-blue text-white capitalize`}
+          >
+            Start your journey
+          </motion.button>
+        )}
         <div className="bg-gray-50 rounded-b-xl py-2 block md:hidden">
           <div
             className="flex items-center justify-center gap-2 cursor-pointer"
