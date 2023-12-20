@@ -1,49 +1,66 @@
 import { useEffect, useState } from "react";
-import { useGoogleLogin } from "@react-oauth/google";
-import { useDispatch, useSelector } from "react-redux";
+import { motion, AnimatePresence } from "framer-motion";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import notiAction from "../../../store/actions/notiAction";
-import {
-  isAuthenticate,
-  userLogin,
-  userLoginwithGoogle,
-} from "../../../store/actions/userAction";
+import RadioBtn from "./RadioBtn";
+import Button from "../common/Button";
 
 const Login = () => {
+  const [dontKnow, setDontKnow] = useState(false);
+  const [radioBtn, setRadioBtn] = useState("am");
   const [userData, setUserData] = useState({
     email: "",
-    password: "",
+    firstName: "",
+    lastName: "",
+    gender: "Male",
+    birthDateMM: "",
+    birthDateDD: "",
+    birthDateYYYY: "",
+    birthTimeHH: "",
+    birthTimeMM: "",
   });
 
   const userReducer = useSelector((store) => store.userReducer);
 
-  const dispatch = useDispatch();
   const router = useNavigate();
 
-  const userChange = (event) => {
+  const birthHandler = (event) => {
+    if (event.target.checked) {
+      setDontKnow(true);
+    } else {
+      setDontKnow(false);
+    }
+  };
+
+  const onChangeHandler = (event) => {
     setUserData({
       ...userData,
       [event.target.name]: event.target.value,
     });
   };
 
-  const login = useGoogleLogin({
-    onSuccess: (credentialResponse) => {
-      dispatch(userLoginwithGoogle(credentialResponse.access_token, router));
-    },
-    onError: () => {
-      dispatch(notiAction("Login Failed"));
-    },
-  });
+  const onSubmitHandler = (e) => {
+    if (userData) {
+      e.preventDefault();
+      const hrCalculate =
+        radioBtn === "am"
+          ? userData.birthTimeHH
+          : Number(userData.birthTimeHH) + 12;
 
-  const onSubmitHandler = (event) => {
-    event.preventDefault();
-    dispatch(userLogin(userData, router));
+      const formatuserData = {
+        firstName: userData.firstName,
+        lastName: userData.lastName,
+        email: userData.email,
+        gender: userData.gender,
+        birthDate: `${userData.birthDateYYYY}-${userData.birthDateMM}-${userData.birthDateDD}`,
+        birthTime: userData.birthTimeHH
+          ? userData.birthTimeMM && `${hrCalculate}:${userData.birthTimeMM}:00`
+          : "",
+      };
+      localStorage.setItem("userValue", JSON.stringify(formatuserData));
+      router("/answer");
+    }
   };
-
-  useEffect(() => {
-    dispatch(isAuthenticate());
-  }, [dispatch]);
 
   useEffect(() => {
     if (userReducer.isAuthenticate) {
@@ -67,71 +84,156 @@ const Login = () => {
           </p>
         </div>
         <form className="w-full md:w-7/12" onSubmit={onSubmitHandler}>
-          <p className="tracking-widest text-3xl font-bold">LOGIN</p>
-          <div className="space-y-7 mt-10">
-            <div>
-              <div
-                className={`flex gap-3 border-b-2 pb-2 ${
-                  userReducer.error?.email
-                    ? "border-red-500"
-                    : "border-gray-400"
-                }`}
-              >
-                <i className="fa-solid fa-user mt-1"></i>
-                <input
-                  type="text"
-                  className="w-full outline-0"
-                  placeholder="Your Email"
-                  name="email"
-                  onChange={userChange}
-                />
-              </div>
-              <p
-                className={`text-red-500 text-sm mt-1 ${
-                  userReducer.error?.email ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                {userReducer.error?.email}
-              </p>
-            </div>
-            <div>
-              <div
-                className={`flex gap-3 border-b-2 pb-2 ${
-                  userReducer.error?.password
-                    ? "border-red-500"
-                    : "border-gray-400"
-                }`}
-              >
-                <i className="fa-solid fa-lock mt-1"></i>
-                <input
-                  type="password"
-                  className="w-full outline-0"
-                  placeholder="Your Password"
-                  name="password"
-                  onChange={userChange}
-                />
-              </div>
-              <p
-                className={`text-red-500 text-sm mt-1 ${
-                  userReducer.error?.password ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                {userReducer.error?.password}
-              </p>
-            </div>
-            <button className="bg-gray-900 w-full text-white py-2 text-lg font-semibold rounded">
-              Login
-            </button>
-          </div>
-          <div className="mt-5 space-y-5 flex items-center gap-5">
-            <p>Or:</p>
-            <img
-              src="/images/loginbtn.png"
-              alt=""
-              onClick={() => login()}
-              className="cursor-pointer w-6/12 pb-6"
+          <div className="mt-8">
+            <p>First Name:</p>
+            <input
+              type="text"
+              className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
+              required
+              onChange={onChangeHandler}
+              name="firstName"
             />
           </div>
+          <div className="mt-8">
+            <p>Last Name:</p>
+            <input
+              type="text"
+              className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
+              required
+              onChange={onChangeHandler}
+              name="lastName"
+            />
+          </div>
+          <div className="mt-8">
+            <div className="flex items-center gap-2">
+              <p>Email:</p> <small>(Same email you have used in myfates)</small>
+            </div>
+            <input
+              type="email"
+              className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
+              required
+              onChange={onChangeHandler}
+              name="email"
+            />
+          </div>
+          <div className="mt-8">
+            <p>Gender:</p>
+            <select
+              className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
+              required
+              onChange={onChangeHandler}
+              name="gender"
+            >
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+          </div>
+          <div className="mt-8">
+            <p>Birth Date & Time:</p>
+            <div className="flex gap-5 items-center mt-5">
+              <div>
+                <p>Month</p>
+                <div className="flex gap-5 items-center">
+                  <input
+                    type="text"
+                    className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
+                    required
+                    placeholder="MM"
+                    maxLength={2}
+                    onChange={onChangeHandler}
+                    name="birthDateMM"
+                  />
+                  <p className="font-semibold">/</p>
+                </div>
+              </div>
+              <div>
+                <p>Day</p>
+                <div className="flex gap-5 items-center">
+                  <input
+                    type="text"
+                    className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
+                    required
+                    placeholder="DD"
+                    maxLength={2}
+                    onChange={onChangeHandler}
+                    name="birthDateDD"
+                  />
+                  <p className="font-semibold">/</p>
+                </div>
+              </div>
+              <div>
+                <p>Year</p>
+                <input
+                  type="text"
+                  className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
+                  required
+                  placeholder="Year"
+                  onChange={onChangeHandler}
+                  name="birthDateYYYY"
+                  maxLength={4}
+                />
+              </div>
+            </div>
+          </div>
+          <AnimatePresence>
+            {dontKnow && (
+              <motion.div
+                className={`flex gap-2 items-center`}
+                initial={{ opacity: 0, y: 0 }}
+                animate={{ opacity: 1, y: 25 }}
+                exit={{ opacity: 0, y: -25 }}
+                transition={{ duration: "0.2" }}
+              >
+                <input
+                  type="text"
+                  className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
+                  required
+                  placeholder="hh"
+                  maxLength={2}
+                  max={24}
+                  onChange={onChangeHandler}
+                  name="birthTimeHH"
+                />
+                <p className="font-semibold">:</p>
+                <input
+                  type="text"
+                  className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
+                  required
+                  placeholder="mm"
+                  maxLength={2}
+                  onChange={onChangeHandler}
+                  name="birthTimeMM"
+                />
+                <RadioBtn
+                  myName="am"
+                  selectBtn={radioBtn}
+                  radioHandler={setRadioBtn}
+                />
+                <RadioBtn
+                  myName="pm"
+                  selectBtn={radioBtn}
+                  radioHandler={setRadioBtn}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+          <div
+            className={`transition-all duration-500 ${
+              dontKnow ? "mt-16" : "mt-8"
+            }`}
+          >
+            <label className="flex gap-2">
+              <input
+                type="checkbox"
+                name="check"
+                checked={dontKnow}
+                onChange={birthHandler}
+                className="cursor-pointer"
+              />
+              <p className="cursor-pointer">{`I don't know my birth time`}</p>
+            </label>
+          </div>
+          <Button value={"SUBMIT"} className={"mt-8 w-full"} />
         </form>
       </div>
     </div>

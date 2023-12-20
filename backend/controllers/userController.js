@@ -78,7 +78,7 @@ const register = (req, res) => {
   }
 };
 
-const registerClientCommon = (req, res) => {
+const registerGoogle = (req, res) => {
   const { email } = req.body;
   User.findOne({ email })
     .then((findUser) => {
@@ -150,37 +150,7 @@ const registerClientCommon = (req, res) => {
     });
 };
 
-const registerGoogle = (req, res) => {
-  registerClientCommon(req, res);
-};
-
-const registerClientGoogle = (req, res) => {
-  const { email } = req.body;
-  User.findOne({ email: email })
-    .then((response) => {
-      if (response?.subscriptionPlan.planType) {
-        if (
-          response?.subscriptionPlan.expireDate >=
-          moment(new Date()).format("YYYY-MM-DD")
-        ) {
-          registerClientCommon(req, res);
-        } else {
-          res.status(400).json({
-            message: "Your plan is expired. Please purchase a plan!",
-          });
-        }
-      } else {
-        res.status(400).json({
-          message: "Please purchase a plan!",
-        });
-      }
-    })
-    .catch(() => {
-      serverError(res);
-    });
-};
-
-const loginCommon = (req, res) => {
+const login = (req, res) => {
   const { email, password } = req.body;
   const validation = loginValidation({ email, password });
   if (validation.isValid) {
@@ -234,20 +204,36 @@ const loginCommon = (req, res) => {
   }
 };
 
-const login = (req, res) => {
-  loginCommon(req, res);
-};
-
 const loginClientDashboard = (req, res) => {
-  const { email } = req.body;
-  User.findOne({ email: email })
+  const { email, firstName, lastName, gender, birthDate, birthTime } = req.body;
+  const obj = {
+    profile: {
+      firstName,
+      lastName,
+      gender,
+      birthDate,
+      birthTime,
+    },
+  };
+  User.findOneAndUpdate({ email: email }, obj)
     .then((response) => {
       if (response?.subscriptionPlan.planType) {
         if (
           response?.subscriptionPlan.expireDate >=
           moment(new Date()).format("YYYY-MM-DD")
         ) {
-          loginCommon(req, res);
+          const token = jwt.sign(
+            {
+              _id: response._id,
+              email: response.email,
+            },
+            process.env.SECRET,
+            { expiresIn: "24h" }
+          );
+          res.status(200).json({
+            token,
+            message: "Welcome back!",
+          });
         } else {
           res.status(400).json({
             message: "Your plan is expired. Please purchase a plan!",
@@ -396,21 +382,13 @@ const deleteUser = (req, res) => {
     });
 };
 
-const updateUser = (req, res) => {
+const paymentUser = (req, res) => {
   const { email } = req.user;
-  const { firstName, lastName, birthDate, birthTime, planType, gender } =
-    req.body;
+  const { planType } = req.body;
   let today = new Date();
   let expireDate = new Date(today);
   expireDate.setDate(today.getDate() + 10);
   const userObj = {
-    profile: {
-      firstName,
-      lastName,
-      gender,
-      birthDate,
-      birthTime,
-    },
     subscriptionPlan: {
       planType: planType,
       expireDate: moment(expireDate).format("YYYY-MM-DD"),
@@ -420,6 +398,30 @@ const updateUser = (req, res) => {
     .then((response) => {
       res.status(200).json({
         message: "Your plan has been successfully updated!",
+        response,
+      });
+    })
+    .catch(() => {
+      serverError(res);
+    });
+};
+
+const updateUser = (req, res) => {
+  const { email } = req.user;
+  const { firstName, lastName, birthDate, birthTime, gender } = req.body;
+  const userObj = {
+    profile: {
+      firstName,
+      lastName,
+      gender,
+      birthDate,
+      birthTime,
+    },
+  };
+  User.findOneAndUpdate({ email }, userObj, { new: true })
+    .then((response) => {
+      res.status(200).json({
+        message: "User updated!",
         response,
       });
     })
@@ -438,6 +440,6 @@ module.exports = {
   getMyAccount,
   deleteUser,
   updateUser,
+  paymentUser,
   loginClientDashboard,
-  registerClientGoogle,
 };

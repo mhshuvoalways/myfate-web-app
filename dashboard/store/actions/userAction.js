@@ -15,6 +15,8 @@ export const userLogin = (user, navigate) => (dispatch) => {
       setAuthToken(response.data.token);
       localStorage.setItem("token", response.data.token);
       dispatch(isAuthenticate());
+      dispatch(addReport(user));
+      dispatch(addAllReports(user));
       navigate("/");
     })
     .catch((err) => {
@@ -26,41 +28,7 @@ export const userLogin = (user, navigate) => (dispatch) => {
       });
       dispatch(enableBtn(true));
       dispatch(notiAction(err.response?.data.message));
-    });
-};
-
-export const userLoginwithGoogle = (access_token, navigate) => (dispatch) => {
-  dispatch(enableBtn(false));
-  const userInfoEndpoint = "https://www.googleapis.com/oauth2/v2/userinfo";
-  fetch(userInfoEndpoint, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  })
-    .then((response) => response.json())
-    .then((response) => {
-      axios
-        .post("/user/registerclientgoogle", response)
-        .then((finalRes) => {
-          setAuthToken(finalRes.data.token);
-          localStorage.setItem("token", finalRes.data.token);
-          navigate("/");
-          dispatch(enableBtn(true));
-        })
-        .catch((err) => {
-          dispatch({
-            type: Types.LOGIN_USER_ERROR_GOOGLE,
-            payload: {
-              error: err.response?.data,
-            },
-          });
-          dispatch(enableBtn(true));
-          dispatch(notiAction(err.response?.data.message));
-        });
-    })
-    .catch(() => {
-      dispatch(notiAction("Login failed! Try again"));
+      navigate("/userinfo");
     });
 };
 
@@ -112,6 +80,36 @@ export const getMyAccount = () => (dispatch) => {
         type: Types.GET_MYACCOUT,
         payload: err.response?.data,
       });
+    });
+};
+
+export const addReport = (userValue) => (dispatch) => {
+  axios
+    .post("/reports/addreports", userValue)
+    .then(() => {})
+    .catch((err) => {
+      dispatch(notiAction(err.response?.data.message));
+    });
+};
+
+export const addAllReports = (user) => (dispatch) => {
+  axios
+    .post("/report/addreport", user)
+    .then(() => {})
+    .catch((err) => {
+      dispatch(notiAction(err.response?.data.message));
+    });
+  axios
+    .post("/love/addlove", user)
+    .then(() => {})
+    .catch((err) => {
+      dispatch(notiAction(err.response?.data.message));
+    });
+  axios
+    .post("/finance/addfinance", user)
+    .then(() => {})
+    .catch((err) => {
+      dispatch(notiAction(err.response?.data.message));
     });
 };
 

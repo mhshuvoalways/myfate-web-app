@@ -4,7 +4,7 @@ const sentenceFinal = require("../utils/sayings/sentenceFinal");
 
 const addReport = (req, res) => {
   const { _id } = req.user;
-  const { financeReportWritings, financeReport } = JSON.parse(FinanceReport);
+  const { financeReport } = JSON.parse(FinanceReport);
   const newObj = {
     financeReportWritings: sentenceFinal('finance'),
     financeReport,

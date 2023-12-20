@@ -6,10 +6,11 @@ import Time from "./pages/Time";
 import DReport from "./pages/DReport";
 import Finance from "./pages/Finance";
 import Love from "./pages/Love";
-import Login from "./pages/Login";
+import UserInfo from "./pages/UserInfo";
 import Tostify from "./components/utils/Toastify";
 import Loading from "./components/utils/Loading";
 import { isAuthenticate } from "../store/actions/userAction";
+import Answer from "./pages/Answere";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -54,7 +55,8 @@ const App = () => {
               </PrivateRoute>
             }
           />
-          <Route path="/login" element={<Login />} />
+          <Route path="/answer" element={<Answer />} />
+          <Route path="/userinfo" element={<UserInfo />} />
         </Routes>
       </BrowserRouter>
       <Tostify />

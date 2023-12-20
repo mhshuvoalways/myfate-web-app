@@ -13,16 +13,10 @@ const userSchema = new Schema(
       gender: String,
       birthDate: String,
       birthTime: String,
-      sixMonthPrediction: [],
     },
     roles: {
       type: String,
       default: "user",
-    },
-    fullReport: {
-      title: String,
-      publishDate: Date,
-      content: [],
     },
     subscriptionPlan: {
       planType: String,

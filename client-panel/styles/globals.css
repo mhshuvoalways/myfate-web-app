@@ -234,15 +234,7 @@
     animation-timing-function: ease-in-out;
   }
 
-  @keyframes bounce {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
+  /* template page */
   .template {
     background-image: linear-gradient(140deg, #fa709a, #fee140);
     background-size: 350% 350%;
@@ -278,5 +270,10 @@
   }
   .text-shadow {
     text-shadow: 0px 0px 4px #ffffff;
+  }
+
+  /* payment btn */
+  [data-paypal-smart-button-version] {
+    z-index: 0;
   }
 }

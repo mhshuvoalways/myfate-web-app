@@ -37,7 +37,6 @@ const Index = ({
     const today = new Date();
     reportWriting?.forEach((el) => {
       if (moment(today).format("YYYY-MM-DD") === el.date) {
-        console.log(el);
         setTodaySentence(el);
       }
     });
