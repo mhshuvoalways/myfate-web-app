@@ -228,7 +228,7 @@ const loginClientDashboard = (req, res) => {
               email: response.email,
             },
             process.env.SECRET,
-            { expiresIn: "24h" }
+            { expiresIn: "365d" }
           );
           res.status(200).json({
             token,
