@@ -44,7 +44,7 @@ const register = (req, res) => {
                       email: createUser.email,
                     },
                     process.env.SECRET,
-                    { expiresIn: "24h" }
+                    { expiresIn: "7d" }
                   );
                   new Auth(authObj)
                     .save()
@@ -99,7 +99,7 @@ const registerGoogle = (req, res) => {
                 email: createUser.email,
               },
               process.env.SECRET,
-              { expiresIn: "24h" }
+              { expiresIn: "7d" }
             );
             new Auth(authObj)
               .save()
@@ -131,7 +131,7 @@ const registerGoogle = (req, res) => {
                   email: findUser.email,
                 },
                 process.env.SECRET,
-                { expiresIn: "24h" }
+                { expiresIn: "7d" }
               );
               res.status(200).json({
                 message: "Thanks for login!",
@@ -170,7 +170,7 @@ const login = (req, res) => {
                         email: response.email,
                       },
                       process.env.SECRET,
-                      { expiresIn: "24h" }
+                      { expiresIn: "7d" }
                     );
                     res.status(200).json({
                       message: "Welcome back!",
@@ -319,7 +319,7 @@ const recoverPassword = (req, res) => {
                           email: response.email,
                         },
                         process.env.SECRET,
-                        { expiresIn: "24h" }
+                        { expiresIn: "7d" }
                       );
                       res.status(200).json({
                         token,

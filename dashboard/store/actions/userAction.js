@@ -16,8 +16,7 @@ export const userLogin = (user, navigate) => (dispatch) => {
       localStorage.setItem("token", response.data.token);
       dispatch(isAuthenticate());
       dispatch(addReport(user));
-      dispatch(addAllReports(user));
-      navigate("/");
+      dispatch(addAllReports(user, navigate));
     })
     .catch((err) => {
       dispatch({
@@ -84,31 +83,46 @@ export const getMyAccount = () => (dispatch) => {
 };
 
 export const addReport = (userValue) => (dispatch) => {
+  dispatch(enableBtn(false));
   axios
     .post("/reports/addreports", userValue)
-    .then(() => {})
+    .then(() => {
+      dispatch(enableBtn(true));
+    })
     .catch((err) => {
+      dispatch(enableBtn(true));
       dispatch(notiAction(err.response?.data.message));
     });
 };
 
-export const addAllReports = (user) => (dispatch) => {
+export const addAllReports = (user, navigate) => (dispatch) => {
+  dispatch(enableBtn(false));
   axios
     .post("/report/addreport", user)
-    .then(() => {})
+    .then(() => {
+      dispatch(enableBtn(true));
+    })
     .catch((err) => {
       dispatch(notiAction(err.response?.data.message));
+      dispatch(enableBtn(true));
     });
   axios
     .post("/love/addlove", user)
-    .then(() => {})
+    .then(() => {
+      dispatch(enableBtn(true));
+    })
     .catch((err) => {
+      dispatch(enableBtn(true));
       dispatch(notiAction(err.response?.data.message));
     });
   axios
     .post("/finance/addfinance", user)
-    .then(() => {})
+    .then(() => {
+      dispatch(enableBtn(true));
+      navigate("/");
+    })
     .catch((err) => {
+      dispatch(enableBtn(true));
       dispatch(notiAction(err.response?.data.message));
     });
 };
@@ -125,5 +139,5 @@ export const logout = (navigate) => (dispatch) => {
   });
   localStorage.removeItem("token");
   setAuthToken("");
-  navigate("/login");
+  navigate("/userinfo");
 };
