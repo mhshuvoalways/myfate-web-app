@@ -50,11 +50,11 @@ const generalDbPaths = [
 
 const addReports = (req, res) => {
   const { _id } = req.user;
-  const { firstName, lastName, gender } = req.body;
-  const personalityType = "KGBX";
+  const { firstName, lastName, gender, personality } = req.body;
+  console.log(req.body);
   const userName = `${firstName} ${lastName}`;
-  const result = igdop(personalityType, personalityDbPaths, generalDbPaths);
-  finalAPI(filePaths, personalityType, userName, gender)
+  const result = igdop(personality, personalityDbPaths, generalDbPaths);
+  finalAPI(filePaths, personality, userName, gender)
     .then((createRes) => {
       const newObj = {
         userId: _id,

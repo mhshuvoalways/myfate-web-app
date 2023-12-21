@@ -9,65 +9,142 @@ import { userLogin } from "../../store/actions/userAction";
 const questions = [
   {
     id: 1,
-    question: "Which of the two is more important to you?",
-    firstAns: "believing in myselft",
-    secAnd: "loving myselft",
+    question: "1. Which do you feel more comfortable?",
+    firstAns: {
+      option: "Mountain",
+      personality: "",
+    },
+    secAnd: {
+      option: "Ocean",
+      personality: "",
+    },
   },
   {
     id: 2,
-    question: "If you had a dream tonight, what would you dream about?",
-    firstAns: "Dream of becoming the main character in a fantastic fairy tale",
-    secAnd: "A dream with a loved one",
+    question: "Which do you feel more comfortable?",
+    firstAns: {
+      option: "Sun",
+      personality: "",
+    },
+    secAnd: {
+      option: "Moon",
+      personality: "",
+    },
   },
   {
     id: 3,
-    question: "What would you like to do if you had free time on a sunny day?",
-    firstAns: "Have a beer with friends at the Han River",
-    secAnd: "Take a walk along the Han River alone while listening to music",
+    question: "Which do you feel more comfortable?",
+    firstAns: {
+      option: "Sky",
+      personality: "",
+    },
+    secAnd: {
+      option: "Ground",
+      personality: "",
+    },
   },
   {
     id: 4,
-    question: "When you have to solve a problem, what do you do first?",
-    firstAns: "Close your eyes and picture the situation",
-    secAnd: "Open your eyes and look around",
+    question: "Which do you feel more comfortable?",
+    firstAns: {
+      option: "Ice",
+      personality: "",
+    },
+    secAnd: {
+      option: "Fire",
+      personality: "",
+    },
   },
   {
     id: 5,
-    question: "What gift do you give yourself after working hard all day?",
-    firstAns: "A simple but not flashy bouquet",
-    secAnd:
-      "Clothes that I hesitated to buy because they were a bit expensive.",
+    question:
+      "After a long day what situation would you feel more comfortable?",
+    firstAns: {
+      option: "Friends waiting for you to be together",
+      personality: "P",
+    },
+    secAnd: {
+      option:
+        "Clothes that I hesitated to buy because they were a bit expensive.",
+      personality: "K",
+    },
   },
   {
     id: 6,
-    question: "What do you do when something sad happens?",
-    firstAns: "Crying while watching a sad movie or book",
-    secAnd: "Calm down your mind and write a diary",
+    question: "When faced with a problem in a work or project…",
+    firstAns: {
+      option:
+        "Prefer brainstorming novel ideas and theoretical solutions that haven't been tried before.",
+      personality: "O",
+    },
+    secAnd: {
+      option:
+        "Focus on practical, tried-and-true methods and data-driven approaches",
+      personality: "G",
+    },
+  },
+  {
+    id: 7,
+    question:
+      "In a situation where there is a conflict between colleagues at work",
+    firstAns: {
+      option:
+        "Prioritize understanding each person’s feelings and values to reach a harmonious solution.",
+      personality: "E",
+    },
+    secAnd: {
+      option:
+        "Prefer to resolve the issue by objectively assessing the facts and interests",
+      personality: "B",
+    },
+  },
+  {
+    id: 8,
+    question: "When faced with a work deadline",
+    firstAns: {
+      option:
+        "Tend to start closer to the deadline, finding that the time pressure can be stimulating and productive?",
+      personality: "X",
+    },
+    secAnd: {
+      option:
+        "Start working on the task well in advance to ensure it’s completed on time?",
+      personality: "R",
+    },
   },
 ];
 
 const Template = () => {
   const [start, setStart] = useState("initial");
   const [stepQuestions, setStepQuestions] = useState(0);
+  const [userPersonality, setUserPersonality] = useState("");
   const userReducer = useSelector((store) => store.userReducer);
 
   const dispatch = useDispatch();
   const router = useNavigate();
 
-  const nextHandler = () => {
-    const getUser = JSON.parse(localStorage.getItem("userValue"));
+  const nextHandler = (person) => {
     setStepQuestions((prev) => {
       if (prev >= questions.length - 1) {
         setStart("loading");
-        setTimeout(() => {
-          dispatch(userLogin(getUser, router));
-        }, 60 * 1000);
+      }
+      if (person) {
+        setUserPersonality(userPersonality.concat(person).trim());
       }
       return prev + 1;
     });
   };
-
   const myItem = questions[stepQuestions];
+
+  useEffect(() => {
+    const getUser = JSON.parse(localStorage.getItem("userValue"));
+    getUser.personality = userPersonality;
+    setTimeout(() => {
+      if (userPersonality.length === 4) {
+        dispatch(userLogin(getUser, router));
+      }
+    }, 7000);
+  }, [dispatch, router, userPersonality]);
 
   useEffect(() => {
     if (userReducer.isAuthenticate) {
@@ -109,20 +186,20 @@ const Template = () => {
             <div className="fixed bottom-5 max-w-[500px] w-full px-5 sm:px-0 mx-auto">
               <div>
                 <div className="space-y-3">
-                  <Fade right key={myItem.firstAns}>
+                  <Fade right key={myItem.firstAns.option}>
                     <button
                       className="bg-white text-[#333333] w-full p-5 rounded-full text-[18px]"
-                      onClick={nextHandler}
+                      onClick={() => nextHandler(myItem.firstAns.personality)}
                     >
-                      {myItem.firstAns}
+                      {myItem.firstAns.option}
                     </button>
                   </Fade>
-                  <Fade right key={myItem.secAnd} delay={100}>
+                  <Fade right key={myItem.secAnd.option} delay={100}>
                     <button
                       className="bg-white text-[#333333] w-full p-5 rounded-full text-[18px]"
-                      onClick={nextHandler}
+                      onClick={() => nextHandler(myItem.secAnd.personality)}
                     >
-                      {myItem.secAnd}
+                      {myItem.secAnd.option}
                     </button>
                   </Fade>
                 </div>
