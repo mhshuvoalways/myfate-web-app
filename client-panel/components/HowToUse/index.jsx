@@ -46,10 +46,10 @@ const HowItWorks = () => {
       scrollTrigger: {
         trigger: stepsWrapper,
         pin: true,
-        start: "-70 top",
+        start: "top 100",
         pinSpacing: true,
         scrub: true,
-        end: "185% top",
+        end: "175% top",
         snap: 1 / stepsCount,
         anticipatePin: 0.1,
       },

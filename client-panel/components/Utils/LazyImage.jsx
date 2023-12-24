@@ -21,7 +21,7 @@ const LazyImage = ({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-            observer.unobserve(imageRef.current);
+            observer?.unobserve(imageRef.current);
           }
         });
       },

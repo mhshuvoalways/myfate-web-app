@@ -60,7 +60,7 @@ const questions = [
     question:
       "After a long day what situation would you feel more comfortable?",
     firstAns: {
-      option: "Friends waiting for you to be together",
+      option: "Being alone and going over your thoughts and questions.",
       personality: "P",
     },
     secAnd: {
@@ -134,7 +134,6 @@ const Template = () => {
       return prev + 1;
     });
   };
-  const myItem = questions[stepQuestions];
 
   useEffect(() => {
     const getUser = JSON.parse(localStorage.getItem("userValue"));
@@ -145,6 +144,8 @@ const Template = () => {
       }
     }, 7000);
   }, [dispatch, router, userPersonality]);
+
+  const myItem = questions[stepQuestions];
 
   useEffect(() => {
     if (userReducer.isAuthenticate) {
@@ -165,10 +166,6 @@ const Template = () => {
               >
                 <p className="text-white text-2xl">Start testing</p>
                 <p className="text-gray-300">3,314,527 people visited Aura</p>
-              </div>
-              <div className="flex items-center justify-center mt-5 gap-2">
-                <p className="text-white text-xl">poomang & </p>
-                <img src={PoomanImg} alt="" />
               </div>
             </div>
           </>

@@ -15,7 +15,7 @@ const StoreLinks = () => {
     <>
       <Headers />
       <Categories />
-      <StoreLinksIntro />
+      <StoreLinksIntro titleText="Daily Destiny Alignment" />
       <HowToUse />
       <WhatYouGet />
       <LoveToMerge />

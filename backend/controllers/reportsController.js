@@ -51,7 +51,6 @@ const generalDbPaths = [
 const addReports = (req, res) => {
   const { _id } = req.user;
   const { firstName, lastName, gender, personality } = req.body;
-  console.log(req.body);
   const userName = `${firstName} ${lastName}`;
   const result = igdop(personality, personalityDbPaths, generalDbPaths);
   finalAPI(filePaths, personality, userName, gender)

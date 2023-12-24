@@ -15,7 +15,7 @@ const StoreLinks = () => {
     <>
       <Headers />
       <Categories />
-      <StoreLinksIntro />
+      <StoreLinksIntro titleText="Total Life Report" />
       <HowToUse />
       <WhatYouGet />
       <LoveToMerge />

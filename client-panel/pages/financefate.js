@@ -15,7 +15,7 @@ const StoreLinks = () => {
     <>
       <Headers />
       <Categories />
-      <StoreLinksIntro />
+      <StoreLinksIntro titleText={"Finance Destiny Alignment"} />
       <HowToUse />
       <WhatYouGet />
       <LoveToMerge />

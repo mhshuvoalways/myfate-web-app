@@ -103,10 +103,6 @@ const Template = () => {
                 <p className="text-white text-2xl">Start testing</p>
                 <p className="text-gray-300">3,314,527 people visited Aura</p>
               </div>
-              <div className="flex items-center justify-center mt-5 gap-2">
-                <p className="text-white text-xl">poomang & </p>
-                <Image src={PoomanImg} alt="" />
-              </div>
             </div>
           </>
         )}
