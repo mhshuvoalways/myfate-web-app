@@ -21,7 +21,7 @@ const StoreLinksExtras = () => {
               delay: "0.40",
             },
           ]}
-          className={"text-4xl md:text-5xl lg:text-6xl font-semibold"}
+          className={"text-4xl md:text-5xl lg:text-6xl font-semibold text-[#262A56]"}
         />
       </div>
       <div className="anim-fade-up mt-20" style={{ "--delay": "0.8s" }}>

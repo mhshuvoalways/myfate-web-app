@@ -1,19 +1,30 @@
+import moment from "moment";
 import { useEffect } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { isAuthenticate, logout } from "../../../store/actions/userAction";
 import { CiCalendar, CiDollar, CiHeart } from "react-icons/ci";
 import { SiGoogleanalytics } from "react-icons/si";
-import { PiUserCircle } from "react-icons/pi";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { isAuthenticate, logout } from "../../../store/actions/userAction";
 
 const SidebarHeader = ({ children }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
 
+  const userReducer = useSelector((store) => store.userReducer);
+
   useEffect(() => {
     dispatch(isAuthenticate(navigate));
   }, [dispatch, navigate]);
+
+  useEffect(() => {
+    if (
+      userReducer.user?.subscriptionPlan?.expireDate <
+      moment(new Date()).format("YYYY-MM-DD")
+    ) {
+      dispatch(logout(navigate));
+    }
+  }, [dispatch, navigate, userReducer.user?.subscriptionPlan?.expireDate]);
 
   return (
     <div className="sm:flex">
@@ -64,14 +75,6 @@ const SidebarHeader = ({ children }) => {
                 />
               </p>
             </Link>
-          </li>
-          <li>
-            <p>
-              <PiUserCircle
-                onClick={() => dispatch(logout(navigate))}
-                className="text-4xl rounded-xl p-1 cursor-pointer"
-              />
-            </p>
           </li>
         </ul>
       </div>

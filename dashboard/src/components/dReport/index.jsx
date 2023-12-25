@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import moment from "moment";
 import { motion } from "framer-motion";
 import Header from "../header";
 import Chatjs from "../chart/Chart";
@@ -5,8 +7,6 @@ import Timer from "../timer";
 import SubItem from "../subItem";
 import Items from "../chart/Items";
 import Modal from "../utils/Modal";
-import { useEffect, useState } from "react";
-import moment from "moment";
 
 const Index = ({
   selectSubItemValue,

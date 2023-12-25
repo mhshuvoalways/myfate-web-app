@@ -65,7 +65,10 @@ const Index = () => {
                   to your future?
                 </p>
                 <div className="mt-10">
-                  <Button value={"Start your journey"} />
+                  <Button
+                    value={"Start your journey"}
+                    className={"!bg-[#262A56]"}
+                  />
                 </div>
               </div>
             </Zoom>

@@ -69,8 +69,8 @@ const Login = () => {
   }, [router, userReducer.isAuthenticate]);
 
   return (
-    <div className="bg-my-cream p-10 h-full md:h-[100vh] flex justify-center items-center">
-      <div className="bg-white max-w-3xl mx-auto flex flex-wrap md:flex-nowrap justify-between p-10 md:p-20 gap-12 items-center flex-col-reverse md:flex-row">
+    <div className="p-10 min-h-screen flex justify-center items-center bg-[#f1ede8]">
+      <div className="max-w-3xl bg-white mx-auto flex flex-wrap md:flex-nowrap justify-between p-10 md:p-20 gap-12 items-center flex-col-reverse md:flex-row">
         <div className="space-y-10 w-8/12 md:w-5/12 mx-auto">
           <img src="/images/auth.png" alt="" />
           <p className="text-center">
@@ -230,7 +230,7 @@ const Login = () => {
                 onChange={birthHandler}
                 className="cursor-pointer"
               />
-              <p className="cursor-pointer">{`I don't know my birth time`}</p>
+              <p className="cursor-pointer">{`I know my birth time`}</p>
             </label>
           </div>
           <Button value={"SUBMIT"} className={"mt-8 w-full"} />

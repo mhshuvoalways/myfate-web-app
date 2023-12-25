@@ -55,7 +55,7 @@ body {
 
 /* answer page */
 .template {
-  background-image: linear-gradient(140deg, #fa709a, #fee140);
+  background-image: linear-gradient(140deg, #190482, #27005d);
   background-size: 350% 350%;
   animation: gradientBG 10s ease infinite;
 }

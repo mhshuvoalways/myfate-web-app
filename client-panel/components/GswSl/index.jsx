@@ -5,9 +5,7 @@ import Button from "../common/Button";
 
 const index = () => {
   return (
-    <div
-      className={`py-16 bg-center bg-no-repeat gswsl flex items-center`}
-    >
+    <div className={`py-16 bg-center bg-no-repeat gswsl flex items-center`}>
       <div className="mycontainer">
         <div className="w-full md:w-7/12 space-y-10">
           <div>
@@ -56,7 +54,7 @@ const index = () => {
               <p className="text-xl text-my-blue">Find out now</p>
             </div>
             <Link href={"/payment"}>
-              <Button value={"Start Now"} />
+              <Button value={"Start Now"} className={"!bg-[#262A56]"} />
             </Link>
           </Fade>
         </div>

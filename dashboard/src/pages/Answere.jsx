@@ -3,7 +3,6 @@ import { Fade } from "react-reveal";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import ImgTemp from "../../public/images/template/kl.png";
-import PoomanImg from "../../public/images/template/poomang.svg";
 import { userLogin } from "../../store/actions/userAction";
 
 const questions = [
@@ -142,7 +141,7 @@ const Template = () => {
       if (userPersonality.length === 4) {
         dispatch(userLogin(getUser, router));
       }
-    }, 7000);
+    }, 12000);
   }, [dispatch, router, userPersonality]);
 
   const myItem = questions[stepQuestions];
@@ -164,8 +163,8 @@ const Template = () => {
                 className="template-btn cursor-pointer"
                 onClick={() => setStart("start")}
               >
-                <p className="text-white text-2xl">Start testing</p>
-                <p className="text-gray-300">3,314,527 people visited Aura</p>
+                <p className="text-white text-2xl">Start your Journey</p>
+                <p className="text-gray-300">720,219 people visited MyFates</p>
               </div>
             </div>
           </>
@@ -200,7 +199,7 @@ const Template = () => {
                     </button>
                   </Fade>
                 </div>
-                <img src={PoomanImg} alt="" className="mx-auto mt-5" />
+                <p className="text-gray-400 mt-5">MyFates</p>
               </div>
             </div>
           </div>

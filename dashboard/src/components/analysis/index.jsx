@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Element } from "react-scroll";
+import LazyImage from "../utils/LazyImage";
 import Header from "../header";
 import Items from "../chart/Items";
 import List from "../list";
@@ -74,7 +75,7 @@ const Index = () => {
                     <p className="font-semibold text-3xl mb-5 sticky top-0 bg-[#fcfcfc] py-2">
                       {individualWord(el[0])}
                     </p>
-                    <img src={el[1].image} alt="" className="rounded-xl" />
+                    <LazyImage imgSrc={el[1].image} />
                     <p className="text-xl leading-loose text-justify mt-2">
                       {el[1].data}
                     </p>

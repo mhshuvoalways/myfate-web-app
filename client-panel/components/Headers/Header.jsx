@@ -34,9 +34,13 @@ const Header = ({ toggleSidebar, userReducer }) => {
         <div className="gap-2 hidden sm:flex w-0 sm:w-32 ml-auto text-end">
           {userReducer.isAuthenticate ? (
             userReducer.user?.subscriptionPlan?.planType ? (
-              <div className="w-0 sm:w-6 cursor-pointer ml-auto hidden sm:block">
+              <Link
+                href={"https://myfate-client-dashboard.vercel.app"}
+                className="w-0 sm:w-6 cursor-pointer ml-auto hidden sm:block"
+                target="blank"
+              >
                 <Image src={DashIcon} alt="" />
-              </div>
+              </Link>
             ) : (
               <Link
                 href={"/pricing?suggest=payment"}
