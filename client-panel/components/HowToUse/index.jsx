@@ -8,7 +8,7 @@ import TextAnimation from "@/components/Utils/TextAnimation";
 
 const HowItWorks = ({ pageType }) => {
   const [animProgress, setAnimProgress] = useState(0);
-  const stepsCount = pageType.length;
+  const stepsCount = pageType?.length;
 
   useEffect(() => {
     const stepsWrapper = document.querySelector(".steps-wrapper");
