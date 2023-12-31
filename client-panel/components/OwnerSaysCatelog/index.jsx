@@ -5,10 +5,11 @@ import Img4 from "@/public/ownerSaysCatelog/kim.jpeg";
 import Img5 from "@/public/ownerSaysCatelog/billie.jpeg";
 import ArrowLeft from "@/public/ownerSaysCatelog/arrowLeft.svg";
 import ArrowRight from "@/public/ownerSaysCatelog/arrowRight.svg";
-import Icon1 from "@/public/ownerSaysCatelog/icon1.webp";
-import Icon2 from "@/public/ownerSaysCatelog/icon2.webp";
-import Icon3 from "@/public/ownerSaysCatelog/icon3.webp";
-import Icon4 from "@/public/ownerSaysCatelog/icon4.webp";
+import Icon1 from "@/public/ownerSaysCatelog/1.png";
+import Icon2 from "@/public/ownerSaysCatelog/2.png";
+import Icon3 from "@/public/ownerSaysCatelog/3.png";
+import Icon4 from "@/public/ownerSaysCatelog/4.png";
+import Icon5 from "@/public/ownerSaysCatelog/5.png";
 import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
@@ -213,7 +214,7 @@ const index = ({ home }) => {
                 />
                 <div className="w-full md:w-6/12 space-y-7">
                   <Image
-                    src={Icon3}
+                    src={Icon5}
                     alt=""
                     className="w-16 h-16 rounded-full"
                   />

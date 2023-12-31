@@ -8,14 +8,48 @@ import Pricing from "@/components/Pricing";
 import NotConvinced from "@/components/NotConvinced";
 import GswSl from "@/components/GswSl";
 import Footer from "@/components/Footer";
+import Pic9 from "@/public/howtoget/t9.png";
+import Pic10 from "@/public/howtoget/t10.png";
+import Pic11 from "@/public/howtoget/t11.png";
+import Pic12 from "@/public/howtoget/t12.png";
 
 const StoreLinks = () => {
+  const lovefate = [
+    {
+      description:
+        "Romance: Full overview of your romance energy. Are you full with romance energy today?",
+      image: Pic9,
+      type: "lovefate",
+    },
+
+    {
+      description:
+        "Intimacy: Full overview of your intimacy. Are you full with intimate energy today?",
+      image: Pic10,
+      type: "lovefate",
+    },
+
+    {
+      description:
+        "Connection: Full overview of your connection energy. Will you connect today?",
+      image: Pic11,
+      type: "lovefate",
+    },
+
+    {
+      description:
+        "Destiny: Full overview of your destiny energy. Are you full with destiny energy today?",
+      image: Pic12,
+      type: "lovefate",
+    },
+  ];
+
   return (
     <>
       <Headers />
       <Categories />
       <StoreLinksIntro titleText={"Love Destiny Alignment"} />
-      <HowToUse />
+      <HowToUse pageType={lovefate} />
       <WhatYouGet />
       <LoveToMerge />
       <NotConvinced />

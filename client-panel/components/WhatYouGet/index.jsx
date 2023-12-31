@@ -1,7 +1,7 @@
-import BoxIcon from "@/public/whatWeGet/box.svg";
-import MsgIcon from "@/public/whatWeGet/msg.svg";
-import NetIcon from "@/public/whatWeGet/net.svg";
-import ShareIcon from "@/public/whatWeGet/share.svg";
+import Icon1 from "@/public/whatWeGet/1.png";
+import Icon2 from "@/public/whatWeGet/2.png";
+import Icon3 from "@/public/whatWeGet/3.png";
+import Icon4 from "@/public/whatWeGet/4.png";
 import WhatYouGetImg from "@/public/whatWeGet/kid.jpeg";
 import Image from "next/image";
 import { Fade, Zoom } from "react-reveal";
@@ -77,7 +77,7 @@ const Index = () => {
             <Fade bottom>
               <div className="bg-white rounded-3xl p-6 shadow-sm">
                 <div className="bg-gray-50 w-16 h-16 rounded-full flex justify-center items-center p-4">
-                  <Image src={ShareIcon} alt="" />
+                  <Image src={Icon1} alt="" />
                 </div>
                 <p className="mt-5 text-xl md:text-2xl lg:text-2xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
                   Unlock your potential: Insights for life, love, and career
@@ -86,7 +86,7 @@ const Index = () => {
               </div>
               <div className="bg-white rounded-3xl p-6 shadow-sm">
                 <div className="bg-gray-50 w-16 h-16 rounded-full flex justify-center items-center p-4">
-                  <Image src={BoxIcon} alt="" />
+                  <Image src={Icon2} alt="" />
                 </div>
                 <p className="mt-5 text-xl md:text-2xl lg:text-2xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
                   Personalized reports guiding you to your destiny
@@ -94,7 +94,7 @@ const Index = () => {
               </div>
               <div className="bg-white rounded-3xl p-6 shadow-sm">
                 <div className="bg-gray-50 w-16 h-16 rounded-full flex justify-center items-center p-4">
-                  <Image src={MsgIcon} alt="" />
+                  <Image src={Icon3} alt="" />
                 </div>
                 <p className="mt-5 text-xl md:text-2xl lg:text-2xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
                   Navigate life with confidence: Expert analysis for every step
@@ -102,7 +102,7 @@ const Index = () => {
               </div>
               <div className="bg-white rounded-3xl p-6 shadow-sm">
                 <div className="bg-gray-50 w-16 h-16 rounded-full flex justify-center items-center p-4">
-                  <Image src={NetIcon} alt="" />
+                  <Image src={Icon4} alt="" />
                 </div>
                 <p className="mt-5 text-xl md:text-2xl lg:text-2xl font-semibold tracking-wide leading-snug text-gray-700 font-gabarito">
                   Your blueprint for personal and professional fulfillment

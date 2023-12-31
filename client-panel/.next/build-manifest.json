@@ -27,10 +27,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/dailyfate": [
+    "/past-life": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/dailyfate.js"
+      "static/chunks/pages/past-life.js"
+    ],
+    "/pricing": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/pricing.js"
+    ],
+    "/store-links": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/store-links.js"
     ]
   },
   "ampFirstPages": []

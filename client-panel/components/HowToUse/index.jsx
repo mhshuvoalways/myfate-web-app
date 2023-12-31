@@ -5,37 +5,10 @@ import cx from "classnames";
 import LazyImage from "../Utils/LazyImage";
 import CircularProgress from "./CircularProgress";
 import TextAnimation from "@/components/Utils/TextAnimation";
-import Pic1 from "@/public/howtoget/t1.png";
-import Pic2 from "@/public/howtoget/t2.png";
-import Pic3 from "@/public/howtoget/t3.png";
-import Pic4 from "@/public/howtoget/t4.png";
 
-const steps = [
-  {
-    description:
-      "Full report: A complete overview of your life, offering insights into everything",
-    image: Pic1,
-  },
-  {
-    description:
-      "Daily Report: Daily updates providing guidance to align daily actions with your long-term destiny",
-    image: Pic2,
-  },
-  {
-    description:
-      "Love: Detailed analysis of your romantic relationships, focusing on compatibility and deeper connections.",
-    image: Pic3,
-  },
-  {
-    description:
-      "Finance: Strategic financial advice for wealth management, and long-term financial security",
-    image: Pic4,
-  },
-];
-
-const HowItWorks = () => {
+const HowItWorks = ({ pageType }) => {
   const [animProgress, setAnimProgress] = useState(0);
-  const stepsCount = steps.length;
+  const stepsCount = pageType.length;
 
   useEffect(() => {
     const stepsWrapper = document.querySelector(".steps-wrapper");
@@ -134,7 +107,7 @@ const HowItWorks = () => {
                       {stepsCount}
                     </span>
                   </div>
-                  {steps.map((step, index) => (
+                  {pageType.map((step, index) => (
                     <div key={index}>
                       {activeIndex === index && (
                         <figure
@@ -161,7 +134,7 @@ const HowItWorks = () => {
                     style={{ height: `${animProgress * 100}%` }}
                   ></div>
                   <ul className="flex flex-col items-start md:max-w-[380px] lg:max-w-[410px] xl:max-w-[480px] relative overflow-hidden steps">
-                    {steps.map((step, index) => (
+                    {pageType.map((step, index) => (
                       <li
                         className={cx(
                           `px-2.5 py-3.75 sm:px-3.75 sm:py-4 xl:px-5 lg:py-4.5 border-l-4 border-grey-fields-100 md:!top-0 md:!relative hiw-step`,
