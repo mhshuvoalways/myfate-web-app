@@ -107,7 +107,7 @@ const HowItWorks = ({ pageType }) => {
                       {stepsCount}
                     </span>
                   </div>
-                  {pageType.map((step, index) => (
+                  {pageType?.map((step, index) => (
                     <div key={index}>
                       {activeIndex === index && (
                         <figure
@@ -134,7 +134,7 @@ const HowItWorks = ({ pageType }) => {
                     style={{ height: `${animProgress * 100}%` }}
                   ></div>
                   <ul className="flex flex-col items-start md:max-w-[380px] lg:max-w-[410px] xl:max-w-[480px] relative overflow-hidden steps">
-                    {pageType.map((step, index) => (
+                    {pageType?.map((step, index) => (
                       <li
                         className={cx(
                           `px-2.5 py-3.75 sm:px-3.75 sm:py-4 xl:px-5 lg:py-4.5 border-l-4 border-grey-fields-100 md:!top-0 md:!relative hiw-step`,
