@@ -5,10 +5,11 @@ const morgan = require("morgan");
 const db = require("./config/db");
 
 const userRouter = require("./routers/userRouter");
-const reportRouter = require("./routers/reportRouter");
-const loveRouter = require("./routers/loveRouter");
-const financeRouter = require("./routers/financeRouter");
+const reportRouter = require("./routers/fullReport/reportRouter");
+const loveRouter = require("./routers/fullReport/loveRouter");
+const financeRouter = require("./routers/fullReport/financeRouter");
 const reportsRouter = require("./routers/reportsRouter");
+const horoRouter = require("./routers/horoRouter");
 
 const app = express();
 app.use(express.json());
@@ -20,6 +21,7 @@ app.use("/api/report", reportRouter);
 app.use("/api/love", loveRouter);
 app.use("/api/finance", financeRouter);
 app.use("/api/reports", reportsRouter);
+app.use("/api/horo", horoRouter);
 
 app.get("/", (req, res) => {
   res.send("This is a business web app");

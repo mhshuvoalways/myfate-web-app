@@ -17,8 +17,8 @@ const index = () => {
             />
           </Link>
           <p className="text-sm text-grey-fields-100 mt-3.75 max-w-[295px] md:max-w-[285px]">
-            Take orders via chat, manage your business &amp; get paid seamlessly
-            with our My Fate
+            Take a look into your advanced horoscope report with our service.
+            Get to know you better.
           </p>
           <figure className="mt-5 sm:mt-6.25">
             <Image src={AppLogo} alt="My Fate app download banner" />

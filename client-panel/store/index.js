@@ -6,6 +6,7 @@ import {
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import userReducer from "./reducers/userReducer";
+import horoscopeReducer from "./reducers/horoscopeReducer";
 import notiReducer from "./reducers/notiReducer";
 import btnReducer from "./reducers/btnReducer";
 
@@ -15,6 +16,7 @@ const enhancers = [middlewareEnhancer];
 const composedEnhancers = composeWithDevTools(...enhancers);
 const rootReducer = combineReducers({
   userReducer,
+  horoscopeReducer,
   notiReducer,
   btnReducer,
 });

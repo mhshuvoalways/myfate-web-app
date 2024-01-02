@@ -12,8 +12,6 @@ import NotConvinced from "@/components/NotConvinced";
 import Faq from "@/components/Faq";
 import Motivation from "@/components/Motivation";
 import Footer from "@/components/Footer";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
 import Pic1 from "@/public/howtoget/t1.png";
 import Pic2 from "@/public/howtoget/t2.png";
 import Pic3 from "@/public/howtoget/t3.png";
@@ -47,18 +45,6 @@ const fullreport = [
 ];
 
 const Index = () => {
-  const router = useRouter();
-
-  useEffect(() => {
-    const detectLocation = navigator.language || navigator.languages;
-    // console.log(navigator);
-    if (detectLocation.includes("en")) {
-      // router.push("/en");
-    } else {
-      // router.push("/jp");
-    }
-  }, []);
-
   return (
     <>
       <Headers />

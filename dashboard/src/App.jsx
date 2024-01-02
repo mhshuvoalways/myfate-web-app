@@ -19,6 +19,17 @@ const App = () => {
     dispatch(isAuthenticate());
   }, [dispatch]);
 
+  useEffect(() => {
+    const preferredLanguage = localStorage.getItem("language");
+    if (!preferredLanguage) {
+      const browserLanguage = "en";
+      const userLanguage = window.confirm("Switch to Japan?")
+        ? "jp"
+        : browserLanguage;
+      localStorage.setItem("language", userLanguage);
+    }
+  }, []);
+
   return (
     <div>
       <BrowserRouter>

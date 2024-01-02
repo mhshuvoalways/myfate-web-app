@@ -1,6 +1,6 @@
 import Headers from "@/components/Headers";
 import Categories from "@/components/Headers/Categories";
-import FunTests from "@/components/FunTests";
+import FunTests from "@/components/horoscope";
 import Footer from "@/components/Footer";
 
 const Pricing = () => {

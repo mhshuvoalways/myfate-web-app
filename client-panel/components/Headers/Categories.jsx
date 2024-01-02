@@ -19,7 +19,7 @@ const Categories = () => {
             </p>
             <SubMenus menuName={menuName} setMenuName={setMenuName} />
           </div>
-          <Link href="/fun-tests-guide">
+          <Link href="/horoscope">
             <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs py-3">
               Free Horoscope
             </p>

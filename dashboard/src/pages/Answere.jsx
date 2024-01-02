@@ -137,6 +137,7 @@ const Template = () => {
   useEffect(() => {
     const getUser = JSON.parse(localStorage.getItem("userValue"));
     getUser.personality = userPersonality;
+    getUser.language = localStorage.getItem("language");
     setTimeout(() => {
       if (userPersonality.length === 4) {
         dispatch(userLogin(getUser, router));

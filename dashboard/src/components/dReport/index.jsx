@@ -36,7 +36,7 @@ const Index = ({
   useEffect(() => {
     const today = new Date();
     reportWriting?.forEach((el) => {
-      if (moment(today).format("YYYY-MM-DD") === el.date) {
+      if (moment(today).format("YYYY-MM-DD") ===  el?.date) {
         setTodaySentence(el);
       }
     });

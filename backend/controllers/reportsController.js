@@ -1,59 +1,14 @@
-const path = require("path");
 const Reports = require("../Model/Reports");
-const finalAPI = require("./reports/finalAPI");
-const igdop = require("./igdop/imageList");
+const finalAPI = require("../utils/reports/finalAPI");
+const igdop = require("../utils/igdop/imageList");
 const serverError = require("../utils/serverError");
-
-const filePaths = [
-  path.join(__dirname, "reports/full/overview.json"),
-  path.join(__dirname, "reports/full/advice.json"),
-  path.join(__dirname, "reports/full/lifeCycle.json"),
-  path.join(__dirname, "reports/full/nature.json"),
-  path.join(__dirname, "reports/full/relationship.json"),
-  path.join(__dirname, "reports/full/swot.json"),
-
-  path.join(__dirname, "reports/love/idealPartner.json"),
-  path.join(__dirname, "reports/love/kids.json"),
-  path.join(__dirname, "reports/love/lifeCycle.json"),
-  path.join(__dirname, "reports/love/marriage.json"),
-  path.join(__dirname, "reports/love/needs.json"),
-  path.join(__dirname, "reports/love/overview.json"),
-
-  path.join(__dirname, "reports/money/outlook.json"),
-  path.join(__dirname, "reports/money/outlook2.json"),
-  path.join(__dirname, "reports/money/overview.json"),
-  path.join(__dirname, "reports/money/risk.json"),
-
-  path.join(__dirname, "reports/work-academic/idealCareer.json"),
-  path.join(__dirname, "reports/work-academic/learning.json"),
-  path.join(__dirname, "reports/work-academic/overview.json"),
-];
-
-// Example usage
-const personalityDbPaths = [
-  path.join(__dirname, "igdop/nature/nature.json"),
-  path.join(__dirname, "igdop/animal/animal.json"),
-  path.join(__dirname, "igdop/castle/castle.json"),
-  path.join(__dirname, "igdop/space/space.json"),
-];
-
-const generalDbPaths = [
-  path.join(__dirname, "igdop/love/love.json"),
-  path.join(__dirname, "igdop/marriage/marriage.json"),
-  path.join(__dirname, "igdop/animalLove/animalLove.json"),
-
-  path.join(__dirname, "igdop/money/money.json"),
-
-  path.join(__dirname, "igdop/learn/learn.json"),
-  path.join(__dirname, "igdop/career/career.json"),
-];
 
 const addReports = (req, res) => {
   const { _id } = req.user;
-  const { firstName, lastName, gender, personality } = req.body;
+  const { firstName, lastName, gender, personality, language } = req.body;
   const userName = `${firstName} ${lastName}`;
-  const result = igdop(personality, personalityDbPaths, generalDbPaths);
-  finalAPI(filePaths, personality, userName, gender)
+  const result = igdop(personality);
+  finalAPI(personality, userName, gender, language)
     .then((createRes) => {
       const newObj = {
         userId: _id,
