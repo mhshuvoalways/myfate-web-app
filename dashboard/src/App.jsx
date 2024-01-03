@@ -24,9 +24,11 @@ const App = () => {
   useEffect(() => {
     const preferredLanguage = localStorage.getItem("language");
     if (!preferredLanguage) {
-      const userLanguage = window.confirm("Switch to Japan?") ? "jp" : "en";
-      i18n.changeLanguage(userLanguage);
-      localStorage.setItem("language", userLanguage);
+      setTimeout(() => {
+        const userLanguage = window.confirm("Switch to Japan?") ? "jp" : "en";
+        i18n.changeLanguage(userLanguage);
+        localStorage.setItem("language", userLanguage);
+      }, 2000);
     } else {
       i18n.changeLanguage(preferredLanguage);
     }
