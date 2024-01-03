@@ -237,7 +237,7 @@ const Login = () => {
               <p className="cursor-pointer">{myform.dk}</p>
             </label>
           </div>
-          <Button value={"SUBMIT"} className={"mt-8 w-full"} />
+          <Button value={myform.btn} className={"mt-8 w-full uppercase"} />
         </form>
       </div>
     </div>

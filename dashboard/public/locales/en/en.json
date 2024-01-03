@@ -7,7 +7,8 @@
     "gender": ["Male", "Female"],
     "bt": "Birth Date & Time",
     "ymd": ["Year", "Month", "Day"],
-    "dk": "I know my birth time"
+    "dk": "I know my birth time",
+    "btn": "Submit"
   },
   "questions": [
     {
