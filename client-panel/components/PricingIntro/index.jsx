@@ -15,6 +15,7 @@ const Index = () => {
   const { t } = useTranslation("pricing");
   const title1 = t("title");
   const title2 = t("title2");
+  const pricingBtn = t("pricingBtn");
   const pricingObj = t("pricingObj", { returnObjects: true });
 
   useEffect(() => {
@@ -61,7 +62,11 @@ const Index = () => {
           />
           <div className="flex gap-5 justify-center flex-wrap mt-10">
             {pricingObj.map((el) => (
-              <PricingItem pricingObj={el} key={el.id} />
+              <PricingItem
+                pricingObj={el}
+                key={el.id}
+                pricingBtn={pricingBtn}
+              />
             ))}
           </div>
         </div>
