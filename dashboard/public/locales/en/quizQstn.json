@@ -1,0 +1,10 @@
+{
+  "fName": "First Name",
+  "lName": "Last Name",
+  "email": "Email",
+  "emailDes": "myfatesで使用しているEメールと同じもの",
+  "gender": ["Male", "Female"],
+  "bt": "Birth Date & Time",
+  "ymd": ["Year", "Month", "Day"],
+  "dk": "I know my birth time"
+}

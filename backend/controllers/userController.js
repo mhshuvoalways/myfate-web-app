@@ -44,7 +44,7 @@ const register = (req, res) => {
                       email: createUser.email,
                     },
                     process.env.SECRET,
-                    { expiresIn: "7d" }
+                    { expiresIn: "2h" }
                   );
                   new Auth(authObj)
                     .save()
@@ -99,7 +99,7 @@ const registerGoogle = (req, res) => {
                 email: createUser.email,
               },
               process.env.SECRET,
-              { expiresIn: "7d" }
+              { expiresIn: "2h" }
             );
             new Auth(authObj)
               .save()
@@ -131,7 +131,7 @@ const registerGoogle = (req, res) => {
                   email: findUser.email,
                 },
                 process.env.SECRET,
-                { expiresIn: "7d" }
+                { expiresIn: "2h" }
               );
               res.status(200).json({
                 message: "Thanks for login!",
@@ -170,7 +170,7 @@ const login = (req, res) => {
                         email: response.email,
                       },
                       process.env.SECRET,
-                      { expiresIn: "7d" }
+                      { expiresIn: "2h" }
                     );
                     res.status(200).json({
                       message: "Welcome back!",
@@ -266,7 +266,7 @@ const findMail = (req, res) => {
                   email: response.email,
                 },
                 process.env.SECRET,
-                { expiresIn: "1h" }
+                { expiresIn: "2h" }
               );
               if (authRes.strategy === "email") {
                 transporter(email, recoverPass(token));
@@ -319,7 +319,7 @@ const recoverPassword = (req, res) => {
                           email: response.email,
                         },
                         process.env.SECRET,
-                        { expiresIn: "7d" }
+                        { expiresIn: "2h" }
                       );
                       res.status(200).json({
                         token,
