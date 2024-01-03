@@ -2,11 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/horoscope/result": "pages/horoscope/result.js",
-  "/lovefate": "pages/lovefate.js",
-  "/financefate": "pages/financefate.js",
-  "/fullreport": "pages/fullreport.js",
-  "/": "pages/index.js",
-  "/dailyfate": "pages/dailyfate.js",
-  "/horoscope": "pages/horoscope.js"
+  "/horoscope": "pages/horoscope.js",
+  "/payment": "pages/payment.js",
+  "/pricing": "pages/pricing.js"
 }

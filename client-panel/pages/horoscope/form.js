@@ -18,7 +18,11 @@ const StoreLinks = () => {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["subMenus", "common"])),
+      ...(await serverSideTranslations(locale, [
+        "subMenus",
+        "footer",
+        "common",
+      ])),
     },
   };
 }
