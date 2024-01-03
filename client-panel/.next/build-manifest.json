@@ -22,15 +22,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/horoscope": [
+    "/financefate": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/horoscope.js"
-    ],
-    "/horoscope/form": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/horoscope/form.js"
+      "static/chunks/pages/financefate.js"
     ]
   },
   "ampFirstPages": []

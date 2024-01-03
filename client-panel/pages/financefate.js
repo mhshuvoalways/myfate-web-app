@@ -1,3 +1,5 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import Headers from "@/components/Headers";
 import Categories from "@/components/Headers/Categories";
 import StoreLinksIntro from "@/components/StoreLinksIntro";
@@ -14,6 +16,9 @@ import Pic15 from "@/public/howtoget/t15.png";
 import Pic16 from "@/public/howtoget/t16.png";
 
 const StoreLinks = () => {
+  const { t } = useTranslation("howtouse");
+  const howtouse = t("howtouse", { returnObjects: true });
+
   const financefate = [
     {
       description:
@@ -46,7 +51,7 @@ const StoreLinks = () => {
       <Headers />
       <Categories />
       <StoreLinksIntro titleText={"Finance Destiny Alignment"} />
-      <HowToUse pageType={financefate}/>
+      <HowToUse pageType={financefate} howtouse={howtouse} />
       <WhatYouGet />
       <LoveToMerge />
       <NotConvinced />
@@ -56,5 +61,23 @@ const StoreLinks = () => {
     </>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "convince",
+        "footer",
+        "pricing",
+        "gswsl",
+        "lovefates",
+        "subMenus",
+        "whatyouget",
+        "howtouse",
+        "common",
+      ])),
+    },
+  };
+}
 
 export default StoreLinks;

@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../common/Button";
+import { useTranslation } from "next-i18next";
 
 const Signup = () => {
   const [userData, setUserData] = useState({
@@ -21,6 +22,11 @@ const Signup = () => {
     password: "",
     recaptcha: "",
   });
+
+  const { t } = useTranslation("auth");
+  const signup = t("signup");
+  const des = t("des");
+  const isAccount = t("isAccount");
 
   const dispatch = useDispatch();
   const router = useRouter();
@@ -71,17 +77,14 @@ const Signup = () => {
           <Image src={AuthImg} alt="" />
           <p className="text-center">
             <Link href="/login" className="underline">
-              Already have an account? Login here
+              {isAccount}
             </Link>
           </p>
         </div>
         <div className="w-full md:w-7/12">
           <div className="space-y-5">
-            <p className="tracking-widest text-4xl font-gabarito">WELCOME</p>
-            <p className="text-gray-500 text-lg">
-              Create a free account to experience full MyFates service. Sign in
-              with Google or enter an email and password below.
-            </p>
+            <p className="tracking-widest text-4xl font-gabarito">{signup}</p>
+            <p className="text-gray-500 text-lg">{des}</p>
           </div>
           <div className="mt-10 space-y-5">
             <Image

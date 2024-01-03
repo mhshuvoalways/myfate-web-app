@@ -1,5 +1,6 @@
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import SignupComponent from "@/components/Auth/SignUp";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Signup = () => {
   return (
@@ -8,5 +9,13 @@ const Signup = () => {
     </GoogleOAuthProvider>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["auth"])),
+    },
+  };
+}
 
 export default Signup;

@@ -1,76 +1,13 @@
 import { Fade } from "react-reveal";
+import { useTranslation } from "next-i18next";
 import TextAnimation from "../Utils/TextAnimation";
 import PricingItem from "./PricingItem";
 
 const Index = () => {
-  const pricingObj = [
-    {
-      id: 1,
-      title: "Pro",
-      description: "For anyone who wants to know deeper about themselves",
-      planTitle: 30,
-      inclueds: [
-        "Life Total Analysis",
-        "Life Advice",
-        "Romance Compatibility Analysis",
-        "Ideal Partner Analysis",
-        "Financial Analysis",
-        "Financial Risk Analysis",
-        "Academic Advice",
-        "Personalized Daily Energy Overview",
-        "Personalized Daily Romance Overview",
-        "Personalized Daily Finance Overview",
-        "Daily Sayings",
-        "Daily Prayers",
-      ],
-    },
-    {
-      id: 2,
-      title: "Premium",
-      description:
-        "For anyone who wants to get a personalized analysis from a doctor who has been in Sajoo for decades",
-      planTitle: 150,
-      inclueds: [
-        "Doctor’s Full Analysis once a month",
-        "Life Total Analysis",
-        "Life Advice",
-        "Romance Compatibility Analysis",
-        "Ideal Partner Analysis",
-        "Financial Analysis",
-        "Financial Risk Analysis",
-        "Academic Advice",
-        "Personalized Daily Energy Overview",
-        "Personalized Daily Romance Overview",
-        "Personalized Daily Finance Overview",
-        "Daily Sayings",
-        "Daily Prayers",
-      ],
-    },
-    {
-      id: 3,
-      title: "Premium Max",
-      description:
-        "For anyone who wants to get a personalized+ analysis from a doctor who has been in Sajoo for decades",
-      planTitle: 300,
-      inclueds: [
-        "Doctor’s Full Analysis twice a month",
-        "Doctor’s Q&A",
-        "Maximum Details",
-        "Life Total Analysis",
-        "Life Advice",
-        "Romance Compatibility Analysis",
-        "Ideal Partner Analysis",
-        "Financial Analysis",
-        "Financial Risk Analysis",
-        "Academic Advice",
-        "Personalized Daily Energy Overview",
-        "Personalized Daily Romance Overview",
-        "Personalized Daily Finance Overview",
-        "Daily Sayings",
-        "Daily Prayers",
-      ],
-    },
-  ];
+  const { t } = useTranslation("pricing");
+  const title1 = t("title");
+  const title2 = t("title2");
+  const pricingObj = t("pricingObj", { returnObjects: true });
 
   return (
     <div className="bg-gray-50 py-32">
@@ -78,11 +15,11 @@ const Index = () => {
         <TextAnimation
           letters={[
             {
-              letter: "Tiny",
+              letter: title1.split(" ")[0],
               delay: "0",
             },
             {
-              letter: "Investment",
+              letter: title1.split(" ")[1],
               delay: "0.10",
             },
           ]}
@@ -92,15 +29,15 @@ const Index = () => {
         <TextAnimation
           letters={[
             {
-              letter: "And",
+              letter: title2.split(' ')[0],
               delay: "0.30",
             },
             {
-              letter: "Get",
+              letter: title2.split(' ')[1],
               delay: "0.40",
             },
             {
-              letter: "Everything",
+              letter: title2.split(' ')[2],
               delay: "0.50",
             },
           ]}

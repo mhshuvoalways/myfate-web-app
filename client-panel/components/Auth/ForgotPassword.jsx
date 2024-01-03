@@ -6,10 +6,15 @@ import Image from "next/image";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import Button from "../common/Button";
+import { useTranslation } from "next-i18next";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+
+  const { t } = useTranslation("auth");
+  const fpdes = t("fpdes");
+  const fpBtn = t("fpBtn");
 
   const dispatch = useDispatch();
 
@@ -37,10 +42,7 @@ const Signup = () => {
           <Image src={AuthImg} alt="" />
         </div>
         <form className="w-full md:w-7/12 space-y-8" onSubmit={findMail}>
-          <p className="text-gray-500 text-lg">
-            {`Need to reset your password? Simply provide your email address below
-            and we'll help you with the process.`}
-          </p>
+          <p className="text-gray-500 text-lg">{fpdes}</p>
           <div>
             <div
               className={`flex gap-3 border-b-2 pb-2 ${
@@ -63,7 +65,7 @@ const Signup = () => {
               {error}
             </p>
           </div>
-          <Button value={"RESET PASSWORD"} />
+          <Button value={fpBtn} />
         </form>
       </div>
     </div>

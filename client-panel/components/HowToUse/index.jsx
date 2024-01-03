@@ -6,7 +6,7 @@ import LazyImage from "../Utils/LazyImage";
 import CircularProgress from "./CircularProgress";
 import TextAnimation from "@/components/Utils/TextAnimation";
 
-const HowItWorks = ({ pageType }) => {
+const HowItWorks = ({ pageType, howtouse }) => {
   const [animProgress, setAnimProgress] = useState(0);
   const stepsCount = pageType?.length;
 
@@ -62,19 +62,19 @@ const HowItWorks = ({ pageType }) => {
               <TextAnimation
                 letters={[
                   {
-                    letter: `What`,
+                    letter: howtouse.title1.split(" ")[0],
                     delay: "0",
                   },
                   {
-                    letter: `you`,
+                    letter: howtouse.title1.split(" ")[1],
                     delay: "0.20",
                   },
                   {
-                    letter: `get`,
+                    letter: howtouse.title1.split(" ")[2],
                     delay: "0.40",
                   },
                   {
-                    letter: `with`,
+                    letter: howtouse.title1.split(" ")[3],
                     delay: "0.50",
                   },
                 ]}
@@ -83,7 +83,7 @@ const HowItWorks = ({ pageType }) => {
               <TextAnimation
                 letters={[
                   {
-                    letter: `Myfates.com`,
+                    letter: howtouse.title2.split(' ')[0],
                     delay: "0.60",
                   },
                 ]}

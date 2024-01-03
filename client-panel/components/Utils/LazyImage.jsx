@@ -10,7 +10,6 @@ const LazyImage = ({
   style,
   ...props
 }) => {
-
   const imageRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -39,7 +38,7 @@ const LazyImage = ({
         ></div>
       )}
       <img
-        src={isVisible ? imgSrc.src : ""}
+        src={isVisible ? imgSrc.src || imgSrc : ""}
         {...props}
         className={
           !hasLoaded && classesBeforeLoad ? classesBeforeLoad : className

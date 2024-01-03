@@ -1,10 +1,15 @@
 import AuthImg from "@/public/auth/auth.png";
 import LoginBtn from "@/public/auth/loginbtn.png";
 import notiAction from "@/store/actions/notiAction";
-import { isAuthenticate, userLogin, userLoginwithGoogle } from "@/store/actions/userAction";
+import {
+  isAuthenticate,
+  userLogin,
+  userLoginwithGoogle,
+} from "@/store/actions/userAction";
 import { useGoogleLogin } from "@react-oauth/google";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,6 +20,11 @@ const Signup = () => {
     email: "",
     password: "",
   });
+
+  const { t } = useTranslation("auth");
+  const loginData = t("login");
+  const hasAccount = t("hasAccount");
+  const fp = t("fp");
 
   const userReducer = useSelector((store) => store.userReducer);
 
@@ -59,12 +69,12 @@ const Signup = () => {
           <Image src={AuthImg} alt="" />
           <p className="text-center">
             <Link href="/signup" className="underline">
-              Create an account
+              {hasAccount}
             </Link>
           </p>
         </div>
         <form className="w-full md:w-7/12" onSubmit={onSubmitHandler}>
-          <p className="tracking-widest text-3xl font-bold">LOGIN</p>
+          <p className="tracking-widest text-3xl font-bold">{loginData}</p>
           <div className="space-y-7 mt-10">
             <div>
               <div
@@ -117,9 +127,9 @@ const Signup = () => {
               </p>
             </div>
             <p className="text-gray-400 text-end">
-              <Link href={"/forgot-password"}>Forgot Password?</Link>
+              <Link href={"/forgot-password"}>{fp}</Link>
             </p>
-            <Button value={"LOGIN"} className={'w-full'}/>
+            <Button value={"LOGIN"} className={"w-full"} />
           </div>
           <div className="mt-5 space-y-5 flex items-center justify-end gap-5">
             <Image

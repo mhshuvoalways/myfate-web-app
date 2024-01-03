@@ -5,8 +5,15 @@ import { Link as ScrollList } from "react-scroll";
 import Link from "next/link";
 import AnimationText from "../Utils/TextAnimation";
 import ArrowRight from "@/public/storeLinks/arrowRight.svg";
+import { useTranslation } from "next-i18next";
 
-const index = () => {
+const Index = () => {
+  const { t } = useTranslation("homeintro");
+  const title1 = t("title");
+  const description = t("description");
+  const firstButton = t("firstButton");
+  const secondButton = t("secondButton");
+
   return (
     <div className="pt-20 firstintro bg-cover">
       <div className="flex justify-center items-center mycontainer">
@@ -16,15 +23,15 @@ const index = () => {
             textCenter
             letters={[
               {
-                letter: "MyFates",
+                letter: title1.split(" ")[0],
                 delay: "0.5",
               },
               {
-                letter: "Future",
+                letter: title1.split(" ")[1],
                 delay: "0.25",
               },
               {
-                letter: "Connection",
+                letter: title1.split(" ")[2],
                 delay: "0.35",
               },
             ]}
@@ -34,27 +41,27 @@ const index = () => {
             textCenter
             letters={[
               {
-                letter: "Ancient",
+                letter: description.split(" ")[0],
                 delay: "0.55",
               },
               {
-                letter: "Wisdom",
+                letter: description.split(" ")[1],
                 delay: "0.65",
               },
               {
-                letter: "from",
+                letter: description.split(" ")[2],
                 delay: "0.75",
               },
               {
-                letter: "Korea",
+                letter: description.split(" ")[3],
                 delay: "0.75",
               },
               {
-                letter: "and",
+                letter: description.split(" ")[4],
                 delay: "0.85",
               },
               {
-                letter: "Japan",
+                letter: description.split(" ")[5],
                 delay: "0.95",
               },
             ]}
@@ -65,7 +72,7 @@ const index = () => {
                 whileTap={{ scale: 0.9 }}
                 className="border-gray-200 border-2 text-gray-200 py-2.5 font-semibold mybutton px-10 capitalize"
               >
-                Start your journey
+                {firstButton}
               </motion.button>
             </Link>
             <ScrollList to={"reports"} smooth spy>
@@ -73,7 +80,7 @@ const index = () => {
                 whileTap={{ scale: 0.9 }}
                 className="py-2.5 font-semibold hover:rounded-full transition-all rounded px-10 flex items-center gap-1 capitalize"
               >
-                <p className="text-gray-200">See our Reports</p>
+                <p className="text-gray-200">{secondButton}</p>
                 <motion.div initial={{ rotate: -90 }}>
                   <Image src={ArrowRight} alt="" />
                 </motion.div>
@@ -87,4 +94,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

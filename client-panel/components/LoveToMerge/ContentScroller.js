@@ -106,7 +106,9 @@ const ScrollerList = ({ group }) => {
           <p>{item.des}</p>
           <div className="flex gap-5 mt-5 items-center">
             <Image
-              src={item.pic}
+              src={`/${item.pic}`}
+              width={200}
+              height={200}
               alt=""
               className="rounded-full w-10 h-10 shadow-md border"
             />

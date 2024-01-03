@@ -1,3 +1,5 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import Headers from "@/components/Headers";
 import Categories from "@/components/Headers/Categories";
 import StoreLinksIntro from "@/components/StoreLinksIntro";
@@ -14,6 +16,9 @@ import Pic11 from "@/public/howtoget/t11.png";
 import Pic12 from "@/public/howtoget/t12.png";
 
 const StoreLinks = () => {
+  const { t } = useTranslation("howtouse");
+  const howtouse = t("howtouse", { returnObjects: true });
+
   const lovefate = [
     {
       description:
@@ -49,7 +54,7 @@ const StoreLinks = () => {
       <Headers />
       <Categories />
       <StoreLinksIntro titleText={"Love Destiny Alignment"} />
-      <HowToUse pageType={lovefate} />
+      <HowToUse pageType={lovefate} howtouse={howtouse} />
       <WhatYouGet />
       <LoveToMerge />
       <NotConvinced />
@@ -59,5 +64,23 @@ const StoreLinks = () => {
     </>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "convince",
+        "footer",
+        "pricing",
+        "gswsl",
+        "lovefates",
+        "subMenus",
+        "whatyouget",
+        "howtouse",
+        "common",
+      ])),
+    },
+  };
+}
 
 export default StoreLinks;

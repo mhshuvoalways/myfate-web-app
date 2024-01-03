@@ -90,7 +90,10 @@ const PricingItem = ({ pricingObj }) => {
                     className={
                       item === "Doctor’s Full Analysis once a month" ||
                       item === `Doctor’s Full Analysis twice a month` ||
-                      item === `Doctor’s Q&A`
+                      item === `Doctor’s Q&A` ||
+                      item === "月に一度のドクター徹底分析" ||
+                      item === "ドクターズQ&A" ||
+                      item === "月2回のドクター徹底分析"
                         ? "text-[#B8621B]"
                         : "text-gray-600"
                     }

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { appWithTranslation } from "next-i18next";
 import setAuthToken from "../utils/setAuthToken";
 import { Provider } from "react-redux";
 import store from "../store";
@@ -8,7 +9,7 @@ import "@/styles/external.css";
 import "@/styles/globals.css";
 import "@/styles/responsive.css";
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   const token = typeof window !== "undefined" && localStorage.getItem("token");
   if (token) {
     setAuthToken(token);
@@ -27,3 +28,5 @@ export default function App({ Component, pageProps }) {
     </Provider>
   );
 }
+
+export default appWithTranslation(App);

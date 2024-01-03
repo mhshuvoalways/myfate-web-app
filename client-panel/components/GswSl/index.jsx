@@ -2,8 +2,16 @@ import Link from "next/link";
 import { Fade } from "react-reveal";
 import TextAnimation from "../Utils/TextAnimation";
 import Button from "../common/Button";
+import { useTranslation } from "next-i18next";
 
-const index = () => {
+const Index = () => {
+  const { t } = useTranslation("gswsl");
+  const title1 = t("title");
+  const title2 = t("title2");
+  const secTitle = t("secTitle");
+  const secTitle2 = t("secTitle2");
+  const btn = t("btn");
+
   return (
     <div className={`py-16 bg-center bg-no-repeat gswsl flex items-center`}>
       <div className="mycontainer">
@@ -12,19 +20,19 @@ const index = () => {
             <TextAnimation
               letters={[
                 {
-                  letter: "Connect",
+                  letter: title1.split(" ")[0],
                   delay: "0",
                 },
                 {
-                  letter: "to",
+                  letter: title1.split(" ")[1],
                   delay: "0.20",
                 },
                 {
-                  letter: "your",
+                  letter: title1.split(" ")[2],
                   delay: "0.30",
                 },
                 {
-                  letter: "future",
+                  letter: title1.split(" ")[3],
                   delay: "0.40",
                 },
               ]}
@@ -33,15 +41,15 @@ const index = () => {
             <TextAnimation
               letters={[
                 {
-                  letter: "Find",
+                  letter: title2.split(" ")[0],
                   delay: "0.50",
                 },
                 {
-                  letter: "out",
+                  letter: title2.split(" ")[1],
                   delay: "0.60",
                 },
                 {
-                  letter: "now",
+                  letter: title2.split(" ")[2],
                   delay: "0.70",
                 },
               ]}
@@ -50,11 +58,11 @@ const index = () => {
           </div>
           <Fade bottom>
             <div>
-              <p className="text-2xl">Connect to your future</p>
-              <p className="text-xl text-my-blue">Find out now</p>
+              <p className="text-2xl">{secTitle}</p>
+              <p className="text-xl text-my-blue">{secTitle2}</p>
             </div>
             <Link href={"/payment"}>
-              <Button value={"Start Now"} className={"!bg-[#262A56]"} />
+              <Button value={btn} className={"!bg-[#262A56]"} />
             </Link>
           </Fade>
         </div>
@@ -63,4 +71,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

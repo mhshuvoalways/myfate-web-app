@@ -2,6 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/horoscope": "pages/horoscope.js",
-  "/horoscope/form": "pages/horoscope/form.js"
+  "/financefate": "pages/financefate.js"
 }

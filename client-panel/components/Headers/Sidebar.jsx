@@ -30,6 +30,11 @@ const Sidebar = ({ isOpen, toggleSidebar, userReducer }) => {
                 Home
               </p>
             </Link>
+            <Link href="/about">
+              <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
+                About
+              </p>
+            </Link>
             <Link href="/store-links">
               <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
                 Store Links
@@ -47,22 +52,12 @@ const Sidebar = ({ isOpen, toggleSidebar, userReducer }) => {
             </Link>
             {userReducer.isAuthenticate ? (
               userReducer.user?.subscriptionPlan?.planType ? (
-                <>
-                  {/* <Link
-                    href={"https://personal-info-dashboard.vercel.app"}
-                    target="blank"
-                  >
-                    <p className="cursor-pointer hover:text-gray-800 text-my-text-gray">
-                      Dashboard
-                    </p>
-                  </Link> */}
-                  <p
-                    className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800"
-                    onClick={() => dispatch(logout(router))}
-                  >
-                    Logout
-                  </p>
-                </>
+                <p
+                  className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800"
+                  onClick={() => dispatch(logout(router))}
+                >
+                  Logout
+                </p>
               ) : (
                 <>
                   {/* <Link href={"/pricing?suggest=payment"}>

@@ -1,3 +1,5 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import Headers from "@/components/Headers";
 import Categories from "@/components/Headers/Categories";
 import StoreLinksIntro from "@/components/StoreLinksIntro";
@@ -14,6 +16,9 @@ import Pic3 from "@/public/howtoget/t3.png";
 import Pic4 from "@/public/howtoget/t4.png";
 
 const StoreLinks = () => {
+  const { t } = useTranslation("howtouse");
+  const howtouse = t("howtouse", { returnObjects: true });
+
   const fullreport = [
     {
       description:
@@ -46,15 +51,34 @@ const StoreLinks = () => {
       <Headers />
       <Categories />
       <StoreLinksIntro titleText="Total Life Report" />
-      <HowToUse pageType={fullreport} />
+      <HowToUse pageType={fullreport} howtouse={howtouse} />
       <WhatYouGet />
       <LoveToMerge />
       <NotConvinced />
       <Pricing />
       <GswSl />
       <Footer />
+      <p></p>
     </>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "convince",
+        "footer",
+        "pricing",
+        "gswsl",
+        "lovefates",
+        "subMenus",
+        "whatyouget",
+        "howtouse",
+        "common",
+      ])),
+    },
+  };
+}
 
 export default StoreLinks;

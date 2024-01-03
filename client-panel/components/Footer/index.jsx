@@ -1,8 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import AppLogo from "@/public/footer/app.svg";
+import { useTranslation } from "next-i18next";
 
-const index = () => {
+const Index = () => {
+  const { t } = useTranslation("footer");
+  const des = t("des");
+  const privacy = t("privacy");
+  const termsofService = t("termsofService");
+  const refundPolicy = t("refundPolicy");
+  const subPolicy = t("subPolicy");
+
   return (
     <div className="bg-[#050537] py-20">
       <div className="flex gap-20 flex-wrap mycontainer">
@@ -17,8 +25,7 @@ const index = () => {
             />
           </Link>
           <p className="text-sm text-grey-fields-100 mt-3.75 max-w-[295px] md:max-w-[285px]">
-            Take a look into your advanced horoscope report with our service.
-            Get to know you better.
+            {des}
           </p>
           <figure className="mt-5 sm:mt-6.25">
             <Image src={AppLogo} alt="My Fate app download banner" />
@@ -30,10 +37,10 @@ const index = () => {
           </li>
           <li className="mb-2.5 md:mb-3.75 flex items-center">
             <Link
-              href="/privacy"
+              href="/privacy-policy"
               className="text-grey-fields-100 hover:text-accent-yellow-500 font-medium text-1sm md:text-base whitespace-nowrap cursor-pointer"
             >
-              Privacy
+              {privacy}
             </Link>
           </li>
           <li className="mb-2.5 md:mb-3.75 flex items-center">
@@ -41,7 +48,23 @@ const index = () => {
               href="/terms-of-service"
               className="text-grey-fields-100 hover:text-accent-yellow-500 font-medium text-1sm md:text-base whitespace-nowrap cursor-pointer"
             >
-              Terms of Service
+              {termsofService}
+            </Link>
+          </li>
+          <li className="mb-2.5 md:mb-3.75 flex items-center">
+            <Link
+              href="/refund-policy"
+              className="text-grey-fields-100 hover:text-accent-yellow-500 font-medium text-1sm md:text-base whitespace-nowrap cursor-pointer"
+            >
+              {refundPolicy}
+            </Link>
+          </li>
+          <li className="mb-2.5 md:mb-3.75 flex items-center">
+            <Link
+              href="/sub-policy"
+              className="text-grey-fields-100 hover:text-accent-yellow-500 font-medium text-1sm md:text-base whitespace-nowrap cursor-pointer"
+            >
+              {subPolicy}
             </Link>
           </li>
         </ul>
@@ -50,4 +73,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

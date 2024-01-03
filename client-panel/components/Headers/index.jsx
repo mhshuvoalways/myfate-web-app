@@ -12,23 +12,22 @@ const TopHeader = () => {
   };
 
   return (
-    <div className="pb-[65px]">
-      <Header
-        toggleSidebar={toggleSidebar}
-        userReducer={userReducer}
-      />
-      <Sidebar
-        isOpen={isOpen}
-        toggleSidebar={toggleSidebar}
-        userReducer={userReducer}
-      />
-      {isOpen && (
-        <p
-          className="bg-black fixed inset-0 opacity-40 z-50"
-          onClick={toggleSidebar}
-        ></p>
-      )}
-    </div>
+    <>
+      <div className="pb-[65px]">
+        <Header toggleSidebar={toggleSidebar} userReducer={userReducer} />
+        <Sidebar
+          isOpen={isOpen}
+          toggleSidebar={toggleSidebar}
+          userReducer={userReducer}
+        />
+        {isOpen && (
+          <p
+            className="bg-black fixed inset-0 opacity-40 z-50"
+            onClick={toggleSidebar}
+          ></p>
+        )}
+      </div>
+    </>
   );
 };
 

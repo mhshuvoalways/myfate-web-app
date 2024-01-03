@@ -1,3 +1,4 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Headers from "@/components/Headers";
 import Categories from "@/components/Headers/Categories";
 import StoreLinksIntro from "@/components/Intro";
@@ -12,39 +13,12 @@ import NotConvinced from "@/components/NotConvinced";
 import Faq from "@/components/Faq";
 import Motivation from "@/components/Motivation";
 import Footer from "@/components/Footer";
-import Pic1 from "@/public/howtoget/t1.png";
-import Pic2 from "@/public/howtoget/t2.png";
-import Pic3 from "@/public/howtoget/t3.png";
-import Pic4 from "@/public/howtoget/t4.png";
-
-const fullreport = [
-  {
-    description:
-      "Full report: Full overview of your total life. What are you born with?",
-    image: Pic1,
-    type: "fullreport",
-  },
-  {
-    description:
-      "Love: Full love overview of your total life. Who will you meet?",
-    image: Pic2,
-    type: "fullreport",
-  },
-  {
-    description:
-      "Finance: Full finance overview of your total life. How much will you earn?",
-    image: Pic3,
-    type: "fullreport",
-  },
-  {
-    description:
-      "Learning: Full academic overview of your total life. How and what will you learn?",
-    image: Pic4,
-    type: "fullreport",
-  },
-];
+import { useTranslation } from "next-i18next";
 
 const Index = () => {
+  const { t } = useTranslation("howtouse");
+  const howtouse = t("howtouse", { returnObjects: true });
+
   return (
     <>
       <Headers />
@@ -52,7 +26,7 @@ const Index = () => {
       <StoreLinksIntro />
       <OwnerSaysCatelog home />
       <WhatYouGet />
-      <HowToUse pageType={fullreport} />
+      <HowToUse pageType={howtouse.fullreport} howtouse={howtouse} />
       <Resources />
       <LoveToMerge />
       <Pricing />
@@ -64,5 +38,26 @@ const Index = () => {
     </>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "convince",
+        "faq",
+        "footer",
+        "gswsl",
+        "homeintro",
+        "lovefates",
+        "pricing",
+        "motivation",
+        "subMenus",
+        "whatyouget",
+        "howtouse",
+        "common",
+      ])),
+    },
+  };
+}
 
 export default Index;

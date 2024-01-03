@@ -1,3 +1,4 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import useLoading from "@/hooks/useLoading";
 import Loading from "@/components/Loading";
 import Headers from "@/components/Headers";
@@ -21,5 +22,13 @@ const PastLife = () => {
     </>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["subMenus", "common"])),
+    },
+  };
+}
 
 export default PastLife;

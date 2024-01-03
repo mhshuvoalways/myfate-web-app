@@ -2,45 +2,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import parse from "html-react-parser";
 import { useState } from "react";
 import TextAnimation from "../Utils/TextAnimation";
+import { useTranslation } from "next-i18next";
 
 const Index = () => {
-  const faqItems = [
-    {
-      id: 1,
-      faqTitle: "What is MyFates?",
-      faqDes: `MyFates is a Japanese-Korean self empowering service that was made to give deeper understanding about oneself. Myfates uses traditional horoscope and psychological methods to give maximum insight about oneself.`,
-    },
-    {
-      id: 2,
-      faqTitle: "How can it be so accurate?",
-      faqDes: `The report made for each person is totally special. No two people would get the same report. That is, each individual would get an individualized result, giving the best accuracy in the world.`,
-    },
-    {
-      id: 3,
-      faqTitle: "Does it tell me the real me?",
-      faqDes: `It tells you what you are born with based on our horoscope and psychology method. Our goal is to give positive insights that will eventually motivate you to grow.`,
-    },
-    {
-      id: 4,
-      faqTitle: "Will it help me get a romantic partner?",
-      faqDes: `It will give you a strategic insight to get yourself a partner that best suits you. To get what you want, you have to know yourself. Our report will definitely help.`,
-    },
-    {
-      id: 5,
-      faqTitle: "Will it give me insights about finance?",
-      faqDes: `Yes. it can provide valuable insights about your financial choices. Every single person has different personality that can significantly impact their financial decisions. Our goal is to provide analysis of the personality.`,
-    },
-    {
-      id: 6,
-      faqTitle: "Why does the premium plan get sold out?",
-      faqDes: `As the owner herself, doctor Ji spends much time to give each people maximum insight. Therefore, we stop receiving orders when she believes that we are not capable of meeting our high standards.`,
-    },
-    {
-      id: 7,
-      faqTitle: "Who made MyFates?",
-      faqDes: `Dr. Ji. A pediatrician who studied horoscope and psychology for decades. She made myfates.com to provide deeper understanding about oneself and provide positive advice to young people that are lost in this rapidly changing world.`,
-    },
-  ];
+  const { t } = useTranslation("faq");
+  const title1 = t("title");
+  const title2 = t("title2");
+  const faqItems = t("faqItems", { returnObjects: true });
 
   const [faqObj, setFaqObj] = useState(null);
 
@@ -57,7 +25,7 @@ const Index = () => {
       <TextAnimation
         letters={[
           {
-            letter: "Frequently",
+            letter: title1,
           },
         ]}
         className={"text-4xl md:text-5xl lg:text-6xl font-semibold text-center"}
@@ -66,11 +34,11 @@ const Index = () => {
       <TextAnimation
         letters={[
           {
-            letter: "Asked",
+            letter: title2.split(" ")[0],
             delay: "0.25",
           },
           {
-            letter: "Questions",
+            letter: title2.split(" ")[1],
             delay: "0.45",
           },
         ]}
