@@ -1,3 +1,4 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Headers from "@/components/Headers";
 import Categories from "@/components/Headers/Categories";
 import Footer from "@/components/Footer";
@@ -7,7 +8,6 @@ const privacy = () => {
     <>
       <Headers />
       <Categories />
-
       <div>
         <p className="text-center text-3xl text-white bg-gray-800 py-16">
           Terms of Service
@@ -65,5 +65,17 @@ const privacy = () => {
     </>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "subMenus",
+        "footer",
+        "common",
+      ])),
+    },
+  };
+}
 
 export default privacy;
