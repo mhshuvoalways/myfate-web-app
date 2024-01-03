@@ -1,3 +1,4 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Headers from "@/components/Headers";
 import Categories from "@/components/Headers/Categories";
 import HoroscopeResult from "@/components/horoscope/result";
@@ -13,5 +14,13 @@ const HoroScopeResult = () => {
     </>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["subMenus", "common"])),
+    },
+  };
+}
 
 export default HoroScopeResult;
