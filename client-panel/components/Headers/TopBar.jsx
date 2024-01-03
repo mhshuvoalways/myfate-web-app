@@ -1,24 +1,32 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 
 const TopBar = () => {
   const [language, setLanguage] = useState("");
+  const { i18n } = useTranslation();
   const router = useRouter();
 
   const languageHandler = (value) => {
     setLanguage(value);
     typeof window !== "undefined" && localStorage.setItem("language", value);
+    langChange(value);
+  };
+
+  const langChange = (value) => {
     if (value === "jp") {
-      window.location.href = "/jp";
+      router.push("/jp", null, { locale: "jp" });
+      i18n.changeLanguage("jp");
     } else {
-      window.location.href = "/";
+      router.push("/", null, { locale: "en" });
+      i18n.changeLanguage("en");
     }
   };
 
   useEffect(() => {
-    setLanguage(
-      typeof window !== "undefined" && localStorage.getItem("language")
-    );
+    const getLang =
+      typeof window !== "undefined" && localStorage.getItem("language");
+    setLanguage(getLang);
   }, []);
 
   return (

@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/horoscope/form": "pages/horoscope/form.js",
-  "/horoscope": "pages/horoscope.js",
-  "/": "pages/index.js"
+  "/store-links": "pages/store-links.js",
+  "/": "pages/index.js",
+  "/pricing": "pages/pricing.js"
 }
