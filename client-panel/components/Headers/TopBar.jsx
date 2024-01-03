@@ -8,29 +8,24 @@ const TopBar = () => {
   const router = useRouter();
 
   const languageHandler = (value) => {
-    setLanguage(value);
-    typeof window !== "undefined" && localStorage.setItem("language", value);
-    langChange(value);
-  };
-
-  const langChange = (value) => {
     if (value === "jp") {
+      setLanguage("jp");
       router.push("/jp", null, { locale: "jp" });
       i18n.changeLanguage("jp");
     } else {
+      setLanguage("en");
       router.push("/", null, { locale: "en" });
       i18n.changeLanguage("en");
     }
   };
 
   useEffect(() => {
-    const getLang =
-      typeof window !== "undefined" && localStorage.getItem("language");
-    if (getLang) {
-      setLanguage(getLang);
-      if (router.pathname === "/") {
-        langChange(getLang);
-      }
+    if (window.location.pathname.includes("jp")) {
+      typeof window !== "undefined" && localStorage.setItem("language", "jp");
+      setLanguage("jp");
+    } else {
+      typeof window !== "undefined" && localStorage.setItem("language", "en");
+      setLanguage("en");
     }
   }, []);
 

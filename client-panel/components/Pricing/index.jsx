@@ -7,6 +7,7 @@ const Index = () => {
   const { t } = useTranslation("pricing");
   const title1 = t("title");
   const title2 = t("title2");
+  const pricingBtn = t("pricingBtn");
   const pricingObj = t("pricingObj", { returnObjects: true });
 
   return (
@@ -29,15 +30,15 @@ const Index = () => {
         <TextAnimation
           letters={[
             {
-              letter: title2.split(' ')[0],
+              letter: title2.split(" ")[0],
               delay: "0.30",
             },
             {
-              letter: title2.split(' ')[1],
+              letter: title2.split(" ")[1],
               delay: "0.40",
             },
             {
-              letter: title2.split(' ')[2],
+              letter: title2.split(" ")[2],
               delay: "0.50",
             },
           ]}
@@ -49,7 +50,11 @@ const Index = () => {
         <div className="flex gap-5 flex-wrap justify-center mt-10">
           <Fade bottom>
             {pricingObj.map((el) => (
-              <PricingItem pricingObj={el} key={el.id} />
+              <PricingItem
+                pricingObj={el}
+                key={el.id}
+                pricingBtn={pricingBtn}
+              />
             ))}
           </Fade>
         </div>

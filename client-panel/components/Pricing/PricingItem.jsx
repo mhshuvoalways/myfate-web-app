@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import TickPhoto from "@/public/pricing/tick.svg";
 import ArrowDownBlue from "@/public/pricing/arrowDownBlue.svg";
 
-const PricingItem = ({ pricingObj }) => {
+const PricingItem = ({ pricingObj, pricingBtn }) => {
   const [itemExpand, setItemExpand] = useState(false);
   const { id, title, description, planTitle, inclueds } = pricingObj;
   const router = useRouter();
@@ -23,7 +23,7 @@ const PricingItem = ({ pricingObj }) => {
     <Fade key={id}>
       <div className="space-y-5 bg-white rounded-xl shadow p-5 min-w-full sm:min-w-[280px] max-w-[320px]">
         <div>
-          {title === "Premium plan" ? (
+          {title === "Premium" ? (
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-1">
                 <p className="text-3xl font-semibold">{title}</p>
@@ -59,7 +59,7 @@ const PricingItem = ({ pricingObj }) => {
             whileTap={{ scale: 0.9 }}
             className={`border border-gray-400 py-2 rounded font-semibold text-center w-full bg-my-blue text-white capitalize`}
           >
-            Start your journey
+            {pricingBtn}
           </motion.button>
         )}
         <div className="bg-gray-50 rounded-b-xl py-2 block md:hidden">
