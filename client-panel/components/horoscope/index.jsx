@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Img1 from "@/public/horoscope/1.png";
@@ -6,19 +5,6 @@ import Img2 from "@/public/horoscope/2.png";
 import Img3 from "@/public/horoscope/3.png";
 
 const Index = () => {
-  useEffect(() => {
-    const preferredLanguage =
-      typeof window !== "undefined" && localStorage.getItem("language");
-    if (!preferredLanguage) {
-      const browserLanguage = "en";
-      const userLanguage = window.confirm("Switch to Japan?")
-        ? "jp"
-        : browserLanguage;
-      typeof window !== "undefined" &&
-        localStorage.setItem("language", userLanguage);
-    }
-  }, []);
-
   return (
     <div className="mycontainer mt-10 mb-20">
       <div className="flex justify-center lg:justify-between gap-10 flex-wrap md:flex-nowrap items-center space-y-5">

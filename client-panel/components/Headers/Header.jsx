@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { isAuthenticate } from "@/store/actions/userAction";
-import TopBar from "./TopBar";
 import DashIcon from "@/public/header/dashboardicon.png";
 import Logo from "@/public/header/logo.png";
 
@@ -16,7 +15,6 @@ const Header = ({ toggleSidebar, userReducer }) => {
 
   return (
     <div className={`shadow-sm fixed left-0 right-0 bg-white z-50`}>
-      <TopBar />
       <div className="mx-auto flex justify-between items-center flex-wrap py-1 mycontainer">
         <button
           className="text-[26px] text-black w-32 mr-auto text-start sm:block hidden"

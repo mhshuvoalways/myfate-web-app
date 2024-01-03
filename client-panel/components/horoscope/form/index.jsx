@@ -29,14 +29,12 @@ const HoroScopeForm = () => {
   const onSubmitHandler = (e) => {
     if (userData) {
       const obj = userData;
-      obj.language =
-        typeof window !== "undefined" && localStorage.getItem("language");
+      obj.language = window.location.pathname.includes("jp") ? "jp" : "en";
       obj.type = router.query.type;
       e.preventDefault();
       dispatch(horoAdd(obj, router));
     }
   };
-
 
   useEffect(() => {
     if (!userReducer.isAuthenticate) {
