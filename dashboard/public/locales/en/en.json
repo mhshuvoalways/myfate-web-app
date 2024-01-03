@@ -1,0 +1,110 @@
+{
+  "form": {
+    "fName": "First Name",
+    "lName": "Last Name",
+    "email": "Email",
+    "emailDes": "Same email you have used in myfates",
+    "gender": ["Male", "Female"],
+    "bt": "Birth Date & Time",
+    "ymd": ["Year", "Month", "Day"],
+    "dk": "I know my birth time"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "1. Which do you feel more comfortable?",
+      "firstAns": {
+        "option": "Mountain",
+        "personality": ""
+      },
+      "secAnd": {
+        "option": "Ocean",
+        "personality": ""
+      }
+    },
+    {
+      "id": 2,
+      "question": "Which do you feel more comfortable?",
+      "firstAns": {
+        "option": "Sun",
+        "personality": ""
+      },
+      "secAnd": {
+        "option": "Moon",
+        "personality": ""
+      }
+    },
+    {
+      "id": 3,
+      "question": "Which do you feel more comfortable?",
+      "firstAns": {
+        "option": "Sky",
+        "personality": ""
+      },
+      "secAnd": {
+        "option": "Ground",
+        "personality": ""
+      }
+    },
+    {
+      "id": 4,
+      "question": "Which do you feel more comfortable?",
+      "firstAns": {
+        "option": "Ice",
+        "personality": ""
+      },
+      "secAnd": {
+        "option": "Fire",
+        "personality": ""
+      }
+    },
+    {
+      "id": 5,
+      "question": "After a long day what situation would you feel more comfortable?",
+      "firstAns": {
+        "option": "Friends waiting for you to be together.",
+        "personality": "P"
+      },
+      "secAnd": {
+        "option": "Being alone and going over your thoughts and questions.",
+        "personality": "K"
+      }
+    },
+    {
+      "id": 6,
+      "question": "When faced with a problem in a work or project…",
+      "firstAns": {
+        "option": "Prefer brainstorming novel ideas and theoretical solutions that haven't been tried before.",
+        "personality": "O"
+      },
+      "secAnd": {
+        "option": "Focus on practical, tried-and-true methods and data-driven approaches",
+        "personality": "G"
+      }
+    },
+    {
+      "id": 7,
+      "question": "In a situation where there is a conflict between colleagues at work",
+      "firstAns": {
+        "option": "Prioritize understanding each person’s feelings and values to reach a harmonious solution.",
+        "personality": "E"
+      },
+      "secAnd": {
+        "option": "Prefer to resolve the issue by objectively assessing the facts and interests",
+        "personality": "B"
+      }
+    },
+    {
+      "id": 8,
+      "question": "When faced with a work deadline",
+      "firstAns": {
+        "option": "Tend to start closer to the deadline, finding that the time pressure can be stimulating and productive?",
+        "personality": "X"
+      },
+      "secAnd": {
+        "option": "Start working on the task well in advance to ensure it’s completed on time?",
+        "personality": "R"
+      }
+    }
+  ]
+}

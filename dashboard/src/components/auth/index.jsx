@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import RadioBtn from "./RadioBtn";
 import Button from "../common/Button";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
   const [dontKnow, setDontKnow] = useState(false);
@@ -19,6 +20,9 @@ const Login = () => {
     birthTimeHH: "",
     birthTimeMM: "",
   });
+
+  const { t } = useTranslation();
+  const myform = t("form", { returnObjects: true });
 
   const userReducer = useSelector((store) => store.userReducer);
 
@@ -84,8 +88,8 @@ const Login = () => {
           </p>
         </div>
         <form className="w-full md:w-7/12" onSubmit={onSubmitHandler}>
-          <div className="mt-8">
-            <p>First Name:</p>
+          <div>
+            <p>{myform.fName}:</p>
             <input
               type="text"
               className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
@@ -95,7 +99,7 @@ const Login = () => {
             />
           </div>
           <div className="mt-8">
-            <p>Last Name:</p>
+            <p>{myform.lName}:</p>
             <input
               type="text"
               className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
@@ -106,7 +110,7 @@ const Login = () => {
           </div>
           <div className="mt-8">
             <div className="flex items-center gap-2">
-              <p>Email:</p> <small>(Same email you have used in myfates)</small>
+              <p>{myform.email}:</p> <small>({myform.emailDes})</small>
             </div>
             <input
               type="email"
@@ -117,7 +121,7 @@ const Login = () => {
             />
           </div>
           <div className="mt-8">
-            <p>Gender:</p>
+            <p>{myform.gender}:</p>
             <select
               className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
               required
@@ -129,10 +133,10 @@ const Login = () => {
             </select>
           </div>
           <div className="mt-8">
-            <p>Birth Date & Time:</p>
+            <p>{myform.bt}:</p>
             <div className="flex gap-5 items-center mt-5">
               <div>
-                <p>Month</p>
+                <p>{myform.ymd[1]}</p>
                 <div className="flex gap-5 items-center">
                   <input
                     type="text"
@@ -147,7 +151,7 @@ const Login = () => {
                 </div>
               </div>
               <div>
-                <p>Day</p>
+                <p>{myform.ymd[2]}</p>
                 <div className="flex gap-5 items-center">
                   <input
                     type="text"
@@ -162,7 +166,7 @@ const Login = () => {
                 </div>
               </div>
               <div>
-                <p>Year</p>
+                <p>{myform.ymd[0]}</p>
                 <input
                   type="text"
                   className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
@@ -230,7 +234,7 @@ const Login = () => {
                 onChange={birthHandler}
                 className="cursor-pointer"
               />
-              <p className="cursor-pointer">{`I know my birth time`}</p>
+              <p className="cursor-pointer">{myform.dk}</p>
             </label>
           </div>
           <Button value={"SUBMIT"} className={"mt-8 w-full"} />

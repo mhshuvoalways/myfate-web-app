@@ -1,8 +1,8 @@
 {
   "..\\components\\NotConvinced\\index.jsx -> ./ContentScroller": {
-    "id": 9686,
+    "id": "..\\components\\NotConvinced\\index.jsx -> ./ContentScroller",
     "files": [
-      "static/chunks/686.8930551aa33dccbe.js"
+      "static/chunks/components_NotConvinced_ContentScroller_js.js"
     ]
   }
 }

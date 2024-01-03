@@ -4,120 +4,16 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import ImgTemp from "../../public/images/template/kl.png";
 import { userLogin } from "../../store/actions/userAction";
-
-const questions = [
-  {
-    id: 1,
-    question: "1. Which do you feel more comfortable?",
-    firstAns: {
-      option: "Mountain",
-      personality: "",
-    },
-    secAnd: {
-      option: "Ocean",
-      personality: "",
-    },
-  },
-  {
-    id: 2,
-    question: "Which do you feel more comfortable?",
-    firstAns: {
-      option: "Sun",
-      personality: "",
-    },
-    secAnd: {
-      option: "Moon",
-      personality: "",
-    },
-  },
-  {
-    id: 3,
-    question: "Which do you feel more comfortable?",
-    firstAns: {
-      option: "Sky",
-      personality: "",
-    },
-    secAnd: {
-      option: "Ground",
-      personality: "",
-    },
-  },
-  {
-    id: 4,
-    question: "Which do you feel more comfortable?",
-    firstAns: {
-      option: "Ice",
-      personality: "",
-    },
-    secAnd: {
-      option: "Fire",
-      personality: "",
-    },
-  },
-  {
-    id: 5,
-    question:
-      "After a long day what situation would you feel more comfortable?",
-    firstAns: {
-      option: "Being alone and going over your thoughts and questions.",
-      personality: "P",
-    },
-    secAnd: {
-      option:
-        "Clothes that I hesitated to buy because they were a bit expensive.",
-      personality: "K",
-    },
-  },
-  {
-    id: 6,
-    question: "When faced with a problem in a work or project…",
-    firstAns: {
-      option:
-        "Prefer brainstorming novel ideas and theoretical solutions that haven't been tried before.",
-      personality: "O",
-    },
-    secAnd: {
-      option:
-        "Focus on practical, tried-and-true methods and data-driven approaches",
-      personality: "G",
-    },
-  },
-  {
-    id: 7,
-    question:
-      "In a situation where there is a conflict between colleagues at work",
-    firstAns: {
-      option:
-        "Prioritize understanding each person’s feelings and values to reach a harmonious solution.",
-      personality: "E",
-    },
-    secAnd: {
-      option:
-        "Prefer to resolve the issue by objectively assessing the facts and interests",
-      personality: "B",
-    },
-  },
-  {
-    id: 8,
-    question: "When faced with a work deadline",
-    firstAns: {
-      option:
-        "Tend to start closer to the deadline, finding that the time pressure can be stimulating and productive?",
-      personality: "X",
-    },
-    secAnd: {
-      option:
-        "Start working on the task well in advance to ensure it’s completed on time?",
-      personality: "R",
-    },
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Template = () => {
   const [start, setStart] = useState("initial");
   const [stepQuestions, setStepQuestions] = useState(0);
   const [userPersonality, setUserPersonality] = useState("");
   const userReducer = useSelector((store) => store.userReducer);
+
+  const { t } = useTranslation();
+  const questions = t("questions", { returnObjects: true });
 
   const dispatch = useDispatch();
   const router = useNavigate();

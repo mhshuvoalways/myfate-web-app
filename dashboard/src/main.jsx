@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import App from "./App";
 import setAuthToken from "../utils/setAuthToken";
 import store from "../store";
+import "./i18n";
 import "./index.css";
 
 const token = localStorage.getItem("token");

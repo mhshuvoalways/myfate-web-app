@@ -1,0 +1,110 @@
+{
+  "form": {
+    "fName": "名",
+    "lName": "姓",
+    "email": "メール",
+    "emailDes": "Myfates で使用したものと同じメール",
+    "gender": ["男", "女性"],
+    "bt": "生年月日と時刻",
+    "ymd": ["年", "月", "日"],
+    "dk": "私は自分の出生時間を知っています。"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "1. どちらがより快適だと感じますか?",
+      "firstAns": {
+        "option": "山",
+        "personality": ""
+      },
+      "secAnd": {
+        "option": "海",
+        "personality": ""
+      }
+    },
+    {
+      "id": 2,
+      "question": "どちらがより快適だと感じますか？",
+      "firstAns": {
+        "option": "太陽",
+        "personality": ""
+      },
+      "secAnd": {
+        "option": "月",
+        "personality": ""
+      }
+    },
+    {
+      "id": 3,
+      "question": "どちらがより快適だと感じますか？",
+      "firstAns": {
+        "option": "空",
+        "personality": ""
+      },
+      "secAnd": {
+        "option": "地面",
+        "personality": ""
+      }
+    },
+    {
+      "id": 4,
+      "question": "どちらがより快適だと感じますか？",
+      "firstAns": {
+        "option": "氷",
+        "personality": ""
+      },
+      "secAnd": {
+        "option": "火",
+        "personality": ""
+      }
+    },
+    {
+      "id": 5,
+      "question": "長い一日を終えた後、どのような状況がより快適に感じられますか?",
+      "firstAns": {
+        "option": "一人になって自分の考えや質問を検討します。",
+        "personality": "P"
+      },
+      "secAnd": {
+        "option": "ちょっと高かったので買うのをためらっていた服。",
+        "personality": "K"
+      }
+    },
+    {
+      "id": 6,
+      "question": "仕事やプロジェクトで問題に直面したとき…",
+      "firstAns": {
+        "option": "これまで試したことのない新しいアイデアや理論的な解決策をブレインストーミングすることを好みます。",
+        "personality": "O"
+      },
+      "secAnd": {
+        "option": "実践的で実証済みの手法とデータ主導のアプローチに焦点を当てる",
+        "personality": "G"
+      }
+    },
+    {
+      "id": 7,
+      "question": "職場で同僚間で衝突が起きた場合",
+      "firstAns": {
+        "option": "調和のとれた解決策に到達するために、各人の感情や価値観を理解することを優先します。",
+        "personality": "E"
+      },
+      "secAnd": {
+        "option": "事実と利益を客観的に評価して問題を解決することを好む",
+        "personality": "B"
+      }
+    },
+    {
+      "id": 8,
+      "question": "仕事の締め切りに迫られたとき",
+      "firstAns": {
+        "option": "時間のプレッシャーが刺激的で生産的になる可能性があると考えて、締め切りが近づいて作業を開始する傾向がありますか?",
+        "personality": "X"
+      },
+      "secAnd": {
+        "option": "時間通りに完了するために、かなり前からタスクに取り組み始めますか?",
+        "personality": "R"
+      }
+    }
+  ]
+}
