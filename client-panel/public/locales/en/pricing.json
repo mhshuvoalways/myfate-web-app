@@ -1,7 +1,10 @@
 {
   "title": "Tiny Investment",
   "title2": "And Get Everything",
-  "pricingBtn": "Start Your Journey",
+  "pricingBtn": {
+    "normal": "Start Your Journey",
+    "soldout": "Sold Out"
+  },
   "pricingObj": [
     {
       "id": 1,

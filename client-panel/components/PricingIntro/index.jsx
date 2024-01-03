@@ -15,7 +15,7 @@ const Index = () => {
   const { t } = useTranslation("pricing");
   const title1 = t("title");
   const title2 = t("title2");
-  const pricingBtn = t("pricingBtn");
+  const pricingBtn = t("pricingBtn", { returnObjects: true });
   const pricingObj = t("pricingObj", { returnObjects: true });
 
   useEffect(() => {

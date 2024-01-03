@@ -1,7 +1,10 @@
 {
   "title": "少額の投資",
   "title2": "そしてすべてを手に入れましょう",
-  "pricingBtn": "旅を始めましょう",
+  "pricingBtn": {
+    "normal": "旅を始めましょう",
+    "soldout": "完売"
+  },
   "pricingObj": [
     {
       "id": 1,

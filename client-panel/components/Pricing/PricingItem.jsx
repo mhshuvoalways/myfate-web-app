@@ -45,13 +45,13 @@ const PricingItem = ({ pricingObj, pricingBtn }) => {
           <p className="text-lg text-gray-500 mt-2">{description}</p>
         </div>
         <p className="text-2xl font-semibold">{`USD $${planTitle}`}</p>
-        {title === "Premium Max" ? (
+        {title === "Premium Max" || title === "プレミアムマックス" ? (
           <motion.button
             whileTap={{ scale: 0.9 }}
             className={`border border-gray-400 py-2 rounded font-semibold text-center w-full bg-gray-500 cursor-not-allowed text-white capitalize`}
             disabled
           >
-            Sold Out
+            {pricingBtn.soldout}
           </motion.button>
         ) : (
           <motion.button
@@ -59,7 +59,7 @@ const PricingItem = ({ pricingObj, pricingBtn }) => {
             whileTap={{ scale: 0.9 }}
             className={`border border-gray-400 py-2 rounded font-semibold text-center w-full bg-my-blue text-white capitalize`}
           >
-            {pricingBtn}
+            {pricingBtn.normal}
           </motion.button>
         )}
         <div className="bg-gray-50 rounded-b-xl py-2 block md:hidden">
