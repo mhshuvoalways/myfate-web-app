@@ -26,7 +26,12 @@ const TopBar = () => {
   useEffect(() => {
     const getLang =
       typeof window !== "undefined" && localStorage.getItem("language");
-    setLanguage(getLang);
+    if (getLang) {
+      setLanguage(getLang);
+      if (router.pathname === "/") {
+        langChange(getLang);
+      }
+    }
   }, []);
 
   return (
