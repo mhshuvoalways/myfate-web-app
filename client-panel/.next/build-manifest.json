@@ -27,25 +27,35 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/dailyfate": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/dailyfate.js"
+    ],
+    "/financefate": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/financefate.js"
+    ],
+    "/fullreport": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/fullreport.js"
+    ],
     "/horoscope": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/horoscope.js"
-    ],
-    "/horoscope/form": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/horoscope/form.js"
     ],
     "/horoscope/result": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/horoscope/result.js"
     ],
-    "/signup": [
+    "/lovefate": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/signup.js"
+      "static/chunks/pages/lovefate.js"
     ]
   },
   "ampFirstPages": []
