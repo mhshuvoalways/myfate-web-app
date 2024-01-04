@@ -2,7 +2,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import SubMenus from "./SubMenus";
-import Language from './Language'
 
 const Categories = () => {
   const [menuName, setMenuName] = useState("");
@@ -22,21 +21,20 @@ const Categories = () => {
                   onMouseEnter={() => setMenuName("explorefuture")}
                   onMouseLeave={() => setMenuName("")}
                 >
-                  <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs pb-1">
+                  <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs py-2">
                     {el}
                   </p>
                   <SubMenus menuName={menuName} subMenusItems={subMenusItems} />
                 </div>
               ) : (
                 <Link href="/horoscope">
-                  <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs pb-1">
+                  <p className="cursor-pointer hover:text-my-text-gray font-gabarito uppercase text-xs py-2">
                     {el}
                   </p>
                 </Link>
               )}
             </div>
           ))}
-          <Language/>
         </div>
       </div>
     </div>

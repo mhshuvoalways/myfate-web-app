@@ -20,8 +20,9 @@ const Login = () => {
     birthTimeHH: "",
     birthTimeMM: "",
   });
+  const [preLang, setPreLang] = useState("");
 
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
   const myform = t("form", { returnObjects: true });
 
   const userReducer = useSelector((store) => store.userReducer);
@@ -41,6 +42,19 @@ const Login = () => {
       ...userData,
       [event.target.name]: event.target.value,
     });
+  };
+
+  useEffect(() => {
+    const getLanguage =
+      typeof window !== "undefined" && localStorage.getItem("language");
+    setPreLang(getLanguage);
+    i18n.changeLanguage(getLanguage);
+  }, [i18n]);
+
+  const changedLanguage = (value) => {
+    setPreLang(value);
+    i18n.changeLanguage(value);
+    typeof window !== "undefined" && localStorage.setItem("language", value);
   };
 
   const onSubmitHandler = (e) => {
@@ -89,6 +103,19 @@ const Login = () => {
         </div>
         <form className="w-full md:w-7/12" onSubmit={onSubmitHandler}>
           <div>
+            <div className="flex items-center gap-2">
+              <p>Your preferred language:</p>
+            </div>
+            <select
+              className="border-b-2 border-gray-400 outline-0 pr-2 w-full"
+              onChange={(e) => changedLanguage(e.target.value)}
+              value={preLang}
+            >
+              <option value={"en"}>English</option>
+              <option value={"jp"}>Japanese</option>
+            </select>
+          </div>
+          <div className="mt-8">
             <p>{myform.fName}:</p>
             <input
               type="text"

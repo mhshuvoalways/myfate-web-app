@@ -13,7 +13,7 @@ const TopHeader = () => {
 
   return (
     <>
-      <div className="pb-[65px]">
+      <div className="pb-[50px]">
         <Header toggleSidebar={toggleSidebar} userReducer={userReducer} />
         <Sidebar
           isOpen={isOpen}

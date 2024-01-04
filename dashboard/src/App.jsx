@@ -11,28 +11,13 @@ import Tostify from "./components/utils/Toastify";
 import Loading from "./components/utils/Loading";
 import { isAuthenticate } from "../store/actions/userAction";
 import Answer from "./pages/Answere";
-import { useTranslation } from "react-i18next";
 
 const App = () => {
   const dispatch = useDispatch();
-  const { i18n } = useTranslation();
 
   useEffect(() => {
     dispatch(isAuthenticate());
   }, [dispatch]);
-
-  useEffect(() => {
-    const preferredLanguage = localStorage.getItem("language");
-    if (!preferredLanguage) {
-      setTimeout(() => {
-        const userLanguage = window.confirm("Switch to Japan?") ? "jp" : "en";
-        i18n.changeLanguage(userLanguage);
-        localStorage.setItem("language", userLanguage);
-      }, 2000);
-    } else {
-      i18n.changeLanguage(preferredLanguage);
-    }
-  }, [i18n]);
 
   return (
     <div>

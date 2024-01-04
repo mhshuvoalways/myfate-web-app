@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { isAuthenticate } from "@/store/actions/userAction";
 import DashIcon from "@/public/header/dashboardicon.png";
+import Language from "./Language";
 import Logo from "@/public/header/logo.png";
 
 const Header = ({ toggleSidebar, userReducer }) => {
@@ -15,7 +16,7 @@ const Header = ({ toggleSidebar, userReducer }) => {
 
   return (
     <div className={`shadow-sm fixed left-0 right-0 bg-white z-50`}>
-      <div className="mx-auto flex justify-between items-center flex-wrap py-1 mycontainer">
+      <div className="mx-auto flex justify-between items-center gap-0 sm:gap-5 flex-wrap py-1 mycontainer">
         <button
           className="text-[26px] text-black w-32 mr-auto text-start sm:block hidden"
           onClick={toggleSidebar}
@@ -25,6 +26,9 @@ const Header = ({ toggleSidebar, userReducer }) => {
         <Link href="/">
           <Image src={Logo} className="mr-0 sm:mr-2.5 w-40" alt="" />
         </Link>
+        <div className="block sm:hidden">
+        <Language />
+        </div>
         <button
           className="text-[26px] text-black block sm:hidden"
           onClick={toggleSidebar}
@@ -64,6 +68,9 @@ const Header = ({ toggleSidebar, userReducer }) => {
               </Link>
             </>
           )}
+        </div>
+        <div className="hidden sm:block">
+          <Language />
         </div>
       </div>
     </div>
