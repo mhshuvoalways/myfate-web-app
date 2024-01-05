@@ -1,6 +1,3 @@
-import ArrowDown from "@/public/buildgrowth/arrowDown.svg";
-import Nigeria from "@/public/flag/ng.png";
-import Image from "next/image";
 import { useEffect } from "react";
 import PricingItem from "../Pricing/PricingItem";
 import TextAnimation from "../Utils/TextAnimation";

@@ -11,6 +11,7 @@
       "title": "Pro",
       "description": "For anyone who wants to know deeper about themselves",
       "planTitle": 30,
+      "timeline": "monthly",
       "inclueds": [
         "Life Total Analysis",
         "Life Advice",
@@ -31,6 +32,7 @@
       "title": "Premium",
       "description": "For anyone who wants to get a personalized analysis from a doctor who has been in Sajoo for decades",
       "planTitle": 150,
+      "timeline": "monthly",
       "inclueds": [
         "Doctor’s Full Analysis once a month",
         "Life Total Analysis",
@@ -52,6 +54,7 @@
       "title": "Premium Max",
       "description": "For anyone who wants to get a personalized+ analysis from a doctor who has been in Sajoo for decades",
       "planTitle": 300,
+      "timeline": "monthly",
       "inclueds": [
         "Doctor’s Full Analysis twice a month",
         "Doctor’s Q&A",

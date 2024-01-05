@@ -13,7 +13,7 @@
   "questions": [
     {
       "id": 1,
-      "question": "1. Which do you feel more comfortable?",
+      "question": "Which do you feel more comfortable?",
       "firstAns": {
         "option": "Mountain",
         "personality": ""
@@ -73,7 +73,7 @@
     },
     {
       "id": 6,
-      "question": "When faced with a problem in a work or project…",
+      "question": "When faced with a problem in a work or project?",
       "firstAns": {
         "option": "Prefer brainstorming novel ideas and theoretical solutions that haven't been tried before.",
         "personality": "O"
@@ -85,7 +85,7 @@
     },
     {
       "id": 7,
-      "question": "In a situation where there is a conflict between colleagues at work",
+      "question": "In a situation where there is a conflict between colleagues at worK?",
       "firstAns": {
         "option": "Prioritize understanding each person’s feelings and values to reach a harmonious solution.",
         "personality": "E"
@@ -97,13 +97,13 @@
     },
     {
       "id": 8,
-      "question": "When faced with a work deadline",
+      "question": "When faced with a work deadline?",
       "firstAns": {
-        "option": "Tend to start closer to the deadline, finding that the time pressure can be stimulating and productive?",
+        "option": "Tend to start closer to the deadline, finding that the time pressure can be stimulating and productive",
         "personality": "X"
       },
       "secAnd": {
-        "option": "Start working on the task well in advance to ensure it’s completed on time?",
+        "option": "Start working on the task well in advance to ensure it’s completed on time",
         "personality": "R"
       }
     }

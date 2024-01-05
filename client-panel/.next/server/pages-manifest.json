@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/fullreport": "pages/fullreport.js",
-  "/lovefate": "pages/lovefate.js"
+  "/pricing": "pages/pricing.js",
+  "/horoscope": "pages/horoscope.js",
+  "/": "pages/index.js"
 }

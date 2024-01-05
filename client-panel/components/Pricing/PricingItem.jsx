@@ -9,7 +9,7 @@ import ArrowDownBlue from "@/public/pricing/arrowDownBlue.svg";
 
 const PricingItem = ({ pricingObj, pricingBtn }) => {
   const [itemExpand, setItemExpand] = useState(false);
-  const { id, title, description, planTitle, inclueds } = pricingObj;
+  const { id, title, description, planTitle, inclueds, timeline } = pricingObj;
   const router = useRouter();
   const userReducer = useSelector((store) => store.userReducer);
 
@@ -44,7 +44,10 @@ const PricingItem = ({ pricingObj, pricingBtn }) => {
           )}
           <p className="text-lg text-gray-500 mt-2">{description}</p>
         </div>
-        <p className="text-2xl font-semibold">{`USD $${planTitle}`}</p>
+        <div className="flex items-center gap-3">
+          <p className="text-2xl font-semibold">{`USD $${planTitle}`}</p>
+          <p>{timeline}</p>
+        </div>
         {title === "Premium Max" || title === "プレミアムマックス" ? (
           <motion.button
             whileTap={{ scale: 0.9 }}

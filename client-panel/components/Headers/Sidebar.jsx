@@ -10,7 +10,7 @@ const Sidebar = ({ isOpen, toggleSidebar, userReducer }) => {
     <div
       className={`bg-white h-screen transform transition-all duration-300 shadow-lg fixed ${
         isOpen
-          ? "translate-x-0 w-full sm:w-3/12 z-[60]"
+          ? "translate-x-0 w-full sm:w-3/12 z-[60] overflow-y-scroll"
           : "-translate-x-full w-0 opacity-0 -z-10"
       }`}
     >
@@ -24,68 +24,72 @@ const Sidebar = ({ isOpen, toggleSidebar, userReducer }) => {
         <div className="py-5">
           <p className="text-2xl pb-2">Home</p>
           <hr />
-          <div className="pt-3">
+          <div>
             <Link href="/">
               <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
                 Home
               </p>
             </Link>
-            <Link href="/about">
+            <Link href="/fullreport">
               <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
-                About
+                Entire Life
               </p>
             </Link>
-            <Link href="/store-links">
+            <Link href="/horoscope">
               <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
-                Store Links
+                Free Horoscope
               </p>
             </Link>
-            <Link href="/pricing">
+            <Link href="/">
               <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
-                Pricing
+                Celebrity Future
               </p>
             </Link>
-            <Link href="/past-life">
+          </div>
+        </div>
+        <div className="py-5">
+          <p className="text-2xl pb-2">Dashboard</p>
+          <hr />
+          <div>
+            <Link href="/fullreport">
               <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
-                Past Life
+                Entire Life
               </p>
             </Link>
+            <Link href="/">
+              <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
+                Daily Outlook
+              </p>
+            </Link>
+            <Link href="/horoscope">
+              <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
+                Love Outlook
+              </p>
+            </Link>
+            <Link href="/">
+              <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
+                Finance Outlook
+              </p>
+            </Link>
+          </div>
+        </div>
+        <div className="py-5">
+          <p className="text-2xl pb-2">Account</p>
+          <hr />
+          <div>
             {userReducer.isAuthenticate ? (
-              userReducer.user?.subscriptionPlan?.planType ? (
-                <p
-                  className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800"
-                  onClick={() => dispatch(logout(router))}
-                >
-                  Logout
-                </p>
-              ) : (
-                <>
-                  {/* <Link href={"/pricing?suggest=payment"}>
-                    <p className="cursor-pointer hover:text-gray-800 text-my-text-gray">
-                      Dashboard
-                    </p>
-                  </Link> */}
-                  <p
-                    className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800"
-                    onClick={() => dispatch(logout(router))}
-                  >
-                    Logout
-                  </p>
-                </>
-              )
+              <p
+                className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800"
+                onClick={() => dispatch(logout(router))}
+              >
+                Logout
+              </p>
             ) : (
-              <>
-                {/* <Link href={"/login"}>
-                  <p className="cursor-pointer hover:text-gray-800 text-my-text-gray">
-                    Dashboard
-                  </p>
-                </Link> */}
-                <Link href="/login">
-                  <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
-                    Login
-                  </p>
-                </Link>
-              </>
+              <Link href="/login">
+                <p className="cursor-pointer text-my-text-gray my-4 hover:text-gray-800">
+                  Login
+                </p>
+              </Link>
             )}
           </div>
         </div>

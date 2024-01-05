@@ -18,59 +18,63 @@ const Header = ({ toggleSidebar, userReducer }) => {
     <div className={`shadow-sm fixed left-0 right-0 bg-white z-50`}>
       <div className="mx-auto flex justify-between items-center gap-0 sm:gap-5 flex-wrap py-1 mycontainer">
         <button
-          className="text-[26px] text-black w-32 mr-auto text-start sm:block hidden"
+          className="text-[26px] text-black w-32 text-start sm:block hidden"
           onClick={toggleSidebar}
         >
           ☰
         </button>
         <Link href="/">
-          <Image src={Logo} className="mr-0 sm:mr-2.5 w-40" alt="" />
+          <Image src={Logo} className="w-40 static sm:absolute top-2" alt="" />
         </Link>
-        <div className="block sm:hidden">
-        <Language />
+        <div className="flex items-center gap-3 ml-auto sm:ml-0 md:-ml-40">
+          <div className="block sm:hidden">
+            <Language />
+          </div>
+          <button
+            className="text-[26px] text-black block sm:hidden ml-auto"
+            onClick={toggleSidebar}
+          >
+            ☰
+          </button>
         </div>
-        <button
-          className="text-[26px] text-black block sm:hidden"
-          onClick={toggleSidebar}
-        >
-          ☰
-        </button>
-        <div className="gap-2 hidden sm:flex w-0 sm:w-32 ml-auto text-end">
-          {userReducer.isAuthenticate ? (
-            userReducer.user?.subscriptionPlan?.planType ? (
-              <Link
-                href={"https://myfate-client-dashboard.vercel.app"}
-                className="w-0 sm:w-6 cursor-pointer ml-auto hidden sm:block"
-                target="blank"
-              >
-                <Image src={DashIcon} alt="" />
-              </Link>
+        <div className="flex items-center gap-3">
+          <div className="hidden sm:block">
+            <Language />
+          </div>
+          <div className="gap-2 hidden sm:flex ml-auto text-end">
+            {userReducer.isAuthenticate ? (
+              userReducer.user?.subscriptionPlan?.planType ? (
+                <Link
+                  href={"https://myfate-client-dashboard.vercel.app"}
+                  className="w-0 sm:w-6 cursor-pointer ml-auto hidden sm:block"
+                  target="blank"
+                >
+                  <Image src={DashIcon} alt="" />
+                </Link>
+              ) : (
+                <Link
+                  href={"/pricing?suggest=payment"}
+                  className="w-0 sm:w-6 cursor-pointer ml-auto hidden sm:block"
+                >
+                  <Image src={DashIcon} alt="" />
+                </Link>
+              )
             ) : (
-              <Link
-                href={"/pricing?suggest=payment"}
-                className="w-0 sm:w-6 cursor-pointer ml-auto hidden sm:block"
-              >
-                <Image src={DashIcon} alt="" />
-              </Link>
-            )
-          ) : (
-            <>
-              <Link href="signup">
-                <p className="cursor-pointer hover:text-gray-800 text-my-text-gray">
-                  Sign Up
-                </p>
-              </Link>
-              <p className="text-my-text-gray">/</p>
-              <Link href="/login">
-                <p className="text-my-text-gray cursor-pointer hover:text-gray-800">
-                  Login
-                </p>
-              </Link>
-            </>
-          )}
-        </div>
-        <div className="hidden sm:block">
-          <Language />
+              <>
+                <Link href="signup">
+                  <p className="cursor-pointer hover:text-gray-800 text-my-text-gray">
+                    Sign Up
+                  </p>
+                </Link>
+                <p className="text-my-text-gray">/</p>
+                <Link href="/login">
+                  <p className="text-my-text-gray cursor-pointer hover:text-gray-800">
+                    Login
+                  </p>
+                </Link>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>

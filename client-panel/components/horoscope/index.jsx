@@ -12,8 +12,8 @@ const Index = () => {
           <Link href={"/horoscope/form?type=2024"}>
             <Image src={Img3} alt="" className="w-full mb-2 rounded-2xl" />
             <div className="space-y-1">
-              <p className="font-semibold">2024 Finance Horoscope</p>
-              <p className="text-sm">2024 Finance Horoscope</p>
+              <p className="font-semibold">2024 Overall Fortune</p>
+              <p className="text-sm">2024 Overall Fortune</p>
               <div className="flex gap-2 pt-2">
                 <small className="bg-[#06243F] text-white py-1 px-2 rounded-md font-semibold">
                   NEW
@@ -29,14 +29,11 @@ const Index = () => {
           <Link href={"/horoscope/form?type=2024love"}>
             <Image src={Img2} alt="" className="w-full mb-2 rounded-2xl" />
             <div className="space-y-1">
-              <p className="font-semibold">2024 Finance Love</p>
-              <p className="text-sm">2024 Finance Love</p>
-              <div className="flex gap-2 pt-2">
+              <p className="font-semibold">2024 Love Fortune</p>
+              <p className="text-sm">2024 Love Fortune</p>
+              <div className="pt-2">
                 <small className="bg-[#06243F] text-white py-1 px-2 rounded-md font-semibold">
                   NEW
-                </small>
-                <small className="bg-[#5E17EB] text-white py-1 px-2 rounded-md font-semibold">
-                  HOT
                 </small>
               </div>
             </div>
@@ -46,14 +43,11 @@ const Index = () => {
           <Link href={"/horoscope/form?type=2024finance"}>
             <Image src={Img1} alt="" className="w-full mb-2 rounded-2xl" />
             <div className="space-y-1">
-              <p className="font-semibold">2024 Finance Horoscope</p>
-              <p className="text-sm">2024 Finance Horoscope</p>
-              <div className="flex gap-2 pt-2">
+              <p className="font-semibold">2024 Finance Fortunee</p>
+              <p className="text-sm">2024 Finance Fortunee</p>
+              <div className="pt-2">
                 <small className="bg-[#06243F] text-white py-1 px-2 rounded-md font-semibold">
                   NEW
-                </small>
-                <small className="bg-[#5E17EB] text-white py-1 px-2 rounded-md font-semibold">
-                  HOT
                 </small>
               </div>
             </div>
