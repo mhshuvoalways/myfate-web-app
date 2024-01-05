@@ -26,7 +26,7 @@ const Header = ({ toggleSidebar, userReducer }) => {
         <Link href="/">
           <Image src={Logo} className="w-40 static sm:absolute top-2" alt="" />
         </Link>
-        <div className="flex items-center gap-3 ml-auto sm:ml-0 md:-ml-40">
+        <div className="flex items-center gap-3 ml-auto md:ml-0 lg:-ml-72">
           <div className="block sm:hidden">
             <Language />
           </div>

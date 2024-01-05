@@ -61,7 +61,7 @@ const Index = () => {
           </li>
           <li className="mb-2.5 md:mb-3.75 flex items-center">
             <Link
-              href="/sub-policy"
+              href="/subscription-policy"
               className="text-grey-fields-100 hover:text-accent-yellow-500 font-medium text-1sm md:text-base whitespace-nowrap cursor-pointer"
             >
               {subPolicy}

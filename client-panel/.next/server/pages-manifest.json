@@ -2,7 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/pricing": "pages/pricing.js",
-  "/horoscope": "pages/horoscope.js",
-  "/": "pages/index.js"
+  "/privacy-policy": "pages/privacy-policy.js",
+  "/terms-of-service": "pages/terms-of-service.js",
+  "/refund-policy": "pages/refund-policy.js",
+  "/subscription-policy": "pages/subscription-policy.js"
 }
