@@ -286,4 +286,7 @@
     );
     display: block;
   }
+  .list-disc{
+    list-style: disc !important;
+  }
 }

@@ -22,11 +22,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/privacy-policy": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/privacy-policy.js"
-    ],
     "/refund-policy": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -36,11 +31,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/subscription-policy.js"
-    ],
-    "/terms-of-service": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/terms-of-service.js"
     ]
   },
   "ampFirstPages": []
