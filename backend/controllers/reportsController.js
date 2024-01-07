@@ -2,9 +2,11 @@ const Reports = require("../Model/Reports");
 const finalAPI = require("../utils/reports/finalAPI");
 const igdop = require("../utils/igdop/imageList");
 const serverError = require("../utils/serverError");
+const User = require("../Model/User");
+const moment = require("moment");
 
 const addReports = (req, res) => {
-  const { _id } = req.user;
+  const { _id, email } = req.user;
   const { firstName, lastName, gender, personality, language } = req.body;
   const userName = `${firstName} ${lastName}`;
   const result = igdop(personality);
@@ -94,8 +96,21 @@ const addReports = (req, res) => {
       };
       new Reports(newObj)
         .save()
-        .then((response) => {
-          res.status(200).json(response);
+        .then(() => {
+          let today = new Date();
+          let expireDate = new Date(today);
+          expireDate.setDate(today.getDate() + Number(process.env.EXPIRE_DATE));
+          const userObj = {
+            "subscriptionPlan.expireDate":
+              moment(expireDate).format("YYYY-MM-DD"),
+          };
+          User.findOneAndUpdate({ email }, userObj, { new: true })
+            .then((response) => {
+              res.status(200).json(response);
+            })
+            .catch(() => {
+              serverError(res);
+            });
         })
         .catch(() => {
           serverError(res);

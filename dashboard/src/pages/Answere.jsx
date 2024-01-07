@@ -2,18 +2,21 @@ import { useState, useEffect } from "react";
 import { Fade } from "react-reveal";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import moment from "moment";
 import ImgTemp from "../../public/images/template/kl.png";
-import { userLogin } from "../../store/actions/userAction";
 import { useTranslation } from "react-i18next";
+import { addAllReports } from "../../store/actions/reportAction";
+import { addReport } from "../../store/actions/reportsAction";
 
 const Template = () => {
   const [start, setStart] = useState("initial");
   const [stepQuestions, setStepQuestions] = useState(0);
   const [userPersonality, setUserPersonality] = useState("");
-  const userReducer = useSelector((store) => store.userReducer);
 
   const { t } = useTranslation();
   const questions = t("questions", { returnObjects: true });
+
+  const userReducer = useSelector((store) => store.userReducer);
 
   const dispatch = useDispatch();
   const router = useNavigate();
@@ -36,7 +39,8 @@ const Template = () => {
     getUser.language = localStorage.getItem("language");
     setTimeout(() => {
       if (userPersonality.length === 4) {
-        dispatch(userLogin(getUser, router));
+        dispatch(addReport(getUser, router));
+        dispatch(addAllReports(getUser));
       }
     }, 12000);
   }, [dispatch, router, userPersonality]);
@@ -44,10 +48,13 @@ const Template = () => {
   const myItem = questions[stepQuestions];
 
   useEffect(() => {
-    if (userReducer.isAuthenticate) {
+    if (
+      userReducer.user?.subscriptionPlan?.expireDate >
+      moment(new Date()).format("YYYY-MM-DD")
+    ) {
       router("/");
     }
-  }, [router, userReducer.isAuthenticate]);
+  }, [router, userReducer.user?.subscriptionPlan?.expireDate]);
 
   return (
     <div className={`h-screen template`}>

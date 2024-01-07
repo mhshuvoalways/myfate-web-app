@@ -24,7 +24,7 @@ const Privacy = () => {
             </div>
           ))}
           <br />
-          <small>Copyright © 2023 myfate.com</small>
+          <small>Copyright © 2024 myfates.com</small>
         </div>
       </div>
       <Footer />

@@ -373,7 +373,7 @@ const mainFunc = (language) => {
       },
     };
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < process.env.EXPIRE_DATE; i++) {
       // Each day's data
       const current_date = new Date(startDate.getTime());
       current_date.setUTCDate(startDate.getUTCDate() + i);

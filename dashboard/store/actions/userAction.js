@@ -15,8 +15,11 @@ export const userLogin = (user, navigate) => (dispatch) => {
       setAuthToken(response.data.token);
       localStorage.setItem("token", response.data.token);
       dispatch(isAuthenticate());
-      dispatch(addReport(user));
-      dispatch(addAllReports(user, navigate));
+      if (response.data.hasReports) {
+        navigate("/");
+      } else {
+        navigate("/answer");
+      }
     })
     .catch((err) => {
       dispatch({
@@ -79,51 +82,6 @@ export const getMyAccount = () => (dispatch) => {
         type: Types.GET_MYACCOUT,
         payload: err.response?.data,
       });
-    });
-};
-
-export const addReport = (userValue) => (dispatch) => {
-  dispatch(enableBtn(false));
-  axios
-    .post("/reports/addreports", userValue)
-    .then(() => {
-      dispatch(enableBtn(true));
-    })
-    .catch((err) => {
-      dispatch(enableBtn(true));
-      dispatch(notiAction(err.response?.data.message));
-    });
-};
-
-export const addAllReports = (user, navigate) => (dispatch) => {
-  dispatch(enableBtn(false));
-  axios
-    .post("/report/addreport", user)
-    .then(() => {
-      dispatch(enableBtn(true));
-    })
-    .catch((err) => {
-      dispatch(notiAction(err.response?.data.message));
-      dispatch(enableBtn(true));
-    });
-  axios
-    .post("/love/addlove", user)
-    .then(() => {
-      dispatch(enableBtn(true));
-    })
-    .catch((err) => {
-      dispatch(enableBtn(true));
-      dispatch(notiAction(err.response?.data.message));
-    });
-  axios
-    .post("/finance/addfinance", user)
-    .then(() => {
-      dispatch(enableBtn(true));
-      navigate("/");
-    })
-    .catch((err) => {
-      dispatch(enableBtn(true));
-      dispatch(notiAction(err.response?.data.message));
     });
 };
 

@@ -204,6 +204,22 @@ const login = (req, res) => {
   }
 };
 
+const loginClientDashboardCom = (res, response, hasReports) => {
+  const token = jwt.sign(
+    {
+      _id: response._id,
+      email: response.email,
+    },
+    process.env.SECRET,
+    { expiresIn: "60d" }
+  );
+  res.status(200).json({
+    token,
+    hasReports: hasReports,
+    message: "Welcome back!",
+  });
+};
+
 const loginClientDashboard = (req, res) => {
   const { email, firstName, lastName, gender, birthDate, birthTime } = req.body;
   const obj = {
@@ -217,31 +233,30 @@ const loginClientDashboard = (req, res) => {
   };
   User.findOneAndUpdate({ email: email }, obj)
     .then((response) => {
-      if (response?.subscriptionPlan.planType) {
-        if (
-          response?.subscriptionPlan.expireDate >=
-          moment(new Date()).format("YYYY-MM-DD")
-        ) {
-          const token = jwt.sign(
-            {
-              _id: response._id,
-              email: response.email,
-            },
-            process.env.SECRET,
-            { expiresIn: "60d" }
-          );
-          res.status(200).json({
-            token,
-            message: "Welcome back!",
-          });
+      if (response) {
+        if (response?.subscriptionPlan.planType) {
+          if (!response?.subscriptionPlan.expireDate) {
+            loginClientDashboardCom(res, response, false);
+          } else {
+            if (
+              response?.subscriptionPlan.expireDate >
+              moment(new Date()).format("YYYY-MM-DD")
+            ) {
+              loginClientDashboardCom(res, response, true);
+            } else {
+              res.status(400).json({
+                message: "Your plan is expired. Please purchase a plan!",
+              });
+            }
+          }
         } else {
           res.status(400).json({
-            message: "Your plan is expired. Please purchase a plan!",
+            message: "Please purchase a plan!",
           });
         }
       } else {
         res.status(400).json({
-          message: "Please purchase a plan!",
+          message: "User not found!",
         });
       }
     })
@@ -385,13 +400,9 @@ const deleteUser = (req, res) => {
 const paymentUser = (req, res) => {
   const { email } = req.user;
   const { planType } = req.body;
-  let today = new Date();
-  let expireDate = new Date(today);
-  expireDate.setDate(today.getDate() + 10);
   const userObj = {
     subscriptionPlan: {
       planType: planType,
-      expireDate: moment(expireDate).format("YYYY-MM-DD"),
     },
   };
   User.findOneAndUpdate({ email }, userObj, { new: true })

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PrivateRoute from "./pages/PrivateRoute";
+import PublicRoute from "./pages/PublicRoute";
 import Time from "./pages/Time";
 import DReport from "./pages/DReport";
 import Finance from "./pages/Finance";
@@ -28,7 +29,9 @@ const App = () => {
             path="/"
             element={
               <PrivateRoute>
-                <Time />
+                <PublicRoute>
+                  <Time />
+                </PublicRoute>
               </PrivateRoute>
             }
           />
@@ -36,7 +39,9 @@ const App = () => {
             path="/d-report"
             element={
               <PrivateRoute>
-                <DReport />
+                <PublicRoute>
+                  <DReport />
+                </PublicRoute>
               </PrivateRoute>
             }
           />
@@ -44,7 +49,9 @@ const App = () => {
             path="/finance"
             element={
               <PrivateRoute>
-                <Finance />
+                <PublicRoute>
+                  <Finance />
+                </PublicRoute>
               </PrivateRoute>
             }
           />
@@ -52,7 +59,9 @@ const App = () => {
             path="/love"
             element={
               <PrivateRoute>
-                <Love />
+                <PublicRoute>
+                  <Love />
+                </PublicRoute>
               </PrivateRoute>
             }
           />
@@ -60,7 +69,10 @@ const App = () => {
             path="/account"
             element={
               <PrivateRoute>
-                <Account />
+                <PublicRoute>
+                  
+                  <Account />
+                </PublicRoute>
               </PrivateRoute>
             }
           />

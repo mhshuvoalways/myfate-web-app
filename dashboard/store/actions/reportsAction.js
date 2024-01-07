@@ -1,5 +1,23 @@
 import * as Types from "../constants/reportsTypes";
 import axios from "../../utils/axios";
+import notiAction from "./notiAction";
+import enableBtn from "./btnAction";
+import { isAuthenticate } from "./userAction";
+
+export const addReport = (userValue, router) => (dispatch) => {
+  dispatch(enableBtn(false));
+  axios
+    .post("/reports/addreports", userValue)
+    .then(() => {
+      dispatch(enableBtn(true));
+      dispatch(isAuthenticate());
+      router("/");
+    })
+    .catch((err) => {
+      dispatch(enableBtn(true));
+      dispatch(notiAction(err.response?.data.message));
+    });
+};
 
 export const getreports = () => (dispatch) => {
   axios

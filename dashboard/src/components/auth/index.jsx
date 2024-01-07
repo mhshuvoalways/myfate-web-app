@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import RadioBtn from "./RadioBtn";
 import Button from "../common/Button";
 import { useTranslation } from "react-i18next";
+import { userLogin } from "../../../store/actions/userAction";
 
 const Login = () => {
   const [dontKnow, setDontKnow] = useState(false);
@@ -24,10 +25,10 @@ const Login = () => {
 
   const { i18n, t } = useTranslation();
   const myform = t("form", { returnObjects: true });
+  const dispatch = useDispatch();
+  const router = useNavigate();
 
   const userReducer = useSelector((store) => store.userReducer);
-
-  const router = useNavigate();
 
   const birthHandler = (event) => {
     if (event.target.checked) {
@@ -64,7 +65,6 @@ const Login = () => {
         radioBtn === "am"
           ? userData.birthTimeHH
           : Number(userData.birthTimeHH) + 12;
-
       const formatuserData = {
         firstName: userData.firstName,
         lastName: userData.lastName,
@@ -75,8 +75,8 @@ const Login = () => {
           ? userData.birthTimeMM && `${hrCalculate}:${userData.birthTimeMM}:00`
           : "",
       };
+      dispatch(userLogin(formatuserData, router));
       localStorage.setItem("userValue", JSON.stringify(formatuserData));
-      router("/answer");
     }
   };
 

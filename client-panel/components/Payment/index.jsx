@@ -18,7 +18,7 @@ const Index = () => {
   return (
     <div className="mycontainer my-20 flex justify-center gap-20 md:gap-10 flex-wrap md:flex-nowrap items-center">
       <div className="w-10/12 md:w-6/12">
-        <Image src="/payment/payment.avif" width={500} height={500} />
+        <Image src="/payment/payment.avif" alt="" width={500} height={500} />
       </div>
       <div className="w-10/12 md:w-6/12">
         <Paypal paymentHandler={paymentHandler} />

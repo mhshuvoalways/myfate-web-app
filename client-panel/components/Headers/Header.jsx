@@ -49,9 +49,9 @@ const Header = ({ toggleSidebar, userReducer }) => {
             {userReducer.isAuthenticate ? (
               userReducer.user?.subscriptionPlan?.planType ? (
                 <Link
-                  href={"https://myfate-client-dashboard.vercel.app"}
+                  href={process.env.DASHBOARD_URL}
                   className="w-0 sm:w-6 cursor-pointer ml-auto hidden sm:block"
-                  target="blank"
+                  target="_blank"
                 >
                   <Image src={DashIcon} alt="" />
                 </Link>

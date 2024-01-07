@@ -7,7 +7,7 @@ import Modal from "../utils/Modal";
 import SubscriptionConfirm from "./SubscriptionConfirm";
 
 const Index = () => {
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
   const userReducer = useSelector((state) => state.userReducer);
   const reportsReducer = useSelector((state) => state.reportsReducer);
 

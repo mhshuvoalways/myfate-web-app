@@ -20,7 +20,7 @@ const Index = () => {
 
   useEffect(() => {
     if (!state) {
-      setState(reportsReducer.reports?.reports.entireLife);
+      setState(reportsReducer.reports?.reports?.entireLife);
     }
   }, [reportsReducer.reports?.reports?.entireLife, state]);
 
