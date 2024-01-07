@@ -26,7 +26,11 @@ const Header = ({ toggleSidebar, userReducer }) => {
         <Link href="/">
           <Image src={Logo} className="w-40 static sm:absolute top-2" alt="" />
         </Link>
-        <div className="flex items-center gap-3 ml-auto md:ml-0 lg:-ml-64">
+        <div
+          className={`flex items-center gap-3 ml-auto md:ml-0 ${
+            userReducer.isAuthenticate ? "lg:-ml-36" : "lg:-ml-60"
+          }`}
+        >
           <div className="block sm:hidden">
             <Language />
           </div>
