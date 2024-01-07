@@ -11,7 +11,7 @@ const Items = ({ bgcolor, textcolor, title, number }) => {
       <div>
         <p className="text-xl title-font">{title}</p>
         {number && (
-          <p className={`font-semibold text-4xl ${textcolor}`}>{number}</p>
+          <p className={`font-semibold text-3xl ${textcolor}`}>{number}</p>
         )}
       </div>
       {title === "Total User" && (

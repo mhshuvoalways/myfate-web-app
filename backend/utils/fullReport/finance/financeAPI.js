@@ -363,7 +363,7 @@ const mainFunction = (language) => {
       },
     };
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
       // Each day's data
       const current_date = new Date(startDate.getTime());
       current_date.setUTCDate(startDate.getUTCDate() + i);

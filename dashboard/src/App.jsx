@@ -11,6 +11,7 @@ import Tostify from "./components/utils/Toastify";
 import Loading from "./components/utils/Loading";
 import { isAuthenticate } from "../store/actions/userAction";
 import Answer from "./pages/Answere";
+import Account from "./pages/Account";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -52,6 +53,14 @@ const App = () => {
             element={
               <PrivateRoute>
                 <Love />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/account"
+            element={
+              <PrivateRoute>
+                <Account />
               </PrivateRoute>
             }
           />

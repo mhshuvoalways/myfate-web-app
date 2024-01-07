@@ -1,6 +1,6 @@
 import moment from "moment";
 import { useEffect } from "react";
-import { CiCalendar, CiDollar, CiHeart } from "react-icons/ci";
+import { CiCalendar, CiDollar, CiHeart, CiUser } from "react-icons/ci";
 import { SiGoogleanalytics } from "react-icons/si";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -71,6 +71,17 @@ const SidebarHeader = ({ children }) => {
                 <CiHeart
                   className={`text-4xl rounded-xl p-1 ${
                     location.pathname === "/love" && "bg-gray-600"
+                  }`}
+                />
+              </p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/account">
+              <p>
+                <CiUser
+                  className={`text-4xl rounded-xl p-1 ${
+                    location.pathname === "/account" && "bg-gray-600"
                   }`}
                 />
               </p>

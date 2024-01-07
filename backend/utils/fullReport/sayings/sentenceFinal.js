@@ -34,7 +34,7 @@ function create28DaySentenceLists(reportName, language) {
   const finalPath = language === "jp" ? dbPathJapan : dbPath;
   let allSentenceLists = [];
 
-  for (let day = 0; day < 28; day++) {
+  for (let day = 0; day < 30; day++) {
     // Corrected to 28 days
     const currentDate = new Date(startDate.getTime());
     currentDate.setDate(startDate.getDate() + day);

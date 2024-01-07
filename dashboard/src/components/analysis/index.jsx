@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { Element } from "react-scroll";
 import LazyImage from "../utils/LazyImage";
 import Header from "../header";
-import Items from "../chart/Items";
 import List from "../list";
 import { getreports } from "../../../store/actions/reportsAction";
 
@@ -37,31 +36,6 @@ const Index = () => {
     <div>
       <Header reports={reportsReducer.reports} user={userReducer.user} />
       <div className="w-10/12 mx-auto mycontainer">
-        <div className="bg-white shadow rounded-xl p-5 mt-16">
-          <p className="text-4xl title-font">Client Dashboard</p>
-          <div className="flex sm:justify-between justify-center gap-5 mt-5 flex-wrap md:flex-nowrap">
-            <Items
-              textcolor={"text-red-800"}
-              bgcolor={"bg-[#F1E7FF]"}
-              title="Name"
-              number={`${userReducer.user?.profile?.firstName || ""} ${
-                userReducer.user?.profile?.lastName || ""
-              }`}
-            />
-            <Items
-              textcolor={"text-green-800"}
-              bgcolor={"bg-[#FEF6EB]"}
-              title="Date of Birth"
-              number={userReducer.user?.profile?.birthDate}
-            />
-            <Items
-              textcolor={"text-green-800"}
-              bgcolor={"bg-[#E5F5FF]"}
-              title="Last Plan Type"
-              number={userReducer.user?.subscriptionPlan?.planType || ""}
-            />
-          </div>
-        </div>
         <img src="/images/treesun.png" className="w-full rounded-3xl mt-10" />
         <div className="flex justify-between items-start flex-wrap md:flex-nowrap flex-col-reverse md:flex-row relative mt-10 gap-5">
           <div className="w-full md:w-7/12 lg:w-8/12">
